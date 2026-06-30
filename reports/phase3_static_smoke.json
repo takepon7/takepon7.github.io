@@ -23,6 +23,8 @@
     "leaderboard_percentile_display": true,
     "pair_proposal_submission": true,
     "premium_pass_redeem": true,
+    "publish_brand_assets": true,
+    "publish_metadata": true,
     "responsive_css": true,
     "result_percentile_display": true,
     "season_boundary_fetch": true,
@@ -59,6 +61,16 @@
   ],
   "html": "/Users/ryosuke/dev/new_game/web/dist/index.html",
   "missing_replay_base_renderers": [],
+  "public_assets": [
+    "/Users/ryosuke/dev/new_game/web/dist/brand/og-image.png",
+    "/Users/ryosuke/dev/new_game/web/dist/brand/marketing-hero-16x9.png",
+    "/Users/ryosuke/dev/new_game/web/dist/brand/app-icon-192.png",
+    "/Users/ryosuke/dev/new_game/web/dist/brand/app-icon-512.png",
+    "/Users/ryosuke/dev/new_game/web/dist/brand/apple-touch-icon.png",
+    "/Users/ryosuke/dev/new_game/web/dist/brand/favicon-32.png",
+    "/Users/ryosuke/dev/new_game/web/dist/site.webmanifest",
+    "/Users/ryosuke/dev/new_game/web/dist/robots.txt"
+  ],
   "replay_base_ids": [
     "apple",
     "balloon",

@@ -521,6 +521,22 @@ The Replay control replays the current stroke log from the frozen base object.
 During replay and scoring, drawing controls are locked so the submitted PNG and
 stroke log cannot drift apart mid-verdict.
 
+## Web publishing and marketing assets
+
+The web entrypoint includes production-facing metadata for search/social cards,
+PWA install metadata, and brand icons:
+
+- Open Graph image: `web/public/brand/og-image.png`
+- 16:9 marketing hero: `web/public/brand/marketing-hero-16x9.png`
+- PWA icons: `web/public/brand/app-icon-192.png`, `web/public/brand/app-icon-512.png`
+- Touch/favicon assets: `web/public/brand/apple-touch-icon.png`, `web/public/brand/favicon-32.png`
+- Web manifest: `web/public/site.webmanifest`
+
+The launch plan and generated-asset inventory live under `docs/marketing/`.
+Run `npm run check` and `tools/smoke_phase3_static.py` after changing metadata
+or brand assets; the static smoke verifies that the built app still contains the
+publish metadata and copied public assets.
+
 ## Phase 5 appraiser comments
 
 `src/gitai_phase0/commentary.py` provides the zero-cost template bank for the

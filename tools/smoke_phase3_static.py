@@ -114,6 +114,27 @@ def main() -> None:
 
     missing_runtime = [token for token in required_runtime_tokens if token not in js_text]
     missing_styles = [token for token in required_style_tokens if token not in css_text]
+    required_html_tokens = [
+        "AIをだます擬態ドローイングゲーム",
+        'property="og:image"',
+        "/brand/og-image.png",
+        'name="twitter:card"',
+        "/site.webmanifest",
+        "/brand/favicon-32.png",
+        "/brand/apple-touch-icon.png",
+    ]
+    missing_html = [token for token in required_html_tokens if token not in html]
+    public_assets = [
+        ROOT / "web" / "dist" / "brand" / "og-image.png",
+        ROOT / "web" / "dist" / "brand" / "marketing-hero-16x9.png",
+        ROOT / "web" / "dist" / "brand" / "app-icon-192.png",
+        ROOT / "web" / "dist" / "brand" / "app-icon-512.png",
+        ROOT / "web" / "dist" / "brand" / "apple-touch-icon.png",
+        ROOT / "web" / "dist" / "brand" / "favicon-32.png",
+        ROOT / "web" / "dist" / "site.webmanifest",
+        ROOT / "web" / "dist" / "robots.txt",
+    ]
+    missing_public_assets = [str(path) for path in public_assets if not path.exists()]
     client_base_ids = set(re.findall(r'objectId === "([^"]+)"', source_ts))
     daily_base_ids = daily_base_object_ids()
     missing_replay_base_renderers = sorted((client_base_ids | daily_base_ids) - SUPPORTED_BASE_RENDERER_IDS)
@@ -133,6 +154,8 @@ def main() -> None:
     replay_locks_canvas = '"locked"' in source_ts and "setDrawingControlsDisabled(true)" in source_ts
     assert not missing_runtime, f"missing runtime tokens: {missing_runtime}"
     assert not missing_styles, f"missing style tokens: {missing_styles}"
+    assert not missing_html, f"missing publish metadata tokens: {missing_html}"
+    assert not missing_public_assets, f"missing public assets: {missing_public_assets}"
     assert not missing_replay_base_renderers, (
         "missing replay base renderers: "
         f"{missing_replay_base_renderers}"
@@ -150,6 +173,7 @@ def main() -> None:
         "daily_base_ids": sorted(daily_base_ids),
         "replay_base_ids": sorted(SUPPORTED_BASE_RENDERER_IDS),
         "missing_replay_base_renderers": missing_replay_base_renderers,
+        "public_assets": [str(path) for path in public_assets],
         "checks": {
             "daily_puzzle_fetch": True,
             "daily_puzzle_archive_fetch": True,
@@ -186,6 +210,8 @@ def main() -> None:
             "client_undo_preserves_base": undo_preserves_base,
             "client_replay_uses_strokes": replay_uses_strokes,
             "client_canvas_locks_while_busy": replay_locks_canvas,
+            "publish_metadata": True,
+            "publish_brand_assets": True,
         },
     }
     out = ROOT / "reports" / "phase3_static_smoke.json"
