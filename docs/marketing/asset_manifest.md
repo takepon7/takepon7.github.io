@@ -22,11 +22,22 @@ Built-in `image_gen` mode was used for the project-bound raster assets.
   - `web/public/brand/favicon-32.png`
 - Prompt summary: square premium icon of an apple painted as a baseball with a gold loupe motif, no text.
 
+### Social Launch Creatives
+
+- Feed source: `web/public/brand/social-feed-square-source.png`
+- Feed derived:
+  - `web/public/brand/social-feed-square.png` - 1080x1080 feed creative
+- Story source: `web/public/brand/social-story-vertical-source.png`
+- Story derived:
+  - `web/public/brand/social-story-vertical.png` - 1080x1920 story/reel cover creative
+- Prompt summary: launch campaign scenes showing the apple-to-baseball disguise, premium appraisal tools, and AI scan motifs, no image text.
+
 ## Usage
 
 - Web metadata references `/brand/og-image.png`.
 - PWA manifest references `/brand/app-icon-192.png` and `/brand/app-icon-512.png`.
 - Browser and iOS icons reference `/brand/favicon-32.png` and `/brand/apple-touch-icon.png`.
+- Social posts can use `/brand/social-feed-square.png` and `/brand/social-story-vertical.png` with platform-native copy overlays.
 
 ## Constraints
 

@@ -6,7 +6,7 @@
       "pair_id": "apple_to_baseball",
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "1adca8d9aa4e4e968af99b3f6d86fa4d"
+      "submission_id": "ac4523b061e64da4aee1622e544c8e68"
     },
     {
       "base": "balloon",
@@ -14,7 +14,7 @@
       "pair_id": "balloon_to_baseball",
       "percentile": 1.0,
       "score": 1000,
-      "submission_id": "b928f8f9461548faa008e37b12c6463c"
+      "submission_id": "08a0ca87f89541dbb1001867375852ff"
     },
     {
       "base": "orange",
@@ -22,7 +22,7 @@
       "pair_id": "orange_to_tennis_ball",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "a52c5c5dad604c2da20eccba7d5edf1b"
+      "submission_id": "2789c29f37f04597895d99c3048e4998"
     },
     {
       "base": "tomato",
@@ -30,7 +30,7 @@
       "pair_id": "tomato_to_baseball",
       "percentile": 1.0,
       "score": 1000,
-      "submission_id": "77787a16540f493daef4026b8e3ac02e"
+      "submission_id": "52dc5b5c29ef423bb165b81aa3e167c8"
     },
     {
       "base": "mug",
@@ -38,7 +38,7 @@
       "pair_id": "mug_to_book",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "44af241748e4422d859156443834cadf"
+      "submission_id": "3070fef58cf04c40bf55fe6fb5b14b53"
     },
     {
       "base": "book",
@@ -46,7 +46,7 @@
       "pair_id": "book_to_car",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "c3c351c9ef8841f3a38f4c628bf7c1f3"
+      "submission_id": "9742e389d2c749b494e78c74a1f87e36"
     },
     {
       "base": "chair",
@@ -54,7 +54,7 @@
       "pair_id": "chair_to_car",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "bcd6ea027e04435fadcb8053c0c22276"
+      "submission_id": "f8b482fb74f64388a1165055d94de11d"
     },
     {
       "base": "apple",
@@ -62,7 +62,7 @@
       "pair_id": "apple_to_baseball",
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "85a2cf0b5eb5420fb122fedd8c389473"
+      "submission_id": "06f9f8909fc54ed5ac6c7d0aa9d8d967"
     }
   ],
   "checks": [
@@ -147,7 +147,7 @@
       "status": "pass"
     },
     {
-      "detail": "['2ef11aeb20ff468584b9e2685b35245a']",
+      "detail": "['e7168dcd81c945fcb1a12ff84f94519b']",
       "name": "friend_ladder_contains_player",
       "status": "pass"
     },
@@ -221,7 +221,7 @@
     "seed_scores": "/Users/ryosuke/dev/new_game/data/scoring/seed_scores.json"
   },
   "proposal": {
-    "proposal_id": "8fb6cfba6d18426c82bc6b68c96540af",
+    "proposal_id": "cc8cba4217234eca85f610ed3ff1e5d8",
     "status": "candidate",
     "support_count": 1
   },
@@ -232,7 +232,7 @@
     "rank": 3,
     "reward_count": 0,
     "score": 667,
-    "submission_id": "2ef11aeb20ff468584b9e2685b35245a"
+    "submission_id": "e7168dcd81c945fcb1a12ff84f94519b"
   },
   "summary": {
     "archived_submission_count": 8,
@@ -241,7 +241,7 @@
     "passed_checks": 29,
     "percentile": 0.6666666666666666,
     "score": 667,
-    "submission_id": "2ef11aeb20ff468584b9e2685b35245a",
+    "submission_id": "e7168dcd81c945fcb1a12ff84f94519b",
     "today": "2026-07-06"
   },
   "today": "2026-07-06",

@@ -132,6 +132,8 @@ def main() -> None:
     public_assets = [
         ROOT / "web" / "dist" / "brand" / "og-image.png",
         ROOT / "web" / "dist" / "brand" / "marketing-hero-16x9.png",
+        ROOT / "web" / "dist" / "brand" / "social-feed-square.png",
+        ROOT / "web" / "dist" / "brand" / "social-story-vertical.png",
         ROOT / "web" / "dist" / "brand" / "app-icon-192.png",
         ROOT / "web" / "dist" / "brand" / "app-icon-512.png",
         ROOT / "web" / "dist" / "brand" / "apple-touch-icon.png",

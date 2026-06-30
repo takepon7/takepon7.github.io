@@ -73,6 +73,8 @@ def smoke_public_launch(
     expected_images = {
         "og_image": (web_dist_dir / "brand" / "og-image.png", (1200, 630)),
         "marketing_hero": (web_dist_dir / "brand" / "marketing-hero-16x9.png", (1600, 900)),
+        "social_feed_square": (web_dist_dir / "brand" / "social-feed-square.png", (1080, 1080)),
+        "social_story_vertical": (web_dist_dir / "brand" / "social-story-vertical.png", (1080, 1920)),
         "app_icon_512": (web_dist_dir / "brand" / "app-icon-512.png", (512, 512)),
         "app_icon_192": (web_dist_dir / "brand" / "app-icon-192.png", (192, 192)),
         "apple_touch_icon": (web_dist_dir / "brand" / "apple-touch-icon.png", (180, 180)),

@@ -94,6 +94,8 @@ Generated and checked in:
 
 - Web/Open Graph key visual: `web/public/brand/og-image.png`
 - 16:9 marketing hero: `web/public/brand/marketing-hero-16x9.png`
+- Square social feed creative: `web/public/brand/social-feed-square.png`
+- Vertical story/reel cover creative: `web/public/brand/social-story-vertical.png`
 - PWA icons: `web/public/brand/app-icon-192.png`, `web/public/brand/app-icon-512.png`
 - Apple touch icon: `web/public/brand/apple-touch-icon.png`
 - Favicon: `web/public/brand/favicon-32.png`
