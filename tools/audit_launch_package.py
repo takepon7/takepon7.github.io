@@ -35,6 +35,7 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
     public_launch = load_json(ROOT / "reports" / "public_launch" / "public_launch.json")
     first_play = load_json(ROOT / "reports" / "first_play_api" / "first_play_api.json")
     phase3_static = load_json(ROOT / "reports" / "phase3_static_smoke.json")
+    real_model_coverage = load_json(ROOT / "reports" / "real_model_pair_coverage" / "real_model_pair_coverage.json")
 
     add_check(
         checks,
@@ -122,6 +123,16 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         bool(env_template_report.get("valid")),
         f"passed={env_template_report.get('summary', {}).get('passed_checks', 0)} "
         f"failed={env_template_report.get('summary', {}).get('failed_checks', 0)}",
+    )
+
+    add_check(
+        checks,
+        errors,
+        "real_model_expansion_backlog_ready",
+        bool(real_model_coverage.get("valid"))
+        and real_model_coverage.get("summary", {}).get("expansion_backlog_count", 0) >= 1,
+        f"real_model_pairs={real_model_coverage.get('summary', {}).get('real_model_pair_count', 0)} "
+        f"backlog={real_model_coverage.get('summary', {}).get('expansion_backlog_count', 0)}",
     )
 
     required_assets = {

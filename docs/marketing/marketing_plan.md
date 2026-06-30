@@ -107,6 +107,7 @@ Still useful before a public launch:
 
 - Three real gameplay clips, 8-12 seconds each.
 - One creator/press one-pager PDF/layout built from the checked-in press one-pager and screenshots.
+- Real-model measured-pair expansion from `reports/real_model_pair_coverage/real_model_pair_coverage.md`.
 
 ## KPIs
 

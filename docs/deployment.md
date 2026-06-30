@@ -98,6 +98,7 @@ PYTHONPATH=src .venv310/bin/python tools/smoke_phase3_static.py
 PYTHONPATH=src .venv310/bin/python tools/smoke_release_readiness.py --today 2026-07-06
 PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
 PYTHONPATH=src .venv310/bin/python tools/validate_production_env.py --env-file .env.production
+PYTHONPATH=src .venv310/bin/python tools/audit_real_model_pair_coverage.py
 PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 PYTHONPATH=src .venv310/bin/python -m pytest
 ```
@@ -110,6 +111,7 @@ Expected state:
 - Phase 5 budget gate passes.
 - Public metadata, PWA manifest, policy pages, social creatives, and marketing docs pass.
 - Production env validation rejects placeholder origins, localhost origins, unsafe moderation bypasses, and weak operator tokens.
+- Real-model pair coverage audit reports the measured-pair expansion backlog.
 - Launch package audit gathers release, first-play, marketing, policy, and imagegen asset evidence.
 - Same-origin web serving from the API is ready when `GITAI_STATIC_DIR` points at `web/dist`.
 

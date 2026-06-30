@@ -36,6 +36,11 @@
       "status": "pass"
     },
     {
+      "detail": "real_model_pairs=1 backlog=6",
+      "name": "real_model_expansion_backlog_ready",
+      "status": "pass"
+    },
+    {
       "detail": "{\"missing_assets\": [], \"missing_share_cards\": [], \"share_card_examples\": 5}",
       "name": "imagegen_assets_ready",
       "status": "pass"
@@ -58,7 +63,7 @@
     "latest_date": "2026-07-06",
     "latest_pair_id": "apple_to_baseball",
     "manual_followups": 3,
-    "passed_checks": 9
+    "passed_checks": 10
   },
   "valid": true
 }

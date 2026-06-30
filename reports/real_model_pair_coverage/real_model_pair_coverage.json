@@ -1,0 +1,113 @@
+{
+  "daily_real_model_alternative_dates": [
+    "2026-06-29",
+    "2026-07-06"
+  ],
+  "daily_real_model_ref_dates": [],
+  "expansion_backlog": [
+    {
+      "base": "balloon",
+      "heuristic_refs": [
+        "phase2-heuristic-balloon-baseball-tau30-2026-06-29"
+      ],
+      "pair_id": "balloon_to_baseball",
+      "recommended_models": [
+        "open_clip:ViT-L-14:openai:fp32",
+        "siglip:google/siglip-base-patch16-224:fp32"
+      ],
+      "target": "baseball"
+    },
+    {
+      "base": "tomato",
+      "heuristic_refs": [
+        "phase2-heuristic-tomato-baseball-tau30-2026-06-29"
+      ],
+      "pair_id": "tomato_to_baseball",
+      "recommended_models": [
+        "open_clip:ViT-L-14:openai:fp32",
+        "siglip:google/siglip-base-patch16-224:fp32"
+      ],
+      "target": "baseball"
+    },
+    {
+      "base": "mug",
+      "heuristic_refs": [
+        "phase2-heuristic-mug-book-tau30-2026-06-29"
+      ],
+      "pair_id": "mug_to_book",
+      "recommended_models": [
+        "open_clip:ViT-L-14:openai:fp32",
+        "siglip:google/siglip-base-patch16-224:fp32"
+      ],
+      "target": "book"
+    },
+    {
+      "base": "book",
+      "heuristic_refs": [
+        "phase2-heuristic-book-car-tau30-2026-06-29"
+      ],
+      "pair_id": "book_to_car",
+      "recommended_models": [
+        "open_clip:ViT-L-14:openai:fp32",
+        "siglip:google/siglip-base-patch16-224:fp32"
+      ],
+      "target": "car"
+    },
+    {
+      "base": "chair",
+      "heuristic_refs": [
+        "phase2-heuristic-chair-car-tau30-2026-06-29"
+      ],
+      "pair_id": "chair_to_car",
+      "recommended_models": [
+        "open_clip:ViT-L-14:openai:fp32",
+        "siglip:google/siglip-base-patch16-224:fp32"
+      ],
+      "target": "car"
+    },
+    {
+      "base": "orange",
+      "heuristic_refs": [
+        "phase2-heuristic-orange-tennis-ball-tau30-2026-06-29"
+      ],
+      "pair_id": "orange_to_tennis_ball",
+      "recommended_models": [
+        "open_clip:ViT-L-14:openai:fp32",
+        "siglip:google/siglip-base-patch16-224:fp32"
+      ],
+      "target": "tennis ball"
+    }
+  ],
+  "heuristic_only_pair_ids": [
+    "balloon_to_baseball",
+    "book_to_car",
+    "chair_to_car",
+    "mug_to_book",
+    "orange_to_tennis_ball",
+    "tomato_to_baseball"
+  ],
+  "paths": {
+    "daily_puzzles": "/Users/ryosuke/dev/new_game/data/puzzle/daily_puzzles.json",
+    "pairs": "/Users/ryosuke/dev/new_game/data/scoring/pairs.json",
+    "seed_scores": "/Users/ryosuke/dev/new_game/data/scoring/seed_scores.json"
+  },
+  "real_model_pair_ids": [
+    "apple_to_baseball"
+  ],
+  "recommended_next_actions": [
+    "Run SeedAsset scoring for each expansion_backlog pair with open_clip and/or siglip.",
+    "Promote accepted real-model SeedScores into data/scoring/seed_scores.json.",
+    "Plan future DailyPuzzle entries against real-model ref_versions before a serious public campaign."
+  ],
+  "summary": {
+    "daily_count": 8,
+    "daily_real_model_alternative_count": 2,
+    "daily_real_model_ref_count": 0,
+    "expansion_backlog_count": 6,
+    "heuristic_only_pair_count": 6,
+    "pair_count": 7,
+    "real_model_pair_count": 1,
+    "seed_score_count": 10
+  },
+  "valid": true
+}
