@@ -23,6 +23,10 @@ COPY data ./data
 COPY --from=web-build /app/web/dist ./web/dist
 
 RUN pip install --no-cache-dir -e ".[api]"
+RUN adduser --system --group gitai \
+  && mkdir -p /data \
+  && chown -R gitai:gitai /app /data
 
 EXPOSE 8000
+USER gitai
 CMD ["uvicorn", "gitai_phase0.server:app", "--host", "0.0.0.0", "--port", "8000"]

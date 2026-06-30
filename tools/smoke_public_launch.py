@@ -294,6 +294,7 @@ def validate_container_files() -> dict[str, Any]:
         "FROM python:3.10-slim AS runtime",
         "GITAI_STATIC_DIR=/app/web/dist",
         'pip install --no-cache-dir -e ".[api]"',
+        "USER gitai",
         '"uvicorn"',
         '"gitai_phase0.server:app"',
     ]
