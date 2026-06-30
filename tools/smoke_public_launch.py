@@ -108,6 +108,8 @@ def smoke_public_launch(
     docs = {
         "marketing_plan": ROOT / "docs" / "marketing" / "marketing_plan.md",
         "asset_manifest": ROOT / "docs" / "marketing" / "asset_manifest.md",
+        "launch_copy_kit": ROOT / "docs" / "marketing" / "launch_copy_kit.md",
+        "press_one_pager": ROOT / "docs" / "marketing" / "press_one_pager.md",
         "deployment_notes": ROOT / "docs" / "deployment.md",
     }
     missing_docs = [name for name, path in docs.items() if not path.exists()]
@@ -116,7 +118,9 @@ def smoke_public_launch(
         errors,
         "launch_docs_exist",
         not missing_docs,
-        "marketing, asset, and deployment docs exist" if not missing_docs else f"missing: {missing_docs}",
+        "marketing, asset, copy, press, and deployment docs exist"
+        if not missing_docs
+        else f"missing: {missing_docs}",
     )
 
     readiness = load_json(ROOT / "reports" / "release_readiness" / "release_readiness.json")

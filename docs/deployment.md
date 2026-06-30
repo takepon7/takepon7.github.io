@@ -50,6 +50,7 @@ Run:
 npm run check
 PYTHONPATH=src .venv310/bin/python tools/smoke_phase3_static.py
 PYTHONPATH=src .venv310/bin/python tools/smoke_release_readiness.py --today 2026-07-06
+PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
 PYTHONPATH=src .venv310/bin/python -m pytest
 ```
 
@@ -59,3 +60,4 @@ Expected state:
 - Production JS has no localhost API default.
 - Seed ghosts and first-play flow pass.
 - Phase 5 budget gate passes.
+- Public metadata, PWA manifest, social creatives, and marketing docs pass.
