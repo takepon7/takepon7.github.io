@@ -97,6 +97,7 @@ npm run check
 PYTHONPATH=src .venv310/bin/python tools/smoke_phase3_static.py
 PYTHONPATH=src .venv310/bin/python tools/smoke_release_readiness.py --today 2026-07-06
 PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
+PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 PYTHONPATH=src .venv310/bin/python -m pytest
 ```
 
@@ -107,6 +108,7 @@ Expected state:
 - Seed ghosts and first-play flow pass.
 - Phase 5 budget gate passes.
 - Public metadata, PWA manifest, policy pages, social creatives, and marketing docs pass.
+- Launch package audit gathers release, first-play, marketing, policy, and imagegen asset evidence.
 - Same-origin web serving from the API is ready when `GITAI_STATIC_DIR` points at `web/dist`.
 
 ## CI

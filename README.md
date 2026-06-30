@@ -21,6 +21,7 @@ npm run check
 PYTHONPATH=src .venv310/bin/python tools/smoke_phase3_static.py
 PYTHONPATH=src .venv310/bin/python tools/smoke_release_readiness.py --today 2026-07-06
 PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
+PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 PYTHONPATH=src .venv310/bin/python -m pytest -q
 ```
 
@@ -573,11 +574,14 @@ Run the public launch audit after a production build:
 
 ```bash
 PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
+PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 ```
 
-It verifies launch metadata, brand asset dimensions, PWA manifest basics,
-release readiness, static smoke results, and the absence of localhost API
-defaults in the production bundle. Manual follow-ups such as real production
+The public smoke verifies launch metadata, brand asset dimensions, PWA manifest
+basics, same-origin serving, and the absence of localhost API defaults in the
+production bundle. The launch package audit then gathers release readiness,
+first-play flow, static smoke, policy pages, marketing docs, and imagegen assets
+into `reports/launch_package_audit/`. Manual follow-ups such as real production
 origins and outside playtest metrics are reported separately.
 
 ## Phase 5 appraiser comments
