@@ -131,6 +131,13 @@ def run_flow(
 ) -> None:
     health = client.get("/healthz")
     add_response_check(checks, errors, "healthz", health)
+    add_check(
+        checks,
+        errors,
+        "api_security_headers_present",
+        has_security_headers(health),
+        "public API security headers are present",
+    )
 
     archive = client.get("/v1/daily-puzzles")
     add_response_check(checks, errors, "daily_archive_loads", archive)
@@ -488,6 +495,15 @@ def is_png_b64(value: str) -> bool:
         return b64decode(value).startswith(b"\x89PNG\r\n\x1a\n")
     except Exception:
         return False
+
+
+def has_security_headers(response) -> bool:
+    return (
+        response.headers.get("x-content-type-options") == "nosniff"
+        and response.headers.get("x-frame-options") == "DENY"
+        and response.headers.get("referrer-policy") == "strict-origin-when-cross-origin"
+        and "camera=()" in response.headers.get("permissions-policy", "")
+    )
 
 
 def is_replayable_stroke_log(value: Any) -> bool:

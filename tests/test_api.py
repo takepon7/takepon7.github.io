@@ -185,6 +185,18 @@ def test_default_cors_allows_vite_fallback_port() -> None:
     assert response.headers["access-control-allow-origin"] == "http://127.0.0.1:5174"
 
 
+def test_api_responses_include_public_security_headers() -> None:
+    client = client_for_tests()
+
+    response = client.get("/healthz")
+
+    assert response.status_code == 200
+    assert response.headers["x-content-type-options"] == "nosniff"
+    assert response.headers["x-frame-options"] == "DENY"
+    assert response.headers["referrer-policy"] == "strict-origin-when-cross-origin"
+    assert "camera=()" in response.headers["permissions-policy"]
+
+
 def test_daily_puzzle_endpoint_can_use_compatible_dev_ref(monkeypatch) -> None:
     monkeypatch.setenv("GITAI_TODAY", "2026-06-29")
     monkeypatch.setenv("GITAI_DAILY_REF_VERSION", "phase0-open-clip-tau30-2026-06-29")

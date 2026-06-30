@@ -70,6 +70,12 @@ DEFAULT_CORS_ORIGINS = ",".join(
         "http://localhost:5174",
     )
 )
+SECURITY_HEADERS = {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
+}
 
 
 class ScoreRequest(BaseModel):
@@ -374,6 +380,13 @@ def create_app(state: AppState | None = None) -> FastAPI:
         allow_headers=["*"],
     )
     app.state.gitai = state or build_state_from_env()
+
+    @app.middleware("http")
+    async def add_security_headers(request, call_next):
+        response = await call_next(request)
+        for name, value in SECURITY_HEADERS.items():
+            response.headers.setdefault(name, value)
+        return response
 
     @app.get("/healthz")
     def healthz() -> dict[str, str]:
