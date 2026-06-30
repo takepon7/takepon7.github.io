@@ -1,0 +1,118 @@
+{
+  "results": [
+    {
+      "bucket": "failed",
+      "candidate_labels": [
+        "baseball",
+        "apple",
+        "tennis ball",
+        "tomato",
+        "orange"
+      ],
+      "case_id": "apple_to_baseball_weak_bfe23091",
+      "confidences": {
+        "Cx": 0.48056186166358866,
+        "Cy": 1.133570517857344e-07,
+        "negs": [
+          1.652777183226065e-07,
+          0.5194294954791715,
+          8.364222469691403e-06
+        ]
+      },
+      "detected_text": [],
+      "entropy": 0.6924964738040638,
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/apple_to_baseball-bfe23091-weak.png",
+      "model_version": "heuristic-color-shape-v1",
+      "ocr_cheat": false,
+      "pair_id": "apple_to_baseball",
+      "probabilities": [
+        1.133570517857344e-07,
+        0.48056186166358866,
+        1.652777183226065e-07,
+        0.5194294954791715,
+        8.364222469691403e-06
+      ],
+      "raw": 5.888197594688605e-08,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "fooled",
+      "candidate_labels": [
+        "baseball",
+        "apple",
+        "tennis ball",
+        "tomato",
+        "orange"
+      ],
+      "case_id": "apple_to_baseball_medium_bfe23091",
+      "confidences": {
+        "Cx": 0.015316995818232438,
+        "Cy": 0.9733638512225835,
+        "negs": [
+          0.00019219716219068497,
+          0.010904713388983545,
+          0.0002222424080098588
+        ]
+      },
+      "detected_text": [],
+      "entropy": 0.14307243561494376,
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/apple_to_baseball-bfe23091-medium.png",
+      "model_version": "heuristic-color-shape-v1",
+      "ocr_cheat": false,
+      "pair_id": "apple_to_baseball",
+      "probabilities": [
+        0.9733638512225835,
+        0.015316995818232438,
+        0.00019219716219068497,
+        0.010904713388983545,
+        0.0002222424080098588
+      ],
+      "raw": 0.9584548411837885,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "fooled",
+      "candidate_labels": [
+        "baseball",
+        "apple",
+        "tennis ball",
+        "tomato",
+        "orange"
+      ],
+      "case_id": "apple_to_baseball_strong_bfe23091",
+      "confidences": {
+        "Cx": 1.805167026055984e-05,
+        "Cy": 0.9999474123927262,
+        "negs": [
+          1.728897397248782e-05,
+          1.171803348855705e-05,
+          5.528929552189897e-06
+        ]
+      },
+      "detected_text": [],
+      "entropy": 0.0006393142883762853,
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/apple_to_baseball-bfe23091-strong.png",
+      "model_version": "heuristic-color-shape-v1",
+      "ocr_cheat": false,
+      "pair_id": "apple_to_baseball",
+      "probabilities": [
+        0.9999474123927262,
+        1.805167026055984e-05,
+        1.728897397248782e-05,
+        1.171803348855705e-05,
+        5.528929552189897e-06
+      ],
+      "raw": 0.9999293616717598,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "deterministic_repeat": true,
+    "good_above_plain": true,
+    "text_attack_zeroed": true
+  },
+  "model": "heuristic",
+  "ref_version": "phase0-heuristic-tau30-2026-06-29",
+  "samples": {
+    "attack": {
+      "bucket": "failed",
+      "computed_at": "2026-06-29T03:57:53.217397+00:00",
+      "confidences": {
+        "Cx": 1.2310276134597496e-06,
+        "Cy": 0.9999915041465018,
+        "negs": [
+          4.986774784593246e-06,
+          8.074743037590285e-07,
+          1.4705767965230374e-06
+        ]
+      },
+      "flags": {
+        "moderation": "pass",
+        "ocr_cheat": true
+      },
+      "model_version": "heuristic-color-shape-v1",
+      "percentile": 0.0,
+      "raw": 0.0,
+      "score": 0,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    "good": {
+      "bucket": "fooled",
+      "computed_at": "2026-06-29T03:57:53.207802+00:00",
+      "confidences": {
+        "Cx": 2.0280988745358496e-06,
+        "Cy": 0.9999907719367099,
+        "negs": [
+          4.303482132615231e-06,
+          1.3691928145155895e-06,
+          1.5272894683695682e-06
+        ]
+      },
+      "flags": {
+        "moderation": "pass",
+        "ocr_cheat": false
+      },
+      "model_version": "heuristic-color-shape-v1",
+      "percentile": 1.0,
+      "raw": 0.9999887438565509,
+      "score": 1000,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    "plain": {
+      "bucket": "failed",
+      "computed_at": "2026-06-29T03:57:53.198463+00:00",
+      "confidences": {
+        "Cx": 0.4808128260328011,
+        "Cy": 1.750358252390521e-07,
+        "negs": [
+          2.2160099268936636e-07,
+          0.5191741131484202,
+          1.2664181960711011e-05
+        ]
+      },
+      "flags": {
+        "moderation": "pass",
+        "ocr_cheat": false
+      },
+      "model_version": "heuristic-color-shape-v1",
+      "percentile": 0.3333333333333333,
+      "raw": 9.087635544887998e-08,
+      "score": 333,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    }
+  }
+}

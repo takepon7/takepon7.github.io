@@ -1,0 +1,239 @@
+{
+  "archived_submissions": [
+    {
+      "base": "apple",
+      "date": "2026-06-29",
+      "pair_id": "apple_to_baseball",
+      "percentile": 0.6666666666666666,
+      "score": 667,
+      "submission_id": "7d33ba093d4a4562a16847a7fe4cdd44"
+    },
+    {
+      "base": "balloon",
+      "date": "2026-06-30",
+      "pair_id": "balloon_to_baseball",
+      "percentile": 1.0,
+      "score": 1000,
+      "submission_id": "68ce743021044af4beb556128423e575"
+    },
+    {
+      "base": "orange",
+      "date": "2026-07-01",
+      "pair_id": "orange_to_tennis_ball",
+      "percentile": 0.0,
+      "score": 0,
+      "submission_id": "a7671b91b8e34336a53b98ec426b458b"
+    },
+    {
+      "base": "tomato",
+      "date": "2026-07-02",
+      "pair_id": "tomato_to_baseball",
+      "percentile": 1.0,
+      "score": 1000,
+      "submission_id": "b10e256c6ee84c729745e48ade2d1b41"
+    },
+    {
+      "base": "mug",
+      "date": "2026-07-03",
+      "pair_id": "mug_to_book",
+      "percentile": 0.0,
+      "score": 0,
+      "submission_id": "df19afe61c1b48d89f0da0c6c9f8653d"
+    },
+    {
+      "base": "book",
+      "date": "2026-07-04",
+      "pair_id": "book_to_car",
+      "percentile": 0.0,
+      "score": 0,
+      "submission_id": "1220628b85ba4e2abfe8aac1b0112a51"
+    },
+    {
+      "base": "chair",
+      "date": "2026-07-05",
+      "pair_id": "chair_to_car",
+      "percentile": 0.0,
+      "score": 0,
+      "submission_id": "f2bf30fa2da64b8aa000c5c41180cf24"
+    },
+    {
+      "base": "apple",
+      "date": "2026-07-06",
+      "pair_id": "apple_to_baseball",
+      "percentile": 0.6666666666666666,
+      "score": 667,
+      "submission_id": "52a3ba20d44e41308e920d9f3df78910"
+    }
+  ],
+  "checks": [
+    {
+      "detail": "status 200",
+      "name": "healthz",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "daily_archive_loads",
+      "status": "pass"
+    },
+    {
+      "detail": "8 entries",
+      "name": "daily_archive_has_entries",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "current_daily_loads",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "premium_status_loads",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "cosmetics_load",
+      "status": "pass"
+    },
+    {
+      "detail": "default palette is listed",
+      "name": "default_cosmetic_available",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "score_ghost_loads",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "efficiency_ghost_loads",
+      "status": "pass"
+    },
+    {
+      "detail": "score ghost image is a PNG",
+      "name": "score_ghost_has_png",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "pre_submit_score_is_deterministic",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "submission_accepts_replayable_drawing",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "score_leaderboard_loads_after_submit",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "friend_leaderboard_loads_after_submit",
+      "status": "pass"
+    },
+    {
+      "detail": "['8025e2a0270943a584faf835022f43d7']",
+      "name": "friend_ladder_contains_player",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "friend_ghost_loads_after_submit",
+      "status": "pass"
+    },
+    {
+      "detail": "friend ghost exposes replayable strokes",
+      "name": "friend_ghost_includes_stroke_log",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "share_card_generates_png",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "funny_vote_accepts_viewer",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "funny_ladder_loads",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "appraiser_comment_falls_back_safely",
+      "status": "pass"
+    },
+    {
+      "detail": "fallback_unavailable",
+      "name": "appraiser_comment_has_line",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "premium_code_redeems",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "premium_status_updates",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "pair_proposal_accepts_current_labels",
+      "status": "pass"
+    },
+    {
+      "detail": "candidate",
+      "name": "pair_proposal_is_reviewable",
+      "status": "pass"
+    },
+    {
+      "detail": "8 archived DailyPuzzle submissions accepted",
+      "name": "archived_daily_submissions_accept_replayable_drawings",
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "daily_puzzles": "/Users/ryosuke/dev/new_game/data/puzzle/daily_puzzles.json",
+    "object_catalog": "/Users/ryosuke/dev/new_game/data/puzzle/object_catalog.json",
+    "pairs": "/Users/ryosuke/dev/new_game/data/scoring/pairs.json",
+    "seed_ghosts": "/Users/ryosuke/dev/new_game/data/competition/seed_ghosts.json",
+    "seed_scores": "/Users/ryosuke/dev/new_game/data/scoring/seed_scores.json"
+  },
+  "proposal": {
+    "proposal_id": "ab76f951510b4776a9ff29387dff1ab0",
+    "status": "candidate",
+    "support_count": 1
+  },
+  "season_id": "season-1",
+  "submission": {
+    "bucket": "fooled",
+    "percentile": 0.6666666666666666,
+    "rank": 3,
+    "reward_count": 0,
+    "score": 667,
+    "submission_id": "8025e2a0270943a584faf835022f43d7"
+  },
+  "summary": {
+    "archived_submission_count": 8,
+    "failed_checks": 0,
+    "pair_id": "apple_to_baseball",
+    "passed_checks": 27,
+    "percentile": 0.6666666666666666,
+    "score": 667,
+    "submission_id": "8025e2a0270943a584faf835022f43d7",
+    "today": "2026-07-06"
+  },
+  "today": "2026-07-06",
+  "valid": true
+}

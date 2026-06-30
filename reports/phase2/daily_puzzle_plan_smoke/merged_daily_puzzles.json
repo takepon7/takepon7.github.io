@@ -1,0 +1,46 @@
+{
+  "daily_puzzles": [
+    {
+      "date": "2026-06-29",
+      "frozen_at": "2026-06-29T00:00:00+00:00",
+      "pair_id": "apple_to_baseball",
+      "ref_version": "phase0-heuristic-tau30-2026-06-29"
+    },
+    {
+      "date": "2026-06-30",
+      "frozen_at": "2026-06-29T00:00:00+00:00",
+      "pair_id": "balloon_to_baseball",
+      "ref_version": "phase2-heuristic-balloon-baseball-tau30-2026-06-29"
+    },
+    {
+      "date": "2026-07-01",
+      "frozen_at": "2026-06-29T00:00:00+00:00",
+      "pair_id": "orange_to_tennis_ball",
+      "ref_version": "phase2-heuristic-orange-tennis-ball-tau30-2026-06-29"
+    },
+    {
+      "date": "2026-07-02",
+      "frozen_at": "2026-06-29T00:00:00+00:00",
+      "pair_id": "tomato_to_baseball",
+      "ref_version": "phase2-heuristic-tomato-baseball-tau30-2026-06-29"
+    },
+    {
+      "date": "2026-07-03",
+      "frozen_at": "2026-06-29T00:00:00+00:00",
+      "pair_id": "mug_to_book",
+      "ref_version": "phase2-heuristic-mug-book-tau30-2026-06-29"
+    },
+    {
+      "date": "2026-07-04",
+      "frozen_at": "2026-06-29T00:00:00+00:00",
+      "pair_id": "book_to_car",
+      "ref_version": "phase2-heuristic-book-car-tau30-2026-06-29"
+    },
+    {
+      "date": "2026-07-05",
+      "frozen_at": "2026-06-29T00:00:00+00:00",
+      "pair_id": "chair_to_car",
+      "ref_version": "phase2-heuristic-chair-car-tau30-2026-06-29"
+    }
+  ]
+}

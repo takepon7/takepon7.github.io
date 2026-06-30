@@ -1,0 +1,11 @@
+{
+  "name": "gitai-product-promo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --cache ../../.cache/npm --yes hyperframes@0.7.18 preview",
+    "check": "npx --cache ../../.cache/npm --yes hyperframes@0.7.18 lint && npx --cache ../../.cache/npm --yes hyperframes@0.7.18 validate && npx --cache ../../.cache/npm --yes hyperframes@0.7.18 inspect",
+    "render": "npx --cache ../../.cache/npm --yes hyperframes@0.7.18 render",
+    "publish": "npx --cache ../../.cache/npm --yes hyperframes@0.7.18 publish"
+  }
+}

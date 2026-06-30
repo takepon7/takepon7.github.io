@@ -1,0 +1,148 @@
+{
+  "objects": [
+    {
+      "aliases": ["apples"],
+      "canonical_label": "apple",
+      "category": "food",
+      "dominant_colors": ["red", "green"],
+      "evocability": 0.86,
+      "malleability": 0.58,
+      "object_id": "apple",
+      "shape_vec": [0.92, 0.12, 0.10, 0.00, 0.22],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": ["base ball"],
+      "canonical_label": "baseball",
+      "category": "sports",
+      "dominant_colors": ["white", "red"],
+      "evocability": 0.82,
+      "malleability": 0.42,
+      "object_id": "baseball",
+      "shape_vec": [0.98, 0.06, 0.04, 0.00, 0.34],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": ["tennisball"],
+      "canonical_label": "tennis ball",
+      "category": "sports",
+      "dominant_colors": ["yellow", "green"],
+      "evocability": 0.78,
+      "malleability": 0.40,
+      "object_id": "tennis_ball",
+      "shape_vec": [0.98, 0.05, 0.04, 0.00, 0.26],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": ["tomatoes"],
+      "canonical_label": "tomato",
+      "category": "food",
+      "dominant_colors": ["red"],
+      "evocability": 0.72,
+      "malleability": 0.54,
+      "object_id": "tomato",
+      "shape_vec": [0.94, 0.08, 0.06, 0.00, 0.18],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": [],
+      "canonical_label": "orange",
+      "category": "food",
+      "dominant_colors": ["orange"],
+      "evocability": 0.76,
+      "malleability": 0.50,
+      "object_id": "orange",
+      "shape_vec": [0.97, 0.05, 0.04, 0.00, 0.16],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": [],
+      "canonical_label": "banana",
+      "category": "food",
+      "dominant_colors": ["yellow"],
+      "evocability": 0.92,
+      "malleability": 0.46,
+      "object_id": "banana",
+      "shape_vec": [0.20, 0.92, 0.08, 0.00, 0.18],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": [],
+      "canonical_label": "balloon",
+      "category": "toy",
+      "dominant_colors": ["red", "blue", "yellow"],
+      "evocability": 0.84,
+      "malleability": 0.82,
+      "object_id": "balloon",
+      "shape_vec": [0.90, 0.18, 0.05, 0.00, 0.12],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": ["coffee mug"],
+      "canonical_label": "mug",
+      "category": "tool",
+      "dominant_colors": ["white"],
+      "evocability": 0.80,
+      "malleability": 0.38,
+      "object_id": "mug",
+      "shape_vec": [0.45, 0.28, 0.20, 0.10, 0.30],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": ["book"],
+      "canonical_label": "book",
+      "category": "tool",
+      "dominant_colors": ["blue", "brown"],
+      "evocability": 0.74,
+      "malleability": 0.32,
+      "object_id": "book",
+      "shape_vec": [0.08, 0.34, 0.92, 0.00, 0.28],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": ["house cat"],
+      "canonical_label": "cat",
+      "category": "animal",
+      "dominant_colors": ["black", "white", "orange"],
+      "evocability": 0.70,
+      "malleability": 0.16,
+      "object_id": "cat",
+      "shape_vec": [0.38, 0.34, 0.10, 0.78, 0.68],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": ["automobile"],
+      "canonical_label": "car",
+      "category": "vehicle",
+      "dominant_colors": ["red", "blue", "white"],
+      "evocability": 0.78,
+      "malleability": 0.26,
+      "object_id": "car",
+      "shape_vec": [0.18, 0.72, 0.28, 0.00, 0.56],
+      "source": "human_curated",
+      "status": "active"
+    },
+    {
+      "aliases": [],
+      "canonical_label": "chair",
+      "category": "furniture",
+      "dominant_colors": ["brown"],
+      "evocability": 0.72,
+      "malleability": 0.28,
+      "object_id": "chair",
+      "shape_vec": [0.12, 0.42, 0.42, 0.48, 0.46],
+      "source": "human_curated",
+      "status": "active"
+    }
+  ]
+}

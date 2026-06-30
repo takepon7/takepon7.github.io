@@ -1,0 +1,51 @@
+{
+  "entries": [
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.22104612656845746,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "apple_to_baseball",
+      "pair_key": "object:apple->object:baseball",
+      "proposal_id": "bfe23091405346699abfd28e7b5b2465",
+      "review_note": "seed next",
+      "reviewed_at": "2026-06-30T03:07:12.594037+00:00",
+      "reviewer_id": "ops",
+      "status": "ready_for_seed_generation",
+      "support_count": 1,
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    }
+  ],
+  "skipped": []
+}

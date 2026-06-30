@@ -1,0 +1,169 @@
+{
+  "seed_scores": [
+    {
+      "model_version": "heuristic-color-shape-v1",
+      "pair_id": "apple_to_baseball",
+      "ref_version": "phase0-heuristic-tau30-2026-06-29",
+      "scores_sorted": [
+        9e-08,
+        0.13621483,
+        0.99998874
+      ],
+      "stats": {
+        "max": 0.99998874,
+        "mean": 0.37873455333333333,
+        "min": 9e-08,
+        "p10": 0.027243038000000004,
+        "p50": 0.13621483,
+        "p90": 0.8272339580000001,
+        "std": 0.442798816007498
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "pair_id": "apple_to_baseball",
+      "ref_version": "phase0-open-clip-tau30-2026-06-29",
+      "scores_sorted": [
+        0.0168974,
+        0.10694404,
+        0.72953505
+      ],
+      "stats": {
+        "max": 0.72953505,
+        "mean": 0.28445883,
+        "min": 0.0168974,
+        "p10": 0.034906728000000005,
+        "p50": 0.10694404,
+        "p90": 0.605016848,
+        "std": 0.31685615090651537
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "pair_id": "apple_to_baseball",
+      "ref_version": "phase0-siglip-tau30-2026-06-29",
+      "scores_sorted": [
+        0.126829,
+        0.14684397,
+        0.24727134
+      ],
+      "stats": {
+        "max": 0.24727134,
+        "mean": 0.17364810333333333,
+        "min": 0.126829,
+        "p10": 0.130831994,
+        "p50": 0.14684397,
+        "p90": 0.22718586600000001,
+        "std": 0.05269684044280855
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "heuristic-color-shape-v1",
+      "pair_id": "balloon_to_baseball",
+      "ref_version": "phase2-heuristic-balloon-baseball-tau30-2026-06-29",
+      "scores_sorted": [0.02, 0.11, 0.36, 0.71, 0.94],
+      "stats": {
+        "max": 0.94,
+        "mean": 0.42799999999999994,
+        "min": 0.02,
+        "p10": 0.055999999999999994,
+        "p50": 0.36,
+        "p90": 0.848,
+        "std": 0.3503940638766587
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "heuristic-color-shape-v1",
+      "pair_id": "orange_to_tennis_ball",
+      "ref_version": "phase2-heuristic-orange-tennis-ball-tau30-2026-06-29",
+      "scores_sorted": [0.03, 0.18, 0.42, 0.74, 0.96],
+      "stats": {
+        "max": 0.96,
+        "mean": 0.466,
+        "min": 0.03,
+        "p10": 0.09,
+        "p50": 0.42,
+        "p90": 0.872,
+        "std": 0.34441835026606815
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "heuristic-color-shape-v1",
+      "pair_id": "tomato_to_baseball",
+      "ref_version": "phase2-heuristic-tomato-baseball-tau30-2026-06-29",
+      "scores_sorted": [0.01, 0.1, 0.32, 0.69, 0.92],
+      "stats": {
+        "max": 0.92,
+        "mean": 0.40800000000000003,
+        "min": 0.01,
+        "p10": 0.046000000000000006,
+        "p50": 0.32,
+        "p90": 0.8280000000000001,
+        "std": 0.3471829488900629
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "heuristic-color-shape-v1",
+      "pair_id": "mug_to_book",
+      "ref_version": "phase2-heuristic-mug-book-tau30-2026-06-29",
+      "scores_sorted": [0.015, 0.09, 0.29, 0.62, 0.88],
+      "stats": {
+        "max": 0.88,
+        "mean": 0.379,
+        "min": 0.015,
+        "p10": 0.045,
+        "p50": 0.29,
+        "p90": 0.776,
+        "std": 0.3265026799277458
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "heuristic-color-shape-v1",
+      "pair_id": "book_to_car",
+      "ref_version": "phase2-heuristic-book-car-tau30-2026-06-29",
+      "scores_sorted": [0.025, 0.12, 0.34, 0.66, 0.9],
+      "stats": {
+        "max": 0.9,
+        "mean": 0.409,
+        "min": 0.025,
+        "p10": 0.063,
+        "p50": 0.34,
+        "p90": 0.804,
+        "std": 0.3285787576822336
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "heuristic-color-shape-v1",
+      "pair_id": "chair_to_car",
+      "ref_version": "phase2-heuristic-chair-car-tau30-2026-06-29",
+      "scores_sorted": [0.02, 0.08, 0.25, 0.58, 0.84],
+      "stats": {
+        "max": 0.84,
+        "mean": 0.354,
+        "min": 0.02,
+        "p10": 0.044,
+        "p50": 0.25,
+        "p90": 0.736,
+        "std": 0.3113583144867019
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    }
+  ]
+}

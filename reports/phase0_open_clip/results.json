@@ -1,0 +1,586 @@
+[
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.9899057048208677,
+      "Cy": 0.00016902993270983242,
+      "negs": [
+        0.0011044393780977333,
+        0.008357616980640362,
+        0.000463208887684367
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.00016902993270983242,
+      0.9899057048208677,
+      0.0011044393780977333,
+      0.008357616980640362,
+      0.000463208887684367
+    ],
+    "raw": 1.7062380348819178e-06,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.8741233909879029,
+      "Cy": 0.052700757110568985,
+      "negs": [
+        0.06997842627379527,
+        0.0028195827138267067,
+        0.00037784291390607726
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.052700757110568985,
+      0.8741233909879029,
+      0.06997842627379527,
+      0.0028195827138267067,
+      0.00037784291390607726
+    ],
+    "raw": 0.006633792597448587,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "fooled",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.00017437716278151955,
+      "Cy": 0.9989102644750264,
+      "negs": [
+        0.0007895492264998601,
+        1.3062567166281425e-05,
+        0.00011274656852564019
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.9989102644750264,
+      0.00017437716278151955,
+      0.0007895492264998601,
+      1.3062567166281425e-05,
+      0.00011274656852564019
+    ],
+    "raw": 0.9987360773372339,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 1.388918811847824e-05,
+      "Cy": 0.9996220483006828,
+      "negs": [
+        0.00034032405759563776,
+        8.534599121029587e-07,
+        2.288499369104784e-05
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.9996220483006828,
+      1.388918811847824e-05,
+      0.00034032405759563776,
+      8.534599121029587e-07,
+      2.288499369104784e-05
+    ],
+    "raw": 0.0,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.8620793174696691,
+      "Cy": 0.011265024007385344,
+      "negs": [
+        0.02879527653908588,
+        0.07921210315336934,
+        0.018648278830490247
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.011265024007385344,
+      0.8620793174696691,
+      0.02879527653908588,
+      0.07921210315336934,
+      0.018648278830490247
+    ],
+    "raw": 0.0015536797998191496,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.6226394351262419,
+      "Cy": 0.1528828181813401,
+      "negs": [
+        0.1761701557452585,
+        0.03536247652759207,
+        0.012945114419567597
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.1528828181813401,
+      0.6226394351262419,
+      0.1761701557452585,
+      0.03536247652759207,
+      0.012945114419567597
+    ],
+    "raw": 0.05769194662840257,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "fooled",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.012516872529934357,
+      "Cy": 0.9473582986421646,
+      "negs": [
+        0.026634259824069285,
+        0.0034258259453861855,
+        0.010064743058445434
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.9473582986421646,
+      0.012516872529934357,
+      0.026634259824069285,
+      0.0034258259453861855,
+      0.010064743058445434
+    ],
+    "raw": 0.9355003355778851,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 0.003626393113852579,
+      "Cy": 0.9728689990813421,
+      "negs": [
+        0.017950757359051828,
+        0.0008989344300386382,
+        0.00465491601571494
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.9728689990813421,
+      0.003626393113852579,
+      0.017950757359051828,
+      0.0008989344300386382,
+      0.00465491601571494
+    ],
+    "raw": 0.0,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.6480155667462476,
+      "Cy": 0.04800609454831459,
+      "negs": [
+        0.08430432498396968,
+        0.1547148603990094,
+        0.06495915332245877
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.04800609454831459,
+      0.6480155667462476,
+      0.08430432498396968,
+      0.1547148603990094,
+      0.06495915332245877
+    ],
+    "raw": 0.01689739798231456,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.45951518864851504,
+      "Cy": 0.19786687952420956,
+      "negs": [
+        0.21543551532282137,
+        0.08220221124084914,
+        0.044980205263604786
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.19786687952420956,
+      0.45951518864851504,
+      0.21543551532282137,
+      0.08220221124084914,
+      0.044980205263604786
+    ],
+    "raw": 0.1069440430523494,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "fooled",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.057738239175611814,
+      "Cy": 0.7742382012786034,
+      "negs": [
+        0.09083023060107445,
+        0.02653537405506971,
+        0.05065795488964065
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.7742382012786034,
+      0.057738239175611814,
+      0.09083023060107445,
+      0.02653537405506971,
+      0.05065795488964065
+    ],
+    "raw": 0.7295350508342839,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 0.029536035891415135,
+      "Cy": 0.8462523681798345,
+      "negs": [
+        0.07711110812878043,
+        0.012790987868943251,
+        0.034309499931026555
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.8462523681798345,
+      0.029536035891415135,
+      0.07711110812878043,
+      0.012790987868943251,
+      0.034309499931026555
+    ],
+    "raw": 0.0,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.49169341501709707,
+      "Cy": 0.0867298010887624,
+      "negs": [
+        0.1262420398002503,
+        0.18923092812002212,
+        0.10610381597386825
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.0867298010887624,
+      0.49169341501709707,
+      0.1262420398002503,
+      0.18923092812002212,
+      0.10610381597386825
+    ],
+    "raw": 0.04408532900767527,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.36987571344340636,
+      "Cy": 0.21091362614556278,
+      "negs": [
+        0.22322051295961198,
+        0.11742977678839472,
+        0.07856037066302428
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.21091362614556278,
+      0.36987571344340636,
+      0.22322051295961198,
+      0.11742977678839472,
+      0.07856037066302428
+    ],
+    "raw": 0.13290179820003686,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "fooled",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.10516456375716662,
+      "Cy": 0.593576636262874,
+      "negs": [
+        0.14224838542550877,
+        0.06262924993648039,
+        0.09638116461797012
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.593576636262874,
+      0.10516456375716662,
+      0.14224838542550877,
+      0.06262924993648039,
+      0.09638116461797012
+    ],
+    "raw": 0.5311534082538425,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 0.07175239721843645,
+      "Cy": 0.6718436373296994,
+      "negs": [
+        0.13604405658996205,
+        0.04107122614811626,
+        0.07928868271378603
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "open_clip:ViT-L-14:openai:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.6718436373296994,
+      0.07175239721843645,
+      0.13604405658996205,
+      0.04107122614811626,
+      0.07928868271378603
+    ],
+    "raw": 0.0,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  }
+]

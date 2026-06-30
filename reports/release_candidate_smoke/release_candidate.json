@@ -1,0 +1,131 @@
+{
+  "api_preview_env": {
+    "GITAI_DAILY_PUZZLES_PATH": "reports/phase2/daily_puzzle_plan_smoke_repeat/merged_daily_puzzles.json",
+    "GITAI_PAIRS_PATH": "reports/phase2/seed_score_promotion_smoke/merged_pairs.json",
+    "GITAI_SEASON_ID": "season-1",
+    "GITAI_SEED_GHOSTS": "reports/phase4/planned_seed_ghosts_smoke.json",
+    "GITAI_SEED_SCORES_PATH": "reports/phase2/seed_score_promotion_smoke/merged_seed_scores.json",
+    "GITAI_TODAY": "2026-07-06"
+  },
+  "checks": [
+    {
+      "detail": "0 promotion errors",
+      "name": "promotion_has_no_errors",
+      "status": "pass"
+    },
+    {
+      "detail": "0 DailyPuzzle plan errors",
+      "name": "daily_plan_has_no_errors",
+      "status": "pass"
+    },
+    {
+      "detail": "1 planned entries, expected at least 1",
+      "name": "daily_plan_has_required_new_entries",
+      "status": "pass"
+    },
+    {
+      "detail": "DailyPuzzle dates must be unique",
+      "name": "daily_dates_are_unique",
+      "status": "pass"
+    },
+    {
+      "detail": "all DailyPuzzle entries resolve",
+      "name": "daily_entries_reference_known_pairs_and_refs",
+      "status": "pass"
+    },
+    {
+      "detail": "seed ghosts valid",
+      "name": "seed_ghosts_cover_daily_entries",
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "season_id": "season-1",
+  "seed_ghost_report": {
+    "daily_count": 8,
+    "errors": [],
+    "rows": [
+      {
+        "date": "2026-06-29",
+        "efficiency_ghost": "seed-2026-06-29-apple_to_baseball-fast",
+        "image_files_ok": true,
+        "pair_id": "apple_to_baseball",
+        "score_ghost": "seed-2026-06-29-apple_to_baseball-score",
+        "seed_count": 2
+      },
+      {
+        "date": "2026-06-30",
+        "efficiency_ghost": "seed-2026-06-30-balloon_to_baseball-fast",
+        "image_files_ok": true,
+        "pair_id": "balloon_to_baseball",
+        "score_ghost": "seed-2026-06-30-balloon_to_baseball-score",
+        "seed_count": 2
+      },
+      {
+        "date": "2026-07-01",
+        "efficiency_ghost": "seed-2026-07-01-orange_to_tennis_ball-fast",
+        "image_files_ok": true,
+        "pair_id": "orange_to_tennis_ball",
+        "score_ghost": "seed-2026-07-01-orange_to_tennis_ball-score",
+        "seed_count": 2
+      },
+      {
+        "date": "2026-07-02",
+        "efficiency_ghost": "seed-2026-07-02-tomato_to_baseball-fast",
+        "image_files_ok": true,
+        "pair_id": "tomato_to_baseball",
+        "score_ghost": "seed-2026-07-02-tomato_to_baseball-score",
+        "seed_count": 2
+      },
+      {
+        "date": "2026-07-03",
+        "efficiency_ghost": "seed-2026-07-03-mug_to_book-fast",
+        "image_files_ok": true,
+        "pair_id": "mug_to_book",
+        "score_ghost": "seed-2026-07-03-mug_to_book-score",
+        "seed_count": 2
+      },
+      {
+        "date": "2026-07-04",
+        "efficiency_ghost": "seed-2026-07-04-book_to_car-fast",
+        "image_files_ok": true,
+        "pair_id": "book_to_car",
+        "score_ghost": "seed-2026-07-04-book_to_car-score",
+        "seed_count": 2
+      },
+      {
+        "date": "2026-07-05",
+        "efficiency_ghost": "seed-2026-07-05-chair_to_car-fast",
+        "image_files_ok": true,
+        "pair_id": "chair_to_car",
+        "score_ghost": "seed-2026-07-05-chair_to_car-score",
+        "seed_count": 2
+      },
+      {
+        "date": "2026-07-06",
+        "efficiency_ghost": "seed-2026-07-06-apple_to_baseball-fast",
+        "image_files_ok": true,
+        "pair_id": "apple_to_baseball",
+        "score_ghost": "seed-2026-07-06-apple_to_baseball-score",
+        "seed_count": 2
+      }
+    ],
+    "seed_count": 16,
+    "valid": true
+  },
+  "summary": {
+    "daily_count": 8,
+    "daily_plan_errors": 0,
+    "pair_count": 7,
+    "planned_count": 1,
+    "preview_today": "2026-07-06",
+    "promotion_errors": 0,
+    "seed_ghost_count": 16,
+    "seed_score_count": 10
+  },
+  "valid": true,
+  "warnings": [
+    "promotion is a preview; validation does not apply canonical scoring files",
+    "DailyPuzzle plan is a preview; validation does not apply canonical DailyPuzzle files"
+  ]
+}

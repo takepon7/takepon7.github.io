@@ -1,0 +1,11 @@
+{
+  "fixtures": [
+    {
+      "case_id": "apple_baseball_text_attack",
+      "fingerprint": "61e42cc65231a0a5286ff80ea7925f373cc0ff66b2043edb923b667221b5fb08",
+      "text": [
+        "BASEBALL"
+      ]
+    }
+  ]
+}

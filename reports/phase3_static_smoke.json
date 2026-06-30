@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "appraiser_comment_request": true,
+    "client_canvas_locks_while_busy": true,
+    "client_clear_preserves_base": true,
+    "client_replay_base_parity": true,
+    "client_replay_uses_strokes": true,
+    "client_undo_preserves_base": true,
+    "cosmetic_palette_fetch": true,
+    "daily_puzzle_archive_fetch": true,
+    "daily_puzzle_fetch": true,
+    "daily_puzzle_picker": true,
+    "daily_submission_limit_message": true,
+    "efficiency_ladder_toggle": true,
+    "friend_ladder_toggle": true,
+    "funny_ladder_toggle": true,
+    "funny_vote_submission": true,
+    "ghost_fetch": true,
+    "ghost_replay_surface": true,
+    "ghost_stroke_log_consumption": true,
+    "hero_appraiser_comment_request": true,
+    "leaderboard_fetch": true,
+    "leaderboard_percentile_display": true,
+    "pair_proposal_submission": true,
+    "premium_pass_redeem": true,
+    "responsive_css": true,
+    "result_percentile_display": true,
+    "season_boundary_fetch": true,
+    "share_card_endpoint": true,
+    "share_card_native_share": true,
+    "share_card_surface": true,
+    "share_percentile_surface": true,
+    "stroke_log_submission": true,
+    "stroke_replay_button": true,
+    "stroke_replay_locks_canvas": true,
+    "submission_post": true,
+    "template_bank_comment": true
+  },
+  "client_base_ids": [
+    "apple",
+    "balloon",
+    "banana",
+    "book",
+    "car",
+    "chair",
+    "mug",
+    "orange",
+    "tennis_ball",
+    "tomato"
+  ],
+  "daily_base_ids": [
+    "apple",
+    "balloon",
+    "book",
+    "chair",
+    "mug",
+    "orange",
+    "tomato"
+  ],
+  "html": "/Users/ryosuke/dev/new_game/web/dist/index.html",
+  "missing_replay_base_renderers": [],
+  "replay_base_ids": [
+    "apple",
+    "balloon",
+    "banana",
+    "book",
+    "car",
+    "chair",
+    "mug",
+    "orange",
+    "tennis_ball",
+    "tomato"
+  ],
+  "scripts": [
+    "/assets/index-ha0eVXNF.js"
+  ],
+  "styles": [
+    "/assets/index-Biya7LHZ.css"
+  ]
+}

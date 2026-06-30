@@ -1,0 +1,37 @@
+{
+  "seed_assets": [
+    {
+      "asset_id": "ccc52f852d55231c6fd5ff539ff196e5e1966900c909b8355006afe66f6f228b",
+      "created_at": "2026-06-30T00:00:00+00:00",
+      "gen_model": "local-deterministic-seed-asset-v1",
+      "gen_params_hash": "41c067d8ca2fa79bcbebc684910737c8164e9ec5a48b2cb858d9a944eac3cee1",
+      "gen_prompt": "local deterministic weak disguise: apple to baseball",
+      "image_ref": "file:reports/phase2/seed_asset_pack_smoke/images/apple_to_baseball-bfe23091-weak.png",
+      "pair_id": "apple_to_baseball",
+      "proposal_id": "bfe23091405346699abfd28e7b5b2465",
+      "variant": "weak"
+    },
+    {
+      "asset_id": "87993e761a5a9656317c978ea5b79714813d6fac8aefe31bb1391d8714845c40",
+      "created_at": "2026-06-30T00:00:00+00:00",
+      "gen_model": "local-deterministic-seed-asset-v1",
+      "gen_params_hash": "99a0846a80725a7129862e2562356021a1f892c114bf0017f8d4a46fbf525691",
+      "gen_prompt": "local deterministic medium disguise: apple to baseball",
+      "image_ref": "file:reports/phase2/seed_asset_pack_smoke/images/apple_to_baseball-bfe23091-medium.png",
+      "pair_id": "apple_to_baseball",
+      "proposal_id": "bfe23091405346699abfd28e7b5b2465",
+      "variant": "medium"
+    },
+    {
+      "asset_id": "029e4d0ca9554c7d7a580e47ba5d047b298f1d6b9c563eea285ad310c939e25b",
+      "created_at": "2026-06-30T00:00:00+00:00",
+      "gen_model": "local-deterministic-seed-asset-v1",
+      "gen_params_hash": "074fb666c3fbe82dacad549cc28ea9ccdc9eb30d1db7843cd302d5e2aac9458b",
+      "gen_prompt": "local deterministic strong disguise: apple to baseball",
+      "image_ref": "file:reports/phase2/seed_asset_pack_smoke/images/apple_to_baseball-bfe23091-strong.png",
+      "pair_id": "apple_to_baseball",
+      "proposal_id": "bfe23091405346699abfd28e7b5b2465",
+      "variant": "strong"
+    }
+  ]
+}

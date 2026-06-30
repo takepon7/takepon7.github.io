@@ -1,0 +1,80 @@
+{
+  "daily_count": 8,
+  "errors": [],
+  "rows": [
+    {
+      "date": "2026-06-29",
+      "efficiency_ghost": "seed-2026-06-29-apple_to_baseball-fast",
+      "image_files_ok": true,
+      "pair_id": "apple_to_baseball",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-06-29-apple_to_baseball-score",
+      "seed_count": 2
+    },
+    {
+      "date": "2026-06-30",
+      "efficiency_ghost": "seed-2026-06-30-balloon_to_baseball-fast",
+      "image_files_ok": true,
+      "pair_id": "balloon_to_baseball",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-06-30-balloon_to_baseball-score",
+      "seed_count": 2
+    },
+    {
+      "date": "2026-07-01",
+      "efficiency_ghost": "seed-2026-07-01-orange_to_tennis_ball-fast",
+      "image_files_ok": true,
+      "pair_id": "orange_to_tennis_ball",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-07-01-orange_to_tennis_ball-score",
+      "seed_count": 2
+    },
+    {
+      "date": "2026-07-02",
+      "efficiency_ghost": "seed-2026-07-02-tomato_to_baseball-fast",
+      "image_files_ok": true,
+      "pair_id": "tomato_to_baseball",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-07-02-tomato_to_baseball-score",
+      "seed_count": 2
+    },
+    {
+      "date": "2026-07-03",
+      "efficiency_ghost": "seed-2026-07-03-mug_to_book-fast",
+      "image_files_ok": true,
+      "pair_id": "mug_to_book",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-07-03-mug_to_book-score",
+      "seed_count": 2
+    },
+    {
+      "date": "2026-07-04",
+      "efficiency_ghost": "seed-2026-07-04-book_to_car-fast",
+      "image_files_ok": true,
+      "pair_id": "book_to_car",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-07-04-book_to_car-score",
+      "seed_count": 2
+    },
+    {
+      "date": "2026-07-05",
+      "efficiency_ghost": "seed-2026-07-05-chair_to_car-fast",
+      "image_files_ok": true,
+      "pair_id": "chair_to_car",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-07-05-chair_to_car-score",
+      "seed_count": 2
+    },
+    {
+      "date": "2026-07-06",
+      "efficiency_ghost": "seed-2026-07-06-apple_to_baseball-fast",
+      "image_files_ok": true,
+      "pair_id": "apple_to_baseball",
+      "replayable_stroke_logs": true,
+      "score_ghost": "seed-2026-07-06-apple_to_baseball-score",
+      "seed_count": 2
+    }
+  ],
+  "seed_count": 16,
+  "valid": true
+}

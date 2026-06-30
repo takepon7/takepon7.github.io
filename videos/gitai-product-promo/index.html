@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fffdf7;
+        color: #181716;
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      body {
+        font-variant-numeric: tabular-nums;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fffdf7;
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #fffdf7;
+      }
+
+      .paper-field {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 18% 20%, rgba(139, 69, 56, 0.12), transparent 23%),
+          radial-gradient(circle at 82% 78%, rgba(36, 79, 67, 0.12), transparent 28%),
+          #fffdf7;
+      }
+
+      .grain {
+        position: absolute;
+        inset: 0;
+        opacity: 0.18;
+        background-image:
+          linear-gradient(90deg, rgba(221, 214, 200, 0.45) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(221, 214, 200, 0.35) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+
+      .label {
+        color: #776f65;
+        font-size: 22px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      .wordmark {
+        font-size: 58px;
+        font-weight: 900;
+        line-height: 0.9;
+      }
+
+      .subcopy {
+        color: #5b554e;
+        font-size: 30px;
+        line-height: 1.3;
+        font-weight: 700;
+      }
+
+      .screenshot-shell {
+        position: absolute;
+        overflow: hidden;
+        border: 1px solid #cfc5b4;
+        border-radius: 8px;
+        background: #fffdf7;
+        box-shadow: 0 24px 70px rgba(98, 90, 80, 0.20);
+      }
+
+      .screenshot-shell img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border: 1px solid #cfc5b4;
+        border-radius: 8px;
+        background: #f8f2e8;
+        color: #181716;
+        font-size: 22px;
+        font-weight: 900;
+      }
+
+      .prompt-card {
+        position: absolute;
+        left: 148px;
+        top: 148px;
+        width: 940px;
+        min-height: 350px;
+        padding: 42px;
+        border: 1px solid #d8cebe;
+        border-radius: 8px;
+        background: rgba(255, 253, 247, 0.94);
+        box-shadow: 0 30px 80px rgba(98, 90, 80, 0.18);
+      }
+
+      .prompt-row {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-top: 36px;
+      }
+
+      .prompt-tile {
+        display: grid;
+        place-items: center;
+        width: 270px;
+        height: 104px;
+        border: 1px solid #ded6c8;
+        border-radius: 8px;
+        background: #f8f2e7;
+        font-size: 42px;
+        font-weight: 900;
+      }
+
+      .arrow-wrap {
+        width: 160px;
+        height: 70px;
+      }
+
+      .arrow-path,
+      .seam-path,
+      .orbit-path {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .arrow-path {
+        stroke: #8b4538;
+        stroke-width: 8;
+        stroke-dasharray: 220;
+        stroke-dashoffset: 220;
+      }
+
+      .ghost-ball {
+        position: absolute;
+        right: 215px;
+        top: 150px;
+        width: 430px;
+        height: 430px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #d8cebe;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 24px 70px rgba(98, 90, 80, 0.18);
+      }
+
+      .ghost-ball img {
+        width: 82%;
+        height: 82%;
+        object-fit: contain;
+      }
+
+      .date-chip {
+        position: absolute;
+        right: 266px;
+        top: 624px;
+        width: 320px;
+        padding: 22px 26px;
+        border: 1px solid #d7ccb8;
+        border-radius: 8px;
+        background: #fff9ef;
+      }
+
+      .date-chip strong {
+        display: block;
+        margin-top: 4px;
+        color: #8b4538;
+        font-size: 52px;
+        line-height: 1;
+      }
+
+      .s1-shot {
+        left: 650px;
+        top: 560px;
+        width: 900px;
+        height: 430px;
+        opacity: 0.62;
+      }
+
+      .s2-shot {
+        left: 80px;
+        top: 116px;
+        width: 1760px;
+        height: 820px;
+        opacity: 0.34;
+      }
+
+      .draw-stage {
+        position: absolute;
+        left: 470px;
+        top: 98px;
+        width: 980px;
+        height: 780px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cfc5b4;
+        border-radius: 8px;
+        background: #eee4d4;
+        box-shadow: 0 28px 75px rgba(98, 90, 80, 0.20);
+      }
+
+      .canvas-card {
+        position: relative;
+        width: 690px;
+        height: 560px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid #d8cebe;
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .apple-svg {
+        width: 480px;
+        height: 430px;
+      }
+
+      .seam-path {
+        stroke: #d2222a;
+        stroke-width: 12;
+        stroke-dasharray: 520;
+        stroke-dashoffset: 520;
+      }
+
+      .short-seam {
+        stroke-dasharray: 120;
+        stroke-dashoffset: 120;
+      }
+
+      .scan-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 8px;
+        background: #244f43;
+        opacity: 0.0;
+        box-shadow: 0 0 24px rgba(36, 79, 67, 0.55);
+      }
+
+      .tool-tray {
+        position: absolute;
+        left: 430px;
+        bottom: 74px;
+        width: 1060px;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        border: 1px solid #ddd6c8;
+        border-radius: 8px;
+        background: #fffdf7;
+        box-shadow: 0 16px 40px rgba(98, 90, 80, 0.16);
+      }
+
+      .tool-button,
+      .swatch {
+        width: 62px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #cfc5b4;
+        border-radius: 8px;
+        background: #f5ede0;
+        color: #181716;
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .tool-button.active {
+        background: #181716;
+        color: #fffdf7;
+      }
+
+      .swatch {
+        border-radius: 50%;
+      }
+
+      .submit-pill {
+        margin-left: 26px;
+        min-width: 170px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: #244f43;
+        color: #fffdf7;
+        font-size: 26px;
+        font-weight: 900;
+      }
+
+      .s2-caption {
+        position: absolute;
+        left: 104px;
+        top: 82px;
+        width: 420px;
+      }
+
+      .s2-caption h2,
+      .s3-title h2,
+      .s4-copy h2 {
+        margin: 10px 0 0;
+        max-width: 820px;
+        font-size: 78px;
+        line-height: 0.98;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .judge-world {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        padding: 90px 82px;
+      }
+
+      .s3-bg {
+        left: 98px;
+        top: 96px;
+        width: 1720px;
+        height: 888px;
+        opacity: 0.26;
+      }
+
+      .verdict-panel {
+        position: relative;
+        width: 650px;
+        height: 760px;
+        padding: 44px;
+        border: 1px solid #cfc5b4;
+        border-radius: 8px;
+        background: rgba(255, 253, 247, 0.96);
+        box-shadow: 0 28px 80px rgba(98, 90, 80, 0.22);
+      }
+
+      .judge-face {
+        width: 84px;
+        height: 84px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: #181716;
+        color: #fffdf7;
+        font-size: 44px;
+      }
+
+      .score-big {
+        margin-top: 46px;
+        color: #181716;
+        font-size: 196px;
+        line-height: 0.92;
+        font-weight: 900;
+      }
+
+      .verdict-line {
+        margin-top: 20px;
+        max-width: 520px;
+        color: #5b554e;
+        font-size: 31px;
+        line-height: 1.22;
+        font-weight: 800;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 38px;
+      }
+
+      .metric {
+        min-height: 96px;
+        padding: 14px;
+        border: 1px solid #e0d7c6;
+        border-radius: 8px;
+        background: #f8f2e8;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .meter {
+        width: 100%;
+        height: 10px;
+        margin-top: 14px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #ddd6c8;
+      }
+
+      .meter-fill {
+        width: 100%;
+        height: 100%;
+        background: #244f43;
+        transform-origin: left center;
+      }
+
+      .leaderboard-card {
+        width: 680px;
+        min-height: 660px;
+        padding: 42px;
+        border: 1px solid #cfc5b4;
+        border-radius: 8px;
+        background: rgba(255, 253, 247, 0.96);
+        box-shadow: 0 28px 80px rgba(98, 90, 80, 0.20);
+      }
+
+      .leaderboard-card h3 {
+        margin: 8px 0 26px;
+        font-size: 58px;
+        line-height: 1;
+      }
+
+      .rank-row {
+        display: grid;
+        grid-template-columns: 68px 1fr 198px;
+        align-items: center;
+        min-height: 98px;
+        border-top: 1px solid #e5ded1;
+        color: #181716;
+        font-size: 26px;
+        font-weight: 800;
+      }
+
+      .rank-row .rank {
+        color: #8b4538;
+        font-size: 32px;
+        font-weight: 900;
+      }
+
+      .rank-row .score {
+        text-align: right;
+        font-size: 30px;
+        font-weight: 900;
+      }
+
+      .ghost-preview {
+        position: absolute;
+        right: 44px;
+        top: 44px;
+        width: 128px;
+        height: 128px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #d8cebe;
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .ghost-preview img {
+        width: 82%;
+        height: 82%;
+        object-fit: contain;
+      }
+
+      .share-scene {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 95px;
+        padding: 80px 112px;
+      }
+
+      .share-frame {
+        width: 430px;
+        height: 764px;
+        overflow: hidden;
+        border: 1px solid #cfc5b4;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 34px 95px rgba(38, 33, 28, 0.28);
+      }
+
+      .share-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .s4-copy {
+        width: 860px;
+        min-height: 640px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+      }
+
+      .ghost-word {
+        position: absolute;
+        color: rgba(139, 69, 56, 0.08);
+        font-size: 176px;
+        line-height: 1;
+        font-weight: 900;
+      }
+
+      .ghost-word.one {
+        left: 92px;
+        top: 118px;
+      }
+
+      .ghost-word.two {
+        right: 92px;
+        top: 330px;
+        color: rgba(36, 79, 67, 0.09);
+      }
+
+      .ghost-word.three {
+        left: 190px;
+        bottom: 100px;
+      }
+
+      .cta-pill {
+        width: 560px;
+        min-height: 92px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 32px;
+        border-radius: 8px;
+        background: #244f43;
+        color: #fffdf7;
+        font-size: 33px;
+        line-height: 1.15;
+        font-weight: 900;
+      }
+
+      .transition-wipe {
+        position: absolute;
+        inset: 0;
+        background: #244f43;
+        transform-origin: left center;
+      }
+
+      .transition-wipe.paper {
+        background: #eee4d4;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1920" data-height="1080">
+      <audio id="narration" data-start="0" data-duration="17.873" data-track-index="0" src="narration.wav" data-volume="1"></audio>
+
+      <section id="scene-1" class="clip scene" data-start="0" data-duration="4.8" data-track-index="1">
+        <div class="paper-field"></div>
+        <div class="grain" data-layout-ignore></div>
+        <div class="screenshot-shell s1-shot" data-layout-ignore>
+          <img class="s1-shot-img" src="capture/screenshots/scroll-000.png" alt="" />
+        </div>
+        <div class="prompt-card">
+          <div class="label">Daily challenge</div>
+          <div class="prompt-row">
+            <div class="prompt-tile prompt-apple">apple</div>
+            <svg class="arrow-wrap" viewBox="0 0 160 70" aria-hidden="true">
+              <path class="arrow-path" d="M 12 36 C 54 36 86 36 128 36 M 110 18 L 132 36 L 110 54"></path>
+            </svg>
+            <div class="prompt-tile prompt-baseball">baseball</div>
+          </div>
+          <p class="subcopy">A daily drawing puzzle built around one tiny trick: make the model see the target.</p>
+        </div>
+        <div class="ghost-ball">
+          <img src="capture/assets/top-ghost.png" alt="" />
+        </div>
+        <div class="date-chip">
+          <div class="label">Today</div>
+          <strong>06-29</strong>
+        </div>
+      </section>
+
+      <section id="scene-2" class="clip scene" data-start="4.8" data-duration="5" data-track-index="1">
+        <div class="paper-field"></div>
+        <div class="screenshot-shell s2-shot" data-layout-ignore>
+          <img class="s2-shot-img" src="capture/screenshots/scroll-001.png" alt="" />
+        </div>
+        <div class="s2-caption">
+          <div class="label">The loop</div>
+          <h2>Draw. Submit.</h2>
+        </div>
+        <div class="draw-stage">
+          <div class="canvas-card">
+            <svg class="apple-svg" viewBox="0 0 520 460" aria-hidden="true">
+              <path d="M 148 397 L 372 397 L 372 350 C 434 330 474 268 474 196 C 474 113 421 73 360 92 C 318 105 286 129 260 166 C 234 129 202 105 160 92 C 99 73 46 113 46 196 C 46 268 86 330 148 350 Z" fill="#D2222A"></path>
+              <rect x="260" y="28" width="44" height="118" rx="22" fill="#73401F"></rect>
+              <ellipse cx="344" cy="74" rx="58" ry="24" fill="#438A35"></ellipse>
+              <path class="seam-path" d="M 205 84 C 245 162 244 276 205 390"></path>
+              <path class="seam-path" d="M 315 84 C 275 162 276 276 315 390"></path>
+              <path class="seam-path short-seam" d="M 124 148 L 166 128"></path>
+              <path class="seam-path short-seam" d="M 116 198 L 158 180"></path>
+              <path class="seam-path short-seam" d="M 124 248 L 166 228"></path>
+              <path class="seam-path short-seam" d="M 396 148 L 354 128"></path>
+              <path class="seam-path short-seam" d="M 404 198 L 362 180"></path>
+              <path class="seam-path short-seam" d="M 396 248 L 354 228"></path>
+            </svg>
+            <div class="scan-line"></div>
+          </div>
+        </div>
+        <div class="tool-tray">
+          <div class="tool-button active">✎</div>
+          <div class="tool-button">⌫</div>
+          <div class="tool-button">↶</div>
+          <div class="swatch" style="background:#181716"></div>
+          <div class="swatch" style="background:#D2222A"></div>
+          <div class="swatch" style="background:#2F875A"></div>
+          <div class="swatch" style="background:#E7C24E"></div>
+          <div class="submit-pill">鑑定</div>
+        </div>
+      </section>
+
+      <section id="scene-3" class="clip scene" data-start="9.8" data-duration="5.2" data-track-index="1">
+        <div class="paper-field"></div>
+        <div class="screenshot-shell s3-bg" data-layout-ignore>
+          <img class="s3-bg-img" src="capture/screenshots/full-page.png" alt="" />
+        </div>
+        <div class="judge-world">
+          <div class="verdict-panel">
+            <div class="judge-face">◇</div>
+            <div class="score-big" id="score-count">0</div>
+            <div class="verdict-line">Deterministic vision scoring. Same drawing, same result.</div>
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="label">Target</div>
+                <strong>99%</strong>
+                <div class="meter"><div class="meter-fill target-fill"></div></div>
+              </div>
+              <div class="metric">
+                <div class="label">Base</div>
+                <strong>0%</strong>
+                <div class="meter"><div class="meter-fill base-fill"></div></div>
+              </div>
+              <div class="metric">
+                <div class="label">Bucket</div>
+                <strong>fooled</strong>
+                <div class="meter"><div class="meter-fill bucket-fill"></div></div>
+              </div>
+            </div>
+            <div class="ghost-preview">
+              <img src="capture/assets/top-ghost-proof.png" alt="" />
+            </div>
+          </div>
+          <div class="leaderboard-card">
+            <div class="label">Ranking 06-29</div>
+            <h3>Climb the daily board</h3>
+            <div class="rank-row">
+              <span class="rank">#1</span>
+              <span>Seed Ghost</span>
+              <span class="score">1000 / 8</span>
+            </div>
+            <div class="rank-row">
+              <span class="rank">#2</span>
+              <span>http-room-a</span>
+              <span class="score">667 / 1</span>
+            </div>
+            <div class="rank-row">
+              <span class="rank">#3</span>
+              <span>http-room-b</span>
+              <span class="score">667 / 1</span>
+            </div>
+            <div class="rank-row">
+              <span class="rank">#4</span>
+              <span>Warmup Ghost</span>
+              <span class="score">333 / 4</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-4" class="clip scene" data-start="15" data-duration="5" data-track-index="1">
+        <div class="paper-field"></div>
+        <div class="ghost-word one" data-layout-ignore>DRAW</div>
+        <div class="ghost-word two" data-layout-ignore>FOOL</div>
+        <div class="ghost-word three" data-layout-ignore>SHARE</div>
+        <div class="share-scene">
+          <div class="share-frame">
+            <img src="capture/assets/share-card-seed.png" alt="" />
+          </div>
+          <div class="s4-copy">
+            <div class="label">Share the trick</div>
+            <div class="wordmark">gitai</div>
+            <h2>Make the AI believe.</h2>
+            <div class="cta-pill">Play today’s apple → baseball challenge</div>
+          </div>
+        </div>
+      </section>
+
+      <div id="wipe-1" class="clip transition-wipe" data-start="4.48" data-duration="0.64" data-track-index="8"></div>
+      <div id="wipe-2" class="clip transition-wipe paper" data-start="9.48" data-duration="0.64" data-track-index="8"></div>
+      <div id="wipe-3" class="clip transition-wipe" data-start="14.68" data-duration="0.68" data-track-index="8"></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      gsap.set(["#wipe-1", "#wipe-2", "#wipe-3"], { scaleX: 0 });
+      gsap.set([".target-fill", ".base-fill", ".bucket-fill"], { scaleX: 0 });
+
+      tl.fromTo(".s1-shot", { opacity: 0, y: 80, rotation: -1.5 }, { opacity: 0.62, y: 0, rotation: -1.5, duration: 0.7, ease: "power3.out" }, 0.16);
+      tl.to(".s1-shot-img", { scale: 1.035, duration: 4.5, ease: "none" }, 0.16);
+      tl.fromTo(".prompt-card", { opacity: 0, y: 72 }, { opacity: 1, y: 0, duration: 0.62, ease: "back.out(1.25)" }, 0.28);
+      tl.fromTo(".prompt-apple", { opacity: 0, y: 46, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.42, ease: "power3.out" }, 0.84);
+      tl.fromTo(".prompt-baseball", { opacity: 0, y: 46, rotation: 2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.42, ease: "power2.out" }, 1.12);
+      tl.to(".arrow-path", { strokeDashoffset: 0, duration: 0.58, ease: "power2.out" }, 1.42);
+      tl.fromTo(".ghost-ball", { opacity: 0, x: 88, scale: 0.92 }, { opacity: 1, x: 0, scale: 1, duration: 0.62, ease: "expo.out" }, 1.82);
+      tl.to(".ghost-ball", { y: -10, duration: 1.8, yoyo: true, repeat: 1, ease: "sine.inOut" }, 2.44);
+      tl.fromTo(".date-chip", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.32);
+
+      tl.fromTo("#wipe-1", { scaleX: 0 }, { scaleX: 1, duration: 0.32, ease: "power2.in" }, 4.48);
+      tl.fromTo("#wipe-1", { scaleX: 1 }, { scaleX: 0, duration: 0.31, ease: "power2.out", transformOrigin: "right center" }, 4.81);
+
+      tl.fromTo(".s2-shot", { opacity: 0, y: 70 }, { opacity: 0.34, y: 0, duration: 0.56, ease: "power3.out" }, 4.96);
+      tl.to(".s2-shot-img", { scale: 1.03, duration: 4.6, ease: "none" }, 4.96);
+      tl.fromTo(".s2-caption", { opacity: 0, x: -72 }, { opacity: 1, x: 0, duration: 0.48, ease: "expo.out" }, 5.08);
+      tl.fromTo(".draw-stage", { opacity: 0, y: 68, scale: 0.98 }, { opacity: 1, y: 0, scale: 1, duration: 0.66, ease: "back.out(1.15)" }, 5.18);
+      tl.fromTo(".tool-tray", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.52, ease: "power2.out" }, 5.46);
+      tl.fromTo(".tool-button, .swatch, .submit-pill", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.36, stagger: 0.045, ease: "power3.out" }, 5.70);
+      tl.to(".seam-path", { strokeDashoffset: 0, duration: 1.15, stagger: 0.07, ease: "power2.out" }, 6.08);
+      tl.fromTo(".scan-line", { opacity: 0, y: 0 }, { opacity: 0.82, y: 560, duration: 0.78, ease: "power2.inOut" }, 7.58);
+      tl.to(".scan-line", { opacity: 0, duration: 0.18, ease: "power1.out" }, 8.42);
+      tl.to(".submit-pill", { scale: 1.055, duration: 0.32, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.36);
+      tl.to(".canvas-card", { y: -10, scale: 1.012, duration: 0.55, ease: "power2.out" }, 8.62);
+
+      tl.fromTo("#wipe-2", { scaleX: 0 }, { scaleX: 1, duration: 0.32, ease: "power2.in" }, 9.48);
+      tl.fromTo("#wipe-2", { scaleX: 1 }, { scaleX: 0, duration: 0.32, ease: "power2.out", transformOrigin: "right center" }, 9.8);
+
+      tl.fromTo(".s3-bg", { opacity: 0, y: 64 }, { opacity: 0.26, y: 0, duration: 0.58, ease: "power3.out" }, 9.96);
+      tl.to(".s3-bg-img", { scale: 1.028, duration: 4.8, ease: "none" }, 9.96);
+      tl.fromTo(".verdict-panel", { opacity: 0, x: -90, scale: 0.98 }, { opacity: 1, x: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 10.18);
+      tl.fromTo(".leaderboard-card", { opacity: 0, x: 90, scale: 0.98 }, { opacity: 1, x: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 10.34);
+      tl.fromTo(".judge-face", { opacity: 0, rotation: -35, scale: 0.78 }, { opacity: 1, rotation: 0, scale: 1, duration: 0.46, ease: "back.out(1.6)" }, 10.58);
+
+      const scoreProxy = { value: 0 };
+      tl.to(scoreProxy, {
+        value: 1000,
+        duration: 1.15,
+        ease: "power2.out",
+        onUpdate: function () {
+          document.getElementById("score-count").textContent = Math.round(scoreProxy.value).toString();
+        },
+      }, 10.72);
+      tl.to(".target-fill", { scaleX: 0.99, duration: 0.72, ease: "power2.out" }, 10.98);
+      tl.to(".base-fill", { scaleX: 0.03, duration: 0.72, ease: "power2.out" }, 11.10);
+      tl.to(".bucket-fill", { scaleX: 1, duration: 0.72, ease: "power2.out" }, 11.22);
+      tl.fromTo(".rank-row", { opacity: 0, y: 42 }, { opacity: 1, y: 0, duration: 0.42, stagger: 0.12, ease: "power3.out" }, 11.44);
+      tl.fromTo(".ghost-preview", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(1.45)" }, 12.10);
+      tl.to(".ghost-preview", { y: -8, duration: 1.2, yoyo: true, repeat: 1, ease: "sine.inOut" }, 12.52);
+
+      tl.fromTo("#wipe-3", { scaleX: 0 }, { scaleX: 1, duration: 0.34, ease: "power2.in" }, 14.68);
+      tl.fromTo("#wipe-3", { scaleX: 1 }, { scaleX: 0, duration: 0.34, ease: "power2.out", transformOrigin: "right center" }, 15.02);
+
+      tl.fromTo(".share-frame", { opacity: 0, y: 98, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.72, ease: "expo.out" }, 15.18);
+      tl.fromTo(".s4-copy", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.58, ease: "power3.out" }, 15.46);
+      tl.fromTo(".ghost-word", { opacity: 0, y: 38 }, { opacity: 1, y: 0, duration: 0.72, stagger: 0.12, ease: "power2.out" }, 15.38);
+      tl.to(".ghost-word.one", { x: 22, duration: 3.2, ease: "none" }, 16.0);
+      tl.to(".ghost-word.two", { x: -24, duration: 3.0, ease: "none" }, 16.0);
+      tl.to(".ghost-word.three", { x: 28, duration: 2.8, ease: "none" }, 16.0);
+      tl.to(".share-frame img", { scale: 1.025, duration: 4.4, ease: "none" }, 15.18);
+      tl.fromTo(".cta-pill", { scale: 0.96, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.35)" }, 16.76);
+      tl.to(".share-frame", { y: -8, duration: 1.35, yoyo: true, repeat: 1, ease: "sine.inOut" }, 17.3);
+      tl.to("#scene-4", { opacity: 0, duration: 0.5, ease: "power1.in" }, 19.5);
+
+      window.__timelines["main"] = tl;
+
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has("standalone")) {
+          return;
+        }
+
+        function syncStandalone(time) {
+          tl.seek(time, false);
+          document.querySelectorAll(".clip").forEach(function (clip) {
+            const start = Number(clip.getAttribute("data-start") || "0");
+            const duration = Number(clip.getAttribute("data-duration") || "0");
+            const active = time >= start && time <= start + duration;
+            clip.style.display = active ? "block" : "none";
+          });
+        }
+
+        syncStandalone(Number(params.get("t") || "0"));
+      })();
+    </script>
+  </body>
+</html>

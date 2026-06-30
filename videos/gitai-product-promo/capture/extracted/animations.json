@@ -1,0 +1,12 @@
+{
+  "animations": [
+    {
+      "name": "scan overlay",
+      "description": "Canvas scan overlay appears while judging submissions."
+    },
+    {
+      "name": "button/segment active states",
+      "description": "Tool and leaderboard tabs use active color and compact state changes."
+    }
+  ]
+}

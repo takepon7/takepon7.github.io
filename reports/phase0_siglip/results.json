@@ -1,0 +1,586 @@
+[
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.1357085494991282,
+      "Cy": 0.07228179443321472,
+      "negs": [
+        0.5384988679527066,
+        0.10649363137205237,
+        0.147017156742898
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.07228179443321472,
+      0.1357085494991282,
+      0.5384988679527066,
+      0.10649363137205237,
+      0.147017156742898
+    ],
+    "raw": 0.062472536955489,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.13015582587250682,
+      "Cy": 0.1161824819801919,
+      "negs": [
+        0.5494579409225023,
+        0.12943411987935133,
+        0.0747696313454477
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.1161824819801919,
+      0.13015582587250682,
+      0.5494579409225023,
+      0.12943411987935133,
+      0.0747696313454477
+    ],
+    "raw": 0.10106065508614238,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "fooled",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.06264475806335208,
+      "Cy": 0.5502976686893193,
+      "negs": [
+        0.17721404338415322,
+        0.14486353217068634,
+        0.06497999769248927
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.5502976686893193,
+      0.06264475806335208,
+      0.17721404338415322,
+      0.14486353217068634,
+      0.06497999769248927
+    ],
+    "raw": 0.5158244043714502,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 0.07627473526786496,
+      "Cy": 0.31071660398611317,
+      "negs": [
+        0.28596512612688135,
+        0.21645696484116028,
+        0.11058656977798033
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.31071660398611317,
+      0.07627473526786496,
+      0.28596512612688135,
+      0.21645696484116028,
+      0.11058656977798033
+    ],
+    "raw": 0.0,
+    "tau": 100.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.17703856863847484,
+      "Cy": 0.12920482975143463,
+      "negs": [
+        0.3526603893565515,
+        0.15682890262086552,
+        0.18426730963267357
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.12920482975143463,
+      0.17703856863847484,
+      0.3526603893565515,
+      0.15682890262086552,
+      0.18426730963267357
+    ],
+    "raw": 0.10633059163106282,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.1737742598675193,
+      "Cy": 0.1641814044184569,
+      "negs": [
+        0.3570432840898387,
+        0.17329180639011513,
+        0.13170924523407
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.1641814044184569,
+      0.1737742598675193,
+      0.3570432840898387,
+      0.17329180639011513,
+      0.13170924523407
+    ],
+    "raw": 0.13565090238162972,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.1221758614328779,
+      "Cy": 0.36211113371408665,
+      "negs": [
+        0.20549067040734886,
+        0.18579010355900097,
+        0.12443223088668556
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.36211113371408665,
+      0.1221758614328779,
+      0.20549067040734886,
+      0.18579010355900097,
+      0.12443223088668556
+    ],
+    "raw": 0.3178698940181321,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 0.12749752148075927,
+      "Cy": 0.25733189524019656,
+      "negs": [
+        0.24686977688421477,
+        0.21478164783677306,
+        0.15351915855805642
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.25733189524019656,
+      0.12749752148075927,
+      0.24686977688421477,
+      0.21478164783677306,
+      0.15351915855805642
+    ],
+    "raw": 0.0,
+    "tau": 50.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.1888918818814013,
+      "Cy": 0.1563650933596976,
+      "negs": [
+        0.28561865467134745,
+        0.17564193855212923,
+        0.19348243153542447
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.1563650933596976,
+      0.1888918818814013,
+      0.28561865467134745,
+      0.17564193855212923,
+      0.19348243153542447
+    ],
+    "raw": 0.12682899661442332,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.1868439816516181,
+      "Cy": 0.18058522926222198,
+      "negs": [
+        0.28781960058659306,
+        0.18653256505671706,
+        0.15821862344284982
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.18058522926222198,
+      0.1868439816516181,
+      0.28781960058659306,
+      0.18653256505671706,
+      0.15821862344284982
+    ],
+    "raw": 0.14684396599939814,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.15192346202791862,
+      "Cy": 0.2915672425018551,
+      "negs": [
+        0.20754337177450202,
+        0.19536517410376233,
+        0.1536007495919619
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.2915672425018551,
+      0.15192346202791862,
+      0.20754337177450202,
+      0.19536517410376233,
+      0.1536007495919619
+    ],
+    "raw": 0.2472713376070396,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 0.15394384954218196,
+      "Cy": 0.2346159146439527,
+      "negs": [
+        0.22884532865672563,
+        0.21050363468864808,
+        0.17209127246849165
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.2346159146439527,
+      0.15394384954218196,
+      0.22884532865672563,
+      0.21050363468864808,
+      0.17209127246849165
+    ],
+    "raw": 0.0,
+    "tau": 30.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_plain",
+    "confidences": {
+      "Cx": 0.193504895395193,
+      "Cy": 0.1705989288133618,
+      "negs": [
+        0.25492209193776827,
+        0.1843466466888317,
+        0.19662743716484524
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "weak",
+    "expected_rank": 0,
+    "image_path": "apple_plain.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.1705989288133618,
+      0.193504895395193,
+      0.25492209193776827,
+      0.1843466466888317,
+      0.19662743716484524
+    ],
+    "raw": 0.13758720093880025,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_poor",
+    "confidences": {
+      "Cx": 0.1921118313882146,
+      "Cy": 0.18779737594794102,
+      "negs": [
+        0.256240799400961,
+        0.1918983076298525,
+        0.17195168563303082
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "medium",
+    "expected_rank": 1,
+    "image_path": "apple_baseball_poor.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.18779737594794102,
+      0.1921118313882146,
+      0.256240799400961,
+      0.1918983076298525,
+      0.17195168563303082
+    ],
+    "raw": 0.15171927812468103,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "confused",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_good",
+    "confidences": {
+      "Cx": 0.16763318044384823,
+      "Cy": 0.2588824274213625,
+      "negs": [
+        0.20638715502328248,
+        0.1982324970376783,
+        0.1688647400738285
+      ]
+    },
+    "detected_text": [],
+    "expected_quality": "strong",
+    "expected_rank": 2,
+    "image_path": "apple_baseball_good.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": false,
+    "probabilities": [
+      0.2588824274213625,
+      0.16763318044384823,
+      0.20638715502328248,
+      0.1982324970376783,
+      0.1688647400738285
+    ],
+    "raw": 0.2154851427516958,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  },
+  {
+    "bucket": "failed",
+    "candidate_labels": [
+      "baseball",
+      "apple",
+      "tennis ball",
+      "tomato",
+      "orange"
+    ],
+    "case_id": "apple_baseball_text_attack",
+    "confidences": {
+      "Cx": 0.16846523273045858,
+      "Cy": 0.22310383562653405,
+      "negs": [
+        0.21943038200526682,
+        0.20754317551243784,
+        0.18145737412530272
+      ]
+    },
+    "detected_text": [
+      "BASEBALL"
+    ],
+    "expected_quality": "attack",
+    "expected_rank": 3,
+    "image_path": "apple_baseball_text_attack.png",
+    "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+    "ocr_cheat": true,
+    "probabilities": [
+      0.22310383562653405,
+      0.16846523273045858,
+      0.21943038200526682,
+      0.20754317551243784,
+      0.18145737412530272
+    ],
+    "raw": 0.0,
+    "tau": 20.0,
+    "template_set_id": "drawing_v1"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "qualities": [
+    {
+      "accepted": true,
+      "measured_difficulty": "hard",
+      "p10": 0.027243038000000004,
+      "p50": 0.13621483,
+      "p90": 0.8272339580000001,
+      "pair_id": "apple_to_baseball",
+      "ref_version": "phase0-heuristic-tau30-2026-06-29",
+      "rejection_reasons": [],
+      "spread": 0.79999092
+    },
+    {
+      "accepted": true,
+      "measured_difficulty": "hard",
+      "p10": 0.034906728000000005,
+      "p50": 0.10694404,
+      "p90": 0.605016848,
+      "pair_id": "apple_to_baseball",
+      "ref_version": "phase0-open-clip-tau30-2026-06-29",
+      "rejection_reasons": [],
+      "spread": 0.5701101199999999
+    },
+    {
+      "accepted": true,
+      "measured_difficulty": "hard",
+      "p10": 0.130831994,
+      "p50": 0.14684397,
+      "p90": 0.22718586600000001,
+      "pair_id": "apple_to_baseball",
+      "ref_version": "phase0-siglip-tau30-2026-06-29",
+      "rejection_reasons": [],
+      "spread": 0.09635387200000001
+    }
+  ]
+}

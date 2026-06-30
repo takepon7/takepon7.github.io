@@ -1,0 +1,5168 @@
+{
+  "pairs": [
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.14759509455595918,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "balloon_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.1665049017252264,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "balloon_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.16742449670906656,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "balloon_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.16870610030220573,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "balloon_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.1700840090054837,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "balloon_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.20373696704625677,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "tomato_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.21059509455595915,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "apple_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.21354192967609054,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "tomato_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.21473696704625683,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "apple_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.21678975512226528,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "apple_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.2194244967090665,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "tomato_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.22072036338943385,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "apple_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.22104612656845746,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "apple_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.2217202445181326,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "tomato_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.22572036338943385,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "orange_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.22954192967609055,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "orange_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.23271942555966868,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "orange_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.23315823125451335,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "tomato_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.23433053201505194,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "tennis_ball_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.23533053201505197,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "baseball_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.23670610030220574,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "orange_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.24641058432400997,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "orange_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.24978975512226526,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "tennis_ball_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.25454806057984813,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "balloon_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.2550461265684575,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "baseball_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.26071942555966865,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "tennis_ball_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.26250490172522634,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "tennis_ball_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.26572024451813264,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "tennis_ball_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.2670840090054837,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "baseball_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.27541058432401,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "baseball_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.2781582312545134,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "baseball_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.3134929959180655,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "apple_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.3346207528701474,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "book"
+          ],
+          "canonical_label": "book",
+          "object_id": "book"
+        }
+      ],
+      "pair_id": "banana_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.3350287470485971,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "tomato_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.35184171631099265,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "balloon_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.35449299591806555,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "mug_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.3563249814141736,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "orange_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.35854806057984817,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "mug_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.36362075287014745,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "book"
+          ],
+          "canonical_label": "book",
+          "object_id": "book"
+        }
+      ],
+      "pair_id": "car_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.3739068500774897,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "baseball_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.37981822319063857,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "tennis_ball_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.3808205885603465,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "balloon_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.38090685007748976,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "mug_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.38362022524361095,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "mug_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.3870287470485971,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "mug_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.3878182231906386,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "mug_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.3908108358435281,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "banana_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.39187045937664444,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        },
+        {
+          "aliases": [
+            "book"
+          ],
+          "canonical_label": "book",
+          "object_id": "book"
+        }
+      ],
+      "pair_id": "mug_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.3923249814141736,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "mug_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.3928108358435281,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "mug_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.40064455238066277,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "balloon_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.40487045937664445,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        },
+        {
+          "aliases": [
+            "book"
+          ],
+          "canonical_label": "book",
+          "object_id": "book"
+        }
+      ],
+      "pair_id": "chair_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.409262777219633,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        }
+      ],
+      "pair_id": "chair_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.41062022524361097,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "car_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.4117356251947838,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "balloon_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.4130050723705473,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        }
+      ],
+      "pair_id": "chair_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.423262777219633,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        }
+      ],
+      "pair_id": "car_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      },
+      "difficulty_prior": 0.4270328929290814,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "balloon_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.42994925474117907,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        }
+      ],
+      "pair_id": "banana_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.43196075181052757,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "apple_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.4395060562347099,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        }
+      ],
+      "pair_id": "book_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.44000507237054726,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        }
+      ],
+      "pair_id": "cat_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.4407128805581544,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "apple_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.4445010282749169,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "mug_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.4449492547411791,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        }
+      ],
+      "pair_id": "chair_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      },
+      "difficulty_prior": 0.44522785592457115,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "mug_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.4465060562347099,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "house cat"
+          ],
+          "canonical_label": "cat",
+          "object_id": "cat"
+        }
+      ],
+      "pair_id": "chair_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.45014258799153467,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        }
+      ],
+      "pair_id": "book_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.45122785592457115,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "book_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.45239571528983524,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "tomato_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.4538417163109927,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "banana_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.457353989790823,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "apple_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.4649150807334306,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "apple_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.4651890716328046,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "tomato_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.46583598822861444,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "orange_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.4709607518105276,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "banana_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.4711425879915347,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        }
+      ],
+      "pair_id": "car_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.4740302902965291,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "tomato_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.4780023621937402,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        }
+      ],
+      "pair_id": "banana_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.47939162982734984,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "tomato_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.4845010282749168,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "cat_to_mug",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "coffee mug"
+        ],
+        "canonical_label": "mug",
+        "object_id": "mug"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.4860023621937402,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        }
+      ],
+      "pair_id": "book_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.4874303133162184,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "orange_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "difficulty_prior": 0.4881343230566606,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "apple_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.48871256928908857,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        }
+      ],
+      "pair_id": "car_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.48919340866104055,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "baseball_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.49419340866104056,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "banana_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.4953701554025804,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "baseball_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.4956986260529162,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "tennis_ball_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.4998359882286144,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "banana_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.5000443428157504,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "orange_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.5016986260529162,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "banana_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.5017125692890886,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "banana",
+          "object_id": "banana"
+        }
+      ],
+      "pair_id": "cat_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.5020164888796398,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "orange_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.5023957152898353,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "banana_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      },
+      "difficulty_prior": 0.5025248612512261,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "banana_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.505599322288292,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "baseball_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.5065109687014399,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "tennis_ball_to_car",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.5087128805581544,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "car_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      },
+      "difficulty_prior": 0.5108980286675039,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "tomato_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.511353989790823,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "chair_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.5118205885603465,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "car_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.5129224528739914,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "baseball_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.5176445523806628,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "chair_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.5180682149207411,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "tennis_ball_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.5215060822236253,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "tennis_ball_to_chair",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.5293701554025805,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "car_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      },
+      "difficulty_prior": 0.5313838370175772,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "orange_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.5329224528739914,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        }
+      ],
+      "pair_id": "chair_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.5351343230566606,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "book_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.5370328929290814,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "book_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.5415109687014399,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "car_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.5425060822236253,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "chair_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.5441890716328046,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "car_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.5443916298273499,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "chair_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.5445248612512261,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "cat_to_banana",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "banana",
+        "object_id": "banana"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.5459150807334306,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "cat_to_apple",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      }
+    },
+    {
+      "base": {
+        "aliases": [],
+        "canonical_label": "chair",
+        "object_id": "chair"
+      },
+      "difficulty_prior": 0.5490443428157503,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        }
+      ],
+      "pair_id": "chair_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "automobile"
+        ],
+        "canonical_label": "car",
+        "object_id": "car"
+      },
+      "difficulty_prior": 0.5504303133162185,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "car_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      },
+      "difficulty_prior": 0.5515172436262321,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "baseball_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.552599322288292,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "cat_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.5557356251947838,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "cat_to_balloon",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "balloon",
+        "object_id": "balloon"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      },
+      "difficulty_prior": 0.5567553304037558,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "tennis_ball_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.5645172436262321,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "book_to_baseball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.5660302902965292,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "cat_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.5660682149207411,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        }
+      ],
+      "pair_id": "cat_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.5688980286675039,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "book_to_tomato",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tomatoes"
+        ],
+        "canonical_label": "tomato",
+        "object_id": "tomato"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.5693244978637113,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        }
+      ],
+      "pair_id": "book_to_cat",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.5707553304037558,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      ],
+      "pair_id": "book_to_tennis_ball",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "tennisball"
+        ],
+        "canonical_label": "tennis ball",
+        "object_id": "tennis_ball"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      },
+      "difficulty_prior": 0.5733838370175772,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "balloon",
+          "object_id": "balloon"
+        }
+      ],
+      "pair_id": "book_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.5780164888796399,
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        }
+      ],
+      "pair_id": "cat_to_orange",
+      "status": "candidate",
+      "target": {
+        "aliases": [],
+        "canonical_label": "orange",
+        "object_id": "orange"
+      }
+    },
+    {
+      "base": {
+        "aliases": [
+          "house cat"
+        ],
+        "canonical_label": "cat",
+        "object_id": "cat"
+      },
+      "difficulty_prior": 0.6033244978637113,
+      "hard_negatives": [
+        {
+          "aliases": [],
+          "canonical_label": "chair",
+          "object_id": "chair"
+        },
+        {
+          "aliases": [
+            "coffee mug"
+          ],
+          "canonical_label": "mug",
+          "object_id": "mug"
+        },
+        {
+          "aliases": [
+            "automobile"
+          ],
+          "canonical_label": "car",
+          "object_id": "car"
+        }
+      ],
+      "pair_id": "cat_to_book",
+      "status": "candidate",
+      "target": {
+        "aliases": [
+          "book"
+        ],
+        "canonical_label": "book",
+        "object_id": "book"
+      }
+    }
+  ]
+}

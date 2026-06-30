@@ -1,0 +1,42 @@
+{
+  "pairs": [
+    {
+      "base": {
+        "aliases": [
+          "apples"
+        ],
+        "canonical_label": "apple",
+        "object_id": "apple"
+      },
+      "hard_negatives": [
+        {
+          "aliases": [
+            "tennisball"
+          ],
+          "canonical_label": "tennis ball",
+          "object_id": "tennis_ball"
+        },
+        {
+          "aliases": [
+            "tomatoes"
+          ],
+          "canonical_label": "tomato",
+          "object_id": "tomato"
+        },
+        {
+          "aliases": [],
+          "canonical_label": "orange",
+          "object_id": "orange"
+        }
+      ],
+      "pair_id": "apple_to_baseball",
+      "target": {
+        "aliases": [
+          "base ball"
+        ],
+        "canonical_label": "baseball",
+        "object_id": "baseball"
+      }
+    }
+  ]
+}

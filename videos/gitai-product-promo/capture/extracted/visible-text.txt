@@ -1,0 +1,96 @@
+[div] gitai 鑑定士
+[div] gitai
+[div] 鑑定士
+[div] Player Circle ↻ ↗ 接続済み
+[label] Player
+[span] Player
+[input] guest
+[label] Circle ↻ ↗
+[span] Circle
+[span] ↻ ↗
+[input] LE2YSU
+[button] ↻
+[button] ↗
+[div] 接続済み
+[span] 接続済み
+[div] Daily apple → baseball
+[div] Daily
+[div] apple → baseball
+[div] apple
+[div] →
+[div] baseball
+[div] Date06-29 Try0 Top Ghost 1000 #1 Seed Ghost Funny
+[div] Date06-29 Try0
+[div] Date06-29
+[div] Date
+[div] 06-29
+[div] Try0
+[div] Try
+[div] 0
+[div] Top Ghost 1000 #1 Seed Ghost Funny
+[div] Top Ghost 1000
+[span] Top Ghost
+[strong] 1000
+[div] #1 Seed Ghost
+[button] Funny
+[div] ✎ ⌫ ↶ × Size
+[div] ✎ ⌫ ↶ ×
+[button] ✎
+[button] ⌫
+[button] ↶
+[button] ×
+[div] Size
+[span] Size
+[input] 18
+[div] Canvas apple を baseball へ 未提出
+[div] Canvas apple を baseball へ
+[div] Canvas
+[strong] apple を baseball へ
+[div] 未提出
+[div] 素体に戻す 鑑定
+[button] 素体に戻す
+[button] 鑑定
+[div] Verdict ---
+[div] Verdict
+[div] ---
+[div] ◇ まだ鑑定前です。
+[div] ◇
+[div] まだ鑑定前です。
+[div] Target-- Base-- Raw-- Bucket--
+[div] Target--
+[span] Target
+[strong] --
+[div] Base--
+[span] Base
+[div] Raw--
+[span] Raw
+[div] Bucket--
+[span] Bucket
+[div] Rank --
+[div] Ranking 06-29 Score Efficiency Friends Funny #1Seed Ghost1000 / 8筆#2http-room-a667 / 1筆#3http-room-b667 / 1筆#4Warmup Ghost333 / 4筆
+[div] Ranking 06-29
+[span] Ranking
+[span] 06-29
+[div] Score Efficiency Friends Funny
+[button] Score
+[button] Efficiency
+[button] Friends
+[li] #1Seed Ghost1000 / 8筆
+[span] #1
+[span] Seed Ghost
+[span] 1000 / 8筆
+[li] #2http-room-a667 / 1筆
+[span] #2
+[span] http-room-a
+[span] 667 / 1筆
+[li] #3http-room-b667 / 1筆
+[span] #3
+[span] http-room-b
+[li] #4Warmup Ghost333 / 4筆
+[span] #4
+[span] Warmup Ghost
+[span] 333 / 4筆
+[div] gitai Score --- Share Card
+[div] Score --- Share Card
+[div] Score
+[button] Share Card

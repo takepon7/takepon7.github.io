@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "deterministic_repeat": true,
+    "good_above_plain": true,
+    "text_attack_zeroed": true
+  },
+  "model": "open_clip",
+  "ref_version": "phase0-open-clip-tau30-2026-06-29",
+  "samples": {
+    "attack": {
+      "bucket": "failed",
+      "computed_at": "2026-06-29T02:34:01.233142+00:00",
+      "confidences": {
+        "Cx": 0.029536035891415135,
+        "Cy": 0.8462523681798345,
+        "negs": [
+          0.07711110812878043,
+          0.012790987868943251,
+          0.034309499931026555
+        ]
+      },
+      "flags": {
+        "moderation": "pass",
+        "ocr_cheat": true
+      },
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "percentile": 0.0,
+      "raw": 0.0,
+      "score": 0,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    "good": {
+      "bucket": "fooled",
+      "computed_at": "2026-06-29T02:34:00.668536+00:00",
+      "confidences": {
+        "Cx": 0.057738239175611814,
+        "Cy": 0.7742382012786034,
+        "negs": [
+          0.09083023060107445,
+          0.02653537405506971,
+          0.05065795488964065
+        ]
+      },
+      "flags": {
+        "moderation": "pass",
+        "ocr_cheat": false
+      },
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "percentile": 1.0,
+      "raw": 0.7295350508342839,
+      "score": 1000,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    "plain": {
+      "bucket": "failed",
+      "computed_at": "2026-06-29T02:34:00.107026+00:00",
+      "confidences": {
+        "Cx": 0.6480155667462476,
+        "Cy": 0.04800609454831459,
+        "negs": [
+          0.08430432498396968,
+          0.1547148603990094,
+          0.06495915332245877
+        ]
+      },
+      "flags": {
+        "moderation": "pass",
+        "ocr_cheat": false
+      },
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "percentile": 0.0,
+      "raw": 0.01689739798231456,
+      "score": 0,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    }
+  }
+}

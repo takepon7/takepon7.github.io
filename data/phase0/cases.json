@@ -1,0 +1,194 @@
+{
+  "cases": [
+    {
+      "case_id": "apple_plain",
+      "image_path": "apple_plain.png",
+      "pair": {
+        "pair_id": "apple_to_baseball",
+        "base": {
+          "object_id": "apple",
+          "canonical_label": "apple",
+          "aliases": [
+            "apples"
+          ]
+        },
+        "target": {
+          "object_id": "baseball",
+          "canonical_label": "baseball",
+          "aliases": [
+            "base ball",
+            "BASEBALL"
+          ]
+        },
+        "hard_negatives": [
+          {
+            "object_id": "tennis_ball",
+            "canonical_label": "tennis ball",
+            "aliases": [
+              "tennisball"
+            ]
+          },
+          {
+            "object_id": "tomato",
+            "canonical_label": "tomato",
+            "aliases": [
+              "tomatoes"
+            ]
+          },
+          {
+            "object_id": "orange",
+            "canonical_label": "orange",
+            "aliases": []
+          }
+        ]
+      },
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "known_text": [],
+      "notes": "Unmodified base object."
+    },
+    {
+      "case_id": "apple_baseball_poor",
+      "image_path": "apple_baseball_poor.png",
+      "pair": {
+        "pair_id": "apple_to_baseball",
+        "base": {
+          "object_id": "apple",
+          "canonical_label": "apple",
+          "aliases": [
+            "apples"
+          ]
+        },
+        "target": {
+          "object_id": "baseball",
+          "canonical_label": "baseball",
+          "aliases": [
+            "base ball",
+            "BASEBALL"
+          ]
+        },
+        "hard_negatives": [
+          {
+            "object_id": "tennis_ball",
+            "canonical_label": "tennis ball",
+            "aliases": [
+              "tennisball"
+            ]
+          },
+          {
+            "object_id": "tomato",
+            "canonical_label": "tomato",
+            "aliases": [
+              "tomatoes"
+            ]
+          },
+          {
+            "object_id": "orange",
+            "canonical_label": "orange",
+            "aliases": []
+          }
+        ]
+      },
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "known_text": [],
+      "notes": "Apple silhouette with baseball markings."
+    },
+    {
+      "case_id": "apple_baseball_good",
+      "image_path": "apple_baseball_good.png",
+      "pair": {
+        "pair_id": "apple_to_baseball",
+        "base": {
+          "object_id": "apple",
+          "canonical_label": "apple",
+          "aliases": [
+            "apples"
+          ]
+        },
+        "target": {
+          "object_id": "baseball",
+          "canonical_label": "baseball",
+          "aliases": [
+            "base ball",
+            "BASEBALL"
+          ]
+        },
+        "hard_negatives": [
+          {
+            "object_id": "tennis_ball",
+            "canonical_label": "tennis ball",
+            "aliases": [
+              "tennisball"
+            ]
+          },
+          {
+            "object_id": "tomato",
+            "canonical_label": "tomato",
+            "aliases": [
+              "tomatoes"
+            ]
+          },
+          {
+            "object_id": "orange",
+            "canonical_label": "orange",
+            "aliases": []
+          }
+        ]
+      },
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "known_text": [],
+      "notes": "Round baseball-like disguise."
+    },
+    {
+      "case_id": "apple_baseball_text_attack",
+      "image_path": "apple_baseball_text_attack.png",
+      "pair": {
+        "pair_id": "apple_to_baseball",
+        "base": {
+          "object_id": "apple",
+          "canonical_label": "apple",
+          "aliases": [
+            "apples"
+          ]
+        },
+        "target": {
+          "object_id": "baseball",
+          "canonical_label": "baseball",
+          "aliases": [
+            "base ball",
+            "BASEBALL"
+          ]
+        },
+        "hard_negatives": [
+          {
+            "object_id": "tennis_ball",
+            "canonical_label": "tennis ball",
+            "aliases": [
+              "tennisball"
+            ]
+          },
+          {
+            "object_id": "tomato",
+            "canonical_label": "tomato",
+            "aliases": [
+              "tomatoes"
+            ]
+          },
+          {
+            "object_id": "orange",
+            "canonical_label": "orange",
+            "aliases": []
+          }
+        ]
+      },
+      "expected_quality": "attack",
+      "expected_rank": 3,
+      "known_text": [
+        "BASEBALL"
+      ],
+      "notes": "Typographic attack fixture; must hard-zero."
+    }
+  ]
+}

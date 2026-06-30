@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitai-phase0"
+version = "0.1.0"
+description = "Phase 0 scoring harness for gitai."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pillow>=10",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+api = ["fastapi", "uvicorn[standard]", "httpx"]
+clip = ["torch", "open-clip-torch"]
+siglip = ["torch", "transformers", "sentencepiece", "protobuf"]
+ocr = ["pytesseract"]
+
+[project.scripts]
+gitai-phase0 = "gitai_phase0.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

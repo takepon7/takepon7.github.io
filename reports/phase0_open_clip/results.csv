@@ -1,0 +1,17 @@
+tau,case_id,expected_quality,expected_rank,raw,Cy,Cx,bucket,ocr_cheat,entropy
+100.0,apple_plain,weak,0,0.00000171,0.00016903,0.98990570,failed,False,0.06257467
+100.0,apple_baseball_poor,medium,1,0.00663379,0.05270076,0.87412339,failed,False,0.47834846
+100.0,apple_baseball_good,strong,2,0.99873608,0.99891026,0.00017438,fooled,False,0.00941064
+100.0,apple_baseball_text_attack,attack,3,0.00000000,0.99962205,0.00001389,failed,True,0.00350737
+50.0,apple_plain,weak,0,0.00155368,0.01126502,0.86207932,failed,False,0.55573722
+50.0,apple_baseball_poor,medium,1,0.05769195,0.15288282,0.62263944,failed,False,1.06246868
+50.0,apple_baseball_good,strong,2,0.93550034,0.94735830,0.01251687,fooled,False,0.26835887
+50.0,apple_baseball_text_attack,attack,3,0.00000000,0.97286900,0.00362639,failed,True,0.15060392
+30.0,apple_plain,weak,0,0.01689740,0.04800609,0.64801557,failed,False,1.10173677
+30.0,apple_baseball_poor,medium,1,0.10694404,0.19786688,0.45951519,failed,False,1.35349699
+30.0,apple_baseball_good,strong,2,0.72953505,0.77423820,0.05773824,fooled,False,0.82804853
+30.0,apple_baseball_text_attack,attack,3,0.00000000,0.84625237,0.02953604,failed,True,0.61435855
+20.0,apple_plain,weak,0,0.04408533,0.08672980,0.49169342,failed,False,1.37542442
+20.0,apple_baseball_poor,medium,1,0.13290180,0.21091363,0.36987571,failed,False,1.48223405
+20.0,apple_baseball_good,strong,2,0.53115341,0.59357664,0.10516456,fooled,False,1.22286187
+20.0,apple_baseball_text_attack,attack,3,0.00000000,0.67184364,0.07175240,failed,True,1.05971133

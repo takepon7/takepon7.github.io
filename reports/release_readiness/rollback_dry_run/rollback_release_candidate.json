@@ -1,0 +1,112 @@
+{
+  "apply_report": "/Users/ryosuke/dev/new_game/reports/release_candidate_apply_smoke/apply_release_candidate.json",
+  "errors": [],
+  "files": [
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/scoring/pairs.json",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/scoring/pairs.json"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/scoring/seed_scores.json",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/scoring/seed_scores.json"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/puzzle/daily_puzzles.json",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/puzzle/daily_puzzles.json"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghosts.json",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghosts.json"
+    }
+  ],
+  "requested_apply": false,
+  "rolled_back": false,
+  "seed_ghost_images": [
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-06-29-apple_to_baseball-score.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-06-29-apple_to_baseball-score.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-06-29-apple_to_baseball-fast.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-06-29-apple_to_baseball-fast.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-06-30-balloon_to_baseball-score.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-06-30-balloon_to_baseball-score.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-06-30-balloon_to_baseball-fast.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-06-30-balloon_to_baseball-fast.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-01-orange_to_tennis_ball-score.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-01-orange_to_tennis_ball-score.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-01-orange_to_tennis_ball-fast.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-01-orange_to_tennis_ball-fast.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-02-tomato_to_baseball-score.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-02-tomato_to_baseball-score.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-02-tomato_to_baseball-fast.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-02-tomato_to_baseball-fast.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-03-mug_to_book-score.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-03-mug_to_book-score.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-03-mug_to_book-fast.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-03-mug_to_book-fast.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-04-book_to_car-score.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-04-book_to_car-score.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-04-book_to_car-fast.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-04-book_to_car-fast.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-05-chair_to_car-score.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-05-chair_to_car-score.png"
+    },
+    {
+      "backup": "reports/release_candidate_apply_smoke/backup/data/competition/seed_ghost_images/seed-2026-07-05-chair_to_car-fast.png",
+      "status": "would_restore",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-05-chair_to_car-fast.png"
+    },
+    {
+      "backup": "",
+      "status": "would_remove",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-06-apple_to_baseball-score.png"
+    },
+    {
+      "backup": "",
+      "status": "would_remove",
+      "target": "/Users/ryosuke/dev/new_game/data/competition/seed_ghost_images/seed-2026-07-06-apple_to_baseball-fast.png"
+    }
+  ],
+  "valid": true,
+  "warnings": []
+}

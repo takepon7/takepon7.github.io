@@ -1,0 +1,11 @@
+In gitai, the prompt is simple: turn apple into baseball.
+
+Draw. Submit.
+
+The judge is a deterministic vision model, not vibes.
+
+Fool it, climb the daily board, and ship a share card your friends instantly understand.
+
+gitai.
+
+Make the AI believe.

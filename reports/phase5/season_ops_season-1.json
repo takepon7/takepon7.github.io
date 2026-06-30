@@ -1,0 +1,56 @@
+{
+  "cosmetic_summary": {
+    "by_cosmetic_id": [],
+    "distinct_users": 0,
+    "unlock_count": 0
+  },
+  "generated_at": "2026-06-30T04:04:51.870279+00:00",
+  "missing_tables": [],
+  "model_pin_ok": true,
+  "model_versions": [
+    {
+      "count": 6,
+      "model_version": "heuristic-color-shape-v1",
+      "pinned": true
+    }
+  ],
+  "pinned_model_version": "heuristic-color-shape-v1",
+  "premium_summary": {
+    "active_entitlements": 0,
+    "by_source": [],
+    "redeem_codes": 0,
+    "redemptions": 0
+  },
+  "ref_versions": [
+    {
+      "count": 6,
+      "model_version": "heuristic-color-shape-v1",
+      "needs_rescore": false,
+      "ref_version": "phase0-heuristic-tau30-2026-06-29"
+    }
+  ],
+  "runtime_db": "data/runtime/play.sqlite",
+  "season_id": "season-1",
+  "season_label": "Season 1",
+  "spend_summary": {
+    "by_actor_version": [],
+    "distinct_users": 0,
+    "event_count": 0,
+    "total_cost_units": 0
+  },
+  "submission_summary": {
+    "distinct_users": 6,
+    "first_submission_at": "2026-06-29T00:00:00+00:00",
+    "hidden_from_public": 0,
+    "last_submission_at": "2026-06-29T05:12:08.083609+00:00",
+    "moderation_flagged": 0,
+    "ocr_cheat": 0,
+    "percentile_avg": 0.6666666666666666,
+    "public_rankable": 6,
+    "puzzle_days": 1,
+    "score_avg": 666.8333333333334,
+    "score_max": 1000,
+    "score_min": 333,
+    "total": 6
+  }
+}

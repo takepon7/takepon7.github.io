@@ -1,0 +1,142 @@
+{
+  "cases": [
+    {
+      "case_id": "apple_to_baseball_weak_bfe23091",
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/apple_to_baseball-bfe23091-weak.png",
+      "known_text": [],
+      "notes": "Approved proposal seed asset: bfe23091405346699abfd28e7b5b2465",
+      "pair": {
+        "base": {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        "hard_negatives": [
+          {
+            "aliases": [
+              "tennisball"
+            ],
+            "canonical_label": "tennis ball",
+            "object_id": "tennis_ball"
+          },
+          {
+            "aliases": [
+              "tomatoes"
+            ],
+            "canonical_label": "tomato",
+            "object_id": "tomato"
+          },
+          {
+            "aliases": [],
+            "canonical_label": "orange",
+            "object_id": "orange"
+          }
+        ],
+        "pair_id": "apple_to_baseball",
+        "target": {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      }
+    },
+    {
+      "case_id": "apple_to_baseball_medium_bfe23091",
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/apple_to_baseball-bfe23091-medium.png",
+      "known_text": [],
+      "notes": "Approved proposal seed asset: bfe23091405346699abfd28e7b5b2465",
+      "pair": {
+        "base": {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        "hard_negatives": [
+          {
+            "aliases": [
+              "tennisball"
+            ],
+            "canonical_label": "tennis ball",
+            "object_id": "tennis_ball"
+          },
+          {
+            "aliases": [
+              "tomatoes"
+            ],
+            "canonical_label": "tomato",
+            "object_id": "tomato"
+          },
+          {
+            "aliases": [],
+            "canonical_label": "orange",
+            "object_id": "orange"
+          }
+        ],
+        "pair_id": "apple_to_baseball",
+        "target": {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      }
+    },
+    {
+      "case_id": "apple_to_baseball_strong_bfe23091",
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/apple_to_baseball-bfe23091-strong.png",
+      "known_text": [],
+      "notes": "Approved proposal seed asset: bfe23091405346699abfd28e7b5b2465",
+      "pair": {
+        "base": {
+          "aliases": [
+            "apples"
+          ],
+          "canonical_label": "apple",
+          "object_id": "apple"
+        },
+        "hard_negatives": [
+          {
+            "aliases": [
+              "tennisball"
+            ],
+            "canonical_label": "tennis ball",
+            "object_id": "tennis_ball"
+          },
+          {
+            "aliases": [
+              "tomatoes"
+            ],
+            "canonical_label": "tomato",
+            "object_id": "tomato"
+          },
+          {
+            "aliases": [],
+            "canonical_label": "orange",
+            "object_id": "orange"
+          }
+        ],
+        "pair_id": "apple_to_baseball",
+        "target": {
+          "aliases": [
+            "base ball"
+          ],
+          "canonical_label": "baseball",
+          "object_id": "baseball"
+        }
+      }
+    }
+  ]
+}

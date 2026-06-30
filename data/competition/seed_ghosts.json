@@ -1,0 +1,2362 @@
+{
+  "seed_ghosts": [
+    {
+      "bucket": "fooled",
+      "created_at": "2026-06-29T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "4ab92e4ede5068ffd4dc87a54045e27ea7d769b67d4d7c4d6517178b9b74aec5",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-06-29-apple_to_baseball-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "apple_to_baseball",
+      "percentile": 0.96,
+      "puzzle_date": "2026-06-29",
+      "raw": 0.8772339580000001,
+      "ref_version": "phase0-heuristic-tau30-2026-06-29",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 138
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 338.6,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 374,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 338.6,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 256,
+                "y": 374
+              },
+              {
+                "pressure": 0.5,
+                "t": 5,
+                "x": 173.4,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 6,
+                "x": 138,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 7,
+                "x": 173.4,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 8,
+                "x": 256,
+                "y": 138
+              }
+            ],
+            "size": 10
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 188,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 156,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 158,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 192,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 324,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 356,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 354,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 320,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 188,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 170,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 190,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 172,
+                "y": 298
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 324,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 342,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 322,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 340,
+                "y": 298
+              }
+            ],
+            "size": 8
+          }
+        ]
+      },
+      "submission_id": "seed-2026-06-29-apple_to_baseball-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-06-29T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "13d3165f67f4495c8942ff06fc6e0196a1a52e8d20a6808073d7c98bcaf4dd05",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-06-29-apple_to_baseball-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "apple_to_baseball",
+      "percentile": 0.76,
+      "puzzle_date": "2026-06-29",
+      "raw": 0.13621483,
+      "ref_version": "phase0-heuristic-tau30-2026-06-29",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 198,
+                "y": 162
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 168,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 198,
+                "y": 350
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-06-29-apple_to_baseball-fast",
+      "user_id": "seed-ghost-fast"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-06-30T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "45538b4a74274cca47f4c64d5a354c31b3970115a196363914aa63a26bf32990",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-06-30-balloon_to_baseball-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "balloon_to_baseball",
+      "percentile": 0.96,
+      "puzzle_date": "2026-06-30",
+      "raw": 0.898,
+      "ref_version": "phase2-heuristic-balloon-baseball-tau30-2026-06-29",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 138
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 338.6,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 374,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 338.6,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 256,
+                "y": 374
+              },
+              {
+                "pressure": 0.5,
+                "t": 5,
+                "x": 173.4,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 6,
+                "x": 138,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 7,
+                "x": 173.4,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 8,
+                "x": 256,
+                "y": 138
+              }
+            ],
+            "size": 10
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 188,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 156,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 158,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 192,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 324,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 356,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 354,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 320,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 188,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 170,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 190,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 172,
+                "y": 298
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 324,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 342,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 322,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 340,
+                "y": 298
+              }
+            ],
+            "size": 8
+          }
+        ]
+      },
+      "submission_id": "seed-2026-06-30-balloon_to_baseball-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-06-30T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "49836bc1f089c7a0d7d10cbbfa4551865a7bb3523e7937c8ebc770d2d0ba1b2d",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-06-30-balloon_to_baseball-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "balloon_to_baseball",
+      "percentile": 0.76,
+      "puzzle_date": "2026-06-30",
+      "raw": 0.36,
+      "ref_version": "phase2-heuristic-balloon-baseball-tau30-2026-06-29",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 198,
+                "y": 162
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 168,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 198,
+                "y": 350
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-06-30-balloon_to_baseball-fast",
+      "user_id": "seed-ghost-fast"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-01T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "0c4953f3e2f390ec2612b74969d70503d1177d03597bd813096c8b711d095ec9",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-01-orange_to_tennis_ball-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "orange_to_tennis_ball",
+      "percentile": 0.96,
+      "puzzle_date": "2026-07-01",
+      "raw": 0.922,
+      "ref_version": "phase2-heuristic-orange-tennis-ball-tau30-2026-06-29",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#d9df4a",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 134
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 341.4,
+                "y": 170.60000000000002
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 378,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 341.4,
+                "y": 341.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 256,
+                "y": 378
+              },
+              {
+                "pressure": 0.5,
+                "t": 5,
+                "x": 170.60000000000002,
+                "y": 341.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 6,
+                "x": 134,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 7,
+                "x": 170.60000000000002,
+                "y": 170.60000000000002
+              },
+              {
+                "pressure": 0.5,
+                "t": 8,
+                "x": 256,
+                "y": 134
+              }
+            ],
+            "size": 9
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 184,
+                "y": 142
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 142,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 146,
+                "y": 300
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 190,
+                "y": 370
+              }
+            ],
+            "size": 17
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 328,
+                "y": 142
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 370,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 366,
+                "y": 300
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 322,
+                "y": 370
+              }
+            ],
+            "size": 17
+          },
+          {
+            "color": "#eef2a6",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 230,
+                "y": 176
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 284,
+                "y": 174
+              }
+            ],
+            "size": 24
+          },
+          {
+            "color": "#c9d339",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 174,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 210,
+                "y": 332
+              }
+            ],
+            "size": 18
+          },
+          {
+            "color": "#c9d339",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 338,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 302,
+                "y": 332
+              }
+            ],
+            "size": 18
+          },
+          {
+            "color": "#f7f5ee",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 206,
+                "y": 156
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 180,
+                "y": 204
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 174,
+                "y": 256
+              }
+            ],
+            "size": 8
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-01-orange_to_tennis_ball-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-01T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "d8def2fadec8ddcc38efbafa950bf1de575a5efdf6cb0fbfda0700e36c6f0daf",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-01-orange_to_tennis_ball-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "orange_to_tennis_ball",
+      "percentile": 0.76,
+      "puzzle_date": "2026-07-01",
+      "raw": 0.42,
+      "ref_version": "phase2-heuristic-orange-tennis-ball-tau30-2026-06-29",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#d9df4a",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 184,
+                "y": 152
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 146,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 184,
+                "y": 360
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-01-orange_to_tennis_ball-fast",
+      "user_id": "seed-ghost-fast"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-02T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "8b27d2aa1d9f0e778592747dc739c6224d3ab7f259e523be6e58cbc643dcb659",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-02-tomato_to_baseball-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "tomato_to_baseball",
+      "percentile": 0.96,
+      "puzzle_date": "2026-07-02",
+      "raw": 0.8780000000000001,
+      "ref_version": "phase2-heuristic-tomato-baseball-tau30-2026-06-29",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 138
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 338.6,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 374,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 338.6,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 256,
+                "y": 374
+              },
+              {
+                "pressure": 0.5,
+                "t": 5,
+                "x": 173.4,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 6,
+                "x": 138,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 7,
+                "x": 173.4,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 8,
+                "x": 256,
+                "y": 138
+              }
+            ],
+            "size": 10
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 188,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 156,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 158,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 192,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 324,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 356,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 354,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 320,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 188,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 170,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 190,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 172,
+                "y": 298
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 324,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 342,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 322,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 340,
+                "y": 298
+              }
+            ],
+            "size": 8
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-02-tomato_to_baseball-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-02T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "a0752b0cd1e668c23ed9c2dfa068a854bd1dda0642547eaabc1f62ba8b561e3b",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-02-tomato_to_baseball-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "tomato_to_baseball",
+      "percentile": 0.76,
+      "puzzle_date": "2026-07-02",
+      "raw": 0.32,
+      "ref_version": "phase2-heuristic-tomato-baseball-tau30-2026-06-29",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 198,
+                "y": 162
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 168,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 198,
+                "y": 350
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-02-tomato_to_baseball-fast",
+      "user_id": "seed-ghost-fast"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-03T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "20c7e7f13ef254d1485a0d610a11ae5b89d7364e673ebfdb1c6341c9d62939e3",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-03-mug_to_book-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "mug_to_book",
+      "percentile": 0.96,
+      "puzzle_date": "2026-07-03",
+      "raw": 0.8260000000000001,
+      "ref_version": "phase2-heuristic-mug-book-tau30-2026-06-29",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#315f9d",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#315f9d",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 154,
+                "y": 142
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 154,
+                "y": 370
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 358,
+                "y": 370
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 358,
+                "y": 142
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 154,
+                "y": 142
+              }
+            ],
+            "size": 76
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 148,
+                "y": 132
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 364,
+                "y": 132
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 364,
+                "y": 382
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 148,
+                "y": 382
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 148,
+                "y": 132
+              }
+            ],
+            "size": 10
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 208,
+                "y": 132
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 208,
+                "y": 382
+              }
+            ],
+            "size": 18
+          },
+          {
+            "color": "#254a7d",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 244,
+                "y": 182
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 326,
+                "y": 182
+              }
+            ],
+            "size": 12
+          },
+          {
+            "color": "#254a7d",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 244,
+                "y": 226
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 326,
+                "y": 226
+              }
+            ],
+            "size": 12
+          },
+          {
+            "color": "#254a7d",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 244,
+                "y": 270
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 326,
+                "y": 270
+              }
+            ],
+            "size": 12
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 156
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 190,
+                "y": 156
+              }
+            ],
+            "size": 8
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-03-mug_to_book-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-03T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "840f5064b583cc2fa085d6f755e504a0cc5e21e25d5bf720d211f143147258b9",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-03-mug_to_book-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "mug_to_book",
+      "percentile": 0.76,
+      "puzzle_date": "2026-07-03",
+      "raw": 0.29,
+      "ref_version": "phase2-heuristic-mug-book-tau30-2026-06-29",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#315f9d",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 258
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 208,
+                "y": 142
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 208,
+                "y": 376
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-03-mug_to_book-fast",
+      "user_id": "seed-ghost-fast"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-04T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "1cca192aa98b4e9f962a4ae2cbe63be654289bb906c0bde378181d6bee6b4db6",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-04-book_to_car-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "book_to_car",
+      "percentile": 0.96,
+      "puzzle_date": "2026-07-04",
+      "raw": 0.8540000000000001,
+      "ref_version": "phase2-heuristic-book-car-tau30-2026-06-29",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 132,
+                "y": 300
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 380,
+                "y": 300
+              }
+            ],
+            "size": 92
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 194,
+                "y": 268
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 236,
+                "y": 220
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 318,
+                "y": 220
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 360,
+                "y": 268
+              }
+            ],
+            "size": 50
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 126,
+                "y": 258
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 386,
+                "y": 258
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 386,
+                "y": 340
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 126,
+                "y": 340
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 126,
+                "y": 258
+              }
+            ],
+            "size": 10
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 232,
+                "y": 246
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 310,
+                "y": 246
+              }
+            ],
+            "size": 30
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 178,
+                "y": 354
+              }
+            ],
+            "size": 48
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 334,
+                "y": 354
+              }
+            ],
+            "size": 48
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 178,
+                "y": 354
+              }
+            ],
+            "size": 18
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 334,
+                "y": 354
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-04-book_to_car-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-04T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "f032c53370145f91ae05f7b6ee45c7d03a7f70d137f6438c4da27f51a0afa39d",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-04-book_to_car-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "book_to_car",
+      "percentile": 0.76,
+      "puzzle_date": "2026-07-04",
+      "raw": 0.34,
+      "ref_version": "phase2-heuristic-book-car-tau30-2026-06-29",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 154,
+                "y": 300
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 358,
+                "y": 300
+              }
+            ],
+            "size": 86
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 178,
+                "y": 352
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 334,
+                "y": 352
+              }
+            ],
+            "size": 44
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-04-book_to_car-fast",
+      "user_id": "seed-ghost-fast"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-05T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "b8a1aee2bfcf7e32b0106ca65b07395fc4a8c1e7bedabde7b1493d2b01982716",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-05-chair_to_car-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "chair_to_car",
+      "percentile": 0.96,
+      "puzzle_date": "2026-07-05",
+      "raw": 0.786,
+      "ref_version": "phase2-heuristic-chair-car-tau30-2026-06-29",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 132,
+                "y": 300
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 380,
+                "y": 300
+              }
+            ],
+            "size": 92
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 194,
+                "y": 268
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 236,
+                "y": 220
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 318,
+                "y": 220
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 360,
+                "y": 268
+              }
+            ],
+            "size": 50
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 126,
+                "y": 258
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 386,
+                "y": 258
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 386,
+                "y": 340
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 126,
+                "y": 340
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 126,
+                "y": 258
+              }
+            ],
+            "size": 10
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 232,
+                "y": 246
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 310,
+                "y": 246
+              }
+            ],
+            "size": 30
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 178,
+                "y": 354
+              }
+            ],
+            "size": 48
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 334,
+                "y": 354
+              }
+            ],
+            "size": 48
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 178,
+                "y": 354
+              }
+            ],
+            "size": 18
+          },
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 334,
+                "y": 354
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-05-chair_to_car-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-05T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "885e252621773ade129c15c5fc6f819b46349dbb606a84be0cf0a1e30bda9290",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-05-chair_to_car-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "chair_to_car",
+      "percentile": 0.76,
+      "puzzle_date": "2026-07-05",
+      "raw": 0.25,
+      "ref_version": "phase2-heuristic-chair-car-tau30-2026-06-29",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 154,
+                "y": 300
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 358,
+                "y": 300
+              }
+            ],
+            "size": 86
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 178,
+                "y": 352
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 334,
+                "y": 352
+              }
+            ],
+            "size": 44
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-05-chair_to_car-fast",
+      "user_id": "seed-ghost-fast"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-06T00:00:00+00:00",
+      "display_name": "Seed Ghost",
+      "friend_code": "",
+      "image_hash": "4ab92e4ede5068ffd4dc87a54045e27ea7d769b67d4d7c4d6517178b9b74aec5",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-06-apple_to_baseball-score.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "apple_to_baseball",
+      "percentile": 0.96,
+      "puzzle_date": "2026-07-06",
+      "raw": 1.0,
+      "ref_version": "approved-seed-heuristic-color-shape-v1-apple-baseball-tau30-2026-06-30",
+      "score": 960,
+      "season_id": "season-1",
+      "stroke_count": 8,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#2b2722",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 138
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 338.6,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 374,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 338.6,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 4,
+                "x": 256,
+                "y": 374
+              },
+              {
+                "pressure": 0.5,
+                "t": 5,
+                "x": 173.4,
+                "y": 338.6
+              },
+              {
+                "pressure": 0.5,
+                "t": 6,
+                "x": 138,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 7,
+                "x": 173.4,
+                "y": 173.4
+              },
+              {
+                "pressure": 0.5,
+                "t": 8,
+                "x": 256,
+                "y": 138
+              }
+            ],
+            "size": 10
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 188,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 156,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 158,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 192,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 324,
+                "y": 148
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 356,
+                "y": 222
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 354,
+                "y": 298
+              },
+              {
+                "pressure": 0.5,
+                "t": 3,
+                "x": 320,
+                "y": 366
+              }
+            ],
+            "size": 14
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 188,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 170,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 168,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 190,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 172,
+                "y": 298
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 214
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 324,
+                "y": 224
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 342,
+                "y": 236
+              }
+            ],
+            "size": 8
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 344,
+                "y": 276
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 322,
+                "y": 286
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 340,
+                "y": 298
+              }
+            ],
+            "size": 8
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-06-apple_to_baseball-score",
+      "user_id": "seed-ghost-score"
+    },
+    {
+      "bucket": "fooled",
+      "created_at": "2026-07-06T00:00:00+00:00",
+      "display_name": "Fast Ghost",
+      "friend_code": "",
+      "image_hash": "13d3165f67f4495c8942ff06fc6e0196a1a52e8d20a6808073d7c98bcaf4dd05",
+      "image_ref": "file:data/competition/seed_ghost_images/seed-2026-07-06-apple_to_baseball-fast.png",
+      "model_version": "heuristic-color-shape-v1",
+      "moderation": "pass",
+      "ocr_cheat": false,
+      "pair_id": "apple_to_baseball",
+      "percentile": 0.76,
+      "puzzle_date": "2026-07-06",
+      "raw": 0.9584548411837885,
+      "ref_version": "approved-seed-heuristic-color-shape-v1-apple-baseball-tau30-2026-06-30",
+      "score": 760,
+      "season_id": "season-1",
+      "stroke_count": 2,
+      "stroke_log": {
+        "strokes": [
+          {
+            "color": "#fffdf7",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 256,
+                "y": 256
+              }
+            ],
+            "size": 128
+          },
+          {
+            "color": "#d7472f",
+            "mode": "draw",
+            "points": [
+              {
+                "pressure": 0.5,
+                "t": 0,
+                "x": 198,
+                "y": 162
+              },
+              {
+                "pressure": 0.5,
+                "t": 1,
+                "x": 168,
+                "y": 256
+              },
+              {
+                "pressure": 0.5,
+                "t": 2,
+                "x": 198,
+                "y": 350
+              }
+            ],
+            "size": 18
+          }
+        ]
+      },
+      "submission_id": "seed-2026-07-06-apple_to_baseball-fast",
+      "user_id": "seed-ghost-fast"
+    }
+  ]
+}
