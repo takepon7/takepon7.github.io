@@ -229,6 +229,11 @@ app.innerHTML = `
           </span>
         </label>
         <div class="status"><span class="status-dot" id="status-dot"></span><span id="status-text">接続中</span></div>
+        <nav class="policy-links" aria-label="公開情報">
+          <a id="privacy-link" href="/privacy.html">Privacy</a>
+          <a id="terms-link" href="/terms.html">Terms</a>
+          <a id="safety-link" href="/safety.html">Safety</a>
+        </nav>
       </div>
     </header>
     <section class="workspace">

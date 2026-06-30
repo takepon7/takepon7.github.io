@@ -173,6 +173,26 @@ button {
   background: #2c8a5a;
 }
 
+.policy-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.policy-links a {
+  color: #5b554e;
+  text-decoration: none;
+}
+
+.policy-links a:hover,
+.policy-links a:focus-visible {
+  color: #1f5f4a;
+  text-decoration: underline;
+}
+
 .workspace {
   display: grid;
   grid-template-columns: minmax(260px, 340px) minmax(420px, 1fr) minmax(280px, 360px);
@@ -856,6 +876,12 @@ button {
     align-items: stretch;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .policy-links {
+    justify-content: flex-end;
+    width: 100%;
+    flex-wrap: wrap;
   }
 
   .player,

@@ -60,7 +60,7 @@ Expected state:
 - Production JS has no localhost API default.
 - Seed ghosts and first-play flow pass.
 - Phase 5 budget gate passes.
-- Public metadata, PWA manifest, social creatives, and marketing docs pass.
+- Public metadata, PWA manifest, policy pages, social creatives, and marketing docs pass.
 
 ## CI
 

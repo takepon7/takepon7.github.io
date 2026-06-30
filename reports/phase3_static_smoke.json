@@ -25,6 +25,7 @@
     "premium_pass_redeem": true,
     "production_api_base_not_localhost": true,
     "publish_brand_assets": true,
+    "publish_legal_pages": true,
     "publish_metadata": true,
     "responsive_css": true,
     "result_percentile_display": true,
@@ -72,7 +73,10 @@
     "/Users/ryosuke/dev/new_game/web/dist/brand/apple-touch-icon.png",
     "/Users/ryosuke/dev/new_game/web/dist/brand/favicon-32.png",
     "/Users/ryosuke/dev/new_game/web/dist/site.webmanifest",
-    "/Users/ryosuke/dev/new_game/web/dist/robots.txt"
+    "/Users/ryosuke/dev/new_game/web/dist/robots.txt",
+    "/Users/ryosuke/dev/new_game/web/dist/privacy.html",
+    "/Users/ryosuke/dev/new_game/web/dist/terms.html",
+    "/Users/ryosuke/dev/new_game/web/dist/safety.html"
   ],
   "replay_base_ids": [
     "apple",
@@ -87,9 +91,9 @@
     "tomato"
   ],
   "scripts": [
-    "/assets/index-TBUKSvgX.js"
+    "/assets/index-BZEAgW34.js"
   ],
   "styles": [
-    "/assets/index-Biya7LHZ.css"
+    "/assets/index-uaVlw82J.css"
   ]
 }

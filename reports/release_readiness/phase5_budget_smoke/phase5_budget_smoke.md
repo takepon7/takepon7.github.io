@@ -1,6 +1,6 @@
 # Phase 5 Layer2 budget smoke
 
-- generated_at: `2026-06-30T09:32:25.076812+00:00`
+- generated_at: `2026-06-30T09:43:08.956822+00:00`
 - request_count: `25`
 - mode: `hero`
 - daily_cap_units: `5`

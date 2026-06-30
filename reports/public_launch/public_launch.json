@@ -26,6 +26,11 @@
       "status": "pass"
     },
     {
+      "detail": "{\"linked_from_app\": [\"/privacy.html\", \"/terms.html\", \"/safety.html\"], \"pages\": {\"privacy\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/privacy.html\"}, \"safety\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/safety.html\"}, \"terms\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/terms.html\"}}}",
+      "name": "public_policy_pages_ready",
+      "status": "pass"
+    },
+    {
       "detail": "marketing, asset, copy, press, and deployment docs exist",
       "name": "launch_docs_exist",
       "status": "pass"
@@ -45,7 +50,7 @@
   "summary": {
     "failed_checks": 0,
     "manual_followups": 3,
-    "passed_checks": 8
+    "passed_checks": 9
   },
   "valid": true,
   "warnings": [

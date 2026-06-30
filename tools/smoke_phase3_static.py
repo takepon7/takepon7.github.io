@@ -86,6 +86,12 @@ def main() -> None:
         "提出画像を再生できません",
         "本日の挑戦回数",
         "まだ鑑定前です",
+        "privacy-link",
+        "terms-link",
+        "safety-link",
+        "/privacy.html",
+        "/terms.html",
+        "/safety.html",
     ]
     required_style_tokens = [
         ".draw-canvas",
@@ -107,6 +113,7 @@ def main() -> None:
         ".proposal-button",
         ".daily-select",
         ".palette-select",
+        ".policy-links",
         ".segment",
         "@media",
         ".scan-line",
@@ -140,6 +147,9 @@ def main() -> None:
         ROOT / "web" / "dist" / "brand" / "favicon-32.png",
         ROOT / "web" / "dist" / "site.webmanifest",
         ROOT / "web" / "dist" / "robots.txt",
+        ROOT / "web" / "dist" / "privacy.html",
+        ROOT / "web" / "dist" / "terms.html",
+        ROOT / "web" / "dist" / "safety.html",
     ]
     missing_public_assets = [str(path) for path in public_assets if not path.exists()]
     client_base_ids = set(re.findall(r'objectId === "([^"]+)"', source_ts))
@@ -223,6 +233,7 @@ def main() -> None:
             "client_canvas_locks_while_busy": replay_locks_canvas,
             "publish_metadata": True,
             "publish_brand_assets": True,
+            "publish_legal_pages": True,
             "production_api_base_not_localhost": True,
         },
     }

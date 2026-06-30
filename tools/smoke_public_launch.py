@@ -105,6 +105,21 @@ def smoke_public_launch(
         "manifest includes standalone app metadata and install icons",
     )
 
+    legal_pages = {
+        "privacy": (web_dist_dir / "privacy.html", ["Privacy Policy", "取得する情報", "削除"]),
+        "terms": (web_dist_dir / "terms.html", ["Terms of Use", "禁止事項", "投稿コンテンツ"]),
+        "safety": (web_dist_dir / "safety.html", ["Safety Guidelines", "不正対策", "共有時の注意"]),
+    }
+    legal_results = validate_text_pages(legal_pages)
+    legal_links = [token for token in ("/privacy.html", "/terms.html", "/safety.html") if token in js_text]
+    add_check(
+        checks,
+        errors,
+        "public_policy_pages_ready",
+        all(item["ok"] for item in legal_results.values()) and len(legal_links) == 3,
+        json.dumps({"pages": legal_results, "linked_from_app": legal_links}, sort_keys=True),
+    )
+
     docs = {
         "marketing_plan": ROOT / "docs" / "marketing" / "marketing_plan.md",
         "asset_manifest": ROOT / "docs" / "marketing" / "asset_manifest.md",
@@ -187,6 +202,18 @@ def validate_images(expected: dict[str, tuple[Path, tuple[int, int]]]) -> dict[s
             "expected": size,
             "actual": actual,
         }
+    return results
+
+
+def validate_text_pages(expected: dict[str, tuple[Path, list[str]]]) -> dict[str, dict[str, Any]]:
+    results: dict[str, dict[str, Any]] = {}
+    for name, (path, tokens) in expected.items():
+        if not path.exists():
+            results[name] = {"ok": False, "path": str(path), "missing": tokens}
+            continue
+        text = path.read_text(encoding="utf-8")
+        missing = [token for token in tokens if token not in text]
+        results[name] = {"ok": not missing, "path": str(path), "missing": missing}
     return results
 
 
