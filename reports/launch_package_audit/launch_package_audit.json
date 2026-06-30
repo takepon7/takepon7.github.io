@@ -36,7 +36,7 @@
       "status": "pass"
     },
     {
-      "detail": "real_model_pairs=1 backlog=6",
+      "detail": "real_model_pairs=6 backlog=1",
       "name": "real_model_expansion_backlog_ready",
       "status": "pass"
     },
@@ -59,7 +59,7 @@
   ],
   "summary": {
     "failed_checks": 0,
-    "first_play_submission_id": "d09eebf1cd0d47deb5586ee5f7f1a2ba",
+    "first_play_submission_id": "c6fd900bfef34b8d88c10c767eb2cfdf",
     "latest_date": "2026-07-06",
     "latest_pair_id": "apple_to_baseball",
     "manual_followups": 3,

@@ -4,7 +4,7 @@
 - season_id: `season-1`
 - today: `2026-07-06`
 - pair_id: `apple_to_baseball`
-- submission_id: `d09eebf1cd0d47deb5586ee5f7f1a2ba`
+- submission_id: `c6fd900bfef34b8d88c10c767eb2cfdf`
 - score: `667`
 - percentile: `0.6666666666666666`
 - passed_checks: `38`
@@ -29,7 +29,7 @@
 | submission_accepts_replayable_drawing | pass | status 200 |
 | score_leaderboard_loads_after_submit | pass | status 200 |
 | friend_leaderboard_loads_after_submit | pass | status 200 |
-| friend_ladder_contains_player | pass | ['d09eebf1cd0d47deb5586ee5f7f1a2ba'] |
+| friend_ladder_contains_player | pass | ['c6fd900bfef34b8d88c10c767eb2cfdf'] |
 | friend_ghost_loads_after_submit | pass | status 200 |
 | friend_ghost_includes_stroke_log | pass | friend ghost exposes replayable strokes |
 | share_card_generates_png | pass | status 200 |

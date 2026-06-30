@@ -3,7 +3,7 @@
 - valid: `true`
 - latest_date: `2026-07-06`
 - latest_pair_id: `apple_to_baseball`
-- first_play_submission_id: `d09eebf1cd0d47deb5586ee5f7f1a2ba`
+- first_play_submission_id: `c6fd900bfef34b8d88c10c767eb2cfdf`
 - passed_checks: `10`
 - failed_checks: `0`
 - manual_followups: `3`
@@ -17,7 +17,7 @@
 | marketing_docs_ready | pass | all launch docs exist |
 | closed_playtest_kit_ready | pass | {"missing_docs": [], "missing_tokens": []} |
 | production_env_template_ready | pass | passed=9 failed=0 |
-| real_model_expansion_backlog_ready | pass | real_model_pairs=1 backlog=6 |
+| real_model_expansion_backlog_ready | pass | real_model_pairs=6 backlog=1 |
 | imagegen_assets_ready | pass | {"missing_assets": [], "missing_share_cards": [], "share_card_examples": 5} |
 | policy_pages_ready | pass | privacy, terms, and safety pages exist |
 

@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | canonical_files_exist | pass | all canonical files exist |
 | pairs_are_available | pass | 7 pairs |
-| seed_scores_are_available | pass | 10 seed score refs |
+| seed_scores_are_available | pass | 15 seed score refs |
 | daily_puzzles_are_available | pass | 8 daily puzzles |
 | seed_ghosts_are_available | pass | 16 seed ghosts |
 | daily_dates_are_unique | pass | DailyPuzzle dates are unique |
@@ -38,7 +38,7 @@
 ## First Play
 
 - valid: `true`
-- submission_id: `9cc955c044424210b07c27e839ebb3bf`
+- submission_id: `c4455a6f3275430587bb43c6e670d78a`
 - score: `667`
 
 ## Phase 5 Budget

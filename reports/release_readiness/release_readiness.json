@@ -136,7 +136,7 @@
       "status": "pass"
     },
     {
-      "detail": "10 seed score refs",
+      "detail": "15 seed score refs",
       "name": "seed_scores_are_available",
       "status": "pass"
     },
@@ -212,7 +212,7 @@
       "passed_checks": 38,
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "9cc955c044424210b07c27e839ebb3bf",
+      "submission_id": "c4455a6f3275430587bb43c6e670d78a",
       "today": "2026-07-06"
     },
     "valid": true
@@ -235,7 +235,7 @@
     "daily_spend": 5,
     "degraded_gracefully": true,
     "gate_passed": true,
-    "generated_at": "2026-06-30T10:45:23.351080+00:00",
+    "generated_at": "2026-06-30T12:35:27.566516+00:00",
     "markdown": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.md",
     "mode": "hero",
     "report": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.json",
@@ -263,7 +263,7 @@
       "preview_today": "2026-07-06",
       "promotion_errors": 0,
       "seed_ghost_count": 16,
-      "seed_score_count": 10
+      "seed_score_count": 15
     },
     "valid": true,
     "warnings": [
@@ -296,7 +296,7 @@
     "pair_count": 7,
     "passed_checks": 15,
     "seed_ghost_count": 16,
-    "seed_score_count": 10
+    "seed_score_count": 15
   },
   "valid": true,
   "warnings": [],

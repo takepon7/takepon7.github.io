@@ -1,0 +1,84 @@
+{
+  "qualities": [
+    {
+      "accepted": false,
+      "measured_difficulty": "hard",
+      "p10": 0.16881210556955784,
+      "p50": 0.19874026954806842,
+      "p90": 0.20238574720437252,
+      "pair_id": "balloon_to_baseball",
+      "ref_version": "approved-seed-siglip-google-siglip-base-patch16-224-fp32-balloon-baseball-tau30-2026-06-30",
+      "rejection_reasons": [
+        "spread_below_floor"
+      ],
+      "spread": 0.03357364163481469
+    },
+    {
+      "accepted": false,
+      "measured_difficulty": "hard",
+      "p10": 0.19310363754499107,
+      "p50": 0.1932256159293338,
+      "p90": 0.19913024692889106,
+      "pair_id": "book_to_car",
+      "ref_version": "approved-seed-siglip-google-siglip-base-patch16-224-fp32-book-car-tau30-2026-06-30",
+      "rejection_reasons": [
+        "spread_below_floor",
+        "p90_below_impossible_floor"
+      ],
+      "spread": 0.0060266093838999835
+    },
+    {
+      "accepted": false,
+      "measured_difficulty": "hard",
+      "p10": 0.18308824841136634,
+      "p50": 0.19501920125914804,
+      "p90": 0.19713920871773963,
+      "pair_id": "chair_to_car",
+      "ref_version": "approved-seed-siglip-google-siglip-base-patch16-224-fp32-chair-car-tau30-2026-06-30",
+      "rejection_reasons": [
+        "spread_below_floor",
+        "p90_below_impossible_floor"
+      ],
+      "spread": 0.014050960306373289
+    },
+    {
+      "accepted": false,
+      "measured_difficulty": "hard",
+      "p10": 0.16686782114494325,
+      "p50": 0.1782193131877192,
+      "p90": 0.20136909031003797,
+      "pair_id": "mug_to_book",
+      "ref_version": "approved-seed-siglip-google-siglip-base-patch16-224-fp32-mug-book-tau30-2026-06-30",
+      "rejection_reasons": [
+        "spread_below_floor"
+      ],
+      "spread": 0.03450126916509472
+    },
+    {
+      "accepted": false,
+      "measured_difficulty": "normal",
+      "p10": 0.20123926548596116,
+      "p50": 0.2196906489107138,
+      "p90": 0.22230072056739905,
+      "pair_id": "orange_to_tennis_ball",
+      "ref_version": "approved-seed-siglip-google-siglip-base-patch16-224-fp32-orange-tennis_ball-tau30-2026-06-30",
+      "rejection_reasons": [
+        "spread_below_floor"
+      ],
+      "spread": 0.02106145508143789
+    },
+    {
+      "accepted": false,
+      "measured_difficulty": "normal",
+      "p10": 0.1802345463144816,
+      "p50": 0.20216578074694966,
+      "p90": 0.21896033074466767,
+      "pair_id": "tomato_to_baseball",
+      "ref_version": "approved-seed-siglip-google-siglip-base-patch16-224-fp32-tomato-baseball-tau30-2026-06-30",
+      "rejection_reasons": [
+        "spread_below_floor"
+      ],
+      "spread": 0.03872578443018607
+    }
+  ]
+}

@@ -270,14 +270,15 @@ def test_daily_puzzle_endpoint_auto_selects_compatible_model_ref(monkeypatch) ->
 
 
 def test_daily_puzzle_endpoint_rejects_date_without_compatible_model_ref(monkeypatch) -> None:
-    monkeypatch.setenv("GITAI_TODAY", "2026-07-02")
+    monkeypatch.setenv("GITAI_TODAY", "2026-07-06")
     monkeypatch.delenv("GITAI_DAILY_REF_VERSION", raising=False)
     client = client_for_tests(judge=OpenClipVersionOnlyJudge())
 
-    response = client.get("/v1/daily-puzzle?date=2026-07-01")
+    # 2026-07-05 is the chair_to_car day, the only pair with no real-model SeedScore.
+    response = client.get("/v1/daily-puzzle?date=2026-07-05")
 
     assert response.status_code == 404
-    assert "No seed score ref for pair_id=orange_to_tennis_ball" in response.json()["detail"]
+    assert "No seed score ref for pair_id=chair_to_car" in response.json()["detail"]
 
 
 def test_daily_puzzle_endpoint_does_not_jump_to_future_pack_day(monkeypatch) -> None:

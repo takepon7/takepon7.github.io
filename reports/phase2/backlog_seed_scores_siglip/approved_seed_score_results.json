@@ -1,0 +1,688 @@
+{
+  "results": [
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "baseball",
+        "balloon",
+        "tennis ball",
+        "orange",
+        "apple"
+      ],
+      "case_id": "balloon_to_baseball_weak_backlog-",
+      "confidences": {
+        "Cx": 0.20325645028981185,
+        "Cy": 0.20248681603210125,
+        "negs": [
+          0.25764291790261523,
+          0.1743799739502152,
+          0.16223384182525644
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5962591505175099,
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/balloon_to_baseball-backlog--weak.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "balloon_to_baseball",
+      "probabilities": [
+        0.20248681603210125,
+        0.20325645028981185,
+        0.25764291790261523,
+        0.1743799739502152,
+        0.16223384182525644
+      ],
+      "raw": 0.16133006457493018,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "baseball",
+        "balloon",
+        "tennis ball",
+        "orange",
+        "apple"
+      ],
+      "case_id": "balloon_to_baseball_medium_backlog-",
+      "confidences": {
+        "Cx": 0.1895198674524585,
+        "Cy": 0.2452130059294336,
+        "negs": [
+          0.25023994497938873,
+          0.14024432203267798,
+          0.17478285960604106
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5869153180737678,
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/balloon_to_baseball-backlog--medium.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "balloon_to_baseball",
+      "probabilities": [
+        0.2452130059294336,
+        0.1895198674524585,
+        0.25023994497938873,
+        0.14024432203267798,
+        0.17478285960604106
+      ],
+      "raw": 0.19874026954806842,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "baseball",
+        "balloon",
+        "tennis ball",
+        "orange",
+        "apple"
+      ],
+      "case_id": "balloon_to_baseball_strong_backlog-",
+      "confidences": {
+        "Cx": 0.17281071759096064,
+        "Cy": 0.24576855738070305,
+        "negs": [
+          0.2488252628243322,
+          0.14211788813579718,
+          0.19047757406820692
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.587539189832308,
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/balloon_to_baseball-backlog--strong.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "balloon_to_baseball",
+      "probabilities": [
+        0.24576855738070305,
+        0.17281071759096064,
+        0.2488252628243322,
+        0.14211788813579718,
+        0.19047757406820692
+      ],
+      "raw": 0.20329711661844857,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "car",
+        "book",
+        "mug",
+        "chair",
+        "banana"
+      ],
+      "case_id": "book_to_car_weak_backlog-",
+      "confidences": {
+        "Cx": 0.19099255126279663,
+        "Cy": 0.23865434521063714,
+        "negs": [
+          0.12053989449098305,
+          0.28180546301585896,
+          0.16800774601972424
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5697572009176768,
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/book_to_car-backlog--weak.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "book_to_car",
+      "probabilities": [
+        0.23865434521063714,
+        0.19099255126279663,
+        0.12053989449098305,
+        0.28180546301585896,
+        0.16800774601972424
+      ],
+      "raw": 0.19307314294890537,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "car",
+        "book",
+        "mug",
+        "chair",
+        "banana"
+      ],
+      "case_id": "book_to_car_medium_backlog-",
+      "confidences": {
+        "Cx": 0.2014123622266355,
+        "Cy": 0.2419591874325637,
+        "negs": [
+          0.13668008626842235,
+          0.25738964806050957,
+          0.16255871601186894
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5827318544276128,
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/book_to_car-backlog--medium.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "book_to_car",
+      "probabilities": [
+        0.2419591874325637,
+        0.2014123622266355,
+        0.13668008626842235,
+        0.25738964806050957,
+        0.16255871601186894
+      ],
+      "raw": 0.1932256159293338,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "car",
+        "book",
+        "mug",
+        "chair",
+        "banana"
+      ],
+      "case_id": "book_to_car_strong_backlog-",
+      "confidences": {
+        "Cx": 0.19810845957427312,
+        "Cy": 0.2501665057749303,
+        "negs": [
+          0.14049764298435133,
+          0.2506131182008056,
+          0.16061427346563956
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5836323561569765,
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/book_to_car-backlog--strong.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "book_to_car",
+      "probabilities": [
+        0.2501665057749303,
+        0.19810845957427312,
+        0.14049764298435133,
+        0.2506131182008056,
+        0.16061427346563956
+      ],
+      "raw": 0.20060640467878038,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "car",
+        "chair",
+        "book",
+        "mug",
+        "banana"
+      ],
+      "case_id": "chair_to_car_weak_backlog-",
+      "confidences": {
+        "Cx": 0.21417263615604132,
+        "Cy": 0.2515427938465612,
+        "negs": [
+          0.19282004058425606,
+          0.1275971901840097,
+          0.21386733922913176
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.58715618822093,
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/chair_to_car-backlog--weak.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "chair_to_car",
+      "probabilities": [
+        0.2515427938465612,
+        0.21417263615604132,
+        0.19282004058425606,
+        0.1275971901840097,
+        0.21386733922913176
+      ],
+      "raw": 0.19766921058238754,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "car",
+        "chair",
+        "book",
+        "mug",
+        "banana"
+      ],
+      "case_id": "chair_to_car_medium_backlog-",
+      "confidences": {
+        "Cx": 0.21242378523321018,
+        "Cy": 0.22868327765935917,
+        "negs": [
+          0.21928918966937588,
+          0.14025604197261893,
+          0.19934770546543565
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.596217667198305,
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/chair_to_car-backlog--medium.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "chair_to_car",
+      "probabilities": [
+        0.22868327765935917,
+        0.21242378523321018,
+        0.21928918966937588,
+        0.14025604197261893,
+        0.19934770546543565
+      ],
+      "raw": 0.1801055101994209,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "car",
+        "chair",
+        "book",
+        "mug",
+        "banana"
+      ],
+      "case_id": "chair_to_car_strong_backlog-",
+      "confidences": {
+        "Cx": 0.20540432950928242,
+        "Cy": 0.24543199579568595,
+        "negs": [
+          0.20858683147279122,
+          0.13950231120665207,
+          0.20107453201558845
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.594128448063044,
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/chair_to_car-backlog--strong.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "chair_to_car",
+      "probabilities": [
+        0.24543199579568595,
+        0.20540432950928242,
+        0.20858683147279122,
+        0.13950231120665207,
+        0.20107453201558845
+      ],
+      "raw": 0.19501920125914804,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "book",
+        "mug",
+        "car",
+        "chair",
+        "baseball"
+      ],
+      "case_id": "mug_to_book_weak_backlog-",
+      "confidences": {
+        "Cx": 0.10667650814470366,
+        "Cy": 0.18361763642147605,
+        "negs": [
+          0.2698907292964998,
+          0.15872877731225518,
+          0.2810863488250652
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.552311204823789,
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/mug_to_book-backlog--weak.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "mug_to_book",
+      "probabilities": [
+        0.18361763642147605,
+        0.10667650814470366,
+        0.2698907292964998,
+        0.15872877731225518,
+        0.2810863488250652
+      ],
+      "raw": 0.16402994813424923,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "book",
+        "mug",
+        "car",
+        "chair",
+        "baseball"
+      ],
+      "case_id": "mug_to_book_medium_backlog-",
+      "confidences": {
+        "Cx": 0.11290535545531308,
+        "Cy": 0.2009022535348442,
+        "negs": [
+          0.2457643066526364,
+          0.20256001612926328,
+          0.23786806822794299
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5786257490292028,
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/mug_to_book-backlog--medium.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "mug_to_book",
+      "probabilities": [
+        0.2009022535348442,
+        0.11290535545531308,
+        0.2457643066526364,
+        0.20256001612926328,
+        0.23786806822794299
+      ],
+      "raw": 0.1782193131877192,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "book",
+        "mug",
+        "car",
+        "chair",
+        "baseball"
+      ],
+      "case_id": "mug_to_book_strong_backlog-",
+      "confidences": {
+        "Cx": 0.11365744380190648,
+        "Cy": 0.233720623185692,
+        "negs": [
+          0.24467136114815782,
+          0.19364721606753527,
+          0.2143033557967085
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5793755121416333,
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/mug_to_book-backlog--strong.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "mug_to_book",
+      "probabilities": [
+        0.233720623185692,
+        0.11365744380190648,
+        0.24467136114815782,
+        0.19364721606753527,
+        0.2143033557967085
+      ],
+      "raw": 0.20715653459061767,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "tennis ball",
+        "orange",
+        "baseball",
+        "apple",
+        "tomato"
+      ],
+      "case_id": "orange_to_tennis_ball_weak_backlog-",
+      "confidences": {
+        "Cx": 0.20851455895355633,
+        "Cy": 0.24842708334572525,
+        "negs": [
+          0.20691501058591558,
+          0.16886794129359833,
+          0.16727540582120462
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.598305065693513,
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/orange_to_tennis_ball-backlog--weak.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "orange_to_tennis_ball",
+      "probabilities": [
+        0.24842708334572525,
+        0.20851455895355633,
+        0.20691501058591558,
+        0.16886794129359833,
+        0.16727540582120462
+      ],
+      "raw": 0.19662641962977298,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "tennis ball",
+        "orange",
+        "baseball",
+        "apple",
+        "tomato"
+      ],
+      "case_id": "orange_to_tennis_ball_medium_backlog-",
+      "confidences": {
+        "Cx": 0.16568183511184517,
+        "Cy": 0.2633175905263487,
+        "negs": [
+          0.2262275741153987,
+          0.1694220575539862,
+          0.17535094269242116
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5915015298365647,
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/orange_to_tennis_ball-backlog--medium.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "orange_to_tennis_ball",
+      "probabilities": [
+        0.2633175905263487,
+        0.16568183511184517,
+        0.2262275741153987,
+        0.1694220575539862,
+        0.17535094269242116
+      ],
+      "raw": 0.2196906489107138,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "tennis ball",
+        "orange",
+        "baseball",
+        "apple",
+        "tomato"
+      ],
+      "case_id": "orange_to_tennis_ball_strong_backlog-",
+      "confidences": {
+        "Cx": 0.18344435118708874,
+        "Cy": 0.27304108275497735,
+        "negs": [
+          0.23500840879469062,
+          0.1446347894749227,
+          0.16387136778832065
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5819077374315642,
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/orange_to_tennis_ball-backlog--strong.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "orange_to_tennis_ball",
+      "probabilities": [
+        0.27304108275497735,
+        0.18344435118708874,
+        0.23500840879469062,
+        0.1446347894749227,
+        0.16387136778832065
+      ],
+      "raw": 0.22295323848157034,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "baseball",
+        "tomato",
+        "apple",
+        "orange",
+        "tennis ball"
+      ],
+      "case_id": "tomato_to_baseball_weak_backlog-",
+      "confidences": {
+        "Cx": 0.15077594059113952,
+        "Cy": 0.23805941259798502,
+        "negs": [
+          0.1448761056940275,
+          0.1897659924462598,
+          0.27652254867058806
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5776596789699817,
+      "expected_quality": "weak",
+      "expected_rank": 0,
+      "image_path": "images/tomato_to_baseball-backlog--weak.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "tomato_to_baseball",
+      "probabilities": [
+        0.23805941259798502,
+        0.15077594059113952,
+        0.1448761056940275,
+        0.1897659924462598,
+        0.27652254867058806
+      ],
+      "raw": 0.20216578074694966,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "baseball",
+        "tomato",
+        "apple",
+        "orange",
+        "tennis ball"
+      ],
+      "case_id": "tomato_to_baseball_medium_backlog-",
+      "confidences": {
+        "Cx": 0.16601076788002625,
+        "Cy": 0.20953716304244274,
+        "negs": [
+          0.2014111589409145,
+          0.16634898333581935,
+          0.2566919268007971
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5957692447029403,
+      "expected_quality": "medium",
+      "expected_rank": 1,
+      "image_path": "images/tomato_to_baseball-backlog--medium.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "tomato_to_baseball",
+      "probabilities": [
+        0.20953716304244274,
+        0.16601076788002625,
+        0.2014111589409145,
+        0.16634898333581935,
+        0.2566919268007971
+      ],
+      "raw": 0.17475173770636457,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "bucket": "confused",
+      "candidate_labels": [
+        "baseball",
+        "tomato",
+        "apple",
+        "orange",
+        "tennis ball"
+      ],
+      "case_id": "tomato_to_baseball_strong_backlog-",
+      "confidences": {
+        "Cx": 0.13876002699828932,
+        "Cy": 0.25911357489169157,
+        "negs": [
+          0.1609701722054945,
+          0.15685135999187821,
+          0.2843048659126463
+        ]
+      },
+      "detected_text": [],
+      "entropy": 1.5661330597620358,
+      "expected_quality": "strong",
+      "expected_rank": 2,
+      "image_path": "images/tomato_to_baseball-backlog--strong.png",
+      "model_version": "siglip:google/siglip-base-patch16-224:fp32",
+      "ocr_cheat": false,
+      "pair_id": "tomato_to_baseball",
+      "probabilities": [
+        0.25911357489169157,
+        0.13876002699828932,
+        0.1609701722054945,
+        0.15685135999187821,
+        0.2843048659126463
+      ],
+      "raw": 0.22315896824409717,
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "seed_scores": [
+    {
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "pair_id": "balloon_to_baseball",
+      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-balloon-baseball-tau30-2026-06-30",
+      "scores_sorted": [
+        0.01284341159665145,
+        0.22603140603105815,
+        0.6511094384345139
+      ],
+      "stats": {
+        "max": 0.6511094384345139,
+        "mean": 0.2966614186874078,
+        "min": 0.01284341159665145,
+        "p10": 0.055481010483532794,
+        "p50": 0.22603140603105815,
+        "p90": 0.5660938319538227,
+        "std": 0.2653140645470632
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "pair_id": "book_to_car",
+      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-book-car-tau30-2026-06-30",
+      "scores_sorted": [
+        0.03531601113252659,
+        0.5862194032916829,
+        0.6047924278579384
+      ],
+      "stats": {
+        "max": 0.6047924278579384,
+        "mean": 0.4087759474273826,
+        "min": 0.03531601113252659,
+        "p10": 0.14549668956435785,
+        "p50": 0.5862194032916829,
+        "p90": 0.6010778229446873,
+        "std": 0.26418488768714377
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "pair_id": "chair_to_car",
+      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-chair-car-tau30-2026-06-30",
+      "scores_sorted": [
+        0.018079930045364255,
+        0.14152471539553146,
+        0.14674844299709355
+      ],
+      "stats": {
+        "max": 0.14674844299709355,
+        "mean": 0.10211769614599642,
+        "min": 0.018079930045364255,
+        "p10": 0.0427688871153977,
+        "p50": 0.14152471539553146,
+        "p90": 0.14570369747678114,
+        "std": 0.05946192860927767
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "pair_id": "mug_to_book",
+      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-mug-book-tau30-2026-06-30",
+      "scores_sorted": [
+        0.09135060636755991,
+        0.14528556538749374,
+        0.25656015489415424
+      ],
+      "stats": {
+        "max": 0.25656015489415424,
+        "mean": 0.16439877554973598,
+        "min": 0.09135060636755991,
+        "p10": 0.10213759817154669,
+        "p50": 0.14528556538749374,
+        "p90": 0.23430523699282216,
+        "std": 0.06878727999235425
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "pair_id": "orange_to_tennis_ball",
+      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-orange-tennis_ball-tau30-2026-06-30",
+      "scores_sorted": [
+        0.058549345068282715,
+        0.6858054550384369,
+        0.815513075762507
+      ],
+      "stats": {
+        "max": 0.815513075762507,
+        "mean": 0.5199559586230755,
+        "min": 0.058549345068282715,
+        "p10": 0.18400056706231357,
+        "p50": 0.6858054550384369,
+        "p90": 0.789571551617693,
+        "std": 0.33053296758674594
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    },
+    {
+      "model_version": "open_clip:ViT-L-14:openai:fp32",
+      "pair_id": "tomato_to_baseball",
+      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-tomato-baseball-tau30-2026-06-30",
+      "scores_sorted": [
+        0.017715155839235604,
+        0.4389157332683104,
+        0.5247262497533582
+      ],
+      "stats": {
+        "max": 0.5247262497533582,
+        "mean": 0.3271190462869681,
+        "min": 0.017715155839235604,
+        "p10": 0.10195527132505057,
+        "p50": 0.4389157332683104,
+        "p90": 0.5075641464563487,
+        "std": 0.22156855485831317
+      },
+      "tau": 30.0,
+      "template_set_id": "drawing_v1"
+    }
+  ]
+}

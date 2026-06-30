@@ -3,7 +3,7 @@
 - valid: `true`
 - season_id: `season-1`
 - pair_count: `7`
-- seed_score_count: `10`
+- seed_score_count: `15`
 - daily_count: `8`
 - planned_count: `1`
 - seed_ghost_count: `16`

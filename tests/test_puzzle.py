@@ -224,8 +224,10 @@ def test_seed_score_repository_finds_compatible_ref_by_pair_and_model() -> None:
         pair_id="apple_to_baseball",
         model_version="open_clip:ViT-L-14:openai:fp32",
     )
+    # chair_to_car is the one canonical pair that no real model could fool, so it
+    # still has no open_clip-compatible SeedScore ref and must return None.
     missing = refs.find_compatible(
-        pair_id="orange_to_tennis_ball",
+        pair_id="chair_to_car",
         model_version="open_clip:ViT-L-14:openai:fp32",
     )
 

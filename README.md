@@ -331,6 +331,39 @@ The command writes a promotion report and merged preview under
 `reports/phase2/seed_score_promotion/`. Add `--apply` only after reviewing the
 report; rejected quality rows are skipped unless `--allow-rejected` is set.
 
+When there is no operator-approved runtime queue, expand real-model coverage
+directly from the canonical pair specs instead. This renders the deterministic
+SeedAsset pack for every pair that still lacks a real-model SeedScore:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/build_seed_asset_pack_from_pairs.py
+```
+
+This writes a backlog pack under `data/puzzle/backlog_seed_asset_pack/` using the
+same `approved_seed_cases.json`/`approved_seed_pairs.json` layout, so it feeds the
+existing scoring and promotion tools unchanged. Score it with the real judges and
+promote the accepted rows:
+
+```bash
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+PYTHONPATH=src .venv310/bin/python tools/score_approved_seed_asset_pack.py \
+  --cases data/puzzle/backlog_seed_asset_pack/approved_seed_cases.json \
+  --images-root data/puzzle/backlog_seed_asset_pack \
+  --out-dir reports/phase2/backlog_seed_scores_open_clip \
+  --model open_clip
+PYTHONPATH=src .venv310/bin/python tools/promote_approved_seed_scores.py \
+  --draft-pairs data/puzzle/backlog_seed_asset_pack/approved_seed_pairs.json \
+  --draft-seed-scores reports/phase2/backlog_seed_scores_open_clip/approved_seed_scores.json \
+  --measured-quality reports/phase2/backlog_seed_scores_open_clip/approved_measured_quality.json \
+  --out-dir reports/phase2/seed_score_promotion_open_clip --apply
+```
+
+Running this on the checked-in pairs promoted OpenCLIP SeedScores for five of the
+six backlog pairs, lifting real-model pair coverage from one pair to six. Only
+`chair_to_car` remains heuristic-only: neither OpenCLIP nor SigLIP could be fooled
+by the deterministic chair-to-car disguise into a usable score spread, so the
+curation policy correctly rejects it rather than promoting a degenerate ref.
+
 Plan upcoming DailyPuzzle entries from accepted promoted SeedScores:
 
 ```bash
