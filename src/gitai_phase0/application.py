@@ -112,6 +112,9 @@ class SubmissionStore(Protocol):
     ) -> tuple[bool, int, str]:
         raise NotImplementedError
 
+    def list_content_reports(self, limit: int = 50) -> list[dict[str, Any]]:
+        raise NotImplementedError
+
 
 class AppraisalStore(Protocol):
     def get_cached_comment(self, submission_id: str) -> AppraisalComment | None:

@@ -47,6 +47,7 @@ GITAI_SEASON_LABEL="Season 1"
 GITAI_DAILY_LLM_SPEND_CAP=100
 GITAI_USER_DAILY_COMMENT_LIMIT=3
 GITAI_DAILY_SUBMISSION_LIMIT=10
+GITAI_OPERATOR_TOKEN=replace-with-long-random-token
 ```
 
 `GITAI_PUBLIC_WEB_URL` is rendered onto share cards. If it is unset, cards show
@@ -72,6 +73,13 @@ docker run --rm -p 8000:8000 \
 
 When serving the app and API from the same public origin, set
 `GITAI_CORS_ORIGINS` and `GITAI_PUBLIC_WEB_URL` to that origin.
+
+Operators can review in-app content reports with:
+
+```bash
+curl -H "X-Gitai-Operator-Token: $GITAI_OPERATOR_TOKEN" \
+  https://your-public-web-origin.example/v1/operator/content-reports
+```
 
 ## Preflight
 

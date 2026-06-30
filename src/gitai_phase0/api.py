@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query, Response
+from fastapi import FastAPI, Header, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -277,6 +277,25 @@ class ContentReportResponse(BaseModel):
     submission_id: str
     report_count: int
     status: str
+
+
+class OperatorContentReportEntryResponse(BaseModel):
+    report_id: str
+    submission_id: str
+    reporter_user_id: str
+    reason: str
+    note: str
+    created_at: str
+    puzzle_date: str
+    pair_id: str
+    display_name: str
+    score: int
+    moderation: str
+    ocr_cheat: bool
+
+
+class OperatorContentReportsResponse(BaseModel):
+    entries: list[OperatorContentReportEntryResponse]
 
 
 class AppraisalCommentMintResponse(BaseModel):
@@ -787,6 +806,33 @@ def create_app(state: AppState | None = None) -> FastAPI:
             status=result.status,
         )
 
+    @app.get("/v1/operator/content-reports", response_model=OperatorContentReportsResponse)
+    def operator_content_reports(
+        limit: int = Query(default=50, ge=1, le=200),
+        operator_token: str = Header(default="", alias="X-Gitai-Operator-Token"),
+    ) -> OperatorContentReportsResponse:
+        require_operator_token(operator_token)
+        service: AppState = app.state.gitai
+        return OperatorContentReportsResponse(
+            entries=[
+                OperatorContentReportEntryResponse(
+                    report_id=str(item["report_id"]),
+                    submission_id=str(item["submission_id"]),
+                    reporter_user_id=str(item["reporter_user_id"]),
+                    reason=str(item["reason"]),
+                    note=str(item["note"]),
+                    created_at=str(item["created_at"]),
+                    puzzle_date=str(item["puzzle_date"]),
+                    pair_id=str(item["pair_id"]),
+                    display_name=str(item["display_name"]),
+                    score=int(item["score"]),
+                    moderation=str(item["moderation"]),
+                    ocr_cheat=bool(item["ocr_cheat"]),
+                )
+                for item in service.submissions.list_content_reports(limit=limit)
+            ]
+        )
+
     @app.post("/v1/appraisal-comments", response_model=AppraisalCommentMintResponse)
     def appraisal_comment(request: AppraisalCommentRequest) -> AppraisalCommentMintResponse:
         service: AppState = app.state.gitai
@@ -1224,6 +1270,12 @@ def require_friend_code_for_kind(kind: LeaderboardKind, value: str) -> str:
     if kind == "friend" and not friend_code:
         raise HTTPException(status_code=400, detail="friend_code is required for friend leaderboard")
     return friend_code
+
+
+def require_operator_token(value: str) -> None:
+    expected = os.environ.get("GITAI_OPERATOR_TOKEN", "").strip()
+    if not expected or value != expected:
+        raise HTTPException(status_code=403, detail="operator token required")
 
 
 def build_season_from_env(active_model_version: str) -> SeasonSpec:

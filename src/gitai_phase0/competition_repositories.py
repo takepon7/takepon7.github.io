@@ -246,6 +246,48 @@ class SqliteSubmissionRepository:
             ).fetchone()
         return cursor.rowcount > 0, int(count["count"]), str(stored["report_id"])
 
+    def list_content_reports(self, limit: int = 50) -> list[dict[str, str | int]]:
+        with self._connect() as conn:
+            rows = conn.execute(
+                """
+                select
+                    cr.report_id,
+                    cr.submission_id,
+                    cr.reporter_user_id,
+                    cr.reason,
+                    cr.note,
+                    cr.created_at,
+                    s.puzzle_date,
+                    s.pair_id,
+                    s.display_name,
+                    s.score,
+                    s.moderation,
+                    s.ocr_cheat
+                from content_reports cr
+                join submissions s on s.submission_id = cr.submission_id
+                order by cr.created_at desc
+                limit ?
+                """,
+                (max(1, min(limit, 200)),),
+            ).fetchall()
+        return [
+            {
+                "report_id": str(row["report_id"]),
+                "submission_id": str(row["submission_id"]),
+                "reporter_user_id": str(row["reporter_user_id"]),
+                "reason": str(row["reason"]),
+                "note": str(row["note"]),
+                "created_at": str(row["created_at"]),
+                "puzzle_date": str(row["puzzle_date"]),
+                "pair_id": str(row["pair_id"]),
+                "display_name": str(row["display_name"]),
+                "score": int(row["score"]),
+                "moderation": str(row["moderation"]),
+                "ocr_cheat": int(row["ocr_cheat"]),
+            }
+            for row in rows
+        ]
+
     def funny_vote_count(self, submission_id: str) -> int:
         with self._connect() as conn:
             count = conn.execute(

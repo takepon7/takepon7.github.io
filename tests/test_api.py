@@ -1045,6 +1045,33 @@ def test_content_reports_are_recorded_once_per_reason(tmp_path: Path) -> None:
     assert missing.status_code == 404
 
 
+def test_operator_can_list_content_reports(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("GITAI_OPERATOR_TOKEN", "op-secret")
+    client = client_for_tests(db_path=tmp_path / "submissions.sqlite")
+    payload = payload_for("apple_baseball_good.png")
+    payload.update({"puzzle_date": "2026-06-29", "user_id": "artist", "display_name": "artist"})
+    submission = client.post("/v1/submissions", json=payload)
+    assert submission.status_code == 200
+    submission_id = submission.json()["submission_id"]
+    report = client.post(
+        "/v1/content-reports",
+        json={"submission_id": submission_id, "user_id": "viewer", "reason": "unsafe", "note": "review me"},
+    )
+    assert report.status_code == 200
+
+    denied = client.get("/v1/operator/content-reports")
+    listed = client.get("/v1/operator/content-reports", headers={"X-Gitai-Operator-Token": "op-secret"})
+
+    assert denied.status_code == 403
+    assert listed.status_code == 200
+    entries = listed.json()["entries"]
+    assert len(entries) == 1
+    assert entries[0]["submission_id"] == submission_id
+    assert entries[0]["reason"] == "unsafe"
+    assert entries[0]["note"] == "review me"
+    assert entries[0]["pair_id"] == "apple_to_baseball"
+
+
 def test_unknown_leaderboard_kind_is_rejected() -> None:
     client = client_for_tests()
     response = client.get("/v1/leaderboard?kind=weird")

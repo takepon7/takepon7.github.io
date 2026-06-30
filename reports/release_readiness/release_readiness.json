@@ -209,10 +209,10 @@
       "archived_submission_count": 8,
       "failed_checks": 0,
       "pair_id": "apple_to_baseball",
-      "passed_checks": 32,
+      "passed_checks": 34,
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "60822012b54a4139824e6b86a5f601b2",
+      "submission_id": "517a0ee990e84876a2709d20e6a6c539",
       "today": "2026-07-06"
     },
     "valid": true
@@ -235,7 +235,7 @@
     "daily_spend": 5,
     "degraded_gracefully": true,
     "gate_passed": true,
-    "generated_at": "2026-06-30T10:15:19.531837+00:00",
+    "generated_at": "2026-06-30T10:18:01.609378+00:00",
     "markdown": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.md",
     "mode": "hero",
     "report": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.json",

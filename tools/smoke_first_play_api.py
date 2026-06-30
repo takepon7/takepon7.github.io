@@ -103,6 +103,7 @@ def smoke_first_play_api(
             "GITAI_LAYER2_ACTOR": "null",
             "GITAI_DAILY_SUBMISSION_LIMIT": "10",
             "GITAI_PREMIUM_REDEEM_CODES": "SMOKEPASS:1",
+            "GITAI_OPERATOR_TOKEN": "SMOKEOP",
         }
         with patched_env(env, remove=("GITAI_DAILY_REF_VERSION", "GITAI_SEASON_MODEL_VERSION")):
             client = TestClient(create_app(build_state_from_env()))
@@ -302,6 +303,20 @@ def run_flow(
             "content_report_has_review_counter",
             report_response.json().get("report_count") == 1,
             str(report_response.json().get("status", "")),
+        )
+    operator_reports = client.get(
+        "/v1/operator/content-reports",
+        headers={"X-Gitai-Operator-Token": "SMOKEOP"},
+    )
+    add_response_check(checks, errors, "operator_content_reports_load", operator_reports)
+    if operator_reports.status_code == 200:
+        entries = operator_reports.json().get("entries", [])
+        add_check(
+            checks,
+            errors,
+            "operator_content_reports_include_submission",
+            any(item.get("submission_id") == submission_id for item in entries),
+            f"{len(entries)} reports",
         )
 
     appraisal = client.post(
