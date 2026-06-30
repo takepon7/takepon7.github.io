@@ -76,6 +76,35 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "all launch docs exist" if not missing_docs else f"missing={missing_docs}",
     )
 
+    playtest_docs = {
+        "closed_playtest_plan": ROOT / "docs" / "playtest" / "closed_playtest_plan.md",
+        "tester_invite": ROOT / "docs" / "playtest" / "tester_invite.md",
+        "feedback_form": ROOT / "docs" / "playtest" / "feedback_form.md",
+    }
+    missing_playtest_docs = [name for name, path in playtest_docs.items() if not path.exists()]
+    playtest_text = "\n".join(path.read_text(encoding="utf-8") for path in playtest_docs.values() if path.exists())
+    playtest_tokens = [
+        "20-50 outside testers",
+        "First submission completion rate",
+        "Bug feedback is below 20%",
+        "テストURL",
+        "Did you complete a first submission?",
+    ]
+    missing_playtest_tokens = [token for token in playtest_tokens if token not in playtest_text]
+    add_check(
+        checks,
+        errors,
+        "closed_playtest_kit_ready",
+        not missing_playtest_docs and not missing_playtest_tokens,
+        json.dumps(
+            {
+                "missing_docs": missing_playtest_docs,
+                "missing_tokens": missing_playtest_tokens,
+            },
+            sort_keys=True,
+        ),
+    )
+
     required_assets = {
         "og_image": ROOT / "web" / "public" / "brand" / "og-image.png",
         "marketing_hero": ROOT / "web" / "public" / "brand" / "marketing-hero-16x9.png",

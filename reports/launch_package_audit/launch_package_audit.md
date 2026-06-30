@@ -4,7 +4,7 @@
 - latest_date: `2026-07-06`
 - latest_pair_id: `apple_to_baseball`
 - first_play_submission_id: `d09eebf1cd0d47deb5586ee5f7f1a2ba`
-- passed_checks: `7`
+- passed_checks: `8`
 - failed_checks: `0`
 - manual_followups: `3`
 
@@ -15,6 +15,7 @@
 | first_play_flow_valid | pass | passed=38 failed=0 |
 | static_surface_valid | pass | checks=41 |
 | marketing_docs_ready | pass | all launch docs exist |
+| closed_playtest_kit_ready | pass | {"missing_docs": [], "missing_tokens": []} |
 | imagegen_assets_ready | pass | {"missing_assets": [], "missing_share_cards": [], "share_card_examples": 5} |
 | policy_pages_ready | pass | privacy, terms, and safety pages exist |
 

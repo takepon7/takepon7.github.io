@@ -12,6 +12,7 @@ Current public-launch entry points:
 - Marketing plan: `docs/marketing/marketing_plan.md`
 - Launch copy kit: `docs/marketing/launch_copy_kit.md`
 - Press one-pager: `docs/marketing/press_one_pager.md`
+- Closed playtest kit: `docs/playtest/`
 - Public launch smoke report: `reports/public_launch/public_launch.md`
 
 Run the main local quality gate:

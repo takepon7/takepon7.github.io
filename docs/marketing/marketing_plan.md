@@ -57,6 +57,7 @@ Revenue:
 Week -2 to -1: Closed Playtest
 
 - Recruit 20-50 testers from AI/game/dev communities.
+- Use `docs/playtest/closed_playtest_plan.md`, `tester_invite.md`, and `feedback_form.md` for the test run.
 - Measure: first submission rate, share-card click rate, second attempt rate.
 - Review in-app playtest feedback sentiment after every tester wave.
 - Collect 10-20 funny examples for launch posts.
