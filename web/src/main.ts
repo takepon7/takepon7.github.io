@@ -184,7 +184,7 @@ type Stroke = {
   points: StrokePoint[];
 };
 
-const API_BASE = import.meta.env.VITE_GITAI_API_BASE ?? "http://127.0.0.1:8000";
+const API_BASE = resolveApiBase();
 const HERO_APPRAISAL_PERCENTILE = 0.95;
 const defaultPalette: Cosmetic = {
   cosmetic_id: "palette-classic",
@@ -1494,7 +1494,7 @@ function setReady(ready: boolean, text: string): void {
 }
 
 async function fetchJson<T>(path: string): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`);
+  const response = await fetch(apiUrl(path));
   if (!response.ok) {
     throw new Error(`${response.status} ${response.statusText}`);
   }
@@ -1502,7 +1502,7 @@ async function fetchJson<T>(path: string): Promise<T> {
 }
 
 async function postJson<T>(path: string, payload: unknown): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`, {
+  const response = await fetch(apiUrl(path), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -1692,7 +1692,18 @@ function flashStatus(text: string): void {
 }
 
 function shareCardUrl(submissionId: string): string {
-  return `${API_BASE}/v1/share-card?submission_id=${encodeURIComponent(submissionId)}`;
+  return apiUrl(`/v1/share-card?submission_id=${encodeURIComponent(submissionId)}`);
+}
+
+function apiUrl(path: string): string {
+  return `${API_BASE}${path}`;
+}
+
+function resolveApiBase(): string {
+  const configured = import.meta.env.VITE_GITAI_API_BASE?.trim();
+  if (configured) return configured.replace(/\/+$/, "");
+  if (import.meta.env.DEV) return "http://127.0.0.1:8000";
+  return "";
 }
 
 function leaderboardUrl(date: string): string {

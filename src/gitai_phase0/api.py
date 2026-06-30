@@ -888,6 +888,7 @@ def create_app(state: AppState | None = None) -> FastAPI:
             image_bytes=image_bytes,
             comment=comment,
             season_label=season_label_for_response(service, submission.season_id),
+            public_url=os.environ.get("GITAI_PUBLIC_WEB_URL", "").strip(),
         )
         return Response(
             content=card.png,

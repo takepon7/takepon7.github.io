@@ -744,6 +744,7 @@ def test_share_card_endpoint_uses_cached_appraisal_comment(tmp_path: Path, monke
     db_path = tmp_path / "submissions.sqlite"
     image_store = MemorySubmissionImageStore()
     client = client_for_tests(db_path=db_path, image_store=image_store)
+    monkeypatch.setenv("GITAI_PUBLIC_WEB_URL", "https://gitai.example")
     payload = payload_for("apple_baseball_good.png")
     payload.update({"puzzle_date": "2026-06-29", "user_id": "share", "display_name": "share"})
     submission = client.post("/v1/submissions", json=payload)
@@ -763,10 +764,11 @@ def test_share_card_endpoint_uses_cached_appraisal_comment(tmp_path: Path, monke
         cost_units=0,
         day=date(2026, 6, 29),
     )
-    captured: dict[str, AppraisalComment | None] = {}
+    captured: dict[str, AppraisalComment | str | None] = {}
 
     def fake_build_share_card(**kwargs) -> ShareCard:
         captured["comment"] = kwargs["comment"]
+        captured["public_url"] = kwargs["public_url"]
         return ShareCard(png=b"\x89PNG\r\n\x1a\ncached", filename="cached.png")
 
     monkeypatch.setattr("gitai_phase0.api.build_share_card", fake_build_share_card)
@@ -775,6 +777,7 @@ def test_share_card_endpoint_uses_cached_appraisal_comment(tmp_path: Path, monke
 
     assert response.status_code == 200
     assert captured["comment"] == cached
+    assert captured["public_url"] == "https://gitai.example"
 
 
 def test_share_card_endpoint_rejects_ocr_cheat(tmp_path: Path) -> None:

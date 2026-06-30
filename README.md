@@ -535,7 +535,11 @@ PWA install metadata, and brand icons:
 The launch plan and generated-asset inventory live under `docs/marketing/`.
 Run `npm run check` and `tools/smoke_phase3_static.py` after changing metadata
 or brand assets; the static smoke verifies that the built app still contains the
-publish metadata and copied public assets.
+publish metadata and copied public assets. Production builds default to
+same-origin API requests; set `VITE_GITAI_API_BASE` only when the API is hosted
+on a separate origin. API deployments should set `GITAI_PUBLIC_WEB_URL` so share
+cards point at the public app instead of showing the fallback `gitai` footer.
+See `docs/deployment.md` for the deploy preflight.
 
 ## Phase 5 appraiser comments
 

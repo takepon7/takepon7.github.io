@@ -26,6 +26,7 @@ def build_share_card(
     image_bytes: bytes,
     comment: AppraisalComment | None = None,
     season_label: str = "",
+    public_url: str = "",
 ) -> ShareCard:
     art = Image.open(BytesIO(image_bytes)).convert("RGBA")
     appraisal = comment or comment_for_submission(submission, pair)
@@ -62,7 +63,7 @@ def build_share_card(
     draw.text((92, 1750), "今日のお題に挑戦", fill=(35, 32, 29, 255), font=body_font)
     footer = season_label or submission.season_id
     draw.text((92, 1814), footer, fill=(111, 64, 54, 255), font=small_font)
-    draw.text((92, 1856), "http://127.0.0.1:5173/", fill=(111, 64, 54, 255), font=small_font)
+    draw.text((92, 1856), public_url or "gitai", fill=(111, 64, 54, 255), font=small_font)
 
     out = BytesIO()
     card.convert("RGB").save(out, format="PNG", optimize=True)

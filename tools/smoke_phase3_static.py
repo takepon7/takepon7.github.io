@@ -114,6 +114,11 @@ def main() -> None:
 
     missing_runtime = [token for token in required_runtime_tokens if token not in js_text]
     missing_styles = [token for token in required_style_tokens if token not in css_text]
+    production_localhost_tokens = [
+        token
+        for token in ("http://127.0.0.1:8000", "http://localhost:8000")
+        if token in js_text
+    ]
     required_html_tokens = [
         "AIをだます擬態ドローイングゲーム",
         'property="og:image"',
@@ -154,6 +159,10 @@ def main() -> None:
     replay_locks_canvas = '"locked"' in source_ts and "setDrawingControlsDisabled(true)" in source_ts
     assert not missing_runtime, f"missing runtime tokens: {missing_runtime}"
     assert not missing_styles, f"missing style tokens: {missing_styles}"
+    assert not production_localhost_tokens, (
+        "production bundle must not default to localhost API: "
+        f"{production_localhost_tokens}"
+    )
     assert not missing_html, f"missing publish metadata tokens: {missing_html}"
     assert not missing_public_assets, f"missing public assets: {missing_public_assets}"
     assert not missing_replay_base_renderers, (
@@ -212,6 +221,7 @@ def main() -> None:
             "client_canvas_locks_while_busy": replay_locks_canvas,
             "publish_metadata": True,
             "publish_brand_assets": True,
+            "production_api_base_not_localhost": True,
         },
     }
     out = ROOT / "reports" / "phase3_static_smoke.json"
