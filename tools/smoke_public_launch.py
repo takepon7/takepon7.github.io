@@ -76,6 +76,16 @@ def smoke_public_launch(
         if not localhost_tokens
         else f"found: {localhost_tokens}",
     )
+    feedback_tokens = [token for token in ("/v1/playtest-feedback", "feedback-fun", "feedback-hard", "feedback-bug") if token in js_text]
+    add_check(
+        checks,
+        errors,
+        "playtest_feedback_surface_present",
+        len(feedback_tokens) == 4,
+        "result screen includes feedback submission controls"
+        if len(feedback_tokens) == 4
+        else f"found: {feedback_tokens}",
+    )
 
     expected_images = {
         "og_image": (web_dist_dir / "brand" / "og-image.png", (1200, 630)),
@@ -194,7 +204,7 @@ def smoke_public_launch(
     warnings.extend(
         [
             "Set real production origins in GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL before launch.",
-            "Run an external closed playtest; the automated smoke cannot prove player fun or acquisition metrics.",
+            "Run an external closed playtest; in-app feedback is wired, but automated smoke cannot prove player fun or acquisition metrics.",
             "Replace heuristic playtest content with broader real-model measured pairs before a serious public campaign.",
         ]
     )

@@ -123,6 +123,13 @@ type ContentReportResponse = {
   status: "recorded" | "duplicate";
 };
 
+type PlaytestFeedbackResponse = {
+  feedback_id: string;
+  submission_id: string;
+  sentiment: "fun" | "hard" | "bug";
+  status: "recorded" | "duplicate";
+};
+
 type AppraisalCommentResponse = {
   submission_id: string;
   comment: AppraisalComment;
@@ -336,6 +343,11 @@ app.innerHTML = `
             <div class="result-item"><span class="label">Bucket</span><strong id="bucket">--</strong></div>
           </div>
           <div class="rankline" id="rank-line">Rank --</div>
+          <div class="playtest-feedback" aria-label="Playtest feedback">
+            <button class="feedback-button" id="feedback-fun" type="button" disabled>楽しい</button>
+            <button class="feedback-button" id="feedback-hard" type="button" disabled>難しい</button>
+            <button class="feedback-button" id="feedback-bug" type="button" disabled>バグっぽい</button>
+          </div>
           <div class="leaderboard">
             <div class="leaderboard-title">
               <span class="label">Ranking</span>
@@ -412,6 +424,11 @@ const friendTab = byId<HTMLButtonElement>("friend-tab");
 const funnyTab = byId<HTMLButtonElement>("funny-tab");
 const shareCardButton = byId<HTMLButtonElement>("share-card-button");
 const appraiserButton = byId<HTMLButtonElement>("appraiser-button");
+const feedbackButtons = {
+  fun: byId<HTMLButtonElement>("feedback-fun"),
+  hard: byId<HTMLButtonElement>("feedback-hard"),
+  bug: byId<HTMLButtonElement>("feedback-bug"),
+};
 const ghostVoteButton = byId<HTMLButtonElement>("ghost-vote-button");
 const ghostReplayButton = byId<HTMLButtonElement>("ghost-replay-button");
 const ghostReportButton = byId<HTMLButtonElement>("ghost-report-button");
@@ -551,6 +568,15 @@ function setupTools(): void {
   });
   appraiserButton.addEventListener("click", () => {
     void requestAppraiserComment();
+  });
+  feedbackButtons.fun.addEventListener("click", () => {
+    void submitPlaytestFeedback("fun");
+  });
+  feedbackButtons.hard.addEventListener("click", () => {
+    void submitPlaytestFeedback("hard");
+  });
+  feedbackButtons.bug.addEventListener("click", () => {
+    void submitPlaytestFeedback("bug");
   });
   scoreTab.addEventListener("click", () => {
     void setLeaderboardKind("score");
@@ -1048,6 +1074,7 @@ function resetVerdict(): void {
   byId<HTMLSpanElement>("save-state").textContent = "未提出";
   shareCardButton.disabled = true;
   appraiserButton.disabled = true;
+  setFeedbackButtonsDisabled(true);
 }
 
 async function submitDrawing(): Promise<void> {
@@ -1104,6 +1131,7 @@ function renderResult(result: SubmissionResponse): void {
   byId<HTMLDivElement>("share-preview").style.backgroundImage = `url(${shareCardUrl(result.submission_id)})`;
   shareCardButton.disabled = false;
   appraiserButton.disabled = false;
+  setFeedbackButtonsDisabled(false);
   if (result.rewards.length > 0) {
     flashStatus(`${result.rewards[0].label} unlocked`);
   }
@@ -1689,6 +1717,36 @@ async function reportVisibleGhost(): Promise<void> {
   } finally {
     ghostReportButton.disabled = !visibleGhostSubmissionId;
   }
+}
+
+async function submitPlaytestFeedback(sentiment: PlaytestFeedbackResponse["sentiment"]): Promise<void> {
+  if (!lastSubmissionId) return;
+  setFeedbackButtonsDisabled(true);
+  try {
+    const result = await postJson<PlaytestFeedbackResponse>("/v1/playtest-feedback", {
+      submission_id: lastSubmissionId,
+      user_id: playerId,
+      sentiment,
+    });
+    flashStatus(result.status === "recorded" ? feedbackStatusText(result.sentiment) : "記録済み");
+  } catch (error) {
+    console.error(error);
+    flashStatus("記録できません");
+  } finally {
+    setFeedbackButtonsDisabled(!lastSubmissionId);
+  }
+}
+
+function setFeedbackButtonsDisabled(disabled: boolean): void {
+  for (const button of Object.values(feedbackButtons)) {
+    button.disabled = disabled;
+  }
+}
+
+function feedbackStatusText(sentiment: PlaytestFeedbackResponse["sentiment"]): string {
+  if (sentiment === "fun") return "楽しいを記録";
+  if (sentiment === "hard") return "難しいを記録";
+  return "バグっぽいを記録";
 }
 
 async function shareCircleInvite(): Promise<void> {

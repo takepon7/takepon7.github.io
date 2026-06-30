@@ -288,6 +288,82 @@ class SqliteSubmissionRepository:
             for row in rows
         ]
 
+    def record_playtest_feedback(
+        self,
+        feedback_id: str,
+        submission_id: str,
+        user_id: str,
+        sentiment: str,
+        note: str,
+        created_at: datetime | None = None,
+    ) -> tuple[bool, str]:
+        if created_at is None:
+            created_at = datetime.utcnow()
+        with self._connect() as conn:
+            submission = conn.execute(
+                "select submission_id from submissions where submission_id = ?",
+                (submission_id,),
+            ).fetchone()
+            if submission is None:
+                raise KeyError(f"Unknown submission_id: {submission_id}")
+            cursor = conn.execute(
+                """
+                insert or ignore into playtest_feedback (
+                    feedback_id, submission_id, user_id, sentiment, note, created_at
+                ) values (?, ?, ?, ?, ?, ?)
+                """,
+                (feedback_id, submission_id, user_id, sentiment, note, created_at.isoformat()),
+            )
+            stored = conn.execute(
+                """
+                select feedback_id
+                from playtest_feedback
+                where submission_id = ? and user_id = ? and sentiment = ?
+                """,
+                (submission_id, user_id, sentiment),
+            ).fetchone()
+        return cursor.rowcount > 0, str(stored["feedback_id"])
+
+    def list_playtest_feedback(self, limit: int = 50) -> list[dict[str, str | int]]:
+        with self._connect() as conn:
+            rows = conn.execute(
+                """
+                select
+                    pf.feedback_id,
+                    pf.submission_id,
+                    pf.user_id,
+                    pf.sentiment,
+                    pf.note,
+                    pf.created_at,
+                    s.puzzle_date,
+                    s.pair_id,
+                    s.display_name,
+                    s.score,
+                    s.bucket
+                from playtest_feedback pf
+                join submissions s on s.submission_id = pf.submission_id
+                order by pf.created_at desc
+                limit ?
+                """,
+                (max(1, min(limit, 200)),),
+            ).fetchall()
+        return [
+            {
+                "feedback_id": str(row["feedback_id"]),
+                "submission_id": str(row["submission_id"]),
+                "user_id": str(row["user_id"]),
+                "sentiment": str(row["sentiment"]),
+                "note": str(row["note"]),
+                "created_at": str(row["created_at"]),
+                "puzzle_date": str(row["puzzle_date"]),
+                "pair_id": str(row["pair_id"]),
+                "display_name": str(row["display_name"]),
+                "score": int(row["score"]),
+                "bucket": str(row["bucket"]),
+            }
+            for row in rows
+        ]
+
     def funny_vote_count(self, submission_id: str) -> int:
         with self._connect() as conn:
             count = conn.execute(
@@ -337,6 +413,9 @@ class SqliteSubmissionRepository:
 
     def clear(self) -> None:
         with self._connect() as conn:
+            conn.execute("delete from playtest_feedback")
+            conn.execute("delete from content_reports")
+            conn.execute("delete from funny_votes")
             conn.execute("delete from submissions")
 
     def _connect(self) -> sqlite3.Connection:
@@ -415,6 +494,22 @@ class SqliteSubmissionRepository:
             )
             conn.execute(
                 "create index if not exists idx_content_reports_submission on content_reports (submission_id, created_at)"
+            )
+            conn.execute(
+                """
+                create table if not exists playtest_feedback (
+                    feedback_id text primary key,
+                    submission_id text not null,
+                    user_id text not null,
+                    sentiment text not null,
+                    note text not null default '',
+                    created_at text not null,
+                    unique (submission_id, user_id, sentiment)
+                )
+                """
+            )
+            conn.execute(
+                "create index if not exists idx_playtest_feedback_submission on playtest_feedback (submission_id, created_at)"
             )
             conn.execute(
                 """

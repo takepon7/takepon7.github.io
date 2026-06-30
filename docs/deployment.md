@@ -81,6 +81,13 @@ curl -H "X-Gitai-Operator-Token: $GITAI_OPERATOR_TOKEN" \
   https://your-public-web-origin.example/v1/operator/content-reports
 ```
 
+Operators can review closed-playtest feedback with:
+
+```bash
+curl -H "X-Gitai-Operator-Token: $GITAI_OPERATOR_TOKEN" \
+  https://your-public-web-origin.example/v1/operator/playtest-feedback
+```
+
 ## Preflight
 
 Run:

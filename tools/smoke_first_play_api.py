@@ -319,6 +319,34 @@ def run_flow(
             f"{len(entries)} reports",
         )
 
+    feedback_response = client.post(
+        "/v1/playtest-feedback",
+        json={"submission_id": submission_id, "user_id": "first-player", "sentiment": "fun"},
+    )
+    add_response_check(checks, errors, "playtest_feedback_records_submission", feedback_response)
+    if feedback_response.status_code == 200:
+        add_check(
+            checks,
+            errors,
+            "playtest_feedback_has_status",
+            feedback_response.json().get("status") == "recorded",
+            str(feedback_response.json().get("status", "")),
+        )
+    operator_feedback = client.get(
+        "/v1/operator/playtest-feedback",
+        headers={"X-Gitai-Operator-Token": "SMOKEOP"},
+    )
+    add_response_check(checks, errors, "operator_playtest_feedback_load", operator_feedback)
+    if operator_feedback.status_code == 200:
+        entries = operator_feedback.json().get("entries", [])
+        add_check(
+            checks,
+            errors,
+            "operator_playtest_feedback_include_submission",
+            any(item.get("submission_id") == submission_id for item in entries),
+            f"{len(entries)} feedback entries",
+        )
+
     appraisal = client.post(
         "/v1/appraisal-comments",
         json={"submission_id": submission_id, "user_id": "first-player", "mode": "on_demand"},

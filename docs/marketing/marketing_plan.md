@@ -58,6 +58,7 @@ Week -2 to -1: Closed Playtest
 
 - Recruit 20-50 testers from AI/game/dev communities.
 - Measure: first submission rate, share-card click rate, second attempt rate.
+- Review in-app playtest feedback sentiment after every tester wave.
 - Collect 10-20 funny examples for launch posts.
 
 Launch Week
@@ -115,6 +116,7 @@ Still useful before a public launch:
 - Day-2 return rate.
 - Layer2 spend per 1,000 submissions.
 - Moderation flag rate.
+- Playtest feedback split: fun / hard / bug.
 
 ## Launch Gate
 

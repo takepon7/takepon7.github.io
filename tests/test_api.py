@@ -1072,6 +1072,70 @@ def test_operator_can_list_content_reports(tmp_path: Path, monkeypatch) -> None:
     assert entries[0]["pair_id"] == "apple_to_baseball"
 
 
+def test_playtest_feedback_is_recorded_once_per_sentiment(tmp_path: Path) -> None:
+    client = client_for_tests(db_path=tmp_path / "submissions.sqlite")
+    payload = payload_for("apple_baseball_good.png")
+    payload.update({"puzzle_date": "2026-06-29", "user_id": "artist", "display_name": "artist"})
+    submission = client.post("/v1/submissions", json=payload)
+    assert submission.status_code == 200
+    submission_id = submission.json()["submission_id"]
+
+    first = client.post(
+        "/v1/playtest-feedback",
+        json={"submission_id": submission_id, "user_id": "viewer", "sentiment": "fun"},
+    )
+    duplicate = client.post(
+        "/v1/playtest-feedback",
+        json={"submission_id": submission_id, "user_id": "viewer", "sentiment": "fun"},
+    )
+    other_sentiment = client.post(
+        "/v1/playtest-feedback",
+        json={"submission_id": submission_id, "user_id": "viewer", "sentiment": "hard", "note": "tight"},
+    )
+    missing = client.post(
+        "/v1/playtest-feedback",
+        json={"submission_id": "missing", "user_id": "viewer", "sentiment": "bug"},
+    )
+
+    assert first.status_code == 200
+    assert first.json()["status"] == "recorded"
+    assert first.json()["sentiment"] == "fun"
+    assert duplicate.status_code == 200
+    assert duplicate.json()["status"] == "duplicate"
+    assert duplicate.json()["feedback_id"] == first.json()["feedback_id"]
+    assert other_sentiment.status_code == 200
+    assert other_sentiment.json()["status"] == "recorded"
+    assert missing.status_code == 404
+
+
+def test_operator_can_list_playtest_feedback(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("GITAI_OPERATOR_TOKEN", "op-secret")
+    client = client_for_tests(db_path=tmp_path / "submissions.sqlite")
+    payload = payload_for("apple_baseball_good.png")
+    payload.update({"puzzle_date": "2026-06-29", "user_id": "artist", "display_name": "artist"})
+    submission = client.post("/v1/submissions", json=payload)
+    assert submission.status_code == 200
+    submission_id = submission.json()["submission_id"]
+    feedback = client.post(
+        "/v1/playtest-feedback",
+        json={"submission_id": submission_id, "user_id": "viewer", "sentiment": "bug", "note": "button felt stuck"},
+    )
+    assert feedback.status_code == 200
+
+    denied = client.get("/v1/operator/playtest-feedback")
+    listed = client.get("/v1/operator/playtest-feedback", headers={"X-Gitai-Operator-Token": "op-secret"})
+
+    assert denied.status_code == 403
+    assert listed.status_code == 200
+    entries = listed.json()["entries"]
+    assert len(entries) == 1
+    assert entries[0]["submission_id"] == submission_id
+    assert entries[0]["user_id"] == "viewer"
+    assert entries[0]["sentiment"] == "bug"
+    assert entries[0]["note"] == "button felt stuck"
+    assert entries[0]["pair_id"] == "apple_to_baseball"
+
+
 def test_unknown_leaderboard_kind_is_rejected() -> None:
     client = client_for_tests()
     response = client.get("/v1/leaderboard?kind=weird")

@@ -6,7 +6,7 @@
       "pair_id": "apple_to_baseball",
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "35a9e83a3787479db20f6074b84508cf"
+      "submission_id": "7b0c89214b3243fbb216ed4e26f6fbc5"
     },
     {
       "base": "balloon",
@@ -14,7 +14,7 @@
       "pair_id": "balloon_to_baseball",
       "percentile": 1.0,
       "score": 1000,
-      "submission_id": "241fa073a1ed48b5ae932c1551d1b01d"
+      "submission_id": "f0f10ddd4bd74d34a24e958c74f477cf"
     },
     {
       "base": "orange",
@@ -22,7 +22,7 @@
       "pair_id": "orange_to_tennis_ball",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "bb7d8c1afe264965a2ab74737781b6fa"
+      "submission_id": "609bd698fb104d97bb81a6bc77239330"
     },
     {
       "base": "tomato",
@@ -30,7 +30,7 @@
       "pair_id": "tomato_to_baseball",
       "percentile": 1.0,
       "score": 1000,
-      "submission_id": "d18e619da81d4f029fb8303b91968deb"
+      "submission_id": "3c7a9da54c8949a494e9ea53e6ba434d"
     },
     {
       "base": "mug",
@@ -38,7 +38,7 @@
       "pair_id": "mug_to_book",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "733144ce5e514d5e93b7775744c29cd9"
+      "submission_id": "02e8f91ac9da42e2a43446c82c310904"
     },
     {
       "base": "book",
@@ -46,7 +46,7 @@
       "pair_id": "book_to_car",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "24914e80ad4c433c95d0dc308d16fe3d"
+      "submission_id": "14a3d93f2eaf4d91ba51a4fbe1890e7f"
     },
     {
       "base": "chair",
@@ -54,7 +54,7 @@
       "pair_id": "chair_to_car",
       "percentile": 0.0,
       "score": 0,
-      "submission_id": "c02c9cc552d14c6d9fd9062b806833b5"
+      "submission_id": "9aa31a56957b4f48898f49e4f3be708a"
     },
     {
       "base": "apple",
@@ -62,7 +62,7 @@
       "pair_id": "apple_to_baseball",
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "e10b53b272f64fc5a68ea2ada8f0243a"
+      "submission_id": "1e8f2d2816e2460da25db08aca6b74fb"
     }
   ],
   "checks": [
@@ -152,7 +152,7 @@
       "status": "pass"
     },
     {
-      "detail": "['517a0ee990e84876a2709d20e6a6c539']",
+      "detail": "['ca1a98be622b42eb956fe04959c3fb17']",
       "name": "friend_ladder_contains_player",
       "status": "pass"
     },
@@ -203,6 +203,26 @@
     },
     {
       "detail": "status 200",
+      "name": "playtest_feedback_records_submission",
+      "status": "pass"
+    },
+    {
+      "detail": "recorded",
+      "name": "playtest_feedback_has_status",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
+      "name": "operator_playtest_feedback_load",
+      "status": "pass"
+    },
+    {
+      "detail": "1 feedback entries",
+      "name": "operator_playtest_feedback_include_submission",
+      "status": "pass"
+    },
+    {
+      "detail": "status 200",
       "name": "appraiser_comment_falls_back_safely",
       "status": "pass"
     },
@@ -246,7 +266,7 @@
     "seed_scores": "/Users/ryosuke/dev/new_game/data/scoring/seed_scores.json"
   },
   "proposal": {
-    "proposal_id": "05bf36ef76dd47daaf8dc8ccfc1ce71d",
+    "proposal_id": "4b2557907b0647ef950948c95f085d6a",
     "status": "candidate",
     "support_count": 1
   },
@@ -257,16 +277,16 @@
     "rank": 3,
     "reward_count": 0,
     "score": 667,
-    "submission_id": "517a0ee990e84876a2709d20e6a6c539"
+    "submission_id": "ca1a98be622b42eb956fe04959c3fb17"
   },
   "summary": {
     "archived_submission_count": 8,
     "failed_checks": 0,
     "pair_id": "apple_to_baseball",
-    "passed_checks": 34,
+    "passed_checks": 38,
     "percentile": 0.6666666666666666,
     "score": 667,
-    "submission_id": "517a0ee990e84876a2709d20e6a6c539",
+    "submission_id": "ca1a98be622b42eb956fe04959c3fb17",
     "today": "2026-07-06"
   },
   "today": "2026-07-06",

@@ -209,10 +209,10 @@
       "archived_submission_count": 8,
       "failed_checks": 0,
       "pair_id": "apple_to_baseball",
-      "passed_checks": 34,
+      "passed_checks": 38,
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "517a0ee990e84876a2709d20e6a6c539",
+      "submission_id": "ca1a98be622b42eb956fe04959c3fb17",
       "today": "2026-07-06"
     },
     "valid": true
@@ -235,7 +235,7 @@
     "daily_spend": 5,
     "degraded_gracefully": true,
     "gate_passed": true,
-    "generated_at": "2026-06-30T10:18:01.609378+00:00",
+    "generated_at": "2026-06-30T10:26:30.713449+00:00",
     "markdown": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.md",
     "mode": "hero",
     "report": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.json",
@@ -304,13 +304,13 @@
     "asset_detail": "web dist assets resolve",
     "assets_ok": true,
     "scripts": [
-      "/assets/index-BD-tfYTY.js"
+      "/assets/index-CLj8WYBw.js"
     ],
-    "static_check_count": 40,
+    "static_check_count": 41,
     "static_smoke_detail": "all static checks pass",
     "static_smoke_ok": true,
     "styles": [
-      "/assets/index-BrPzsF5k.css"
+      "/assets/index-B4v211zz.css"
     ]
   }
 }

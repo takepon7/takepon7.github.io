@@ -23,6 +23,7 @@
     "leaderboard_fetch": true,
     "leaderboard_percentile_display": true,
     "pair_proposal_submission": true,
+    "playtest_feedback_submission": true,
     "premium_pass_redeem": true,
     "production_api_base_not_localhost": true,
     "publish_brand_assets": true,
@@ -93,9 +94,9 @@
     "tomato"
   ],
   "scripts": [
-    "/assets/index-BD-tfYTY.js"
+    "/assets/index-CLj8WYBw.js"
   ],
   "styles": [
-    "/assets/index-BrPzsF5k.css"
+    "/assets/index-B4v211zz.css"
   ]
 }

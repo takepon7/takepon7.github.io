@@ -4,10 +4,10 @@
 - season_id: `season-1`
 - today: `2026-07-06`
 - pair_id: `apple_to_baseball`
-- submission_id: `517a0ee990e84876a2709d20e6a6c539`
+- submission_id: `ca1a98be622b42eb956fe04959c3fb17`
 - score: `667`
 - percentile: `0.6666666666666666`
-- passed_checks: `34`
+- passed_checks: `38`
 - failed_checks: `0`
 
 | check | status | detail |
@@ -29,7 +29,7 @@
 | submission_accepts_replayable_drawing | pass | status 200 |
 | score_leaderboard_loads_after_submit | pass | status 200 |
 | friend_leaderboard_loads_after_submit | pass | status 200 |
-| friend_ladder_contains_player | pass | ['517a0ee990e84876a2709d20e6a6c539'] |
+| friend_ladder_contains_player | pass | ['ca1a98be622b42eb956fe04959c3fb17'] |
 | friend_ghost_loads_after_submit | pass | status 200 |
 | friend_ghost_includes_stroke_log | pass | friend ghost exposes replayable strokes |
 | share_card_generates_png | pass | status 200 |
@@ -39,6 +39,10 @@
 | content_report_has_review_counter | pass | recorded |
 | operator_content_reports_load | pass | status 200 |
 | operator_content_reports_include_submission | pass | 1 reports |
+| playtest_feedback_records_submission | pass | status 200 |
+| playtest_feedback_has_status | pass | recorded |
+| operator_playtest_feedback_load | pass | status 200 |
+| operator_playtest_feedback_include_submission | pass | 1 feedback entries |
 | appraiser_comment_falls_back_safely | pass | status 200 |
 | appraiser_comment_has_line | pass | fallback_unavailable |
 | premium_code_redeems | pass | status 200 |

@@ -31,6 +31,8 @@ from gitai_phase0.application import (
     ScoreSubmissionUseCase,
     SubmitDrawingCommand,
     SubmitDrawingUseCase,
+    SubmitPlaytestFeedbackCommand,
+    SubmitPlaytestFeedbackUseCase,
     SubmitPairProposalCommand,
     SubmitPairProposalUseCase,
     VoteForSubmissionCommand,
@@ -65,6 +67,7 @@ from gitai_phase0.submission_images import LocalSubmissionImageStore
 SUBMISSION_RATE_LIMIT = (5, 60)
 FUNNY_VOTE_RATE_LIMIT = (30, 60)
 CONTENT_REPORT_RATE_LIMIT = (10, 60)
+PLAYTEST_FEEDBACK_RATE_LIMIT = (20, 60)
 PAIR_PROPOSAL_RATE_LIMIT = (10, 60)
 DEFAULT_CORS_ORIGINS = ",".join(
     (
@@ -117,6 +120,13 @@ class ContentReportRequest(BaseModel):
     submission_id: str
     user_id: str = "local-player"
     reason: str = Field(default="other", pattern="^(unsafe|personal_info|rights|spam|other)$")
+    note: str = Field(default="", max_length=240)
+
+
+class PlaytestFeedbackRequest(BaseModel):
+    submission_id: str
+    user_id: str = "local-player"
+    sentiment: str = Field(pattern="^(fun|hard|bug)$")
     note: str = Field(default="", max_length=240)
 
 
@@ -279,6 +289,13 @@ class ContentReportResponse(BaseModel):
     status: str
 
 
+class PlaytestFeedbackResponse(BaseModel):
+    feedback_id: str
+    submission_id: str
+    sentiment: str
+    status: str
+
+
 class OperatorContentReportEntryResponse(BaseModel):
     report_id: str
     submission_id: str
@@ -296,6 +313,24 @@ class OperatorContentReportEntryResponse(BaseModel):
 
 class OperatorContentReportsResponse(BaseModel):
     entries: list[OperatorContentReportEntryResponse]
+
+
+class OperatorPlaytestFeedbackEntryResponse(BaseModel):
+    feedback_id: str
+    submission_id: str
+    user_id: str
+    sentiment: str
+    note: str
+    created_at: str
+    puzzle_date: str
+    pair_id: str
+    display_name: str
+    score: int
+    bucket: str
+
+
+class OperatorPlaytestFeedbackResponse(BaseModel):
+    entries: list[OperatorPlaytestFeedbackEntryResponse]
 
 
 class AppraisalCommentMintResponse(BaseModel):
@@ -806,6 +841,34 @@ def create_app(state: AppState | None = None) -> FastAPI:
             status=result.status,
         )
 
+    @app.post("/v1/playtest-feedback", response_model=PlaytestFeedbackResponse)
+    def playtest_feedback(request: PlaytestFeedbackRequest) -> PlaytestFeedbackResponse:
+        service: AppState = app.state.gitai
+        enforce_rate_limit(
+            submissions=service.submissions,
+            actor_id=request.user_id,
+            action="playtest_feedback",
+            rule=PLAYTEST_FEEDBACK_RATE_LIMIT,
+        )
+        usecase = SubmitPlaytestFeedbackUseCase(submissions=service.submissions)
+        try:
+            result = usecase.execute(
+                SubmitPlaytestFeedbackCommand(
+                    submission_id=request.submission_id,
+                    user_id=request.user_id,
+                    sentiment=request.sentiment,
+                    note=request.note,
+                )
+            )
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail=str(exc)) from exc
+        return PlaytestFeedbackResponse(
+            feedback_id=result.feedback_id,
+            submission_id=result.submission_id,
+            sentiment=result.sentiment,
+            status=result.status,
+        )
+
     @app.get("/v1/operator/content-reports", response_model=OperatorContentReportsResponse)
     def operator_content_reports(
         limit: int = Query(default=50, ge=1, le=200),
@@ -830,6 +893,32 @@ def create_app(state: AppState | None = None) -> FastAPI:
                     ocr_cheat=bool(item["ocr_cheat"]),
                 )
                 for item in service.submissions.list_content_reports(limit=limit)
+            ]
+        )
+
+    @app.get("/v1/operator/playtest-feedback", response_model=OperatorPlaytestFeedbackResponse)
+    def operator_playtest_feedback(
+        limit: int = Query(default=50, ge=1, le=200),
+        operator_token: str = Header(default="", alias="X-Gitai-Operator-Token"),
+    ) -> OperatorPlaytestFeedbackResponse:
+        require_operator_token(operator_token)
+        service: AppState = app.state.gitai
+        return OperatorPlaytestFeedbackResponse(
+            entries=[
+                OperatorPlaytestFeedbackEntryResponse(
+                    feedback_id=str(item["feedback_id"]),
+                    submission_id=str(item["submission_id"]),
+                    user_id=str(item["user_id"]),
+                    sentiment=str(item["sentiment"]),
+                    note=str(item["note"]),
+                    created_at=str(item["created_at"]),
+                    puzzle_date=str(item["puzzle_date"]),
+                    pair_id=str(item["pair_id"]),
+                    display_name=str(item["display_name"]),
+                    score=int(item["score"]),
+                    bucket=str(item["bucket"]),
+                )
+                for item in service.submissions.list_playtest_feedback(limit=limit)
             ]
         )
 

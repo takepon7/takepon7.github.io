@@ -655,6 +655,28 @@ button {
   font-weight: 900;
 }
 
+.playtest-feedback {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.feedback-button {
+  min-height: 38px;
+  border: 1px solid #d0c5b4;
+  border-radius: 8px;
+  background: #fffaf1;
+  color: #26231f;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.feedback-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .leaderboard {
   border: 1px solid #d7ccb8;
   border-radius: 8px;

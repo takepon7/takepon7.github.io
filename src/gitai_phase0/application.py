@@ -115,6 +115,20 @@ class SubmissionStore(Protocol):
     def list_content_reports(self, limit: int = 50) -> list[dict[str, Any]]:
         raise NotImplementedError
 
+    def record_playtest_feedback(
+        self,
+        feedback_id: str,
+        submission_id: str,
+        user_id: str,
+        sentiment: str,
+        note: str,
+        created_at: datetime | None = None,
+    ) -> tuple[bool, str]:
+        raise NotImplementedError
+
+    def list_playtest_feedback(self, limit: int = 50) -> list[dict[str, Any]]:
+        raise NotImplementedError
+
 
 class AppraisalStore(Protocol):
     def get_cached_comment(self, submission_id: str) -> AppraisalComment | None:
@@ -324,6 +338,22 @@ class ReportContentResult:
     report_id: str
     submission_id: str
     report_count: int
+    status: str
+
+
+@dataclass(frozen=True)
+class SubmitPlaytestFeedbackCommand:
+    submission_id: str
+    user_id: str
+    sentiment: str
+    note: str = ""
+
+
+@dataclass(frozen=True)
+class SubmitPlaytestFeedbackResult:
+    feedback_id: str
+    submission_id: str
+    sentiment: str
     status: str
 
 
@@ -685,6 +715,30 @@ class ReportContentUseCase:
         )
 
 
+class SubmitPlaytestFeedbackUseCase:
+    def __init__(self, submissions: SubmissionStore) -> None:
+        self._submissions = submissions
+
+    def execute(self, command: SubmitPlaytestFeedbackCommand) -> SubmitPlaytestFeedbackResult:
+        user_id = sanitize_user_id(command.user_id)
+        submission = self._submissions.get(command.submission_id)
+        feedback_id = uuid.uuid4().hex
+        inserted, stored_feedback_id = self._submissions.record_playtest_feedback(
+            feedback_id=feedback_id,
+            submission_id=submission.submission_id,
+            user_id=user_id,
+            sentiment=sanitize_feedback_sentiment(command.sentiment),
+            note=sanitize_feedback_note(command.note),
+            created_at=datetime.now(timezone.utc),
+        )
+        return SubmitPlaytestFeedbackResult(
+            feedback_id=stored_feedback_id,
+            submission_id=submission.submission_id,
+            sentiment=sanitize_feedback_sentiment(command.sentiment),
+            status="recorded" if inserted else "duplicate",
+        )
+
+
 class MintAppraisalCommentUseCase:
     HERO_PERCENTILE_FLOOR = 0.95
     HERO_SPEND_USER_ID = "__hero_appraisal__"
@@ -821,6 +875,18 @@ def sanitize_report_reason(value: str) -> str:
 
 
 def sanitize_report_note(value: str) -> str:
+    return " ".join(value.strip().split())[:240]
+
+
+def sanitize_feedback_sentiment(value: str) -> str:
+    cleaned = value.strip().lower().replace("-", "_")
+    allowed = {"fun", "hard", "bug"}
+    if cleaned not in allowed:
+        return "bug"
+    return cleaned
+
+
+def sanitize_feedback_note(value: str) -> str:
     return " ".join(value.strip().split())[:240]
 
 
