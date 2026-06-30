@@ -61,3 +61,8 @@ Expected state:
 - Seed ghosts and first-play flow pass.
 - Phase 5 budget gate passes.
 - Public metadata, PWA manifest, social creatives, and marketing docs pass.
+
+## CI
+
+`.github/workflows/ci.yml` runs the same production-facing checks on `main`
+pushes and pull requests. Treat a failing CI run as a release blocker.

@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: python -m pip install -e ".[test,api]"
+
+      - name: Typecheck and build web
+        run: npm run check
+
+      - name: Static web smoke
+        run: PYTHONPATH=src python tools/smoke_phase3_static.py
+
+      - name: Release readiness smoke
+        run: PYTHONPATH=src python tools/smoke_release_readiness.py --today 2026-07-06
+
+      - name: Public launch smoke
+        run: PYTHONPATH=src python tools/smoke_public_launch.py
+
+      - name: Test
+        run: PYTHONPATH=src python -m pytest -q
