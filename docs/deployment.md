@@ -52,6 +52,26 @@ GITAI_DAILY_SUBMISSION_LIMIT=10
 `GITAI_PUBLIC_WEB_URL` is rendered onto share cards. If it is unset, cards show
 `gitai` instead of a local development URL.
 
+## Container
+
+The included `Dockerfile` builds the web bundle with Node, copies it into the
+Python runtime image, sets `GITAI_STATIC_DIR=/app/web/dist`, and starts uvicorn
+on port `8000`.
+
+Example:
+
+```bash
+docker build -t gitai .
+docker run --rm -p 8000:8000 \
+  -e GITAI_CORS_ORIGINS=https://your-public-web-origin.example \
+  -e GITAI_PUBLIC_WEB_URL=https://your-public-web-origin.example \
+  -v gitai-data:/data \
+  gitai
+```
+
+When serving the app and API from the same public origin, set
+`GITAI_CORS_ORIGINS` and `GITAI_PUBLIC_WEB_URL` to that origin.
+
 ## Preflight
 
 Run:

@@ -1,7 +1,7 @@
 # Public launch smoke
 
 - valid: `true`
-- passed_checks: `10`
+- passed_checks: `11`
 - failed_checks: `0`
 - manual_followups: `3`
 
@@ -14,6 +14,7 @@
 | pwa_manifest_ready | pass | manifest includes standalone app metadata and install icons |
 | public_policy_pages_ready | pass | {"linked_from_app": ["/privacy.html", "/terms.html", "/safety.html"], "pages": {"privacy": {"missing": [], "ok": true, "path": "/Users/ryosuke/dev/new_game/web/dist/privacy.html"}, "safety": {"missing": [], "ok": true, "path": "/Users/ryosuke/dev/new_game/web/dist/safety.html"}, "terms": {"missing": [], "ok": true, "path": "/Users/ryosuke/dev/new_game/web/dist/terms.html"}}} |
 | same_origin_web_serving_ready | pass | {"api_pair_id": "apple_to_baseball", "api_status": 200, "app_status": 200, "ok": true, "privacy_status": 200} |
+| container_deploy_files_ready | pass | {"dockerfile": "/Users/ryosuke/dev/new_game/Dockerfile", "dockerignore": "/Users/ryosuke/dev/new_game/.dockerignore", "missing_dockerfile_tokens": [], "missing_dockerignore_tokens": [], "ok": true} |
 | launch_docs_exist | pass | marketing, asset, copy, press, and deployment docs exist |
 | release_readiness_valid | pass | passed=15 failed=0 |
 | static_smoke_valid | pass | all static checks pass |

@@ -36,6 +36,11 @@
       "status": "pass"
     },
     {
+      "detail": "{\"dockerfile\": \"/Users/ryosuke/dev/new_game/Dockerfile\", \"dockerignore\": \"/Users/ryosuke/dev/new_game/.dockerignore\", \"missing_dockerfile_tokens\": [], \"missing_dockerignore_tokens\": [], \"ok\": true}",
+      "name": "container_deploy_files_ready",
+      "status": "pass"
+    },
+    {
       "detail": "marketing, asset, copy, press, and deployment docs exist",
       "name": "launch_docs_exist",
       "status": "pass"
@@ -55,7 +60,7 @@
   "summary": {
     "failed_checks": 0,
     "manual_followups": 3,
-    "passed_checks": 10
+    "passed_checks": 11
   },
   "valid": true,
   "warnings": [

@@ -136,6 +136,15 @@ def smoke_public_launch(
         json.dumps(same_origin, sort_keys=True),
     )
 
+    container = validate_container_files()
+    add_check(
+        checks,
+        errors,
+        "container_deploy_files_ready",
+        container["ok"],
+        json.dumps(container, sort_keys=True),
+    )
+
     docs = {
         "marketing_plan": ROOT / "docs" / "marketing" / "marketing_plan.md",
         "asset_manifest": ROOT / "docs" / "marketing" / "asset_manifest.md",
@@ -267,6 +276,37 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
             "api_status": api.status_code,
             "api_pair_id": api.json().get("pair_id") if api.status_code == 200 else "",
         }
+
+
+def validate_container_files() -> dict[str, Any]:
+    dockerfile = ROOT / "Dockerfile"
+    dockerignore = ROOT / ".dockerignore"
+    if not dockerfile.exists() or not dockerignore.exists():
+        return {
+            "ok": False,
+            "missing": [str(path) for path in (dockerfile, dockerignore) if not path.exists()],
+        }
+    dockerfile_text = dockerfile.read_text(encoding="utf-8")
+    dockerignore_text = dockerignore.read_text(encoding="utf-8")
+    required_dockerfile_tokens = [
+        "FROM node:22-bookworm-slim AS web-build",
+        "npm ci && npm run build",
+        "FROM python:3.10-slim AS runtime",
+        "GITAI_STATIC_DIR=/app/web/dist",
+        'pip install --no-cache-dir -e ".[api]"',
+        '"uvicorn"',
+        '"gitai_phase0.server:app"',
+    ]
+    required_ignore_tokens = ["node_modules/", ".git-local/", ".venv310/", "reports/", "web/dist/"]
+    missing = [token for token in required_dockerfile_tokens if token not in dockerfile_text]
+    missing_ignore = [token for token in required_ignore_tokens if token not in dockerignore_text]
+    return {
+        "ok": not missing and not missing_ignore,
+        "dockerfile": str(dockerfile),
+        "dockerignore": str(dockerignore),
+        "missing_dockerfile_tokens": missing,
+        "missing_dockerignore_tokens": missing_ignore,
+    }
 
 
 def add_check(

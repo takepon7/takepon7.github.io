@@ -17,4 +17,5 @@ def test_public_launch_smoke_accepts_current_build(tmp_path: Path) -> None:
     assert any(item["name"] == "brand_images_have_expected_sizes" for item in report["checks"])
     assert any(item["name"] == "public_policy_pages_ready" for item in report["checks"])
     assert any(item["name"] == "same_origin_web_serving_ready" for item in report["checks"])
+    assert any(item["name"] == "container_deploy_files_ready" for item in report["checks"])
     assert (tmp_path / "public_launch" / "public_launch.json").exists()

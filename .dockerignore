@@ -1,0 +1,17 @@
+.cache/
+.git/
+.git-local/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.venv310/
+__pycache__/
+*.egg-info/
+*.py[cod]
+.DS_Store
+data/runtime/
+node_modules/
+reports/
+videos/
+web/dist/
