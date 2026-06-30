@@ -197,6 +197,34 @@ def test_api_responses_include_public_security_headers() -> None:
     assert "camera=()" in response.headers["permissions-policy"]
 
 
+def test_api_can_serve_built_web_app_same_origin(tmp_path: Path, monkeypatch) -> None:
+    static_dir = tmp_path / "dist"
+    static_dir.mkdir()
+    (static_dir / "index.html").write_text("<!doctype html><title>gitai app</title>", encoding="utf-8")
+    (static_dir / "privacy.html").write_text("<!doctype html><title>Privacy Policy</title>", encoding="utf-8")
+    monkeypatch.setenv("GITAI_STATIC_DIR", str(static_dir))
+    monkeypatch.setenv("GITAI_TODAY", "2026-06-29")
+    client = client_for_tests()
+
+    app_shell = client.get("/")
+    privacy = client.get("/privacy.html")
+    api = client.get("/v1/daily-puzzle")
+
+    assert app_shell.status_code == 200
+    assert "gitai app" in app_shell.text
+    assert privacy.status_code == 200
+    assert "Privacy Policy" in privacy.text
+    assert api.status_code == 200
+    assert api.json()["pair_id"] == "apple_to_baseball"
+
+
+def test_api_static_web_mount_fails_fast_without_built_index(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("GITAI_STATIC_DIR", str(tmp_path / "missing-dist"))
+
+    with pytest.raises(RuntimeError, match="GITAI_STATIC_DIR"):
+        client_for_tests()
+
+
 def test_daily_puzzle_endpoint_can_use_compatible_dev_ref(monkeypatch) -> None:
     monkeypatch.setenv("GITAI_TODAY", "2026-06-29")
     monkeypatch.setenv("GITAI_DAILY_REF_VERSION", "phase0-open-clip-tau30-2026-06-29")

@@ -1,12 +1,19 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 import json
+import os
 from pathlib import Path
 import re
+import tempfile
 from typing import Any
+from typing import Iterator
 
+from fastapi.testclient import TestClient
 from PIL import Image
+
+from gitai_phase0.api import build_state_from_env, create_app
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -120,6 +127,15 @@ def smoke_public_launch(
         json.dumps({"pages": legal_results, "linked_from_app": legal_links}, sort_keys=True),
     )
 
+    same_origin = validate_same_origin_static_serving(web_dist_dir)
+    add_check(
+        checks,
+        errors,
+        "same_origin_web_serving_ready",
+        same_origin["ok"],
+        json.dumps(same_origin, sort_keys=True),
+    )
+
     docs = {
         "marketing_plan": ROOT / "docs" / "marketing" / "marketing_plan.md",
         "asset_manifest": ROOT / "docs" / "marketing" / "asset_manifest.md",
@@ -217,6 +233,42 @@ def validate_text_pages(expected: dict[str, tuple[Path, list[str]]]) -> dict[str
     return results
 
 
+def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
+    if not (web_dist_dir / "index.html").exists():
+        return {"ok": False, "error": f"missing web dist index: {web_dist_dir / 'index.html'}"}
+    with tempfile.TemporaryDirectory(prefix="gitai-public-launch-") as tmpdir:
+        tmp = Path(tmpdir)
+        env = {
+            "GITAI_STATIC_DIR": str(web_dist_dir),
+            "GITAI_RUNTIME_DB": str(tmp / "runtime.sqlite"),
+            "GITAI_IMAGE_STORE": str(tmp / "submissions"),
+            "GITAI_MODEL": "heuristic",
+            "GITAI_OCR": "fingerprint",
+            "GITAI_MODERATION": "fingerprint",
+            "GITAI_TODAY": "2026-07-06",
+            "GITAI_LAYER2_ACTOR": "null",
+        }
+        with patched_env(env, remove=("GITAI_DAILY_REF_VERSION", "GITAI_SEASON_MODEL_VERSION")):
+            client = TestClient(create_app(build_state_from_env()))
+            app_shell = client.get("/")
+            privacy = client.get("/privacy.html")
+            api = client.get("/v1/daily-puzzle")
+        return {
+            "ok": (
+                app_shell.status_code == 200
+                and '<div id="app"></div>' in app_shell.text
+                and privacy.status_code == 200
+                and "Privacy Policy" in privacy.text
+                and api.status_code == 200
+                and api.json().get("pair_id") == "apple_to_baseball"
+            ),
+            "app_status": app_shell.status_code,
+            "privacy_status": privacy.status_code,
+            "api_status": api.status_code,
+            "api_pair_id": api.json().get("pair_id") if api.status_code == 200 else "",
+        }
+
+
 def add_check(
     checks: list[dict[str, str]],
     errors: list[str],
@@ -265,6 +317,22 @@ def render_markdown(report: dict[str, Any]) -> str:
         lines.extend(["", "## Errors", ""])
         lines.extend(f"- {error}" for error in report["errors"])
     return "\n".join(lines) + "\n"
+
+
+@contextmanager
+def patched_env(updates: dict[str, str], remove: tuple[str, ...] = ()) -> Iterator[None]:
+    old_values = {key: os.environ.get(key) for key in [*updates.keys(), *remove]}
+    for key in remove:
+        os.environ.pop(key, None)
+    os.environ.update(updates)
+    try:
+        yield
+    finally:
+        for key, value in old_values.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
 
 
 if __name__ == "__main__":

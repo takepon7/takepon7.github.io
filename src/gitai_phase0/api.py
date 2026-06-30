@@ -9,6 +9,7 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from PIL import Image
 
@@ -909,6 +910,7 @@ def create_app(state: AppState | None = None) -> FastAPI:
             headers={"Content-Disposition": f'inline; filename="{card.filename}"'},
         )
 
+    mount_static_web_app(app)
     return app
 
 
@@ -989,6 +991,17 @@ def build_state_from_env() -> AppState:
         ocr=ocr,
         moderator=moderator,
     )
+
+
+def mount_static_web_app(app: FastAPI) -> None:
+    static_dir = os.environ.get("GITAI_STATIC_DIR", "").strip()
+    if not static_dir:
+        return
+    static_path = Path(static_dir)
+    index_path = static_path / "index.html"
+    if not static_path.is_dir() or not index_path.exists():
+        raise RuntimeError(f"GITAI_STATIC_DIR must point to a built web dist with index.html: {static_path}")
+    app.mount("/", StaticFiles(directory=static_path, html=True), name="web")
 
 
 def object_label_payload(label) -> dict[str, Any]:

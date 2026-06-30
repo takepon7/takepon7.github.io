@@ -11,6 +11,15 @@ npm run check
 The production web bundle defaults to same-origin API calls. This is the safest
 setup when the static app and API are served under the same domain.
 
+To serve the built web app from the API process, build the web bundle and set:
+
+```bash
+GITAI_STATIC_DIR=/app/web/dist
+```
+
+With `GITAI_STATIC_DIR` set, the API keeps `/v1/*` and `/healthz` as API routes
+and serves `/`, policy pages, icons, and other static assets from the web dist.
+
 If the API is hosted on a separate origin, set:
 
 ```bash
@@ -27,6 +36,7 @@ Minimum production-facing environment:
 ```bash
 GITAI_CORS_ORIGINS=https://your-public-web-origin.example
 GITAI_PUBLIC_WEB_URL=https://your-public-web-origin.example
+GITAI_STATIC_DIR=/app/web/dist
 GITAI_RUNTIME_DB=/var/lib/gitai/gitai.sqlite
 GITAI_IMAGE_STORE=/var/lib/gitai/submissions
 GITAI_MODEL=heuristic
@@ -61,6 +71,7 @@ Expected state:
 - Seed ghosts and first-play flow pass.
 - Phase 5 budget gate passes.
 - Public metadata, PWA manifest, policy pages, social creatives, and marketing docs pass.
+- Same-origin web serving from the API is ready when `GITAI_STATIC_DIR` points at `web/dist`.
 
 ## CI
 
