@@ -541,6 +541,17 @@ on a separate origin. API deployments should set `GITAI_PUBLIC_WEB_URL` so share
 cards point at the public app instead of showing the fallback `gitai` footer.
 See `docs/deployment.md` for the deploy preflight.
 
+Run the public launch audit after a production build:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
+```
+
+It verifies launch metadata, brand asset dimensions, PWA manifest basics,
+release readiness, static smoke results, and the absence of localhost API
+defaults in the production bundle. Manual follow-ups such as real production
+origins and outside playtest metrics are reported separately.
+
 ## Phase 5 appraiser comments
 
 `src/gitai_phase0/commentary.py` provides the zero-cost template bank for the

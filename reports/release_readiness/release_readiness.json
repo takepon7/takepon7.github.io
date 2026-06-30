@@ -212,7 +212,7 @@
       "passed_checks": 29,
       "percentile": 0.6666666666666666,
       "score": 667,
-      "submission_id": "ecf49bf9657a48f9b491a7a6d3b6e23e",
+      "submission_id": "2ef11aeb20ff468584b9e2685b35245a",
       "today": "2026-07-06"
     },
     "valid": true
@@ -235,7 +235,7 @@
     "daily_spend": 5,
     "degraded_gracefully": true,
     "gate_passed": true,
-    "generated_at": "2026-06-30T09:18:24.390931+00:00",
+    "generated_at": "2026-06-30T09:21:38.131615+00:00",
     "markdown": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.md",
     "mode": "hero",
     "report": "/Users/ryosuke/dev/new_game/reports/release_readiness/phase5_budget_smoke/phase5_budget_smoke.json",

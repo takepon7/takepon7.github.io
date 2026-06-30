@@ -38,7 +38,7 @@
 ## First Play
 
 - valid: `true`
-- submission_id: `ecf49bf9657a48f9b491a7a6d3b6e23e`
+- submission_id: `2ef11aeb20ff468584b9e2685b35245a`
 - score: `667`
 
 ## Phase 5 Budget
