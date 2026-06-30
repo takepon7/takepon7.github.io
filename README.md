@@ -105,12 +105,13 @@ GITAI_MODERATION=none         # development-only bypass
 ```
 
 `GET /v1/ghost?date=YYYY-MM-DD&kind=score` returns the current #1 submission
-with its PNG as `image_b64` and, for player submissions, the stored
-`stroke_log`, so the client can show and replay "beat this" without realtime
-play. Use `kind=efficiency` to show the top efficient ghost, or
+with its PNG as `image_b64` and the stored `stroke_log`, so the client can show
+and replay "beat this" without realtime play. Seed ghosts are generated from the
+same replayable stroke-log format, so fresh leaderboards can still show a
+replay target before any player has submitted. Use `kind=efficiency` to show the
+top efficient ghost, or
 `kind=friend&friend_code=ABC123` to show the top ghost in a private circle.
-`kind=funny` shows the current most-voted ghost. Seed ghosts can omit
-`stroke_log`; the client simply disables ghost replay for those entries.
+`kind=funny` shows the current most-voted ghost.
 
 `POST /v1/funny-votes` accepts `{ submission_id, user_id }`. Votes are unique
 per `(submission_id, user_id)` and players cannot vote for their own submission.
@@ -392,7 +393,8 @@ PYTHONPATH=src .venv310/bin/python tools/validate_phase4_seed_ghosts.py
 ```
 
 The validator writes `reports/phase4/seed_ghosts.json` and `.md`, and checks
-that every DailyPuzzle has both score and efficiency ghosts with image files.
+that every DailyPuzzle has both score and efficiency ghosts, image files, and
+stroke logs that replay back to the stored PNGs.
 
 For a reviewable release candidate from the approved-seed pipeline, build the
 ghost pack against the planner preview before applying DailyPuzzle changes:
@@ -407,6 +409,7 @@ PYTHONPATH=src .venv310/bin/python tools/build_seed_ghost_pack.py \
 
 PYTHONPATH=src .venv310/bin/python tools/validate_phase4_seed_ghosts.py \
   --daily-puzzles reports/phase2/daily_puzzle_plan/merged_daily_puzzles.json \
+  --pairs reports/phase2/seed_score_promotion/merged_pairs.json \
   --seed-ghosts reports/phase4/planned_seed_ghosts.json \
   --out-dir reports/phase4/planned_seed_ghosts \
   --season-id season-1
@@ -428,8 +431,9 @@ PYTHONPATH=src .venv310/bin/python tools/validate_release_candidate.py \
 ```
 
 The release candidate report checks promotion errors, DailyPuzzle plan errors,
-pair/ref linkage, unique DailyPuzzle dates, and full seed ghost coverage. It also
-writes the API preview environment block to `release_candidate.md`.
+pair/ref linkage, unique DailyPuzzle dates, and full replayable seed ghost
+coverage. It also writes the API preview environment block to
+`release_candidate.md`.
 
 Preview the canonical write plan after the release candidate validates:
 

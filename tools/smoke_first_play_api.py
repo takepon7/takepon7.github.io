@@ -169,12 +169,29 @@ def run_flow(
     add_response_check(checks, errors, "score_ghost_loads", score_ghost)
     add_response_check(checks, errors, "efficiency_ghost_loads", efficiency_ghost)
     if score_ghost.status_code == 200:
+        score_ghost_log = score_ghost.json().get("stroke_log")
         add_check(
             checks,
             errors,
             "score_ghost_has_png",
             is_png_b64(score_ghost.json().get("image_b64", "")),
             "score ghost image is a PNG",
+        )
+        add_check(
+            checks,
+            errors,
+            "seed_score_ghost_includes_stroke_log",
+            is_replayable_stroke_log(score_ghost_log),
+            "seed score ghost exposes replayable strokes",
+        )
+    if efficiency_ghost.status_code == 200:
+        efficiency_ghost_log = efficiency_ghost.json().get("stroke_log")
+        add_check(
+            checks,
+            errors,
+            "seed_efficiency_ghost_includes_stroke_log",
+            is_replayable_stroke_log(efficiency_ghost_log),
+            "seed efficiency ghost exposes replayable strokes",
         )
 
     drawing = build_replayable_submission(
@@ -471,6 +488,11 @@ def is_png_b64(value: str) -> bool:
         return b64decode(value).startswith(b"\x89PNG\r\n\x1a\n")
     except Exception:
         return False
+
+
+def is_replayable_stroke_log(value: Any) -> bool:
+    parsed = parse_stroke_log(value if isinstance(value, dict) else None, max_strokes=250, max_points_per_stroke=2000)
+    return parsed is not None and bool(parsed)
 
 
 def response_detail(response) -> str:

@@ -37,5 +37,5 @@
 ## First Play
 
 - valid: `true`
-- submission_id: `8025e2a0270943a584faf835022f43d7`
+- submission_id: `c1f3a711d5f6469e9c687b6709e9ab88`
 - score: `667`

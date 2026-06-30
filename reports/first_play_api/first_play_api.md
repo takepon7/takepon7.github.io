@@ -4,10 +4,10 @@
 - season_id: `season-1`
 - today: `2026-07-06`
 - pair_id: `apple_to_baseball`
-- submission_id: `6583633321b14605af4a34733a02dc04`
+- submission_id: `bcad58e34ad74e819d15683fac5d1562`
 - score: `667`
 - percentile: `0.6666666666666666`
-- passed_checks: `27`
+- passed_checks: `29`
 - failed_checks: `0`
 
 | check | status | detail |
@@ -22,11 +22,13 @@
 | score_ghost_loads | pass | status 200 |
 | efficiency_ghost_loads | pass | status 200 |
 | score_ghost_has_png | pass | score ghost image is a PNG |
+| seed_score_ghost_includes_stroke_log | pass | seed score ghost exposes replayable strokes |
+| seed_efficiency_ghost_includes_stroke_log | pass | seed efficiency ghost exposes replayable strokes |
 | pre_submit_score_is_deterministic | pass | status 200 |
 | submission_accepts_replayable_drawing | pass | status 200 |
 | score_leaderboard_loads_after_submit | pass | status 200 |
 | friend_leaderboard_loads_after_submit | pass | status 200 |
-| friend_ladder_contains_player | pass | ['6583633321b14605af4a34733a02dc04'] |
+| friend_ladder_contains_player | pass | ['bcad58e34ad74e819d15683fac5d1562'] |
 | friend_ghost_loads_after_submit | pass | status 200 |
 | friend_ghost_includes_stroke_log | pass | friend ghost exposes replayable strokes |
 | share_card_generates_png | pass | status 200 |
