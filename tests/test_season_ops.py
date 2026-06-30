@@ -24,6 +24,11 @@ def test_season_ops_report_summarizes_safety_spend_and_rewards(tmp_path: Path) -
     submissions.save(record("flagged", score=900, moderation="flag", user_id="artist-c"))
     submissions.save(record("old-model", score=700, model_version="heuristic-previous-v0", user_id="artist-d"))
     submissions.save(record("other-season", season_id="season-2", score=1000, user_id="artist-e"))
+    submissions.record_content_report("report-1", "flagged", "viewer-a", "unsafe", "review")
+    submissions.record_content_report("report-2", "old-model", "viewer-b", "spam", "")
+    submissions.record_playtest_feedback("feedback-1", "public-top", "viewer-a", "fun", "")
+    submissions.record_playtest_feedback("feedback-2", "old-model", "viewer-b", "bug", "felt stuck")
+    submissions.record_playtest_feedback("feedback-other", "other-season", "viewer-z", "hard", "")
     appraisals.record_spend(
         "public-top",
         "artist-a",
@@ -67,6 +72,11 @@ def test_season_ops_report_summarizes_safety_spend_and_rewards(tmp_path: Path) -
     assert report.premium_summary.active_entitlements == 1
     assert report.premium_summary.redeem_codes == 1
     assert report.premium_summary.redemptions == 1
+    assert report.feedback_summary.content_reports == 2
+    assert report.feedback_summary.playtest_feedback == 2
+    assert report.feedback_summary.playtest_distinct_users == 2
+    assert [item.name for item in report.feedback_summary.by_report_reason] == ["spam", "unsafe"]
+    assert [item.name for item in report.feedback_summary.by_playtest_sentiment] == ["bug", "fun"]
     assert sum(item.count for item in report.ref_versions if item.needs_rescore) == 1
 
 
@@ -89,6 +99,7 @@ def test_season_ops_markdown_flags_model_pin_failures(tmp_path: Path) -> None:
     assert "model_pin_ok: `false`" in markdown
     assert "| `heuristic-previous-v0` | 1 | no |" in markdown
     assert "rescore_candidate_submissions: `1`" in markdown
+    assert "## Feedback" in markdown
 
 
 def test_season_ops_report_handles_missing_database(tmp_path: Path) -> None:

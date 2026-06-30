@@ -78,6 +78,15 @@ class PremiumOpsSummary:
 
 
 @dataclass(frozen=True)
+class FeedbackOpsSummary:
+    content_reports: int
+    playtest_feedback: int
+    playtest_distinct_users: int
+    by_report_reason: tuple[CountSummary, ...]
+    by_playtest_sentiment: tuple[CountSummary, ...]
+
+
+@dataclass(frozen=True)
 class SeasonOpsReport:
     season_id: str
     season_label: str
@@ -92,6 +101,7 @@ class SeasonOpsReport:
     spend_summary: SpendOpsSummary
     cosmetic_summary: CosmeticOpsSummary
     premium_summary: PremiumOpsSummary
+    feedback_summary: FeedbackOpsSummary
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -120,6 +130,8 @@ def build_season_ops_report(
                 "premium_entitlements",
                 "premium_redeem_codes",
                 "premium_redemptions",
+                "content_reports",
+                "playtest_feedback",
             ),
         )
 
@@ -134,6 +146,8 @@ def build_season_ops_report(
                 "premium_entitlements",
                 "premium_redeem_codes",
                 "premium_redemptions",
+                "content_reports",
+                "playtest_feedback",
             )
             if name not in tables
         )
@@ -161,6 +175,11 @@ def build_season_ops_report(
             if {"premium_entitlements", "premium_redeem_codes", "premium_redemptions"}.issubset(tables)
             else _empty_premium_summary()
         )
+        feedback_summary = (
+            _feedback_summary(conn, normalized_season_id)
+            if {"submissions", "content_reports", "playtest_feedback"}.issubset(tables)
+            else _empty_feedback_summary()
+        )
 
     return SeasonOpsReport(
         season_id=normalized_season_id,
@@ -176,6 +195,7 @@ def build_season_ops_report(
         spend_summary=spend_summary,
         cosmetic_summary=cosmetic_summary,
         premium_summary=premium_summary,
+        feedback_summary=feedback_summary,
     )
 
 
@@ -292,6 +312,38 @@ def render_season_ops_markdown(report: SeasonOpsReport) -> str:
         for item in report.premium_summary.by_source
     )
     if not report.premium_summary.by_source:
+        lines.append("| n/a | 0 |")
+    lines.extend(
+        [
+            "",
+            "## Feedback",
+            "",
+            f"- content_reports: `{report.feedback_summary.content_reports}`",
+            f"- playtest_feedback: `{report.feedback_summary.playtest_feedback}`",
+            f"- playtest_distinct_users: `{report.feedback_summary.playtest_distinct_users}`",
+            "",
+            "| report_reason | count |",
+            "| --- | ---: |",
+        ]
+    )
+    lines.extend(
+        f"| `{item.name}` | {item.count} |"
+        for item in report.feedback_summary.by_report_reason
+    )
+    if not report.feedback_summary.by_report_reason:
+        lines.append("| n/a | 0 |")
+    lines.extend(
+        [
+            "",
+            "| playtest_sentiment | count |",
+            "| --- | ---: |",
+        ]
+    )
+    lines.extend(
+        f"| `{item.name}` | {item.count} |"
+        for item in report.feedback_summary.by_playtest_sentiment
+    )
+    if not report.feedback_summary.by_playtest_sentiment:
         lines.append("| n/a | 0 |")
     return "\n".join(lines) + "\n"
 
@@ -507,6 +559,60 @@ def _premium_summary(conn: sqlite3.Connection) -> PremiumOpsSummary:
     )
 
 
+def _feedback_summary(conn: sqlite3.Connection, season_id: str) -> FeedbackOpsSummary:
+    report_row = conn.execute(
+        """
+        select count(*) as content_reports
+        from content_reports cr
+        join submissions s on s.submission_id = cr.submission_id
+        where s.season_id = ?
+        """,
+        (season_id,),
+    ).fetchone()
+    report_reason_rows = conn.execute(
+        """
+        select cr.reason, count(*) as count
+        from content_reports cr
+        join submissions s on s.submission_id = cr.submission_id
+        where s.season_id = ?
+        group by cr.reason
+        order by count desc, cr.reason
+        """,
+        (season_id,),
+    ).fetchall()
+    feedback_row = conn.execute(
+        """
+        select count(*) as playtest_feedback, count(distinct pf.user_id) as playtest_distinct_users
+        from playtest_feedback pf
+        join submissions s on s.submission_id = pf.submission_id
+        where s.season_id = ?
+        """,
+        (season_id,),
+    ).fetchone()
+    sentiment_rows = conn.execute(
+        """
+        select pf.sentiment, count(*) as count
+        from playtest_feedback pf
+        join submissions s on s.submission_id = pf.submission_id
+        where s.season_id = ?
+        group by pf.sentiment
+        order by count desc, pf.sentiment
+        """,
+        (season_id,),
+    ).fetchall()
+    return FeedbackOpsSummary(
+        content_reports=_int(report_row, "content_reports"),
+        playtest_feedback=_int(feedback_row, "playtest_feedback"),
+        playtest_distinct_users=_int(feedback_row, "playtest_distinct_users"),
+        by_report_reason=tuple(
+            CountSummary(name=str(item["reason"]), count=int(item["count"])) for item in report_reason_rows
+        ),
+        by_playtest_sentiment=tuple(
+            CountSummary(name=str(item["sentiment"]), count=int(item["count"])) for item in sentiment_rows
+        ),
+    )
+
+
 def _empty_report(
     runtime_db: Path,
     season_id: str,
@@ -529,6 +635,7 @@ def _empty_report(
         spend_summary=_empty_spend_summary(),
         cosmetic_summary=_empty_cosmetic_summary(),
         premium_summary=_empty_premium_summary(),
+        feedback_summary=_empty_feedback_summary(),
     )
 
 
@@ -560,6 +667,16 @@ def _empty_cosmetic_summary() -> CosmeticOpsSummary:
 
 def _empty_premium_summary() -> PremiumOpsSummary:
     return PremiumOpsSummary(active_entitlements=0, redeem_codes=0, redemptions=0, by_source=())
+
+
+def _empty_feedback_summary() -> FeedbackOpsSummary:
+    return FeedbackOpsSummary(
+        content_reports=0,
+        playtest_feedback=0,
+        playtest_distinct_users=0,
+        by_report_reason=(),
+        by_playtest_sentiment=(),
+    )
 
 
 def _int(row: sqlite3.Row, key: str) -> int:
