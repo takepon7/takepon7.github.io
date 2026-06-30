@@ -6,7 +6,7 @@
 - latest_pair_id: `apple_to_baseball`
 - daily_count: `8`
 - seed_ghost_count: `16`
-- passed_checks: `14`
+- passed_checks: `15`
 - failed_checks: `0`
 
 ## Checks
@@ -27,6 +27,7 @@
 | phase3_static_smoke_passes | pass | all static checks pass |
 | api_smoke_passes_latest_daily | pass | API smoke passed for 2026-07-06 |
 | first_play_api_flow_passes | pass | first player flow passed |
+| phase5_layer2_budget_gate_passes | pass | daily_spend=5 cap=5 degraded=true |
 
 ## API Smoke
 
@@ -37,5 +38,11 @@
 ## First Play
 
 - valid: `true`
-- submission_id: `c1f3a711d5f6469e9c687b6709e9ab88`
+- submission_id: `ee89bbf434a941c2b2cad744886cf673`
 - score: `667`
+
+## Phase 5 Budget
+
+- gate_passed: `true`
+- daily_spend: `5` / `5`
+- degraded_gracefully: `true`

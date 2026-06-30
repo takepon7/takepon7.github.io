@@ -14,6 +14,7 @@ from typing import Any, Iterator
 
 from fastapi.testclient import TestClient
 
+from gitai_phase0.budget_smoke import run_appraisal_budget_smoke, write_appraisal_budget_smoke_report
 from gitai_phase0.api import build_state_from_env, create_app
 
 try:
@@ -50,6 +51,8 @@ def main() -> None:
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--season-id", default="season-1")
     parser.add_argument("--today", default="")
+    parser.add_argument("--budget-smoke-requests", type=int, default=25)
+    parser.add_argument("--budget-smoke-daily-cap", type=int, default=5)
     parser.add_argument("--skip-rollback", action="store_true")
     args = parser.parse_args()
 
@@ -67,6 +70,8 @@ def main() -> None:
         out_dir=args.out_dir,
         season_id=args.season_id,
         today=args.today or None,
+        budget_smoke_requests=args.budget_smoke_requests,
+        budget_smoke_daily_cap=args.budget_smoke_daily_cap,
         require_rollback=not args.skip_rollback,
     )
     print(f"Wrote {args.out_dir / 'release_readiness.json'}")
@@ -91,6 +96,8 @@ def smoke_release_readiness(
     today: str | None = None,
     require_rollback: bool = True,
     object_catalog_path: Path | None = None,
+    budget_smoke_requests: int = 25,
+    budget_smoke_daily_cap: int = 5,
 ) -> dict[str, Any]:
     object_catalog_path = object_catalog_path or ROOT / "data" / "puzzle" / "object_catalog.json"
     report: dict[str, Any] = {
@@ -117,6 +124,7 @@ def smoke_release_readiness(
         "rollback_dry_run": {},
         "api_smoke": {},
         "first_play_api": {},
+        "phase5_budget_smoke": {},
         "web_static": {},
     }
     checks: list[dict[str, Any]] = report["checks"]
@@ -322,6 +330,24 @@ def smoke_release_readiness(
     else:
         add_check(checks, errors, "first_play_api_flow_passes", False, "no DailyPuzzle date available")
 
+    budget_smoke = run_phase5_budget_smoke(
+        pairs_path=pairs_path,
+        out_dir=out_dir / "phase5_budget_smoke",
+        request_count=budget_smoke_requests,
+        daily_cap_units=budget_smoke_daily_cap,
+    )
+    report["phase5_budget_smoke"] = budget_smoke
+    add_check(
+        checks,
+        errors,
+        "phase5_layer2_budget_gate_passes",
+        bool(budget_smoke["gate_passed"]),
+        (
+            f"daily_spend={budget_smoke['daily_spend']} cap={budget_smoke['daily_cap_units']} "
+            f"degraded={str(budget_smoke['degraded_gracefully']).lower()}"
+        ),
+    )
+
     latest_entry = next((item for item in daily_entries if str(item.get("date")) == latest), {})
     report["summary"] = {
         "pair_count": len(pair_by_id),
@@ -480,6 +506,26 @@ def run_api_smoke(
 
     result["valid"] = not errors
     return result
+
+
+def run_phase5_budget_smoke(
+    pairs_path: Path,
+    out_dir: Path,
+    request_count: int,
+    daily_cap_units: int,
+) -> dict[str, Any]:
+    with tempfile.TemporaryDirectory(prefix="gitai-release-budget-") as tmpdir:
+        report = run_appraisal_budget_smoke(
+            runtime_db=Path(tmpdir) / "budget-smoke.sqlite",
+            pairs_path=pairs_path,
+            request_count=request_count,
+            daily_cap_units=daily_cap_units,
+        )
+    json_path, markdown_path = write_appraisal_budget_smoke_report(report, out_dir)
+    payload = report.to_dict()
+    payload["report"] = str(json_path)
+    payload["markdown"] = str(markdown_path)
+    return payload
 
 
 def check_web_static(web_dist_dir: Path, static_smoke_path: Path) -> dict[str, Any]:
@@ -661,6 +707,18 @@ def render_markdown(report: dict[str, Any]) -> str:
                 f"- valid: `{str(first_play.get('valid', False)).lower()}`",
                 f"- submission_id: `{first_summary.get('submission_id', '')}`",
                 f"- score: `{first_summary.get('score', 0)}`",
+            ]
+        )
+    budget = report.get("phase5_budget_smoke", {})
+    if budget:
+        lines.extend(
+            [
+                "",
+                "## Phase 5 Budget",
+                "",
+                f"- gate_passed: `{str(budget.get('gate_passed', False)).lower()}`",
+                f"- daily_spend: `{budget.get('daily_spend', 0)}` / `{budget.get('daily_cap_units', 0)}`",
+                f"- degraded_gracefully: `{str(budget.get('degraded_gracefully', False)).lower()}`",
             ]
         )
     if report["warnings"]:

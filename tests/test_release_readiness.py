@@ -41,6 +41,8 @@ def test_release_readiness_accepts_reviewable_bundle(tmp_path: Path) -> None:
     assert report["api_smoke"]["score_deterministic"] is True
     assert report["first_play_api"]["valid"] is True
     assert report["first_play_api"]["summary"]["submission_id"]
+    assert report["phase5_budget_smoke"]["gate_passed"] is True
+    assert report["phase5_budget_smoke"]["degraded_gracefully"] is True
     assert report["rollback_dry_run"]["valid"] is True
     assert report["web_static"]["assets_ok"] is True
     assert (tmp_path / "readiness" / "release_readiness.json").exists()

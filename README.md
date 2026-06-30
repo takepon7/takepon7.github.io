@@ -475,7 +475,9 @@ checks canonical pair/ref linkage, DailyPuzzle uniqueness, seed ghost coverage,
 release candidate validation, rollback dry-run readiness, built web assets, and
 the latest DailyPuzzle API path with seeded ghosts, deterministic scoring, and
 a first-player flow through submit, leaderboard, share card, funny vote,
-appraiser comment fallback, premium redeem, and pair proposal.
+appraiser comment fallback, premium redeem, and pair proposal. It also runs the
+Phase 5 Layer2 budget smoke, so release readiness fails if paid appraiser
+comment minting can exceed the daily cap instead of degrading to templates.
 
 You can run that first-player flow directly when working on the playable loop:
 

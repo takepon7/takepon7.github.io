@@ -1,0 +1,21 @@
+{
+  "actor_cost_units": 1,
+  "daily_cap_units": 5,
+  "daily_spend": 5,
+  "degraded_gracefully": true,
+  "gate_passed": true,
+  "generated_at": "2026-06-30T09:05:05.601121+00:00",
+  "mode": "hero",
+  "request_count": 25,
+  "status_counts": [
+    {
+      "count": 20,
+      "status": "fallback_budget"
+    },
+    {
+      "count": 5,
+      "status": "minted"
+    }
+  ],
+  "user_daily_limit": 25
+}

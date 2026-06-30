@@ -53,6 +53,9 @@ class PairRepository:
         except KeyError as exc:
             raise KeyError(f"Unknown pair_id: {pair_id}") from exc
 
+    def list(self) -> list[PairSpec]:
+        return list(self._pairs.values())
+
 
 class SeedScoreRepository:
     def __init__(self, path: Path) -> None:

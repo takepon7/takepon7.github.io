@@ -54,6 +54,7 @@ def run_appraisal_budget_smoke(
     appraisals = SqliteAppraisalRepository(runtime_db)
     images = MemorySubmissionImageStore()
     pairs = PairRepository(pairs_path)
+    pair = first_pair(pairs)
     actor = ScriptedBudgetActor()
     usecase = MintAppraisalCommentUseCase(
         pairs=pairs,
@@ -69,7 +70,9 @@ def run_appraisal_budget_smoke(
     for index in range(request_count):
         submission_id = f"budget-smoke-{index:04d}"
         image_ref = images.save(submission_id, Image.new("RGBA", (32, 32), "white"))
-        submissions.save(_record(submission_id, image_ref=image_ref, user_id=f"artist-{index:04d}"))
+        submissions.save(
+            _record(submission_id, image_ref=image_ref, user_id=f"artist-{index:04d}", pair_id=pair.pair_id)
+        )
         result = usecase.execute(
             MintAppraisalCommentCommand(
                 submission_id=submission_id,
@@ -96,6 +99,13 @@ def run_appraisal_budget_smoke(
         degraded_gracefully=degraded_gracefully,
         status_counts=tuple(BudgetSmokeStatus(status=status, count=count) for status, count in sorted(counter.items())),
     )
+
+
+def first_pair(pairs: PairRepository) -> PairSpec:
+    pair_list = pairs.list()
+    if not pair_list:
+        raise ValueError("budget smoke requires at least one pair")
+    return pair_list[0]
 
 
 def render_appraisal_budget_smoke_markdown(report: AppraisalBudgetSmokeReport) -> str:
@@ -151,11 +161,16 @@ class ScriptedBudgetActor:
         )
 
 
-def _record(submission_id: str, image_ref: str, user_id: str) -> SubmissionRecord:
+def _record(
+    submission_id: str,
+    image_ref: str,
+    user_id: str,
+    pair_id: str = "apple_to_baseball",
+) -> SubmissionRecord:
     return SubmissionRecord(
         submission_id=submission_id,
         puzzle_date=date(2026, 6, 29),
-        pair_id="apple_to_baseball",
+        pair_id=pair_id,
         ref_version="phase0-heuristic-tau30-2026-06-29",
         player=PlayerIdentity(user_id=user_id, display_name=user_id),
         image_hash=submission_id,
