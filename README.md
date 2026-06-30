@@ -1,5 +1,33 @@
 # gitai Phase 0
 
+gitai is now a playable web app with a deterministic scoring API, daily puzzles,
+leaderboards, replayable ghosts, share cards, launch metadata, and marketing
+assets checked into the repo.
+
+Current public-launch entry points:
+
+- Web app: `web/`
+- API package: `src/gitai_phase0/`
+- Deployment notes: `docs/deployment.md`
+- Marketing plan: `docs/marketing/marketing_plan.md`
+- Launch copy kit: `docs/marketing/launch_copy_kit.md`
+- Press one-pager: `docs/marketing/press_one_pager.md`
+- Public launch smoke report: `reports/public_launch/public_launch.md`
+
+Run the main local quality gate:
+
+```bash
+npm run check
+PYTHONPATH=src .venv310/bin/python tools/smoke_phase3_static.py
+PYTHONPATH=src .venv310/bin/python tools/smoke_release_readiness.py --today 2026-07-06
+PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
+PYTHONPATH=src .venv310/bin/python -m pytest -q
+```
+
+Manual launch blockers remain outside the repository: set production origins,
+run an external closed playtest, and replace the heuristic playtest content with
+broader real-model measured pairs before a serious campaign.
+
 This workspace starts with the kill-switch validation from `PLAN.md` and
 `KICKOFF.md`: prove that `X -> Y` drawings create a score spread before
 building UI, database, or leaderboards.
