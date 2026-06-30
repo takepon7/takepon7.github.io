@@ -192,6 +192,11 @@ def test_api_responses_include_public_security_headers() -> None:
 
     assert response.status_code == 200
     assert response.headers["x-content-type-options"] == "nosniff"
+    csp = response.headers["content-security-policy"]
+    assert "default-src 'self'" in csp
+    assert "img-src 'self' data: blob:" in csp
+    assert "object-src 'none'" in csp
+    assert "frame-ancestors 'none'" in csp
     assert response.headers["x-frame-options"] == "DENY"
     assert response.headers["referrer-policy"] == "strict-origin-when-cross-origin"
     assert "camera=()" in response.headers["permissions-policy"]
@@ -212,6 +217,7 @@ def test_api_can_serve_built_web_app_same_origin(tmp_path: Path, monkeypatch) ->
 
     assert app_shell.status_code == 200
     assert "gitai app" in app_shell.text
+    assert "default-src 'self'" in app_shell.headers["content-security-policy"]
     assert privacy.status_code == 200
     assert "Privacy Policy" in privacy.text
     assert api.status_code == 200

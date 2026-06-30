@@ -266,6 +266,8 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
             "ok": (
                 app_shell.status_code == 200
                 and '<div id="app"></div>' in app_shell.text
+                and "default-src 'self'" in app_shell.headers.get("content-security-policy", "")
+                and "object-src 'none'" in app_shell.headers.get("content-security-policy", "")
                 and privacy.status_code == 200
                 and "Privacy Policy" in privacy.text
                 and api.status_code == 200
@@ -275,6 +277,7 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
             "privacy_status": privacy.status_code,
             "api_status": api.status_code,
             "api_pair_id": api.json().get("pair_id") if api.status_code == 200 else "",
+            "csp": app_shell.headers.get("content-security-policy", ""),
         }
 
 

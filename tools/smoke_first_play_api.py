@@ -499,7 +499,9 @@ def is_png_b64(value: str) -> bool:
 
 def has_security_headers(response) -> bool:
     return (
-        response.headers.get("x-content-type-options") == "nosniff"
+        "default-src 'self'" in response.headers.get("content-security-policy", "")
+        and "object-src 'none'" in response.headers.get("content-security-policy", "")
+        and response.headers.get("x-content-type-options") == "nosniff"
         and response.headers.get("x-frame-options") == "DENY"
         and response.headers.get("referrer-policy") == "strict-origin-when-cross-origin"
         and "camera=()" in response.headers.get("permissions-policy", "")
