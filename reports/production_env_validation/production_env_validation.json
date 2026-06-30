@@ -1,0 +1,62 @@
+{
+  "allow_placeholders": true,
+  "check_paths": false,
+  "checks": [
+    {
+      "detail": "all required keys present",
+      "name": "required_keys_present",
+      "status": "pass"
+    },
+    {
+      "detail": "https://your-public-web-origin.example",
+      "name": "public_web_url_is_https",
+      "status": "pass"
+    },
+    {
+      "detail": "https://your-public-web-origin.example",
+      "name": "public_web_url_not_placeholder",
+      "status": "pass"
+    },
+    {
+      "detail": "https://your-public-web-origin.example",
+      "name": "cors_origins_are_https",
+      "status": "pass"
+    },
+    {
+      "detail": "https://your-public-web-origin.example",
+      "name": "cors_origins_not_placeholder",
+      "status": "pass"
+    },
+    {
+      "detail": "model=heuristic ocr=fingerprint moderation=fingerprint",
+      "name": "model_and_guards_are_production_safe",
+      "status": "pass"
+    },
+    {
+      "detail": "{\"GITAI_DAILY_LLM_SPEND_CAP\": \"100\", \"GITAI_DAILY_SUBMISSION_LIMIT\": \"10\", \"GITAI_USER_DAILY_COMMENT_LIMIT\": \"3\"}",
+      "name": "limits_are_positive_integers",
+      "status": "pass"
+    },
+    {
+      "detail": "season_id=season-1 season_label=Season 1",
+      "name": "season_identity_is_set",
+      "status": "pass"
+    },
+    {
+      "detail": "placeholder accepted for template",
+      "name": "operator_token_is_strong",
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "source": ".env.production.example",
+  "summary": {
+    "failed_checks": 0,
+    "passed_checks": 9,
+    "warnings": 1
+  },
+  "valid": true,
+  "warnings": [
+    "GITAI_OPERATOR_TOKEN is a template placeholder; replace it with a 32+ character random value."
+  ]
+}

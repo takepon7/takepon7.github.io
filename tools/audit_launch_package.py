@@ -3,10 +3,15 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import sys
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from tools.validate_production_env import parse_env_file, validate_production_env  # noqa: E402
+
 DEFAULT_OUT_DIR = ROOT / "reports" / "launch_package_audit"
 
 
@@ -103,6 +108,20 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             },
             sort_keys=True,
         ),
+    )
+
+    env_template_report = validate_production_env(
+        parse_env_file(ROOT / ".env.production.example"),
+        source=".env.production.example",
+        allow_placeholders=True,
+    )
+    add_check(
+        checks,
+        errors,
+        "production_env_template_ready",
+        bool(env_template_report.get("valid")),
+        f"passed={env_template_report.get('summary', {}).get('passed_checks', 0)} "
+        f"failed={env_template_report.get('summary', {}).get('failed_checks', 0)}",
     )
 
     required_assets = {

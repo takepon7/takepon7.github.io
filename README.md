@@ -22,6 +22,7 @@ npm run check
 PYTHONPATH=src .venv310/bin/python tools/smoke_phase3_static.py
 PYTHONPATH=src .venv310/bin/python tools/smoke_release_readiness.py --today 2026-07-06
 PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
+PYTHONPATH=src .venv310/bin/python tools/validate_production_env.py --env-file .env.production.example --allow-placeholders
 PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 PYTHONPATH=src .venv310/bin/python -m pytest -q
 ```
@@ -580,10 +581,13 @@ PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 
 The public smoke verifies launch metadata, brand asset dimensions, PWA manifest
 basics, same-origin serving, and the absence of localhost API defaults in the
-production bundle. The launch package audit then gathers release readiness,
-first-play flow, static smoke, policy pages, marketing docs, and imagegen assets
-into `reports/launch_package_audit/`. Manual follow-ups such as real production
-origins and outside playtest metrics are reported separately.
+production bundle. Validate `.env.production` with `tools/validate_production_env.py`
+before deploying; the checked-in example should only be run with
+`--allow-placeholders`. The launch package audit then gathers release readiness,
+first-play flow, static smoke, production env template health, policy pages,
+marketing docs, and imagegen assets into `reports/launch_package_audit/`.
+Manual follow-ups such as real production origins and outside playtest metrics
+are reported separately.
 
 ## Phase 5 appraiser comments
 
