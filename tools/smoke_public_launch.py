@@ -96,6 +96,15 @@ def smoke_public_launch(
         json.dumps(image_results, sort_keys=True),
     )
 
+    share_cards = validate_share_card_examples(web_dist_dir)
+    add_check(
+        checks,
+        errors,
+        "marketing_share_card_examples_ready",
+        share_cards["ok"],
+        json.dumps(share_cards, sort_keys=True),
+    )
+
     manifest_path = web_dist_dir / "site.webmanifest"
     manifest = load_json(manifest_path)
     manifest_ok = (
@@ -240,6 +249,32 @@ def validate_text_pages(expected: dict[str, tuple[Path, list[str]]]) -> dict[str
         missing = [token for token in tokens if token not in text]
         results[name] = {"ok": not missing, "path": str(path), "missing": missing}
     return results
+
+
+def validate_share_card_examples(web_dist_dir: Path) -> dict[str, Any]:
+    manifest_path = web_dist_dir / "brand" / "share-card-examples.json"
+    manifest = load_json(manifest_path)
+    examples = list(manifest.get("examples", []))
+    results: list[dict[str, Any]] = []
+    pair_ids: set[str] = set()
+    for item in examples:
+        source_path = Path(str(item.get("path", "")))
+        filename = source_path.name
+        image_path = web_dist_dir / "brand" / "share-cards" / filename
+        pair_ids.add(str(item.get("pair_id", "")))
+        if not filename or not image_path.exists():
+            results.append({"ok": False, "path": str(image_path), "actual": None})
+            continue
+        with Image.open(image_path) as image:
+            actual = image.size
+        results.append({"ok": actual == (1080, 1920), "path": str(image_path), "actual": actual})
+    return {
+        "ok": manifest_path.exists() and len(examples) >= 5 and len(pair_ids) >= 5 and all(item["ok"] for item in results),
+        "manifest": str(manifest_path),
+        "count": len(examples),
+        "pair_count": len(pair_ids),
+        "images": results,
+    }
 
 
 def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:

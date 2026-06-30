@@ -48,6 +48,7 @@ Launch ritual:
 - 16:9 hero: `web/public/brand/marketing-hero-16x9.png`
 - Square social creative: `web/public/brand/social-feed-square.png`
 - Vertical story creative: `web/public/brand/social-story-vertical.png`
+- Share-card examples: `web/public/brand/share-cards/*.png`
 - App icon: `web/public/brand/app-icon-512.png`
 
 ## Launch Readiness Notes

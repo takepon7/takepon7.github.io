@@ -96,6 +96,7 @@ Generated and checked in:
 - 16:9 marketing hero: `web/public/brand/marketing-hero-16x9.png`
 - Square social feed creative: `web/public/brand/social-feed-square.png`
 - Vertical story/reel cover creative: `web/public/brand/social-story-vertical.png`
+- Five generated share-card examples: `web/public/brand/share-cards/*.png`
 - PWA icons: `web/public/brand/app-icon-192.png`, `web/public/brand/app-icon-512.png`
 - Apple touch icon: `web/public/brand/apple-touch-icon.png`
 - Favicon: `web/public/brand/favicon-32.png`
@@ -103,8 +104,7 @@ Generated and checked in:
 Still useful before a public launch:
 
 - Three real gameplay clips, 8-12 seconds each.
-- Five share-card examples from different daily puzzles.
-- One creator/press one-pager with screenshots, core loop, and safety/cost design.
+- One creator/press one-pager PDF/layout built from the checked-in press one-pager and screenshots.
 
 ## KPIs
 

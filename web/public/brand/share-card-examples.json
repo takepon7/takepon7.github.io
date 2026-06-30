@@ -1,0 +1,71 @@
+{
+  "examples": [
+    {
+      "base": "apple",
+      "date": "2026-06-29",
+      "pair_id": "apple_to_baseball",
+      "path": "web/public/brand/share-cards/share-card-example-2026-06-29-apple_to_baseball.png",
+      "percentile": 0.6666666666666666,
+      "score": 667,
+      "size": [
+        1080,
+        1920
+      ],
+      "target": "baseball"
+    },
+    {
+      "base": "balloon",
+      "date": "2026-06-30",
+      "pair_id": "balloon_to_baseball",
+      "path": "web/public/brand/share-cards/share-card-example-2026-06-30-balloon_to_baseball.png",
+      "percentile": 1.0,
+      "score": 1000,
+      "size": [
+        1080,
+        1920
+      ],
+      "target": "baseball"
+    },
+    {
+      "base": "orange",
+      "date": "2026-07-01",
+      "pair_id": "orange_to_tennis_ball",
+      "path": "web/public/brand/share-cards/share-card-example-2026-07-01-orange_to_tennis_ball.png",
+      "percentile": 0.0,
+      "score": 0,
+      "size": [
+        1080,
+        1920
+      ],
+      "target": "tennis ball"
+    },
+    {
+      "base": "tomato",
+      "date": "2026-07-02",
+      "pair_id": "tomato_to_baseball",
+      "path": "web/public/brand/share-cards/share-card-example-2026-07-02-tomato_to_baseball.png",
+      "percentile": 1.0,
+      "score": 1000,
+      "size": [
+        1080,
+        1920
+      ],
+      "target": "baseball"
+    },
+    {
+      "base": "mug",
+      "date": "2026-07-03",
+      "pair_id": "mug_to_book",
+      "path": "web/public/brand/share-cards/share-card-example-2026-07-03-mug_to_book.png",
+      "percentile": 0.0,
+      "score": 0,
+      "size": [
+        1080,
+        1920
+      ],
+      "target": "book"
+    }
+  ],
+  "generated_from": "tools/build_marketing_share_cards.py",
+  "today": "2026-07-06"
+}

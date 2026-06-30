@@ -21,6 +21,11 @@
       "status": "pass"
     },
     {
+      "detail": "{\"count\": 5, \"images\": [{\"actual\": [1080, 1920], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/brand/share-cards/share-card-example-2026-06-29-apple_to_baseball.png\"}, {\"actual\": [1080, 1920], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/brand/share-cards/share-card-example-2026-06-30-balloon_to_baseball.png\"}, {\"actual\": [1080, 1920], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/brand/share-cards/share-card-example-2026-07-01-orange_to_tennis_ball.png\"}, {\"actual\": [1080, 1920], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/brand/share-cards/share-card-example-2026-07-02-tomato_to_baseball.png\"}, {\"actual\": [1080, 1920], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/brand/share-cards/share-card-example-2026-07-03-mug_to_book.png\"}], \"manifest\": \"/Users/ryosuke/dev/new_game/web/dist/brand/share-card-examples.json\", \"ok\": true, \"pair_count\": 5}",
+      "name": "marketing_share_card_examples_ready",
+      "status": "pass"
+    },
+    {
       "detail": "manifest includes standalone app metadata and install icons",
       "name": "pwa_manifest_ready",
       "status": "pass"
@@ -60,7 +65,7 @@
   "summary": {
     "failed_checks": 0,
     "manual_followups": 3,
-    "passed_checks": 11
+    "passed_checks": 12
   },
   "valid": true,
   "warnings": [
