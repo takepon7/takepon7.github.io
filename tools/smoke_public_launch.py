@@ -296,6 +296,8 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
             client = TestClient(create_app(build_state_from_env()))
             app_shell = client.get("/")
             privacy = client.get("/privacy.html")
+            script = client.get(next_asset_path(web_dist_dir))
+            brand = client.get("/brand/og-image.png")
             api = client.get("/v1/daily-puzzle")
         return {
             "ok": (
@@ -303,17 +305,38 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
                 and '<div id="app"></div>' in app_shell.text
                 and "default-src 'self'" in app_shell.headers.get("content-security-policy", "")
                 and "object-src 'none'" in app_shell.headers.get("content-security-policy", "")
+                and app_shell.headers.get("cache-control") == "no-cache"
                 and privacy.status_code == 200
                 and "Privacy Policy" in privacy.text
+                and privacy.headers.get("cache-control") == "no-cache"
+                and script.status_code == 200
+                and script.headers.get("cache-control") == "public, max-age=31536000, immutable"
+                and brand.status_code == 200
+                and brand.headers.get("cache-control") == "public, max-age=86400"
                 and api.status_code == 200
+                and api.headers.get("cache-control") == "no-store"
                 and api.json().get("pair_id") == "apple_to_baseball"
             ),
             "app_status": app_shell.status_code,
             "privacy_status": privacy.status_code,
+            "asset_status": script.status_code,
+            "brand_status": brand.status_code,
             "api_status": api.status_code,
             "api_pair_id": api.json().get("pair_id") if api.status_code == 200 else "",
             "csp": app_shell.headers.get("content-security-policy", ""),
+            "cache_control": {
+                "app": app_shell.headers.get("cache-control", ""),
+                "asset": script.headers.get("cache-control", ""),
+                "brand": brand.headers.get("cache-control", ""),
+                "api": api.headers.get("cache-control", ""),
+            },
         }
+
+
+def next_asset_path(web_dist_dir: Path) -> str:
+    for path in sorted((web_dist_dir / "assets").glob("*.js")):
+        return f"/assets/{path.name}"
+    return "/assets/missing.js"
 
 
 def validate_container_files() -> dict[str, Any]:

@@ -399,6 +399,9 @@ def create_app(state: AppState | None = None) -> FastAPI:
         response = await call_next(request)
         for name, value in SECURITY_HEADERS.items():
             response.headers.setdefault(name, value)
+        cache_control = cache_control_for_path(request.url.path)
+        if cache_control:
+            response.headers.setdefault("Cache-Control", cache_control)
         return response
 
     @app.get("/healthz")
@@ -1014,6 +1017,20 @@ def mount_static_web_app(app: FastAPI) -> None:
     if not static_path.is_dir() or not index_path.exists():
         raise RuntimeError(f"GITAI_STATIC_DIR must point to a built web dist with index.html: {static_path}")
     app.mount("/", StaticFiles(directory=static_path, html=True), name="web")
+
+
+def cache_control_for_path(path: str) -> str:
+    if path == "/healthz" or path.startswith("/v1/"):
+        return "no-store"
+    if path == "/" or path.endswith(".html"):
+        return "no-cache"
+    if path.startswith("/assets/"):
+        return "public, max-age=31536000, immutable"
+    if path.startswith("/brand/"):
+        return "public, max-age=86400"
+    if path in {"/site.webmanifest", "/robots.txt"}:
+        return "public, max-age=3600"
+    return ""
 
 
 def object_label_payload(label) -> dict[str, Any]:

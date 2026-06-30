@@ -191,6 +191,7 @@ def test_api_responses_include_public_security_headers() -> None:
     response = client.get("/healthz")
 
     assert response.status_code == 200
+    assert response.headers["cache-control"] == "no-store"
     assert response.headers["x-content-type-options"] == "nosniff"
     csp = response.headers["content-security-policy"]
     assert "default-src 'self'" in csp
@@ -204,23 +205,38 @@ def test_api_responses_include_public_security_headers() -> None:
 
 def test_api_can_serve_built_web_app_same_origin(tmp_path: Path, monkeypatch) -> None:
     static_dir = tmp_path / "dist"
+    assets_dir = static_dir / "assets"
+    brand_dir = static_dir / "brand"
     static_dir.mkdir()
+    assets_dir.mkdir()
+    brand_dir.mkdir()
     (static_dir / "index.html").write_text("<!doctype html><title>gitai app</title>", encoding="utf-8")
     (static_dir / "privacy.html").write_text("<!doctype html><title>Privacy Policy</title>", encoding="utf-8")
+    (assets_dir / "index-test.js").write_text("console.log('gitai')", encoding="utf-8")
+    (brand_dir / "og-image.png").write_bytes(b"png")
     monkeypatch.setenv("GITAI_STATIC_DIR", str(static_dir))
     monkeypatch.setenv("GITAI_TODAY", "2026-06-29")
     client = client_for_tests()
 
     app_shell = client.get("/")
     privacy = client.get("/privacy.html")
+    script = client.get("/assets/index-test.js")
+    brand = client.get("/brand/og-image.png")
     api = client.get("/v1/daily-puzzle")
 
     assert app_shell.status_code == 200
     assert "gitai app" in app_shell.text
     assert "default-src 'self'" in app_shell.headers["content-security-policy"]
+    assert app_shell.headers["cache-control"] == "no-cache"
     assert privacy.status_code == 200
     assert "Privacy Policy" in privacy.text
+    assert privacy.headers["cache-control"] == "no-cache"
+    assert script.status_code == 200
+    assert script.headers["cache-control"] == "public, max-age=31536000, immutable"
+    assert brand.status_code == 200
+    assert brand.headers["cache-control"] == "public, max-age=86400"
     assert api.status_code == 200
+    assert api.headers["cache-control"] == "no-store"
     assert api.json()["pair_id"] == "apple_to_baseball"
 
 

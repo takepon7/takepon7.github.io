@@ -505,6 +505,7 @@ def has_security_headers(response) -> bool:
         and response.headers.get("x-frame-options") == "DENY"
         and response.headers.get("referrer-policy") == "strict-origin-when-cross-origin"
         and "camera=()" in response.headers.get("permissions-policy", "")
+        and response.headers.get("cache-control") == "no-store"
     )
 
 

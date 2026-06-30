@@ -36,7 +36,7 @@
       "status": "pass"
     },
     {
-      "detail": "{\"api_pair_id\": \"apple_to_baseball\", \"api_status\": 200, \"app_status\": 200, \"csp\": \"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'\", \"ok\": true, \"privacy_status\": 200}",
+      "detail": "{\"api_pair_id\": \"apple_to_baseball\", \"api_status\": 200, \"app_status\": 200, \"asset_status\": 200, \"brand_status\": 200, \"cache_control\": {\"api\": \"no-store\", \"app\": \"no-cache\", \"asset\": \"public, max-age=31536000, immutable\", \"brand\": \"public, max-age=86400\"}, \"csp\": \"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'\", \"ok\": true, \"privacy_status\": 200}",
       "name": "same_origin_web_serving_ready",
       "status": "pass"
     },
