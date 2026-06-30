@@ -298,6 +298,8 @@ def validate_container_files() -> dict[str, Any]:
         "GITAI_STATIC_DIR=/app/web/dist",
         'pip install --no-cache-dir -e ".[api]"',
         "USER gitai",
+        "HEALTHCHECK",
+        "http://127.0.0.1:8000/healthz",
         '"uvicorn"',
         '"gitai_phase0.server:app"',
     ]

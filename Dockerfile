@@ -29,4 +29,6 @@ RUN adduser --system --group gitai \
 
 EXPOSE 8000
 USER gitai
+HEALTHCHECK --interval=30s --timeout=3s --start-period=20s --retries=3 \
+  CMD python -c "import json, urllib.request; data=json.load(urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=2)); raise SystemExit(0 if data.get('status') == 'ok' else 1)"
 CMD ["uvicorn", "gitai_phase0.server:app", "--host", "0.0.0.0", "--port", "8000"]

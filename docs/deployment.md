@@ -56,7 +56,8 @@ GITAI_DAILY_SUBMISSION_LIMIT=10
 
 The included `Dockerfile` builds the web bundle with Node, copies it into the
 Python runtime image, sets `GITAI_STATIC_DIR=/app/web/dist`, creates `/data`,
-switches to a non-root `gitai` user, and starts uvicorn on port `8000`.
+switches to a non-root `gitai` user, adds a `/healthz` container healthcheck,
+and starts uvicorn on port `8000`.
 
 Example:
 
