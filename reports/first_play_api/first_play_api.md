@@ -4,10 +4,10 @@
 - season_id: `season-1`
 - today: `2026-07-06`
 - pair_id: `apple_to_baseball`
-- submission_id: `0b4105b86dd84e31b192d278f09021cf`
+- submission_id: `828ece587a004766b5cfe8f53fefb05f`
 - score: `667`
 - percentile: `0.6666666666666666`
-- passed_checks: `30`
+- passed_checks: `32`
 - failed_checks: `0`
 
 | check | status | detail |
@@ -29,12 +29,14 @@
 | submission_accepts_replayable_drawing | pass | status 200 |
 | score_leaderboard_loads_after_submit | pass | status 200 |
 | friend_leaderboard_loads_after_submit | pass | status 200 |
-| friend_ladder_contains_player | pass | ['0b4105b86dd84e31b192d278f09021cf'] |
+| friend_ladder_contains_player | pass | ['828ece587a004766b5cfe8f53fefb05f'] |
 | friend_ghost_loads_after_submit | pass | status 200 |
 | friend_ghost_includes_stroke_log | pass | friend ghost exposes replayable strokes |
 | share_card_generates_png | pass | status 200 |
 | funny_vote_accepts_viewer | pass | status 200 |
 | funny_ladder_loads | pass | status 200 |
+| content_report_records_submission | pass | status 200 |
+| content_report_has_review_counter | pass | recorded |
 | appraiser_comment_falls_back_safely | pass | status 200 |
 | appraiser_comment_has_line | pass | fallback_unavailable |
 | premium_code_redeems | pass | status 200 |

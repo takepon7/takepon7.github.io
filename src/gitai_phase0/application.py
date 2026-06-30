@@ -101,6 +101,17 @@ class SubmissionStore(Protocol):
     def record_funny_vote(self, submission_id: str, voter_user_id: str) -> tuple[bool, int]:
         raise NotImplementedError
 
+    def record_content_report(
+        self,
+        report_id: str,
+        submission_id: str,
+        reporter_user_id: str,
+        reason: str,
+        note: str,
+        created_at: datetime | None = None,
+    ) -> tuple[bool, int, str]:
+        raise NotImplementedError
+
 
 class AppraisalStore(Protocol):
     def get_cached_comment(self, submission_id: str) -> AppraisalComment | None:
@@ -295,6 +306,22 @@ class VoteForSubmissionResult:
     submission_id: str
     funny_votes: int
     accepted: bool
+
+
+@dataclass(frozen=True)
+class ReportContentCommand:
+    submission_id: str
+    reporter_user_id: str
+    reason: str
+    note: str = ""
+
+
+@dataclass(frozen=True)
+class ReportContentResult:
+    report_id: str
+    submission_id: str
+    report_count: int
+    status: str
 
 
 @dataclass(frozen=True)
@@ -631,6 +658,30 @@ class VoteForSubmissionUseCase:
         )
 
 
+class ReportContentUseCase:
+    def __init__(self, submissions: SubmissionStore) -> None:
+        self._submissions = submissions
+
+    def execute(self, command: ReportContentCommand) -> ReportContentResult:
+        reporter_user_id = sanitize_user_id(command.reporter_user_id)
+        submission = self._submissions.get(command.submission_id)
+        report_id = uuid.uuid4().hex
+        inserted, report_count, stored_report_id = self._submissions.record_content_report(
+            report_id=report_id,
+            submission_id=submission.submission_id,
+            reporter_user_id=reporter_user_id,
+            reason=sanitize_report_reason(command.reason),
+            note=sanitize_report_note(command.note),
+            created_at=datetime.now(timezone.utc),
+        )
+        return ReportContentResult(
+            report_id=stored_report_id,
+            submission_id=submission.submission_id,
+            report_count=report_count,
+            status="recorded" if inserted else "duplicate",
+        )
+
+
 class MintAppraisalCommentUseCase:
     HERO_PERCENTILE_FLOOR = 0.95
     HERO_SPEND_USER_ID = "__hero_appraisal__"
@@ -756,6 +807,18 @@ def sanitize_user_id(value: str) -> str:
     if not cleaned:
         return "local-player"
     return cleaned[:96]
+
+
+def sanitize_report_reason(value: str) -> str:
+    cleaned = value.strip().lower().replace("-", "_")
+    allowed = {"unsafe", "personal_info", "rights", "spam", "other"}
+    if cleaned not in allowed:
+        return "other"
+    return cleaned
+
+
+def sanitize_report_note(value: str) -> str:
+    return " ".join(value.strip().split())[:240]
 
 
 def sanitize_season_id(value: str) -> str:

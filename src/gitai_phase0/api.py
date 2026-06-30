@@ -22,6 +22,8 @@ from gitai_phase0.application import (
     MintAppraisalCommentCommand,
     MintAppraisalCommentUseCase,
     PairProposalReviewRejected,
+    ReportContentCommand,
+    ReportContentUseCase,
     RefVersionConflict,
     ReviewPairProposalCommand,
     ReviewPairProposalUseCase,
@@ -62,6 +64,7 @@ from gitai_phase0.submission_images import LocalSubmissionImageStore
 
 SUBMISSION_RATE_LIMIT = (5, 60)
 FUNNY_VOTE_RATE_LIMIT = (30, 60)
+CONTENT_REPORT_RATE_LIMIT = (10, 60)
 PAIR_PROPOSAL_RATE_LIMIT = (10, 60)
 DEFAULT_CORS_ORIGINS = ",".join(
     (
@@ -108,6 +111,13 @@ class SubmitRequest(ScoreRequest):
 class FunnyVoteRequest(BaseModel):
     submission_id: str
     user_id: str = "local-player"
+
+
+class ContentReportRequest(BaseModel):
+    submission_id: str
+    user_id: str = "local-player"
+    reason: str = Field(default="other", pattern="^(unsafe|personal_info|rights|spam|other)$")
+    note: str = Field(default="", max_length=240)
 
 
 class AppraisalCommentRequest(BaseModel):
@@ -260,6 +270,13 @@ class FunnyVoteResponse(BaseModel):
     submission_id: str
     funny_votes: int
     accepted: bool
+
+
+class ContentReportResponse(BaseModel):
+    report_id: str
+    submission_id: str
+    report_count: int
+    status: str
 
 
 class AppraisalCommentMintResponse(BaseModel):
@@ -740,6 +757,34 @@ def create_app(state: AppState | None = None) -> FastAPI:
             submission_id=result.submission_id,
             funny_votes=result.funny_votes,
             accepted=result.accepted,
+        )
+
+    @app.post("/v1/content-reports", response_model=ContentReportResponse)
+    def content_report(request: ContentReportRequest) -> ContentReportResponse:
+        service: AppState = app.state.gitai
+        enforce_rate_limit(
+            submissions=service.submissions,
+            actor_id=request.user_id,
+            action="content_report",
+            rule=CONTENT_REPORT_RATE_LIMIT,
+        )
+        usecase = ReportContentUseCase(submissions=service.submissions)
+        try:
+            result = usecase.execute(
+                ReportContentCommand(
+                    submission_id=request.submission_id,
+                    reporter_user_id=request.user_id,
+                    reason=request.reason,
+                    note=request.note,
+                )
+            )
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail=str(exc)) from exc
+        return ContentReportResponse(
+            report_id=result.report_id,
+            submission_id=result.submission_id,
+            report_count=result.report_count,
+            status=result.status,
         )
 
     @app.post("/v1/appraisal-comments", response_model=AppraisalCommentMintResponse)

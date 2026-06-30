@@ -206,6 +206,46 @@ class SqliteSubmissionRepository:
             ).fetchone()
         return cursor.rowcount > 0, int(count["count"])
 
+    def record_content_report(
+        self,
+        report_id: str,
+        submission_id: str,
+        reporter_user_id: str,
+        reason: str,
+        note: str,
+        created_at: datetime | None = None,
+    ) -> tuple[bool, int, str]:
+        if created_at is None:
+            created_at = datetime.utcnow()
+        with self._connect() as conn:
+            submission = conn.execute(
+                "select submission_id from submissions where submission_id = ?",
+                (submission_id,),
+            ).fetchone()
+            if submission is None:
+                raise KeyError(f"Unknown submission_id: {submission_id}")
+            cursor = conn.execute(
+                """
+                insert or ignore into content_reports (
+                    report_id, submission_id, reporter_user_id, reason, note, created_at
+                ) values (?, ?, ?, ?, ?, ?)
+                """,
+                (report_id, submission_id, reporter_user_id, reason, note, created_at.isoformat()),
+            )
+            stored = conn.execute(
+                """
+                select report_id
+                from content_reports
+                where submission_id = ? and reporter_user_id = ? and reason = ?
+                """,
+                (submission_id, reporter_user_id, reason),
+            ).fetchone()
+            count = conn.execute(
+                "select count(*) as count from content_reports where submission_id = ?",
+                (submission_id,),
+            ).fetchone()
+        return cursor.rowcount > 0, int(count["count"]), str(stored["report_id"])
+
     def funny_vote_count(self, submission_id: str) -> int:
         with self._connect() as conn:
             count = conn.execute(
@@ -317,6 +357,22 @@ class SqliteSubmissionRepository:
             )
             conn.execute(
                 "create index if not exists idx_funny_votes_submission on funny_votes (submission_id)"
+            )
+            conn.execute(
+                """
+                create table if not exists content_reports (
+                    report_id text primary key,
+                    submission_id text not null,
+                    reporter_user_id text not null,
+                    reason text not null,
+                    note text not null default '',
+                    created_at text not null,
+                    unique (submission_id, reporter_user_id, reason)
+                )
+                """
+            )
+            conn.execute(
+                "create index if not exists idx_content_reports_submission on content_reports (submission_id, created_at)"
             )
             conn.execute(
                 """

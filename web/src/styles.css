@@ -365,12 +365,13 @@ button {
 
 .ghost-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #e4dac8;
 }
 
 .ghost-vote,
-.ghost-replay {
+.ghost-replay,
+.ghost-report {
   width: 100%;
   min-height: 36px;
   background: #22201d;
@@ -384,8 +385,13 @@ button {
   border-right: 1px solid #4a4540;
 }
 
+.ghost-vote {
+  border-right: 1px solid #4a4540;
+}
+
 .ghost-vote:disabled,
-.ghost-replay:disabled {
+.ghost-replay:disabled,
+.ghost-report:disabled {
   opacity: 0.45;
   cursor: not-allowed;
 }

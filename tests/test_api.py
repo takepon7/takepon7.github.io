@@ -1007,6 +1007,44 @@ def test_funny_votes_are_unique_and_power_funny_ladder(tmp_path: Path) -> None:
     assert ghost.json()["funny_votes"] == 1
 
 
+def test_content_reports_are_recorded_once_per_reason(tmp_path: Path) -> None:
+    client = client_for_tests(db_path=tmp_path / "submissions.sqlite")
+    payload = payload_for("apple_baseball_good.png")
+    payload.update({"puzzle_date": "2026-06-29", "user_id": "artist", "display_name": "artist"})
+    submission = client.post("/v1/submissions", json=payload)
+    assert submission.status_code == 200
+    submission_id = submission.json()["submission_id"]
+
+    first = client.post(
+        "/v1/content-reports",
+        json={"submission_id": submission_id, "user_id": "viewer", "reason": "unsafe", "note": "bad vibes"},
+    )
+    duplicate = client.post(
+        "/v1/content-reports",
+        json={"submission_id": submission_id, "user_id": "viewer", "reason": "unsafe", "note": "again"},
+    )
+    other_reason = client.post(
+        "/v1/content-reports",
+        json={"submission_id": submission_id, "user_id": "viewer", "reason": "personal_info"},
+    )
+    missing = client.post(
+        "/v1/content-reports",
+        json={"submission_id": "missing", "user_id": "viewer", "reason": "unsafe"},
+    )
+
+    assert first.status_code == 200
+    assert first.json()["status"] == "recorded"
+    assert first.json()["report_count"] == 1
+    assert duplicate.status_code == 200
+    assert duplicate.json()["status"] == "duplicate"
+    assert duplicate.json()["report_id"] == first.json()["report_id"]
+    assert duplicate.json()["report_count"] == 1
+    assert other_reason.status_code == 200
+    assert other_reason.json()["status"] == "recorded"
+    assert other_reason.json()["report_count"] == 2
+    assert missing.status_code == 404
+
+
 def test_unknown_leaderboard_kind_is_rejected() -> None:
     client = client_for_tests()
     response = client.get("/v1/leaderboard?kind=weird")

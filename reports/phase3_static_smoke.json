@@ -6,6 +6,7 @@
     "client_replay_base_parity": true,
     "client_replay_uses_strokes": true,
     "client_undo_preserves_base": true,
+    "content_report_submission": true,
     "cosmetic_palette_fetch": true,
     "daily_puzzle_archive_fetch": true,
     "daily_puzzle_fetch": true,
@@ -92,9 +93,9 @@
     "tomato"
   ],
   "scripts": [
-    "/assets/index-BZEAgW34.js"
+    "/assets/index-BD-tfYTY.js"
   ],
   "styles": [
-    "/assets/index-uaVlw82J.css"
+    "/assets/index-BrPzsF5k.css"
   ]
 }

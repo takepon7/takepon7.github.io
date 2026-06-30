@@ -290,6 +290,20 @@ def run_flow(
     funny_board = client.get(f"/v1/leaderboard?date={daily_body['date']}&kind=funny")
     add_response_check(checks, errors, "funny_ladder_loads", funny_board)
 
+    report_response = client.post(
+        "/v1/content-reports",
+        json={"submission_id": submission_id, "user_id": "safety-viewer", "reason": "unsafe"},
+    )
+    add_response_check(checks, errors, "content_report_records_submission", report_response)
+    if report_response.status_code == 200:
+        add_check(
+            checks,
+            errors,
+            "content_report_has_review_counter",
+            report_response.json().get("report_count") == 1,
+            str(report_response.json().get("status", "")),
+        )
+
     appraisal = client.post(
         "/v1/appraisal-comments",
         json={"submission_id": submission_id, "user_id": "first-player", "mode": "on_demand"},

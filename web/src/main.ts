@@ -116,6 +116,13 @@ type FunnyVoteResponse = {
   accepted: boolean;
 };
 
+type ContentReportResponse = {
+  report_id: string;
+  submission_id: string;
+  report_count: number;
+  status: "recorded" | "duplicate";
+};
+
 type AppraisalCommentResponse = {
   submission_id: string;
   comment: AppraisalComment;
@@ -271,6 +278,7 @@ app.innerHTML = `
             <div class="ghost-actions">
               <button class="ghost-replay" id="ghost-replay-button" type="button" disabled>Replay</button>
               <button class="ghost-vote" id="ghost-vote-button" type="button" disabled>Funny</button>
+              <button class="ghost-report" id="ghost-report-button" type="button" disabled>Report</button>
             </div>
           </div>
         </div>
@@ -406,6 +414,7 @@ const shareCardButton = byId<HTMLButtonElement>("share-card-button");
 const appraiserButton = byId<HTMLButtonElement>("appraiser-button");
 const ghostVoteButton = byId<HTMLButtonElement>("ghost-vote-button");
 const ghostReplayButton = byId<HTMLButtonElement>("ghost-replay-button");
+const ghostReportButton = byId<HTMLButtonElement>("ghost-report-button");
 const dailySelect = byId<HTMLSelectElement>("daily-select");
 const proposalBaseInput = byId<HTMLInputElement>("proposal-base");
 const proposalTargetInput = byId<HTMLInputElement>("proposal-target");
@@ -557,6 +566,9 @@ function setupTools(): void {
   });
   ghostVoteButton.addEventListener("click", () => {
     void voteForVisibleGhost();
+  });
+  ghostReportButton.addEventListener("click", () => {
+    void reportVisibleGhost();
   });
   ghostReplayButton.addEventListener("click", () => {
     void replayVisibleGhost();
@@ -1154,6 +1166,7 @@ async function refreshGhost(date: string): Promise<void> {
     byId<HTMLDivElement>("ghost-name").textContent = "まだ相手がいません。";
     ghostVoteButton.disabled = true;
     ghostReplayButton.disabled = true;
+    ghostReportButton.disabled = true;
   }
 }
 
@@ -1169,6 +1182,7 @@ function renderGhost(ghost: GhostResponse): void {
     ghost.funny_votes > 0 ? `#${ghost.rank} ${ghost.display_name} / ${ghost.funny_votes}票` : `#${ghost.rank} ${ghost.display_name}`;
   ghostVoteButton.disabled = ghost.submission_id === lastSubmissionId;
   ghostReplayButton.disabled = !visibleGhostStrokeLog;
+  ghostReportButton.disabled = false;
 }
 
 async function replayVisibleGhost(): Promise<void> {
@@ -1655,6 +1669,25 @@ async function voteForVisibleGhost(): Promise<void> {
     flashStatus(error instanceof Error && error.message.includes("own") ? "自分には投票不可" : "投票できません");
   } finally {
     ghostVoteButton.disabled = visibleGhostSubmissionId === lastSubmissionId || !visibleGhostSubmissionId;
+  }
+}
+
+async function reportVisibleGhost(): Promise<void> {
+  if (!visibleGhostSubmissionId) return;
+  ghostReportButton.disabled = true;
+  try {
+    const result = await postJson<ContentReportResponse>("/v1/content-reports", {
+      submission_id: visibleGhostSubmissionId,
+      user_id: playerId,
+      reason: "unsafe",
+      note: "reported from ghost card",
+    });
+    flashStatus(result.status === "recorded" ? "通報を記録" : "通報済み");
+  } catch (error) {
+    console.error(error);
+    flashStatus("通報できません");
+  } finally {
+    ghostReportButton.disabled = !visibleGhostSubmissionId;
   }
 }
 
