@@ -129,6 +129,11 @@ and policy links.
 
 Keep `api.gitai.game` pointing at the API host.
 
+`api.gitai.game` requires the parent domain `gitai.game` to be registered first.
+If WHOIS returns `DOMAIN NOT FOUND`, DNS cannot be configured yet. After
+registration, connect the domain to the API host and point `api.gitai.game` at
+that host's DNS target.
+
 Future apex records for `gitai.game`, after the domain is registered:
 
 ```text

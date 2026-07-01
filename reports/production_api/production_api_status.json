@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-07-01T20:03:16+09:00",
+  "valid": false,
+  "target_api": "https://api.gitai.game",
+  "dns": {
+    "gitai.game_registered": false,
+    "gitai.game_status": "DOMAIN NOT FOUND",
+    "api.gitai.game_resolves": false
+  },
+  "vercel": {
+    "cli_installed": true,
+    "cli_version": "54.5.0",
+    "token_present": false,
+    "authenticated": false,
+    "blocked_reason": "No Vercel token or existing CLI login is available in this environment."
+  },
+  "local_api": {
+    "entrypoint_imports": true
+  },
+  "remaining_blockers": [
+    "Register gitai.game before configuring api.gitai.game DNS.",
+    "Provide a Vercel login or VERCEL_TOKEN before deploying the FastAPI service."
+  ]
+}

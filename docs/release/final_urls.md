@@ -35,6 +35,8 @@ GITAI_IOS_MARKETING_URL=https://takepon7.github.io
 GITAI_IOS_PRIVACY_URL=https://takepon7.github.io/privacy.html
 ```
 
-Before TestFlight, `api.gitai.game` still needs to point to the FastAPI service.
+Before App Review, `api.gitai.game` still needs to point to the FastAPI service.
 GitHub Pages is not suitable for `api.gitai.game` because Pages only serves
-static files. Register `gitai.game` later if a branded apex domain is needed.
+static files. Register `gitai.game` before attempting to configure
+`api.gitai.game`; until the parent domain exists at a registrar, no DNS provider
+can create a working `api.gitai.game` record.

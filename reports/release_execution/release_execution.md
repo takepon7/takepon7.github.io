@@ -1,6 +1,6 @@
 # Release Execution
 
-- checked_at: `2026-07-01T19:08:15+09:00`
+- checked_at: `2026-07-01T20:03:16+09:00`
 - target_web: `https://takepon7.github.io`
 - target_api: `https://api.gitai.game`
 - app_store_app_id: `6786196512`
@@ -22,6 +22,9 @@
   - `https://takepon7.github.io/privacy.html`: `200`
   - `https://takepon7.github.io/support.html`: `200`
 - Vercel CLI is installed, but no usable Vercel login/token was available in this sandbox.
+- Vercel CLI version is `54.5.0`; upgrade to the latest CLI before final deployment.
+- Production API deployment remains blocked because `gitai.game` is not registered and no Vercel login/token is available.
+- Updated Vercel/FastAPI defaults to allow the active web origin `https://takepon7.github.io`.
 - Added Vercel release configuration:
   - `vercel.json`
   - `api/index.py`

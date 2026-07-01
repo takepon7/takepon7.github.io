@@ -17,7 +17,7 @@ os.environ.setdefault("GITAI_MODEL", "heuristic")
 os.environ.setdefault("GITAI_OCR", "fingerprint")
 os.environ.setdefault("GITAI_MODERATION", "fingerprint")
 os.environ.setdefault("GITAI_LAYER2_ACTOR", "null")
-os.environ.setdefault("GITAI_CORS_ORIGINS", "https://gitai.game,capacitor://localhost")
-os.environ.setdefault("GITAI_PUBLIC_WEB_URL", "https://gitai.game")
+os.environ.setdefault("GITAI_CORS_ORIGINS", "https://takepon7.github.io,capacitor://localhost")
+os.environ.setdefault("GITAI_PUBLIC_WEB_URL", "https://takepon7.github.io")
 
 from gitai_phase0.server import app  # noqa: E402

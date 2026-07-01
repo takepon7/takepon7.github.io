@@ -5,8 +5,12 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 PROJECT_NAME="${VERCEL_PROJECT_NAME:-gitai}"
-WEB_DOMAIN="${GITAI_WEB_DOMAIN:-gitai.game}"
+WEB_DOMAIN="${GITAI_WEB_DOMAIN:-takepon7.github.io}"
 API_DOMAIN="${GITAI_API_DOMAIN:-api.gitai.game}"
+VERCEL_HOME="${VERCEL_HOME:-$ROOT/build/vercel/home}"
+
+mkdir -p "$VERCEL_HOME"
+export HOME="$VERCEL_HOME"
 
 require_vercel_auth() {
   if [[ -z "${VERCEL_TOKEN:-}" ]]; then
@@ -59,11 +63,9 @@ fi
 
 deployment_url="$(vercel_cmd deploy --prod --yes)"
 
-vercel_cmd domains add "$WEB_DOMAIN" "$PROJECT_NAME" --yes >/dev/null || true
 vercel_cmd domains add "$API_DOMAIN" "$PROJECT_NAME" --yes >/dev/null || true
-vercel_cmd alias set "$deployment_url" "$WEB_DOMAIN" >/dev/null
 vercel_cmd alias set "$deployment_url" "$API_DOMAIN" >/dev/null
 
 printf 'Deployment: %s\n' "$deployment_url"
-printf 'Web: https://%s\n' "$WEB_DOMAIN"
+printf 'Web origin allowed by CORS: https://%s\n' "$WEB_DOMAIN"
 printf 'API: https://%s/healthz\n' "$API_DOMAIN"
