@@ -28,8 +28,14 @@ a different final bundle ID, update both `.env.appstore` and
 `capacitor.config.ts`, then run:
 
 ```bash
-GITAI_IOS_API_BASE=https://your-api.example.com npm run ios:sync
+GITAI_IOS_API_BASE=https://api.gitai.game npm run ios:sync
 ```
+
+Final App Store URLs:
+
+- Support URL: `https://gitai.game/support.html`
+- Marketing URL: `https://gitai.game`
+- Privacy Policy URL: `https://gitai.game/privacy.html`
 
 ## Automatable Actions
 
@@ -104,7 +110,7 @@ PYTHONPATH=src .venv310/bin/python tools/sync_app_store_metadata.py
 ```
 
 By default, this updates App Store text fields and skips URL fields until final
-production URLs replace the `example.com` placeholders in `.env.appstore`.
+production URLs replace any placeholders in `.env.appstore`.
 
 Once final URLs are present:
 

@@ -19,7 +19,7 @@
 | production_env_template_ready | pass | passed=9 failed=0 |
 | real_model_expansion_backlog_ready | pass | real_model_pairs=6 backlog=1 |
 | imagegen_assets_ready | pass | {"missing_assets": [], "missing_share_cards": [], "share_card_examples": 5} |
-| policy_pages_ready | pass | privacy, terms, and safety pages exist |
+| policy_pages_ready | pass | privacy, terms, safety, and support pages exist |
 | itchio_release_kit_ready | pass | {"doc": "/Users/ryosuke/dev/new_game/docs/release/itchio_release_kit.md", "ready_for_public_upload": false, "zip_path": "/Users/ryosuke/dev/new_game/releases/itchio/gitai-itchio-web-v0.1.0.zip"} |
 | app_store_release_kit_ready | pass | {"doc": "/Users/ryosuke/dev/new_game/docs/release/app_store_release_plan.md", "screenshot_count": 5} |
 

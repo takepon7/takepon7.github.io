@@ -10,10 +10,10 @@
 | check | status | detail |
 | --- | --- | --- |
 | required_keys_present | pass | all required keys present |
-| public_web_url_is_https | pass | https://your-public-web-origin.example |
-| public_web_url_not_placeholder | pass | https://your-public-web-origin.example |
-| cors_origins_are_https | pass | https://your-public-web-origin.example |
-| cors_origins_not_placeholder | pass | https://your-public-web-origin.example |
+| public_web_url_is_https | pass | https://gitai.game |
+| public_web_url_not_placeholder | pass | https://gitai.game |
+| cors_origins_are_production_origins | pass | https://gitai.game, capacitor://localhost |
+| cors_origins_not_placeholder | pass | https://gitai.game, capacitor://localhost |
 | model_and_guards_are_production_safe | pass | model=heuristic ocr=fingerprint moderation=fingerprint |
 | limits_are_positive_integers | pass | {"GITAI_DAILY_LLM_SPEND_CAP": "100", "GITAI_DAILY_SUBMISSION_LIMIT": "10", "GITAI_USER_DAILY_COMMENT_LIMIT": "3"} |
 | season_identity_is_set | pass | season_id=season-1 season_label=Season 1 |

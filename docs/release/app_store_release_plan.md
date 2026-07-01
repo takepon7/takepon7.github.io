@@ -29,6 +29,16 @@ Current App Store Connect record:
 - App ID: `6786196512`
 - SKU: `gitai-ios`
 
+Final release URLs:
+
+- Web / marketing: `https://gitai.game`
+- API: `https://api.gitai.game`
+- Support: `https://gitai.game/support.html`
+- Privacy: `https://gitai.game/privacy.html`
+- Terms: `https://gitai.game/terms.html`
+- Safety: `https://gitai.game/safety.html`
+- Native CORS origin: `capacitor://localhost`
+
 ## Suggested Build Path
 
 ### Phase 1: iOS Wrapper
@@ -45,7 +55,7 @@ The repository now includes a Capacitor iOS shell in `ios/` with bundle ID
 To refresh the bundled iOS web assets:
 
 ```bash
-GITAI_IOS_API_BASE=https://your-api.example.com npm run ios:sync
+GITAI_IOS_API_BASE=https://api.gitai.game npm run ios:sync
 ```
 
 To open the project in Xcode:
@@ -128,6 +138,6 @@ Outputs:
 
 - Apple Developer account holder must create or provide the App Store Connect API key.
 - Final bundle ID must be reserved in Apple Developer/App Store Connect.
-- Production API origin must be known before final iOS build.
-- Re-run `GITAI_IOS_API_BASE=https://final-api.example.com npm run ios:sync` before archiving.
+- Production API must be deployed at `https://api.gitai.game` before final iOS build.
+- Re-run `GITAI_IOS_API_BASE=https://api.gitai.game npm run ios:sync` before archiving.
 - App review screenshots must be generated from the final UI/API build.

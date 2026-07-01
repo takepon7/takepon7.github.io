@@ -135,14 +135,19 @@ def smoke_public_launch(
         "privacy": (web_dist_dir / "privacy.html", ["Privacy Policy", "取得する情報", "削除"]),
         "terms": (web_dist_dir / "terms.html", ["Terms of Use", "禁止事項", "投稿コンテンツ"]),
         "safety": (web_dist_dir / "safety.html", ["Safety Guidelines", "不正対策", "共有時の注意"]),
+        "support": (web_dist_dir / "support.html", ["Support", "問い合わせ", "対応方針"]),
     }
     legal_results = validate_text_pages(legal_pages)
-    legal_links = [token for token in ("/privacy.html", "/terms.html", "/safety.html") if token in js_text]
+    legal_links = [
+        token
+        for token in ("/privacy.html", "/terms.html", "/safety.html", "/support.html")
+        if token in js_text
+    ]
     add_check(
         checks,
         errors,
         "public_policy_pages_ready",
-        all(item["ok"] for item in legal_results.values()) and len(legal_links) == 3,
+        all(item["ok"] for item in legal_results.values()) and len(legal_links) == 4,
         json.dumps({"pages": legal_results, "linked_from_app": legal_links}, sort_keys=True),
     )
 
@@ -203,7 +208,7 @@ def smoke_public_launch(
 
     warnings.extend(
         [
-            "Set real production origins in GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL before launch.",
+            "Point DNS and hosting for gitai.game and api.gitai.game before launch.",
             "Run an external closed playtest; in-app feedback is wired, but automated smoke cannot prove player fun or acquisition metrics.",
             "Replace heuristic playtest content with broader real-model measured pairs before a serious public campaign.",
         ]
@@ -306,6 +311,7 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
             client = TestClient(create_app(build_state_from_env()))
             app_shell = client.get("/")
             privacy = client.get("/privacy.html")
+            support = client.get("/support.html")
             script = client.get(next_asset_path(web_dist_dir))
             brand = client.get("/brand/og-image.png")
             api = client.get("/v1/daily-puzzle")
@@ -319,6 +325,9 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
                 and privacy.status_code == 200
                 and "Privacy Policy" in privacy.text
                 and privacy.headers.get("cache-control") == "no-cache"
+                and support.status_code == 200
+                and "Support" in support.text
+                and support.headers.get("cache-control") == "no-cache"
                 and script.status_code == 200
                 and script.headers.get("cache-control") == "public, max-age=31536000, immutable"
                 and brand.status_code == 200
@@ -329,6 +338,7 @@ def validate_same_origin_static_serving(web_dist_dir: Path) -> dict[str, Any]:
             ),
             "app_status": app_shell.status_code,
             "privacy_status": privacy.status_code,
+            "support_status": support.status_code,
             "asset_status": script.status_code,
             "brand_status": brand.status_code,
             "api_status": api.status_code,

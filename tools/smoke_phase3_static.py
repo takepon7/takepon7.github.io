@@ -96,9 +96,11 @@ def main() -> None:
         "privacy-link",
         "terms-link",
         "safety-link",
+        "support-link",
         "/privacy.html",
         "/terms.html",
         "/safety.html",
+        "/support.html",
     ]
     required_style_tokens = [
         ".draw-canvas",
@@ -161,6 +163,7 @@ def main() -> None:
         ROOT / "web" / "dist" / "privacy.html",
         ROOT / "web" / "dist" / "terms.html",
         ROOT / "web" / "dist" / "safety.html",
+        ROOT / "web" / "dist" / "support.html",
     ]
     missing_public_assets = [str(path) for path in public_assets if not path.exists()]
     client_base_ids = set(re.findall(r'objectId === "([^"]+)"', source_ts))

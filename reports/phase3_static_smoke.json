@@ -79,7 +79,8 @@
     "/Users/ryosuke/dev/new_game/web/dist/robots.txt",
     "/Users/ryosuke/dev/new_game/web/dist/privacy.html",
     "/Users/ryosuke/dev/new_game/web/dist/terms.html",
-    "/Users/ryosuke/dev/new_game/web/dist/safety.html"
+    "/Users/ryosuke/dev/new_game/web/dist/safety.html",
+    "/Users/ryosuke/dev/new_game/web/dist/support.html"
   ],
   "replay_base_ids": [
     "apple",
@@ -94,7 +95,7 @@
     "tomato"
   ],
   "scripts": [
-    "/assets/index-CzHzUxkD.js",
+    "/assets/index-iTydrh-_.js",
     "/native-config.js"
   ],
   "styles": [

@@ -106,12 +106,12 @@ def validate_production_env(
     )
 
     cors_origins = parse_csv(env.get("GITAI_CORS_ORIGINS", ""))
-    cors_ok = bool(cors_origins) and all(is_https_url(origin) for origin in cors_origins)
-    cors_placeholder_ok = allow_placeholders or not any(contains_placeholder(origin) for origin in cors_origins)
+    cors_ok = bool(cors_origins) and all(is_production_cors_origin(origin) for origin in cors_origins)
+    cors_placeholder_ok = allow_placeholders or not any(origin_contains_placeholder(origin) for origin in cors_origins)
     add_check(
         checks,
         errors,
-        "cors_origins_are_https",
+        "cors_origins_are_production_origins",
         cors_ok,
         ", ".join(cors_origins) if cors_origins else "missing",
     )
@@ -209,9 +209,24 @@ def is_https_url(value: str) -> bool:
     return parsed.scheme == "https" and bool(parsed.netloc) and not parsed.path.rstrip("/")
 
 
+def is_capacitor_origin(value: str) -> bool:
+    parsed = urlparse(value)
+    return parsed.scheme == "capacitor" and parsed.netloc == "localhost" and not parsed.path.rstrip("/")
+
+
+def is_production_cors_origin(value: str) -> bool:
+    return is_https_url(value) or is_capacitor_origin(value)
+
+
 def contains_placeholder(value: str) -> bool:
     lowered = value.lower()
     return any(token in lowered for token in PLACEHOLDER_TOKENS)
+
+
+def origin_contains_placeholder(value: str) -> bool:
+    if is_capacitor_origin(value):
+        return False
+    return contains_placeholder(value)
 
 
 def is_positive_int(value: str) -> bool:

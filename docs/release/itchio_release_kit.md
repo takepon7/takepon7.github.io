@@ -12,9 +12,9 @@ This kit packages `web/dist` as a browser-playable itch.io HTML5 upload.
 ## Build
 
 ```bash
-VITE_GITAI_API_BASE=https://your-api.example.com npm run build
+VITE_GITAI_API_BASE=https://api.gitai.game npm run build
 PYTHONPATH=src .venv310/bin/python tools/build_itchio_release_kit.py \
-  --api-base https://your-api.example.com
+  --api-base https://api.gitai.game
 ```
 
 This writes:
@@ -29,7 +29,7 @@ For a fully repeatable build from the tool:
 ```bash
 PYTHONPATH=src .venv310/bin/python tools/build_itchio_release_kit.py \
   --build \
-  --api-base https://your-api.example.com
+  --api-base https://api.gitai.game
 ```
 
 ## itch.io Upload Settings
@@ -68,7 +68,7 @@ PYTHONPATH=src .venv310/bin/python tools/smoke_phase3_static.py
 PYTHONPATH=src .venv310/bin/python tools/smoke_public_launch.py
 PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 PYTHONPATH=src .venv310/bin/python tools/build_itchio_release_kit.py \
-  --api-base https://your-api.example.com
+  --api-base https://api.gitai.game
 ```
 
 Then verify manually in the itch.io draft:

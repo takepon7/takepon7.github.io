@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DIST = ROOT / "web" / "dist"
 DEFAULT_OUT_DIR = ROOT / "releases" / "itchio"
 DEFAULT_REPORT_DIR = ROOT / "reports" / "itchio_release"
-REQUIRED_ROOT_FILES = ("index.html", "privacy.html", "terms.html", "safety.html", "site.webmanifest")
+REQUIRED_ROOT_FILES = ("index.html", "privacy.html", "terms.html", "safety.html", "support.html", "site.webmanifest")
 REQUIRED_BRAND_FILES = (
     "brand/app-icon-192.png",
     "brand/app-icon-512.png",

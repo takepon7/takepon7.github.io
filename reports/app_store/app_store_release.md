@@ -1,7 +1,7 @@
 # App Store Release Audit
 
 - valid: `true`
-- passed_checks: `15`
+- passed_checks: `16`
 - failed_checks: `0`
 - screenshot_count: `5`
 
@@ -16,12 +16,13 @@
 | store_visual_assets_ready | pass | icon source, og image, and hero are present |
 | ios_wrapper_files_ready | pass | Capacitor iOS project exists |
 | capacitor_config_ready | pass | appId=app.gitai.game webDir=web/dist |
-| ios_bundle_api_base_ready | pass | iOS bundle has non-local API configuration hook |
+| ios_bundle_api_base_ready | pass | iOS bundle points at https://api.gitai.game |
 | ios_native_assets_ready | pass | {"app_icon": [1024, 1024], "splash": [2732, 2732]} |
 | iphone_6_9_screenshots_ready | pass | {"bad": [], "count": 5, "expected_size": [1290, 2796]} |
 | web_launch_package_valid | pass | passed=12 failed=0 |
 | app_store_connect_record_ready | pass | {"app_id": "6786196512", "bundle_id": "app.gitai.game", "bundle_resource_id": "32QLDGB33V"} |
-| app_store_text_metadata_synced | pass | {"actions": 7, "missing": []} |
+| app_store_text_metadata_synced | pass | {"actions": 9, "missing": []} |
+| app_store_url_metadata_synced | pass | support, marketing, and privacy URLs synced |
 
 ## Screenshots
 
@@ -33,7 +34,6 @@
 
 ## Manual Follow-ups
 
-- Re-sync the iOS wrapper with the final production API origin.
-- Sync App Store URL metadata after final production URLs replace example.com placeholders.
+- Point DNS and hosting for gitai.game and api.gitai.game.
 - Upload an archive build and run TestFlight first-play QA.
 - Attach generated screenshots and submit with manual release.

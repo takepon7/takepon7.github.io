@@ -46,7 +46,7 @@
       "status": "pass"
     },
     {
-      "detail": "iOS bundle has non-local API configuration hook",
+      "detail": "iOS bundle points at https://api.gitai.game",
       "name": "ios_bundle_api_base_ready",
       "status": "pass"
     },
@@ -71,15 +71,19 @@
       "status": "pass"
     },
     {
-      "detail": "{\"actions\": 7, \"missing\": []}",
+      "detail": "{\"actions\": 9, \"missing\": []}",
       "name": "app_store_text_metadata_synced",
+      "status": "pass"
+    },
+    {
+      "detail": "support, marketing, and privacy URLs synced",
+      "name": "app_store_url_metadata_synced",
       "status": "pass"
     }
   ],
   "errors": [],
   "manual_followups": [
-    "Re-sync the iOS wrapper with the final production API origin.",
-    "Sync App Store URL metadata after final production URLs replace example.com placeholders.",
+    "Point DNS and hosting for gitai.game and api.gitai.game.",
     "Upload an archive build and run TestFlight first-play QA.",
     "Attach generated screenshots and submit with manual release."
   ],
@@ -127,7 +131,7 @@
   ],
   "summary": {
     "failed_checks": 0,
-    "passed_checks": 15,
+    "passed_checks": 16,
     "screenshot_count": 5
   },
   "valid": true

@@ -8,22 +8,22 @@
       "status": "pass"
     },
     {
-      "detail": "https://your-public-web-origin.example",
+      "detail": "https://gitai.game",
       "name": "public_web_url_is_https",
       "status": "pass"
     },
     {
-      "detail": "https://your-public-web-origin.example",
+      "detail": "https://gitai.game",
       "name": "public_web_url_not_placeholder",
       "status": "pass"
     },
     {
-      "detail": "https://your-public-web-origin.example",
-      "name": "cors_origins_are_https",
+      "detail": "https://gitai.game, capacitor://localhost",
+      "name": "cors_origins_are_production_origins",
       "status": "pass"
     },
     {
-      "detail": "https://your-public-web-origin.example",
+      "detail": "https://gitai.game, capacitor://localhost",
       "name": "cors_origins_not_placeholder",
       "status": "pass"
     },

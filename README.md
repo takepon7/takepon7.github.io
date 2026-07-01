@@ -28,9 +28,10 @@ PYTHONPATH=src .venv310/bin/python tools/audit_launch_package.py
 PYTHONPATH=src .venv310/bin/python -m pytest -q
 ```
 
-Manual launch blockers remain outside the repository: set production origins,
-run an external closed playtest, and replace the heuristic playtest content with
-broader real-model measured pairs before a serious campaign.
+Manual launch blockers remain outside the repository: point DNS and hosting for
+`gitai.game` and `api.gitai.game`, run an external closed playtest, and replace
+the heuristic playtest content with broader real-model measured pairs before a
+serious campaign.
 
 This workspace starts with the kill-switch validation from `PLAN.md` and
 `KICKOFF.md`: prove that `X -> Y` drawings create a score spread before

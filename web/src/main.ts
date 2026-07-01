@@ -247,6 +247,7 @@ app.innerHTML = `
           <a id="privacy-link" href="/privacy.html">Privacy</a>
           <a id="terms-link" href="/terms.html">Terms</a>
           <a id="safety-link" href="/safety.html">Safety</a>
+          <a id="support-link" href="/support.html">Support</a>
         </nav>
       </div>
     </header>

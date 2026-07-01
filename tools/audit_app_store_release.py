@@ -122,6 +122,8 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
     ios_public_text = ""
     if ios_files["ios_index"].exists():
         ios_public_text += ios_files["ios_index"].read_text(encoding="utf-8", errors="ignore")
+    if ios_files["ios_native_config"].exists():
+        ios_public_text += ios_files["ios_native_config"].read_text(encoding="utf-8", errors="ignore")
     for js_path in (ROOT / "ios" / "App" / "App" / "public" / "assets").glob("*.js"):
         ios_public_text += js_path.read_text(encoding="utf-8", errors="ignore")
     add_check(
@@ -130,8 +132,8 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "ios_bundle_api_base_ready",
         "127.0.0.1" not in ios_public_text
         and "localhost" not in ios_public_text
-        and ("https://api.example.com" in ios_public_text or "GITAI_API_BASE" in ios_public_text),
-        "iOS bundle has non-local API configuration hook",
+        and "https://api.gitai.game" in ios_public_text,
+        "iOS bundle points at https://api.gitai.game",
     )
     ios_icon_ok = image_size(ios_files["ios_app_icon"]) == (1024, 1024)
     ios_splash_ok = image_size(ios_files["ios_splash"]) == (2732, 2732)
@@ -229,6 +231,17 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
             sort_keys=True,
         ),
     )
+    url_metadata_synced = any(
+        item.get("name") == "url_metadata_synced" and item.get("status") == "pass"
+        for item in metadata_sync.get("checks", [])
+    )
+    add_check(
+        checks,
+        errors,
+        "app_store_url_metadata_synced",
+        bool(metadata_sync.get("valid")) and url_metadata_synced,
+        "support, marketing, and privacy URLs synced" if url_metadata_synced else "URL metadata not synced",
+    )
 
     report = {
         "valid": not errors,
@@ -236,8 +249,7 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "errors": errors,
         "screenshots": screenshot_results,
         "manual_followups": [
-            "Re-sync the iOS wrapper with the final production API origin.",
-            "Sync App Store URL metadata after final production URLs replace example.com placeholders.",
+            "Point DNS and hosting for gitai.game and api.gitai.game.",
             "Upload an archive build and run TestFlight first-play QA.",
             "Attach generated screenshots and submit with manual release.",
         ],

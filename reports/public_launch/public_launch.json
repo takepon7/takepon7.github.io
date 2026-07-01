@@ -36,12 +36,12 @@
       "status": "pass"
     },
     {
-      "detail": "{\"linked_from_app\": [\"/privacy.html\", \"/terms.html\", \"/safety.html\"], \"pages\": {\"privacy\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/privacy.html\"}, \"safety\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/safety.html\"}, \"terms\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/terms.html\"}}}",
+      "detail": "{\"linked_from_app\": [\"/privacy.html\", \"/terms.html\", \"/safety.html\", \"/support.html\"], \"pages\": {\"privacy\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/privacy.html\"}, \"safety\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/safety.html\"}, \"support\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/support.html\"}, \"terms\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/terms.html\"}}}",
       "name": "public_policy_pages_ready",
       "status": "pass"
     },
     {
-      "detail": "{\"api_pair_id\": \"apple_to_baseball\", \"api_status\": 200, \"app_status\": 200, \"asset_status\": 200, \"brand_status\": 200, \"cache_control\": {\"api\": \"no-store\", \"app\": \"no-cache\", \"asset\": \"public, max-age=31536000, immutable\", \"brand\": \"public, max-age=86400\"}, \"csp\": \"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'\", \"ok\": true, \"privacy_status\": 200}",
+      "detail": "{\"api_pair_id\": \"apple_to_baseball\", \"api_status\": 200, \"app_status\": 200, \"asset_status\": 200, \"brand_status\": 200, \"cache_control\": {\"api\": \"no-store\", \"app\": \"no-cache\", \"asset\": \"public, max-age=31536000, immutable\", \"brand\": \"public, max-age=86400\"}, \"csp\": \"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'\", \"ok\": true, \"privacy_status\": 200, \"support_status\": 200}",
       "name": "same_origin_web_serving_ready",
       "status": "pass"
     },
@@ -74,7 +74,7 @@
   },
   "valid": true,
   "warnings": [
-    "Set real production origins in GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL before launch.",
+    "Point DNS and hosting for gitai.game and api.gitai.game before launch.",
     "Run an external closed playtest; in-app feedback is wired, but automated smoke cannot prove player fun or acquisition metrics.",
     "Replace heuristic playtest content with broader real-model measured pairs before a serious public campaign."
   ]

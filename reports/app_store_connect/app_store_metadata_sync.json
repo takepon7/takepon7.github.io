@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "detail": "name,subtitle",
+      "detail": "name,privacyPolicyUrl,subtitle",
       "status": "updated",
       "target": "appInfoLocalization"
     },
@@ -31,6 +31,16 @@
       "target": "appStoreVersionLocalization.whatsNew"
     },
     {
+      "detail": "marketingUrl",
+      "status": "updated",
+      "target": "appStoreVersionLocalization.marketingUrl"
+    },
+    {
+      "detail": "supportUrl",
+      "status": "updated",
+      "target": "appStoreVersionLocalization.supportUrl"
+    },
+    {
       "detail": "copyright,releaseType,usesIdfa",
       "status": "updated",
       "target": "appStoreVersion"
@@ -58,15 +68,15 @@
       "status": "pass"
     },
     {
-      "detail": "skipped until final production URLs are set",
+      "detail": "synced=['privacyPolicyUrl', 'marketingUrl', 'supportUrl']",
       "name": "url_metadata_synced",
       "status": "pass"
     }
   ],
   "errors": [],
-  "generated_at": "2026-07-01T08:03:34.936468+00:00",
+  "generated_at": "2026-07-01T08:09:20.908947+00:00",
   "summary": {
-    "actions": 7,
+    "actions": 9,
     "app_id": "6786196512",
     "app_info_id": "33840f48-7299-4a95-937d-60e004bc2848",
     "app_store_version_id": "64d20a1f-231c-4ec4-832a-fa387f8f31f2",

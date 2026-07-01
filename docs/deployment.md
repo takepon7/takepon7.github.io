@@ -23,7 +23,7 @@ and serves `/`, policy pages, icons, and other static assets from the web dist.
 If the API is hosted on a separate origin, set:
 
 ```bash
-VITE_GITAI_API_BASE=https://api.example.com
+VITE_GITAI_API_BASE=https://api.gitai.game
 ```
 
 Do not leave the production build pointed at `127.0.0.1` or `localhost`; the
@@ -34,8 +34,8 @@ static smoke fails when the production bundle contains a localhost API default.
 Minimum production-facing environment:
 
 ```bash
-GITAI_CORS_ORIGINS=https://your-public-web-origin.example
-GITAI_PUBLIC_WEB_URL=https://your-public-web-origin.example
+GITAI_CORS_ORIGINS=https://gitai.game,capacitor://localhost
+GITAI_PUBLIC_WEB_URL=https://gitai.game
 GITAI_STATIC_DIR=/app/web/dist
 GITAI_RUNTIME_DB=/var/lib/gitai/gitai.sqlite
 GITAI_IMAGE_STORE=/var/lib/gitai/submissions
@@ -65,8 +65,8 @@ Example:
 ```bash
 docker build -t gitai .
 docker run --rm -p 8000:8000 \
-  -e GITAI_CORS_ORIGINS=https://your-public-web-origin.example \
-  -e GITAI_PUBLIC_WEB_URL=https://your-public-web-origin.example \
+  -e GITAI_CORS_ORIGINS=https://gitai.game,capacitor://localhost \
+  -e GITAI_PUBLIC_WEB_URL=https://gitai.game \
   -v gitai-data:/data \
   gitai
 ```
@@ -78,14 +78,14 @@ Operators can review in-app content reports with:
 
 ```bash
 curl -H "X-Gitai-Operator-Token: $GITAI_OPERATOR_TOKEN" \
-  https://your-public-web-origin.example/v1/operator/content-reports
+  https://api.gitai.game/v1/operator/content-reports
 ```
 
 Operators can review closed-playtest feedback with:
 
 ```bash
 curl -H "X-Gitai-Operator-Token: $GITAI_OPERATOR_TOKEN" \
-  https://your-public-web-origin.example/v1/operator/playtest-feedback
+  https://api.gitai.game/v1/operator/playtest-feedback
 ```
 
 ## Preflight
@@ -110,7 +110,7 @@ Expected state:
 - Seed ghosts and first-play flow pass.
 - Phase 5 budget gate passes.
 - Public metadata, PWA manifest, policy pages, social creatives, and marketing docs pass.
-- Production env validation rejects placeholder origins, localhost origins, unsafe moderation bypasses, and weak operator tokens.
+- Production env validation rejects placeholder origins, browser localhost origins, unsafe moderation bypasses, and weak operator tokens while accepting the native `capacitor://localhost` app origin.
 - Real-model pair coverage audit reports the measured-pair expansion backlog.
 - Launch package audit gathers release, first-play, marketing, policy, and imagegen asset evidence.
 - Same-origin web serving from the API is ready when `GITAI_STATIC_DIR` points at `web/dist`.

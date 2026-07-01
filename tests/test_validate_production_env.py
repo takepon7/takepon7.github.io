@@ -36,7 +36,7 @@ def test_production_env_strict_validation_rejects_placeholders_and_unsafe_guards
     assert report["valid"] is False
     error_text = "\n".join(report["errors"])
     assert "public_web_url_is_https" in error_text
-    assert "cors_origins_are_https" in error_text
+    assert "cors_origins_are_production_origins" in error_text
     assert "model_and_guards_are_production_safe" in error_text
     assert "operator_token_is_strong" in error_text
 
@@ -46,7 +46,7 @@ def test_production_env_strict_validation_accepts_realistic_values() -> None:
     env.update(
         {
             "GITAI_PUBLIC_WEB_URL": "https://play.gitai.app",
-            "GITAI_CORS_ORIGINS": "https://play.gitai.app",
+            "GITAI_CORS_ORIGINS": "https://play.gitai.app,capacitor://localhost",
             "GITAI_STATIC_DIR": "/app/web/dist",
             "GITAI_RUNTIME_DB": "/data/gitai.sqlite",
             "GITAI_IMAGE_STORE": "/data/submissions",

@@ -173,6 +173,7 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "privacy": ROOT / "web" / "public" / "privacy.html",
         "terms": ROOT / "web" / "public" / "terms.html",
         "safety": ROOT / "web" / "public" / "safety.html",
+        "support": ROOT / "web" / "public" / "support.html",
     }
     missing_policy_pages = [name for name, path in policy_pages.items() if not path.exists()]
     add_check(
@@ -180,7 +181,7 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         errors,
         "policy_pages_ready",
         not missing_policy_pages,
-        "privacy, terms, and safety pages exist" if not missing_policy_pages else f"missing={missing_policy_pages}",
+        "privacy, terms, safety, and support pages exist" if not missing_policy_pages else f"missing={missing_policy_pages}",
     )
 
     itchio_report = load_json(ROOT / "reports" / "itchio_release" / "itchio_release.json")
