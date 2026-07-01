@@ -1,0 +1,45 @@
+{
+  "checks": [
+    {
+      "detail": "all keys present",
+      "name": "required_env_present",
+      "status": "pass"
+    },
+    {
+      "detail": "private key exists",
+      "name": "private_key_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "ES256 token generated",
+      "name": "jwt_generated",
+      "status": "pass"
+    },
+    {
+      "detail": "created id=32QLDGB33V",
+      "name": "bundle_id_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "HTTP 403 FORBIDDEN_ERROR The given operation is not allowed The resource 'apps' does not allow 'CREATE'. Allowed operations are: GET_COLLECTION, GET_INSTANCE, UPDATE",
+      "name": "app_record_ready",
+      "status": "fail"
+    }
+  ],
+  "errors": [
+    "app_record_ready: HTTP 403 FORBIDDEN_ERROR The given operation is not allowed The resource 'apps' does not allow 'CREATE'. Allowed operations are: GET_COLLECTION, GET_INSTANCE, UPDATE"
+  ],
+  "generated_at": "2026-07-01T07:54:10.077140+00:00",
+  "summary": {
+    "app_found": false,
+    "app_id": "",
+    "app_name": "",
+    "app_sku": "",
+    "bundle_found": true,
+    "bundle_id": "app.gitai.game",
+    "bundle_resource_id": "32QLDGB33V",
+    "failed_checks": 1,
+    "passed_checks": 4
+  },
+  "valid": false
+}

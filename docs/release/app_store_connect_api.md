@@ -56,6 +56,45 @@ The check does not print the private key or JWT. It verifies local env fields,
 generates an ES256 token, and calls the App Store Connect apps endpoint for the
 configured bundle ID.
 
+## Create Missing Records
+
+After the credential check can authenticate, create or reuse the configured
+Bundle ID and App Store app record:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/create_app_store_records.py
+```
+
+This writes:
+
+- `reports/app_store_connect/app_store_record_creation.md`
+- `reports/app_store_connect/app_store_record_creation.json`
+
+Current behavior from the 2026-07-01 run:
+
+- Bundle ID creation works through the API.
+- The App Store app record creation endpoint returned `403 FORBIDDEN_ERROR` with
+  `apps` allowing `GET_COLLECTION`, `GET_INSTANCE`, and `UPDATE`, but not
+  `CREATE`.
+
+If app record creation is blocked by the API, create it once in App Store
+Connect UI with these values:
+
+| Field | Value |
+| --- | --- |
+| Platform | iOS |
+| Name | `gitai` |
+| Primary Language | Japanese (`ja-JP`) |
+| Bundle ID | `app.gitai.game` |
+| SKU | `gitai-ios` |
+| User Access | Full Access |
+
+Then rerun:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/check_app_store_connect.py
+```
+
 ## Kept Manual
 
 - Creating the API key and downloading the `.p8` file.

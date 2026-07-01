@@ -16,14 +16,14 @@
       "status": "pass"
     },
     {
-      "detail": "matched_bundle_ids=0",
+      "detail": "matched_bundle_ids=1",
       "name": "bundle_ids_endpoint_reachable",
       "status": "pass"
     },
     {
-      "detail": "No bundle ID found for app.gitai.game",
+      "detail": "{\"id\": \"32QLDGB33V\", \"identifier\": \"app.gitai.game\", \"name\": \"gitai\", \"platform\": \"UNIVERSAL\"}",
       "name": "bundle_id_found",
-      "status": "fail"
+      "status": "pass"
     },
     {
       "detail": "matched_apps=0",
@@ -37,18 +37,17 @@
     }
   ],
   "errors": [
-    "bundle_id_found: No bundle ID found for app.gitai.game",
     "app_record_found: No App Store app record found for bundle_id=app.gitai.game"
   ],
-  "generated_at": "2026-07-01T06:34:06.463650+00:00",
+  "generated_at": "2026-07-01T07:55:36.923725+00:00",
   "summary": {
     "app_found": false,
     "app_id": "",
-    "bundle_found": false,
+    "bundle_found": true,
     "bundle_id": "app.gitai.game",
-    "bundle_resource_id": "",
-    "failed_checks": 2,
-    "passed_checks": 5
+    "bundle_resource_id": "32QLDGB33V",
+    "failed_checks": 1,
+    "passed_checks": 6
   },
   "valid": false
 }
