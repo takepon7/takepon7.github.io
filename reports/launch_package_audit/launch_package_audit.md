@@ -4,9 +4,9 @@
 - latest_date: `2026-07-06`
 - latest_pair_id: `apple_to_baseball`
 - first_play_submission_id: `c6fd900bfef34b8d88c10c767eb2cfdf`
-- passed_checks: `10`
+- passed_checks: `11`
 - failed_checks: `0`
-- manual_followups: `3`
+- manual_followups: `4`
 
 | check | status | detail |
 | --- | --- | --- |
@@ -20,9 +20,11 @@
 | real_model_expansion_backlog_ready | pass | real_model_pairs=6 backlog=1 |
 | imagegen_assets_ready | pass | {"missing_assets": [], "missing_share_cards": [], "share_card_examples": 5} |
 | policy_pages_ready | pass | privacy, terms, and safety pages exist |
+| itchio_release_kit_ready | pass | {"doc": "/Users/ryosuke/dev/new_game/docs/release/itchio_release_kit.md", "ready_for_public_upload": false, "zip_path": "/Users/ryosuke/dev/new_game/releases/itchio/gitai-itchio-web-v0.1.0.zip"} |
 
 ## Manual Follow-ups
 
 - Set production GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL to the final public origin.
+- Rebuild the itch.io ZIP with the final VITE_GITAI_API_BASE and verify the draft iframe origin.
 - Run an external closed playtest with at least 20 outside players.
 - Replace or expand heuristic playtest pairs with broader real-model measured pairs before a serious campaign.

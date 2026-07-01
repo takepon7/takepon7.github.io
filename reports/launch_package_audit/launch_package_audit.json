@@ -49,11 +49,17 @@
       "detail": "privacy, terms, and safety pages exist",
       "name": "policy_pages_ready",
       "status": "pass"
+    },
+    {
+      "detail": "{\"doc\": \"/Users/ryosuke/dev/new_game/docs/release/itchio_release_kit.md\", \"ready_for_public_upload\": false, \"zip_path\": \"/Users/ryosuke/dev/new_game/releases/itchio/gitai-itchio-web-v0.1.0.zip\"}",
+      "name": "itchio_release_kit_ready",
+      "status": "pass"
     }
   ],
   "errors": [],
   "manual_followups": [
     "Set production GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL to the final public origin.",
+    "Rebuild the itch.io ZIP with the final VITE_GITAI_API_BASE and verify the draft iframe origin.",
     "Run an external closed playtest with at least 20 outside players.",
     "Replace or expand heuristic playtest pairs with broader real-model measured pairs before a serious campaign."
   ],
@@ -62,8 +68,8 @@
     "first_play_submission_id": "c6fd900bfef34b8d88c10c767eb2cfdf",
     "latest_date": "2026-07-06",
     "latest_pair_id": "apple_to_baseball",
-    "manual_followups": 3,
-    "passed_checks": 10
+    "manual_followups": 4,
+    "passed_checks": 11
   },
   "valid": true
 }

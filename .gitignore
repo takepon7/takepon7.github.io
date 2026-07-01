@@ -13,3 +13,4 @@ venv/
 node_modules/
 web/dist/
 data/runtime/
+releases/

@@ -10,6 +10,7 @@
     "dev:api:fast": "bash scripts/dev_api_heuristic.sh",
     "build": "vite build web",
     "preview": "vite preview web --host 127.0.0.1",
+    "release:itchio": "python3 tools/build_itchio_release_kit.py",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run build"
   },

@@ -183,8 +183,30 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "privacy, terms, and safety pages exist" if not missing_policy_pages else f"missing={missing_policy_pages}",
     )
 
+    itchio_report = load_json(ROOT / "reports" / "itchio_release" / "itchio_release.json")
+    itchio_doc = ROOT / "docs" / "release" / "itchio_release_kit.md"
+    itchio_artifact = itchio_report.get("artifact", {})
+    add_check(
+        checks,
+        errors,
+        "itchio_release_kit_ready",
+        bool(itchio_report)
+        and itchio_doc.exists()
+        and bool(itchio_artifact.get("zip_path"))
+        and bool(itchio_artifact.get("zip_sha256")),
+        json.dumps(
+            {
+                "doc": str(itchio_doc),
+                "ready_for_public_upload": itchio_report.get("summary", {}).get("ready_for_public_upload", False),
+                "zip_path": itchio_artifact.get("zip_path", ""),
+            },
+            sort_keys=True,
+        ),
+    )
+
     manual_followups = [
         "Set production GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL to the final public origin.",
+        "Rebuild the itch.io ZIP with the final VITE_GITAI_API_BASE and verify the draft iframe origin.",
         "Run an external closed playtest with at least 20 outside players.",
         "Replace or expand heuristic playtest pairs with broader real-model measured pairs before a serious campaign.",
     ]
