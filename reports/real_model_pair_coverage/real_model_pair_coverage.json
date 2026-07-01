@@ -8,7 +8,14 @@
     "2026-07-04",
     "2026-07-06"
   ],
-  "daily_real_model_ref_dates": [],
+  "daily_real_model_ref_dates": [
+    "2026-06-30",
+    "2026-07-01",
+    "2026-07-02",
+    "2026-07-03",
+    "2026-07-04",
+    "2026-07-06"
+  ],
   "expansion_backlog": [
     {
       "base": "chair",
@@ -47,7 +54,7 @@
   "summary": {
     "daily_count": 8,
     "daily_real_model_alternative_count": 7,
-    "daily_real_model_ref_count": 0,
+    "daily_real_model_ref_count": 6,
     "expansion_backlog_count": 1,
     "heuristic_only_pair_count": 1,
     "pair_count": 7,

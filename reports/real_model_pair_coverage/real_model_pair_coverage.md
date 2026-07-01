@@ -6,7 +6,7 @@
 - daily_count: `8`
 - real_model_pair_count: `6`
 - heuristic_only_pair_count: `1`
-- daily_real_model_ref_count: `0`
+- daily_real_model_ref_count: `6`
 - daily_real_model_alternative_count: `7`
 
 ## Real-Model Covered Pairs

@@ -254,7 +254,7 @@ def test_daily_puzzle_freeze_is_deterministic() -> None:
     assert first.ref_version == "phase0-open-clip-tau30-2026-06-29"
 
 
-def test_playtest_daily_pack_has_compatible_heuristic_refs() -> None:
+def test_playtest_daily_pack_has_real_model_refs_and_heuristic_fallbacks() -> None:
     pairs = PairRepository(Path("data/scoring/pairs.json"))
     refs = SeedScoreRepository(Path("data/scoring/seed_scores.json"))
     daily = DailyPuzzleRepository(Path("data/puzzle/daily_puzzles.json"))
@@ -266,14 +266,19 @@ def test_playtest_daily_pack_has_compatible_heuristic_refs() -> None:
     assert daily.current(date(2026, 7, 4)).pair_id == "book_to_car"
     assert daily.latest().date == date(2026, 7, 6)
     assert daily.latest().pair_id == "apple_to_baseball"
-    assert daily.latest().ref_version == "approved-seed-heuristic-color-shape-v1-apple-baseball-tau30-2026-06-30"
+    assert daily.latest().ref_version == "phase0-open-clip-tau30-2026-06-29"
+    real_model_count = 0
     for puzzle in puzzles:
         pair = pairs.get(puzzle.pair_id)
         ref = refs.get(puzzle.ref_version)
+        heuristic_ref = refs.find_compatible(puzzle.pair_id, "heuristic-color-shape-v1")
         quality = policy.evaluate_seed_scores(ref)
         assert ref.pair_id == pair.pair_id
-        assert ref.model_version == "heuristic-color-shape-v1"
+        assert heuristic_ref is not None
         assert quality.accepted is True
+        if ref.model_version != "heuristic-color-shape-v1":
+            real_model_count += 1
+    assert real_model_count == 6
 
 
 def catalog_object(

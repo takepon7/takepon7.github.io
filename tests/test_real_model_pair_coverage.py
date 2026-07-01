@@ -13,7 +13,7 @@ def test_real_model_pair_coverage_reports_current_backlog(tmp_path: Path) -> Non
     assert report["summary"]["daily_count"] == 8
     assert report["summary"]["real_model_pair_count"] == 6
     assert report["summary"]["heuristic_only_pair_count"] == 1
-    assert report["summary"]["daily_real_model_ref_count"] == 0
+    assert report["summary"]["daily_real_model_ref_count"] == 6
     assert report["summary"]["daily_real_model_alternative_count"] == 7
     assert report["real_model_pair_ids"] == [
         "apple_to_baseball",

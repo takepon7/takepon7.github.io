@@ -9,7 +9,7 @@ from PIL import Image
 from gitai_phase0.competition import PlayerIdentity, SubmissionRecord
 from gitai_phase0.competition_repositories import JsonSeedGhostRepository, SqliteSubmissionRepository
 from gitai_phase0.drawing_verification import CanvasStrokeReplayVerifier, parse_stroke_log
-from gitai_phase0.repositories import DailyPuzzleRepository, PairRepository
+from gitai_phase0.repositories import DailyPuzzleRepository, PairRepository, SeedScoreRepository
 from tools.build_seed_ghost_pack import build_seed_ghost_pack
 from tools.validate_phase4_seed_ghosts import build_report
 
@@ -41,6 +41,7 @@ def test_seed_ghosts_cover_each_playtest_daily_puzzle(tmp_path: Path) -> None:
     ghosts = JsonSeedGhostRepository(Path("data/competition/seed_ghosts.json")).all()
     daily = DailyPuzzleRepository(Path("data/puzzle/daily_puzzles.json")).list()
     pairs = PairRepository(Path("data/scoring/pairs.json"))
+    refs = SeedScoreRepository(Path("data/scoring/seed_scores.json"))
     verifier = CanvasStrokeReplayVerifier()
     repo = SqliteSubmissionRepository(tmp_path / "submissions.sqlite")
     repo.seed(ghosts)
@@ -51,8 +52,9 @@ def test_seed_ghosts_cover_each_playtest_daily_puzzle(tmp_path: Path) -> None:
         assert len(records) == 2
         assert {record.pair_id for record in records} == {puzzle.pair_id}
         assert {record.ref_version for record in records} == {puzzle.ref_version}
+        ref = refs.get(puzzle.ref_version)
         for record in records:
-            assert record.model_version == "heuristic-color-shape-v1"
+            assert record.model_version == ref.model_version
             assert record.bucket == "fooled"
             assert record.moderation == "pass"
             assert record.image_ref.startswith("file:")
