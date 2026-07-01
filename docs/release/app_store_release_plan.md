@@ -1,0 +1,110 @@
+# App Store Release Plan
+
+## Target Shape
+
+Ship `gitai` as an iPhone app backed by the production API.
+
+Fastest implementation path:
+
+- iOS shell: Capacitor or native `WKWebView`
+- Web UI: existing `web/dist`
+- API: existing FastAPI service on a production HTTPS origin
+- Distribution: TestFlight first, then App Store review
+- Automation: App Store Connect API for metadata/build status where useful
+
+## Release Gates
+
+1. Production API is live on HTTPS.
+2. iOS app points at the production API, not localhost.
+3. First-play flow passes on device or simulator.
+4. Privacy, Terms, and Safety URLs are reachable.
+5. App Store screenshots are generated at 6.9-inch size.
+6. TestFlight internal build is installable.
+7. Review notes explain user-generated drawings, moderation, reporting, and no-login flow.
+
+## Suggested Build Path
+
+### Phase 1: iOS Wrapper
+
+- Create an iOS target with bundle ID from `.env.appstore.example`.
+- Load the app locally from bundled web assets or from the production web URL.
+- Prefer bundled assets plus `GITAI_IOS_API_BASE` injected at build time.
+- Add a first-run offline/error screen for API failures.
+- Ensure external policy URLs open in Safari or an in-app browser sheet.
+
+### Phase 2: API Production
+
+- Deploy the existing Docker/FastAPI app.
+- Set:
+  - `GITAI_PUBLIC_WEB_URL`
+  - `GITAI_RUNTIME_DB`
+  - `GITAI_IMAGE_STORE`
+  - `GITAI_MODEL`
+  - `GITAI_OCR`
+  - `GITAI_MODERATION`
+  - `GITAI_OPERATOR_TOKEN`
+- Run release smoke checks and one first-play submission.
+
+### Phase 3: TestFlight
+
+- Create the App Store Connect app record.
+- Upload an archive build.
+- Add internal testers.
+- Verify:
+  - launch
+  - daily puzzle fetch
+  - drawing submission
+  - leaderboard
+  - ghost replay
+  - feedback
+  - share card
+
+### Phase 4: App Review
+
+- Fill metadata from `docs/release/app_store_metadata_ja.md`.
+- Upload screenshots from `reports/app_store/screenshots/iphone-6.9/`.
+- Include review notes from metadata doc.
+- Submit with manual release first.
+
+## App Store Connect API Inputs
+
+Keep credentials outside git:
+
+```bash
+cp .env.appstore.example .env.appstore
+```
+
+Required values:
+
+- `ASC_KEY_ID`
+- `ASC_ISSUER_ID`
+- `ASC_PRIVATE_KEY_PATH`
+- `ASC_BUNDLE_ID`
+- `ASC_APP_SKU`
+- `ASC_APP_NAME`
+- `GITAI_IOS_API_BASE`
+- `GITAI_IOS_SUPPORT_URL`
+- `GITAI_IOS_MARKETING_URL`
+- `GITAI_IOS_PRIVACY_URL`
+
+## Screenshot Generation
+
+Generate the first 6.9-inch screenshot set with:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/build_app_store_screenshots.py
+PYTHONPATH=src .venv310/bin/python tools/audit_app_store_release.py
+```
+
+Outputs:
+
+- `reports/app_store/screenshots/raw/`
+- `reports/app_store/screenshots/generated/iphone-6.9/`
+- `reports/app_store/app_store_release.md`
+
+## Manual Follow-ups
+
+- Apple Developer account holder must create or provide the App Store Connect API key.
+- Final bundle ID must be reserved in Apple Developer/App Store Connect.
+- Production API origin must be known before final iOS build.
+- App review screenshots must be generated from the final UI/API build.

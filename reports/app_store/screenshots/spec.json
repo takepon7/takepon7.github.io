@@ -1,0 +1,39 @@
+{
+  "device": "iphone-6.9",
+  "outDir": "generated",
+  "defaults": {
+    "background": "#244f43",
+    "accent": "#e7c24e",
+    "foreground": "#fffaf0",
+    "headlineFont": "Hiragino Sans",
+    "headlineSize": 70,
+    "template": "headline-top",
+    "deviceWidth": 356
+  },
+  "frames": [
+    {
+      "screenshot": "raw/01-home.png",
+      "headline": "AI鑑定士を\\n**だませ**"
+    },
+    {
+      "screenshot": "raw/02-daily.png",
+      "headline": "毎日変わる\\n**擬態お題**",
+      "background": "#315f9d"
+    },
+    {
+      "screenshot": "raw/03-score.png",
+      "headline": "スコアで\\n**競える**",
+      "background": "#d6453d"
+    },
+    {
+      "screenshot": "raw/04-ghost.png",
+      "headline": "ゴーストに\\n**挑戦**",
+      "background": "#2f875a"
+    },
+    {
+      "screenshot": "raw/05-share.png",
+      "headline": "結果を\\n**シェア**",
+      "background": "#1f1d1a"
+    }
+  ]
+}

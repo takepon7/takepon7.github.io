@@ -204,8 +204,25 @@ def audit_launch_package(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         ),
     )
 
+    app_store_report = load_json(ROOT / "reports" / "app_store" / "app_store_release.json")
+    app_store_doc = ROOT / "docs" / "release" / "app_store_release_plan.md"
+    add_check(
+        checks,
+        errors,
+        "app_store_release_kit_ready",
+        bool(app_store_report.get("valid")) and app_store_doc.exists(),
+        json.dumps(
+            {
+                "doc": str(app_store_doc),
+                "screenshot_count": app_store_report.get("summary", {}).get("screenshot_count", 0),
+            },
+            sort_keys=True,
+        ),
+    )
+
     manual_followups = [
         "Set production GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL to the final public origin.",
+        "Build the iOS wrapper with the final production API origin and upload the first TestFlight build.",
         "Rebuild the itch.io ZIP with the final VITE_GITAI_API_BASE and verify the draft iframe origin.",
         "Run an external closed playtest with at least 20 outside players.",
         "Replace or expand heuristic playtest pairs with broader real-model measured pairs before a serious campaign.",

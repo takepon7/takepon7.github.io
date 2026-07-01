@@ -1,0 +1,33 @@
+# App Store Release Audit
+
+- valid: `true`
+- passed_checks: `9`
+- failed_checks: `0`
+- screenshot_count: `5`
+
+| check | status | detail |
+| --- | --- | --- |
+| release_plan_exists | pass | /Users/ryosuke/dev/new_game/docs/release/app_store_release_plan.md |
+| metadata_ja_exists | pass | /Users/ryosuke/dev/new_game/docs/release/app_store_metadata_ja.md |
+| connect_api_notes_exists | pass | /Users/ryosuke/dev/new_game/docs/release/app_store_connect_api.md |
+| env_template_exists | pass | /Users/ryosuke/dev/new_game/.env.appstore.example |
+| metadata_required_fields_ready | pass | all metadata sections present |
+| appstore_env_template_ready | pass | all App Store env keys present |
+| store_visual_assets_ready | pass | icon source, og image, and hero are present |
+| iphone_6_9_screenshots_ready | pass | {"bad": [], "count": 5, "expected_size": [1290, 2796]} |
+| web_launch_package_valid | pass | passed=12 failed=0 |
+
+## Screenshots
+
+- `/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/01.png`: `1290x2796`
+- `/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/02.png`: `1290x2796`
+- `/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/03.png`: `1290x2796`
+- `/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/04.png`: `1290x2796`
+- `/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/05.png`: `1290x2796`
+
+## Manual Follow-ups
+
+- Create the App Store Connect app record and reserve the final bundle ID.
+- Build the iOS wrapper with the final production API origin.
+- Upload an archive build and run TestFlight first-play QA.
+- Attach generated screenshots and submit with manual release.

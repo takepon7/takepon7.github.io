@@ -1,0 +1,104 @@
+{
+  "checks": [
+    {
+      "detail": "/Users/ryosuke/dev/new_game/docs/release/app_store_release_plan.md",
+      "name": "release_plan_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "/Users/ryosuke/dev/new_game/docs/release/app_store_metadata_ja.md",
+      "name": "metadata_ja_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "/Users/ryosuke/dev/new_game/docs/release/app_store_connect_api.md",
+      "name": "connect_api_notes_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "/Users/ryosuke/dev/new_game/.env.appstore.example",
+      "name": "env_template_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "all metadata sections present",
+      "name": "metadata_required_fields_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "all App Store env keys present",
+      "name": "appstore_env_template_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "icon source, og image, and hero are present",
+      "name": "store_visual_assets_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "{\"bad\": [], \"count\": 5, \"expected_size\": [1290, 2796]}",
+      "name": "iphone_6_9_screenshots_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "passed=12 failed=0",
+      "name": "web_launch_package_valid",
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "manual_followups": [
+    "Create the App Store Connect app record and reserve the final bundle ID.",
+    "Build the iOS wrapper with the final production API origin.",
+    "Upload an archive build and run TestFlight first-play QA.",
+    "Attach generated screenshots and submit with manual release."
+  ],
+  "screenshots": [
+    {
+      "ok": true,
+      "path": "/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/01.png",
+      "size": [
+        1290,
+        2796
+      ]
+    },
+    {
+      "ok": true,
+      "path": "/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/02.png",
+      "size": [
+        1290,
+        2796
+      ]
+    },
+    {
+      "ok": true,
+      "path": "/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/03.png",
+      "size": [
+        1290,
+        2796
+      ]
+    },
+    {
+      "ok": true,
+      "path": "/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/04.png",
+      "size": [
+        1290,
+        2796
+      ]
+    },
+    {
+      "ok": true,
+      "path": "/Users/ryosuke/dev/new_game/reports/app_store/screenshots/generated/iphone-6.9/05.png",
+      "size": [
+        1290,
+        2796
+      ]
+    }
+  ],
+  "summary": {
+    "failed_checks": 0,
+    "passed_checks": 9,
+    "screenshot_count": 5
+  },
+  "valid": true
+}
