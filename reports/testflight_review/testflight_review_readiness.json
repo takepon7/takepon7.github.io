@@ -58,15 +58,14 @@
     {
       "detail": "/Users/ryosuke/dev/new_game/build/ios/archive/gitai.xcarchive",
       "name": "xcode_archive_exists",
-      "status": "fail"
+      "status": "pass"
     }
   ],
   "errors": [
     "testflight_build_uploaded: build_count=0",
-    "production_api_reachable: dns_unresolved=api.gitai.game",
-    "xcode_archive_exists: /Users/ryosuke/dev/new_game/build/ios/archive/gitai.xcarchive"
+    "production_api_reachable: dns_unresolved=api.gitai.game"
   ],
-  "generated_at": "2026-07-01T10:24:48.219305+00:00",
+  "generated_at": "2026-07-01T10:47:46.406152+00:00",
   "summary": {
     "app_id": "6786196512",
     "app_store_state": "PREPARE_FOR_SUBMISSION",
@@ -74,14 +73,13 @@
     "app_store_version_id": "64d20a1f-231c-4ec4-832a-fa387f8f31f2",
     "build_count": 0,
     "bundle_id": "app.gitai.game",
-    "failed_checks": 3,
+    "failed_checks": 2,
     "internal_beta_group_count": 1,
-    "passed_checks": 9,
+    "passed_checks": 10,
     "screenshot_count": 5
   },
   "valid": false,
   "warnings": [
-    "Run tools/archive_ios_testflight.sh from a normal local terminal with Xcode signing access.",
     "Production API must be live before App Review. The iOS bundle currently points at GITAI_IOS_API_BASE.",
     "No TestFlight build is uploaded yet."
   ]

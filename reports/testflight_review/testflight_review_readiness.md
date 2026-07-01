@@ -8,8 +8,8 @@
 - build_count: `0`
 - internal_beta_group_count: `1`
 - screenshot_count: `5`
-- passed_checks: `9`
-- failed_checks: `3`
+- passed_checks: `10`
+- failed_checks: `2`
 
 ## Checks
 
@@ -26,11 +26,10 @@
 | app_store_metadata_synced | pass | actions=9 |
 | app_store_screenshots_generated | pass | count=5 |
 | production_api_reachable | fail | dns_unresolved=api.gitai.game |
-| xcode_archive_exists | fail | /Users/ryosuke/dev/new_game/build/ios/archive/gitai.xcarchive |
+| xcode_archive_exists | pass | /Users/ryosuke/dev/new_game/build/ios/archive/gitai.xcarchive |
 
 ## Warnings
 
-- Run tools/archive_ios_testflight.sh from a normal local terminal with Xcode signing access.
 - Production API must be live before App Review. The iOS bundle currently points at GITAI_IOS_API_BASE.
 - No TestFlight build is uploaded yet.
 
@@ -38,4 +37,3 @@
 
 - testflight_build_uploaded: build_count=0
 - production_api_reachable: dns_unresolved=api.gitai.game
-- xcode_archive_exists: /Users/ryosuke/dev/new_game/build/ios/archive/gitai.xcarchive
