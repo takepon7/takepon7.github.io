@@ -177,14 +177,14 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         ),
     )
 
-    launch_audit = load_json(ROOT / "reports" / "launch_package_audit" / "launch_package_audit.json")
+    public_launch = load_json(ROOT / "reports" / "public_launch" / "public_launch.json")
     add_check(
         checks,
         errors,
-        "web_launch_package_valid",
-        bool(launch_audit.get("valid")),
-        f"passed={launch_audit.get('summary', {}).get('passed_checks', 0)} "
-        f"failed={launch_audit.get('summary', {}).get('failed_checks', 0)}",
+        "web_public_launch_valid",
+        bool(public_launch.get("valid")),
+        f"passed={public_launch.get('summary', {}).get('passed_checks', 0)} "
+        f"failed={public_launch.get('summary', {}).get('failed_checks', 0)}",
     )
 
     connect_check = load_json(ROOT / "reports" / "app_store_connect" / "app_store_connect.json")

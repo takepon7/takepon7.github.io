@@ -19,7 +19,7 @@
 | ios_bundle_api_base_ready | pass | iOS bundle points at https://api.gitai.game |
 | ios_native_assets_ready | pass | {"app_icon": [1024, 1024], "splash": [2732, 2732]} |
 | iphone_6_9_screenshots_ready | pass | {"bad": [], "count": 5, "expected_size": [1290, 2796]} |
-| web_launch_package_valid | pass | passed=12 failed=0 |
+| web_public_launch_valid | pass | passed=14 failed=0 |
 | app_store_connect_record_ready | pass | {"app_id": "6786196512", "bundle_id": "app.gitai.game", "bundle_resource_id": "32QLDGB33V"} |
 | app_store_text_metadata_synced | pass | {"actions": 9, "missing": []} |
 | app_store_url_metadata_synced | pass | support, marketing, and privacy URLs synced |

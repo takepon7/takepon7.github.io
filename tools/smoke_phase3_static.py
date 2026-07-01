@@ -159,7 +159,6 @@ def main() -> None:
         ROOT / "web" / "dist" / "brand" / "apple-touch-icon.png",
         ROOT / "web" / "dist" / "brand" / "favicon-32.png",
         ROOT / "web" / "dist" / "site.webmanifest",
-        ROOT / "web" / "dist" / "CNAME",
         ROOT / "web" / "dist" / "robots.txt",
         ROOT / "web" / "dist" / "privacy.html",
         ROOT / "web" / "dist" / "terms.html",

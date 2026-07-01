@@ -8,22 +8,22 @@
       "status": "pass"
     },
     {
-      "detail": "https://gitai.game",
+      "detail": "https://takepon7.github.io",
       "name": "public_web_url_is_https",
       "status": "pass"
     },
     {
-      "detail": "https://gitai.game",
+      "detail": "https://takepon7.github.io",
       "name": "public_web_url_not_placeholder",
       "status": "pass"
     },
     {
-      "detail": "https://gitai.game, capacitor://localhost",
+      "detail": "https://takepon7.github.io, capacitor://localhost",
       "name": "cors_origins_are_production_origins",
       "status": "pass"
     },
     {
-      "detail": "https://gitai.game, capacitor://localhost",
+      "detail": "https://takepon7.github.io, capacitor://localhost",
       "name": "cors_origins_not_placeholder",
       "status": "pass"
     },

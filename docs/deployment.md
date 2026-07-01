@@ -34,8 +34,8 @@ static smoke fails when the production bundle contains a localhost API default.
 Minimum production-facing environment:
 
 ```bash
-GITAI_CORS_ORIGINS=https://gitai.game,capacitor://localhost
-GITAI_PUBLIC_WEB_URL=https://gitai.game
+GITAI_CORS_ORIGINS=https://takepon7.github.io,capacitor://localhost
+GITAI_PUBLIC_WEB_URL=https://takepon7.github.io
 GITAI_STATIC_DIR=/app/web/dist
 GITAI_RUNTIME_DB=/var/lib/gitai/gitai.sqlite
 GITAI_IMAGE_STORE=/var/lib/gitai/submissions
@@ -65,8 +65,8 @@ Example:
 ```bash
 docker build -t gitai .
 docker run --rm -p 8000:8000 \
-  -e GITAI_CORS_ORIGINS=https://gitai.game,capacitor://localhost \
-  -e GITAI_PUBLIC_WEB_URL=https://gitai.game \
+  -e GITAI_CORS_ORIGINS=https://takepon7.github.io,capacitor://localhost \
+  -e GITAI_PUBLIC_WEB_URL=https://takepon7.github.io \
   -v gitai-data:/data \
   gitai
 ```
@@ -112,8 +112,9 @@ a persistent container volume or managed database/blob storage before promotion.
 
 ## GitHub Pages
 
-GitHub Pages can host the static web app at `https://gitai.game`. It cannot run
-the FastAPI service, so `api.gitai.game` still needs a separate API host.
+GitHub Pages can host the static web app at `https://takepon7.github.io`. It
+cannot run the FastAPI service, so `api.gitai.game` still needs a separate API
+host.
 
 The repository includes `.github/workflows/pages.yml`, which builds `web/dist`
 with:
@@ -122,13 +123,13 @@ with:
 VITE_GITAI_API_BASE=https://api.gitai.game npm run build
 ```
 
-and deploys the artifact to GitHub Pages. The custom domain is set by
-`web/public/CNAME`.
+and deploys the artifact to GitHub Pages. The user-site repository
+`takepon7.github.io` serves at the root, which matches the app's absolute asset
+and policy links.
 
-DNS for `gitai.game` should point to GitHub Pages. Keep `api.gitai.game`
-pointing at the API host.
+Keep `api.gitai.game` pointing at the API host.
 
-Recommended apex records for `gitai.game`:
+Future apex records for `gitai.game`, after the domain is registered:
 
 ```text
 @  A     185.199.108.153

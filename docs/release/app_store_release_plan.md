@@ -31,12 +31,12 @@ Current App Store Connect record:
 
 Final release URLs:
 
-- Web / marketing: `https://gitai.game`
+- Web / marketing: `https://takepon7.github.io`
 - API: `https://api.gitai.game`
-- Support: `https://gitai.game/support.html`
-- Privacy: `https://gitai.game/privacy.html`
-- Terms: `https://gitai.game/terms.html`
-- Safety: `https://gitai.game/safety.html`
+- Support: `https://takepon7.github.io/support.html`
+- Privacy: `https://takepon7.github.io/privacy.html`
+- Terms: `https://takepon7.github.io/terms.html`
+- Safety: `https://takepon7.github.io/safety.html`
 - Native CORS origin: `capacitor://localhost`
 
 ## Suggested Build Path

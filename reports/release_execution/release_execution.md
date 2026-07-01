@@ -1,19 +1,19 @@
 # Release Execution
 
 - checked_at: `2026-07-01T17:24:00+09:00`
-- target_web: `https://gitai.game`
+- target_web: `https://takepon7.github.io`
 - target_api: `https://api.gitai.game`
 - app_store_app_id: `6786196512`
 
 ## DNS / Hosting
 
-- `gitai.game`: DNS did not resolve from this environment.
+- `gitai.game`: DNS did not resolve from this environment; WHOIS reports `DOMAIN NOT FOUND`.
 - `api.gitai.game`: DNS did not resolve from this environment.
 - GitHub repository created: `https://github.com/takepon7/gitai`
+- GitHub user-site repository target: `https://github.com/takepon7/takepon7.github.io`
 - GitHub Pages enabled with Actions workflow deployment.
 - GitHub Pages workflow run succeeded: `https://github.com/takepon7/gitai/actions/runs/28507241390`
-- GitHub Pages custom domain is set to `gitai.game`.
-- `https://takepon7.github.io/gitai/` redirects to `http://gitai.game/`, which is expected after custom domain setup.
+- Active web URL switched to `https://takepon7.github.io` because `gitai.game` is not registered.
 - Vercel CLI is installed, but no usable Vercel login/token was available in this sandbox.
 - Added Vercel release configuration:
   - `vercel.json`
@@ -22,7 +22,6 @@
   - `tools/deploy_vercel_release.sh`
 - Added GitHub Pages release configuration:
   - `.github/workflows/pages.yml`
-  - `web/public/CNAME`
 
 ## App Store / TestFlight
 

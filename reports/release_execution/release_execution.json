@@ -1,15 +1,17 @@
 {
   "checked_at": "2026-07-01T17:24:00+09:00",
   "targets": {
-    "web": "https://gitai.game",
+    "web": "https://takepon7.github.io",
     "api": "https://api.gitai.game"
   },
   "dns": {
     "gitai.game_resolves": false,
+    "gitai.game_registered": false,
     "api.gitai.game_resolves": false
   },
   "github_repository": {
     "url": "https://github.com/takepon7/gitai",
+    "user_site_url": "https://github.com/takepon7/takepon7.github.io",
     "visibility": "public",
     "default_branch": "main"
   },
@@ -26,13 +28,13 @@
   "github_pages": {
     "prepared": true,
     "enabled": true,
-    "custom_domain": "gitai.game",
+    "custom_domain": null,
+    "active_web_url": "https://takepon7.github.io",
     "workflow_run_url": "https://github.com/takepon7/gitai/actions/runs/28507241390",
     "workflow_conclusion": "success",
     "html_url": "http://gitai.game/",
     "prepared_files": [
-      ".github/workflows/pages.yml",
-      "web/public/CNAME"
+      ".github/workflows/pages.yml"
     ],
     "api_supported": false
   },

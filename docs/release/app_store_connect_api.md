@@ -33,9 +33,9 @@ GITAI_IOS_API_BASE=https://api.gitai.game npm run ios:sync
 
 Final App Store URLs:
 
-- Support URL: `https://gitai.game/support.html`
-- Marketing URL: `https://gitai.game`
-- Privacy Policy URL: `https://gitai.game/privacy.html`
+- Support URL: `https://takepon7.github.io/support.html`
+- Marketing URL: `https://takepon7.github.io`
+- Privacy Policy URL: `https://takepon7.github.io/privacy.html`
 
 ## Automatable Actions
 

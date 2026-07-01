@@ -131,13 +131,12 @@ def smoke_public_launch(
         "manifest includes standalone app metadata and install icons",
     )
     cname_path = web_dist_dir / "CNAME"
-    cname_value = cname_path.read_text(encoding="utf-8").strip() if cname_path.exists() else ""
     add_check(
         checks,
         errors,
-        "github_pages_custom_domain_ready",
-        cname_value == "gitai.game",
-        cname_value or "missing CNAME",
+        "github_pages_user_site_ready",
+        not cname_path.exists(),
+        "user-site root URL does not require CNAME" if not cname_path.exists() else "unexpected CNAME",
     )
 
     legal_pages = {

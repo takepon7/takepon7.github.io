@@ -36,8 +36,8 @@
       "status": "pass"
     },
     {
-      "detail": "gitai.game",
-      "name": "github_pages_custom_domain_ready",
+      "detail": "user-site root URL does not require CNAME",
+      "name": "github_pages_user_site_ready",
       "status": "pass"
     },
     {
