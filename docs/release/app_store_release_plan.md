@@ -94,7 +94,7 @@ npm run ios:open
 The repository includes a direct archive/upload helper:
 
 ```bash
-APPLE_TEAM_ID=MC77VJ8M9D tools/archive_ios_testflight.sh
+APPLE_TEAM_ID=P293CBR3MV tools/archive_ios_testflight.sh
 ```
 
 This script refreshes the bundled web assets, archives the Capacitor app, and
