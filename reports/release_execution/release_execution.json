@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-07-01T17:24:00+09:00",
+  "checked_at": "2026-07-01T19:04:36+09:00",
   "targets": {
     "web": "https://takepon7.github.io",
     "api": "https://api.gitai.game"
@@ -13,7 +13,8 @@
     "url": "https://github.com/takepon7/gitai",
     "user_site_url": "https://github.com/takepon7/takepon7.github.io",
     "visibility": "public",
-    "default_branch": "main"
+    "default_branch": "main",
+    "source_repo_pages_disabled": true
   },
   "vercel": {
     "cli_installed": true,
@@ -28,11 +29,18 @@
   "github_pages": {
     "prepared": true,
     "enabled": true,
+    "build_type": "workflow",
+    "workflow_repository_guard": "takepon7/takepon7.github.io",
     "custom_domain": null,
     "active_web_url": "https://takepon7.github.io",
-    "workflow_run_url": "https://github.com/takepon7/gitai/actions/runs/28507241390",
+    "workflow_run_url": "https://github.com/takepon7/takepon7.github.io/actions/runs/28509589123",
     "workflow_conclusion": "success",
-    "html_url": "http://gitai.game/",
+    "html_url": "https://takepon7.github.io/",
+    "public_url_checks": {
+      "root": 200,
+      "privacy": 200,
+      "support": 200
+    },
     "prepared_files": [
       ".github/workflows/pages.yml"
     ],
@@ -62,6 +70,7 @@
     "public_launch_smoke": true,
     "launch_package_audit": true,
     "app_store_release_audit": true,
-    "production_env_validation": true
+    "production_env_validation": true,
+    "github_pages_public_url_smoke": true
   }
 }

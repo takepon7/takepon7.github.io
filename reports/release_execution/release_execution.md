@@ -1,6 +1,6 @@
 # Release Execution
 
-- checked_at: `2026-07-01T17:24:00+09:00`
+- checked_at: `2026-07-01T19:04:36+09:00`
 - target_web: `https://takepon7.github.io`
 - target_api: `https://api.gitai.game`
 - app_store_app_id: `6786196512`
@@ -11,9 +11,16 @@
 - `api.gitai.game`: DNS did not resolve from this environment.
 - GitHub repository created: `https://github.com/takepon7/gitai`
 - GitHub user-site repository target: `https://github.com/takepon7/takepon7.github.io`
+- Disabled the obsolete `takepon7/gitai` Pages setting that still pointed at unregistered `gitai.game`.
 - GitHub Pages enabled with Actions workflow deployment.
-- GitHub Pages workflow run succeeded: `https://github.com/takepon7/gitai/actions/runs/28507241390`
+- Pages workflow is guarded so only `takepon7/takepon7.github.io` publishes the public site.
+- GitHub Pages user-site build type switched from legacy branch publishing to workflow artifacts.
+- GitHub Pages workflow run succeeded: `https://github.com/takepon7/takepon7.github.io/actions/runs/28509589123`
 - Active web URL switched to `https://takepon7.github.io` because `gitai.game` is not registered.
+- Public web checks passed:
+  - `https://takepon7.github.io/`: `200`
+  - `https://takepon7.github.io/privacy.html`: `200`
+  - `https://takepon7.github.io/support.html`: `200`
 - Vercel CLI is installed, but no usable Vercel login/token was available in this sandbox.
 - Added Vercel release configuration:
   - `vercel.json`
@@ -43,3 +50,4 @@
 - `tools/audit_launch_package.py`: pass.
 - `tools/audit_app_store_release.py`: pass.
 - `tools/validate_production_env.py --env-file .env.production.example --allow-placeholders`: pass.
+- GitHub Pages public URL smoke: pass.

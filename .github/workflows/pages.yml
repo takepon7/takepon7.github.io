@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.repository == 'takepon7/takepon7.github.io'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
