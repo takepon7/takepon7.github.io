@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-07-01T19:04:36+09:00",
+  "checked_at": "2026-07-01T19:08:15+09:00",
   "targets": {
     "web": "https://takepon7.github.io",
     "api": "https://api.gitai.game"
@@ -33,7 +33,7 @@
     "workflow_repository_guard": "takepon7/takepon7.github.io",
     "custom_domain": null,
     "active_web_url": "https://takepon7.github.io",
-    "workflow_run_url": "https://github.com/takepon7/takepon7.github.io/actions/runs/28509589123",
+    "workflow_run_url": "https://github.com/takepon7/takepon7.github.io/actions/runs/28509749468",
     "workflow_conclusion": "success",
     "html_url": "https://takepon7.github.io/",
     "public_url_checks": {

@@ -1,6 +1,6 @@
 # Release Execution
 
-- checked_at: `2026-07-01T19:04:36+09:00`
+- checked_at: `2026-07-01T19:08:15+09:00`
 - target_web: `https://takepon7.github.io`
 - target_api: `https://api.gitai.game`
 - app_store_app_id: `6786196512`
@@ -15,7 +15,7 @@
 - GitHub Pages enabled with Actions workflow deployment.
 - Pages workflow is guarded so only `takepon7/takepon7.github.io` publishes the public site.
 - GitHub Pages user-site build type switched from legacy branch publishing to workflow artifacts.
-- GitHub Pages workflow run succeeded: `https://github.com/takepon7/takepon7.github.io/actions/runs/28509589123`
+- GitHub Pages workflow run succeeded: `https://github.com/takepon7/takepon7.github.io/actions/runs/28509749468`
 - Active web URL switched to `https://takepon7.github.io` because `gitai.game` is not registered.
 - Public web checks passed:
   - `https://takepon7.github.io/`: `200`
