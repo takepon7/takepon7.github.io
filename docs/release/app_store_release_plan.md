@@ -102,6 +102,10 @@ exports with `destination=upload` for App Store Connect/TestFlight. It requires
 the Apple Developer account to be available to Xcode or the App Store Connect API
 key from `.env.appstore` to be accepted for provisioning updates.
 
+By default, the export is suitable for review-candidate TestFlight builds:
+`testFlightInternalTestingOnly` is set to `false`. For a throwaway internal-only
+build, run with `TESTFLIGHT_INTERNAL_ONLY=true`.
+
 ### Phase 4: App Review
 
 - Fill metadata from `docs/release/app_store_metadata_ja.md`.
@@ -137,6 +141,7 @@ Generate the first 6.9-inch screenshot set with:
 ```bash
 PYTHONPATH=src .venv310/bin/python tools/build_app_store_screenshots.py
 PYTHONPATH=src .venv310/bin/python tools/audit_app_store_release.py
+PYTHONPATH=src .venv310/bin/python tools/audit_testflight_review_readiness.py
 ```
 
 Outputs:
@@ -144,11 +149,12 @@ Outputs:
 - `reports/app_store/screenshots/raw/`
 - `reports/app_store/screenshots/generated/iphone-6.9/`
 - `reports/app_store/app_store_release.md`
+- `reports/testflight_review/testflight_review_readiness.md`
 
 ## Manual Follow-ups
 
 - Apple Developer account must be available to Xcode for signing, or automatic
   provisioning must succeed with the App Store Connect API key.
 - Production API must be deployed at `https://api.gitai.game` before final iOS build.
-- Run `tools/archive_ios_testflight.sh` after DNS/hosting are live.
+- Run `tools/archive_ios_testflight.sh` from a normal local terminal after DNS/hosting are live.
 - App review screenshots must be generated from the final UI/API build.

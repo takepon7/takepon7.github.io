@@ -49,16 +49,22 @@
   "app_store_connect": {
     "app_id": "6786196512",
     "bundle_id": "app.gitai.game",
-    "build_count": 0
+    "build_count": 0,
+    "app_store_version": "1.0",
+    "app_store_state": "PREPARE_FOR_SUBMISSION",
+    "metadata_synced": true,
+    "screenshot_count": 5,
+    "internal_beta_group_count": 1
   },
   "xcode": {
     "archive_completed": false,
     "blocking_reasons": [
-      "No local Apple Developer account/provisioning profile was available to Xcode.",
-      "Xcode/SwiftPM cache writes were restricted by the sandbox."
+      "SwiftPM package resolution invokes Apple sandbox-exec tooling that is blocked by the Codex sandbox.",
+      "Production API DNS for api.gitai.game is not live yet."
     ],
     "prepared_files": [
-      "tools/archive_ios_testflight.sh"
+      "tools/archive_ios_testflight.sh",
+      "tools/audit_testflight_review_readiness.py"
     ]
   },
   "verification": {
@@ -71,6 +77,7 @@
     "launch_package_audit": true,
     "app_store_release_audit": true,
     "production_env_validation": true,
-    "github_pages_public_url_smoke": true
+    "github_pages_public_url_smoke": true,
+    "testflight_review_audit": false
   }
 }

@@ -34,10 +34,16 @@
 
 - App Store Connect app record exists for bundle ID `app.gitai.game`.
 - App Store Connect build count for app `6786196512`: `0`.
+- App Store version `1.0` is in `PREPARE_FOR_SUBMISSION`.
+- App Store text and URL metadata synced through the App Store Connect API.
+- 6.9-inch screenshot set generated and audited: `5`.
+- Internal TestFlight beta group exists.
 - Xcode archive was attempted with the App Store Connect API key.
-- Archive did not complete in this sandbox because Xcode could not access a local Apple Developer account/provisioning profile and SwiftPM/Xcode cache writes were restricted.
+- Archive did not complete in this sandbox because SwiftPM package resolution invokes Apple tooling that is blocked by the Codex sandbox.
 - Added TestFlight upload helper:
   - `tools/archive_ios_testflight.sh`
+- Added TestFlight/App Review readiness audit:
+  - `tools/audit_testflight_review_readiness.py`
 
 ## Local Verification
 

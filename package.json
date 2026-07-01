@@ -15,6 +15,7 @@
     "ios:open": "npx cap open ios",
     "release:itchio": "python3 tools/build_itchio_release_kit.py",
     "release:appstore:audit": "python3 tools/audit_app_store_release.py",
+    "release:testflight:audit": "python3 tools/audit_testflight_review_readiness.py",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run build"
   },

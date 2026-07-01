@@ -19,19 +19,33 @@ EXPORT_PATH="${EXPORT_PATH:-$ROOT/build/ios/testflight}"
 DERIVED_DATA_PATH="${DERIVED_DATA_PATH:-$ROOT/build/xcode/DerivedData}"
 SOURCE_PACKAGES_PATH="${SOURCE_PACKAGES_PATH:-$ROOT/build/xcode/SourcePackages}"
 PACKAGE_CACHE_PATH="${PACKAGE_CACHE_PATH:-$ROOT/build/xcode/swiftpm}"
+XCODE_HOME_PATH="${XCODE_HOME_PATH:-$ROOT/build/xcode/home}"
+XCODE_TMPDIR="${XCODE_TMPDIR:-$ROOT/build/xcode/tmp}"
+MODULE_CACHE_PATH="${MODULE_CACHE_PATH:-$ROOT/build/xcode/ModuleCache}"
+GITAI_XCODE_ISOLATED_HOME="${GITAI_XCODE_ISOLATED_HOME:-0}"
+TESTFLIGHT_INTERNAL_ONLY="${TESTFLIGHT_INTERNAL_ONLY:-false}"
 EXPORT_OPTIONS="$ROOT/build/ios/ExportOptions.plist"
 
-mkdir -p "$(dirname "$ARCHIVE_PATH")" "$EXPORT_PATH" "$DERIVED_DATA_PATH" "$SOURCE_PACKAGES_PATH" "$PACKAGE_CACHE_PATH"
+mkdir -p "$(dirname "$ARCHIVE_PATH")" "$EXPORT_PATH" "$DERIVED_DATA_PATH" "$SOURCE_PACKAGES_PATH" "$PACKAGE_CACHE_PATH" "$XCODE_HOME_PATH" "$XCODE_TMPDIR" "$MODULE_CACHE_PATH"
+
+if [[ "$GITAI_XCODE_ISOLATED_HOME" == "1" ]]; then
+  export HOME="$XCODE_HOME_PATH"
+  export CFFIXED_USER_HOME="$XCODE_HOME_PATH"
+  export TMPDIR="$XCODE_TMPDIR"
+fi
+export CLANG_MODULE_CACHE_PATH="$MODULE_CACHE_PATH"
+export SWIFT_MODULE_CACHE_PATH="$MODULE_CACHE_PATH"
+export SWIFTPM_MODULECACHE_OVERRIDE="$MODULE_CACHE_PATH"
+export SWIFTC_FLAGS="-module-cache-path $MODULE_CACHE_PATH -Xcc -fmodules-cache-path=$MODULE_CACHE_PATH"
+export OTHER_SWIFT_FLAGS="-module-cache-path $MODULE_CACHE_PATH -Xcc -fmodules-cache-path=$MODULE_CACHE_PATH"
+
+if [[ "$TESTFLIGHT_INTERNAL_ONLY" == "true" || "$TESTFLIGHT_INTERNAL_ONLY" == "1" ]]; then
+  TESTFLIGHT_INTERNAL_ONLY_PLIST="<true/>"
+else
+  TESTFLIGHT_INTERNAL_ONLY_PLIST="<false/>"
+fi
 
 GITAI_IOS_API_BASE="${GITAI_IOS_API_BASE:-https://api.gitai.game}" npm run ios:sync
-
-xcodebuild \
-  -resolvePackageDependencies \
-  -project ios/App/App.xcodeproj \
-  -scheme App \
-  -derivedDataPath "$DERIVED_DATA_PATH" \
-  -clonedSourcePackagesDirPath "$SOURCE_PACKAGES_PATH" \
-  -packageCachePath "$PACKAGE_CACHE_PATH"
 
 xcodebuild \
   -project ios/App/App.xcodeproj \
@@ -48,6 +62,9 @@ xcodebuild \
   -authenticationKeyPath "$ASC_PRIVATE_KEY_PATH" \
   -authenticationKeyID "$ASC_KEY_ID" \
   -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+  CLANG_MODULE_CACHE_PATH="$MODULE_CACHE_PATH" \
+  SWIFT_MODULE_CACHE_PATH="$MODULE_CACHE_PATH" \
+  COMPILER_INDEX_STORE_ENABLE=NO \
   clean archive
 
 cat > "$EXPORT_OPTIONS" <<PLIST
@@ -66,7 +83,7 @@ cat > "$EXPORT_OPTIONS" <<PLIST
   <key>manageAppVersionAndBuildNumber</key>
   <true/>
   <key>testFlightInternalTestingOnly</key>
-  <true/>
+  ${TESTFLIGHT_INTERNAL_ONLY_PLIST}
   <key>uploadSymbols</key>
   <true/>
 </dict>
