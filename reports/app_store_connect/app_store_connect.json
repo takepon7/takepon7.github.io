@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "detail": "all keys present",
+      "name": "required_env_present",
+      "status": "pass"
+    },
+    {
+      "detail": "/Users/ryosuke/dev/new_game/.secrets/.../AuthKey_GG8FQHQ7LD.p8",
+      "name": "private_key_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "ES256 token generated",
+      "name": "jwt_generated",
+      "status": "pass"
+    },
+    {
+      "detail": "matched_bundle_ids=0",
+      "name": "bundle_ids_endpoint_reachable",
+      "status": "pass"
+    },
+    {
+      "detail": "No bundle ID found for app.gitai.game",
+      "name": "bundle_id_found",
+      "status": "fail"
+    },
+    {
+      "detail": "matched_apps=0",
+      "name": "apps_endpoint_reachable",
+      "status": "pass"
+    },
+    {
+      "detail": "No App Store app record found for bundle_id=app.gitai.game",
+      "name": "app_record_found",
+      "status": "fail"
+    }
+  ],
+  "errors": [
+    "bundle_id_found: No bundle ID found for app.gitai.game",
+    "app_record_found: No App Store app record found for bundle_id=app.gitai.game"
+  ],
+  "generated_at": "2026-07-01T06:34:06.463650+00:00",
+  "summary": {
+    "app_found": false,
+    "app_id": "",
+    "bundle_found": false,
+    "bundle_id": "app.gitai.game",
+    "bundle_resource_id": "",
+    "failed_checks": 2,
+    "passed_checks": 5
+  },
+  "valid": false
+}

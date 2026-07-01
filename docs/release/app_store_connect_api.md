@@ -39,6 +39,23 @@ GITAI_IOS_API_BASE=https://your-api.example.com npm run ios:sync
 - Update app info and version metadata.
 - Attach screenshots once generated.
 
+## Credential Check
+
+After placing `.env.appstore` and the `.p8` key locally:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/check_app_store_connect.py
+```
+
+This creates:
+
+- `reports/app_store_connect/app_store_connect.md`
+- `reports/app_store_connect/app_store_connect.json`
+
+The check does not print the private key or JWT. It verifies local env fields,
+generates an ES256 token, and calls the App Store Connect apps endpoint for the
+configured bundle ID.
+
 ## Kept Manual
 
 - Creating the API key and downloading the `.p8` file.
