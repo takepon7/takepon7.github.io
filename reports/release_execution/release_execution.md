@@ -15,6 +15,9 @@
   - `api/index.py`
   - `requirements.txt`
   - `tools/deploy_vercel_release.sh`
+- Added GitHub Pages release configuration:
+  - `.github/workflows/pages.yml`
+  - `web/public/CNAME`
 
 ## App Store / TestFlight
 

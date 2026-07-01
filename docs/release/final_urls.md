@@ -34,4 +34,6 @@ GITAI_IOS_PRIVACY_URL=https://gitai.game/privacy.html
 ```
 
 Before TestFlight, DNS and hosting must point `gitai.game` to the public web app
-and `api.gitai.game` to the FastAPI service.
+and `api.gitai.game` to the FastAPI service. GitHub Pages is suitable for
+`gitai.game`; it is not suitable for `api.gitai.game` because Pages only serves
+static files.

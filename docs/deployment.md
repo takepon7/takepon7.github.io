@@ -110,6 +110,40 @@ The Vercel fallback stores runtime SQLite and submitted images under `/tmp`.
 That is enough for a smokeable deployment, but serious public traffic should use
 a persistent container volume or managed database/blob storage before promotion.
 
+## GitHub Pages
+
+GitHub Pages can host the static web app at `https://gitai.game`. It cannot run
+the FastAPI service, so `api.gitai.game` still needs a separate API host.
+
+The repository includes `.github/workflows/pages.yml`, which builds `web/dist`
+with:
+
+```bash
+VITE_GITAI_API_BASE=https://api.gitai.game npm run build
+```
+
+and deploys the artifact to GitHub Pages. The custom domain is set by
+`web/public/CNAME`.
+
+DNS for `gitai.game` should point to GitHub Pages. Keep `api.gitai.game`
+pointing at the API host.
+
+Recommended apex records for `gitai.game`:
+
+```text
+@  A     185.199.108.153
+@  A     185.199.109.153
+@  A     185.199.110.153
+@  A     185.199.111.153
+@  AAAA  2606:50c0:8000::153
+@  AAAA  2606:50c0:8001::153
+@  AAAA  2606:50c0:8002::153
+@  AAAA  2606:50c0:8003::153
+```
+
+GitHub also recommends adding the custom domain in the repository Pages
+settings before changing DNS, and avoiding wildcard DNS records for Pages.
+
 ## Preflight
 
 Run:

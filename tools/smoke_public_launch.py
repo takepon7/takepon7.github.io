@@ -130,6 +130,15 @@ def smoke_public_launch(
         manifest_ok,
         "manifest includes standalone app metadata and install icons",
     )
+    cname_path = web_dist_dir / "CNAME"
+    cname_value = cname_path.read_text(encoding="utf-8").strip() if cname_path.exists() else ""
+    add_check(
+        checks,
+        errors,
+        "github_pages_custom_domain_ready",
+        cname_value == "gitai.game",
+        cname_value or "missing CNAME",
+    )
 
     legal_pages = {
         "privacy": (web_dist_dir / "privacy.html", ["Privacy Policy", "取得する情報", "削除"]),

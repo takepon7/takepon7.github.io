@@ -11,7 +11,7 @@
 | check | status | detail |
 | --- | --- | --- |
 | release_readiness_valid | pass | passed=15 failed=0 |
-| public_launch_valid | pass | passed=13 failed=0 |
+| public_launch_valid | pass | passed=14 failed=0 |
 | first_play_flow_valid | pass | passed=38 failed=0 |
 | static_surface_valid | pass | checks=41 |
 | marketing_docs_ready | pass | all launch docs exist |

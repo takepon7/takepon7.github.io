@@ -36,6 +36,11 @@
       "status": "pass"
     },
     {
+      "detail": "gitai.game",
+      "name": "github_pages_custom_domain_ready",
+      "status": "pass"
+    },
+    {
       "detail": "{\"linked_from_app\": [\"/privacy.html\", \"/terms.html\", \"/safety.html\", \"/support.html\"], \"pages\": {\"privacy\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/privacy.html\"}, \"safety\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/safety.html\"}, \"support\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/support.html\"}, \"terms\": {\"missing\": [], \"ok\": true, \"path\": \"/Users/ryosuke/dev/new_game/web/dist/terms.html\"}}}",
       "name": "public_policy_pages_ready",
       "status": "pass"
@@ -70,7 +75,7 @@
   "summary": {
     "failed_checks": 0,
     "manual_followups": 3,
-    "passed_checks": 13
+    "passed_checks": 14
   },
   "valid": true,
   "warnings": [

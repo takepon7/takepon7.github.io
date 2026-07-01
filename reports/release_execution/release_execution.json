@@ -18,6 +18,15 @@
       "tools/deploy_vercel_release.sh"
     ]
   },
+  "github_pages": {
+    "prepared": true,
+    "custom_domain": "gitai.game",
+    "prepared_files": [
+      ".github/workflows/pages.yml",
+      "web/public/CNAME"
+    ],
+    "api_supported": false
+  },
   "app_store_connect": {
     "app_id": "6786196512",
     "bundle_id": "app.gitai.game",
