@@ -54,6 +54,9 @@ gitai is a drawing puzzle game. Players draw on top of a provided base object an
 The app connects to the production API at:
 {GITAI_IOS_API_BASE}
 
+The iOS bundle loads bundled web assets through Capacitor and calls the HTTPS API
+above for scoring, leaderboards, share cards, feedback, and content reports.
+
 Moderation and safety:
 - Submitted images are scanned by the server-side moderation path before they appear in public ghost/leaderboard surfaces.
 - Players can report ghost submissions from the app.

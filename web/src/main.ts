@@ -1796,6 +1796,8 @@ function apiUrl(path: string): string {
 }
 
 function resolveApiBase(): string {
+  const runtime = window.GITAI_API_BASE?.trim();
+  if (runtime) return runtime.replace(/\/+$/, "");
   const configured = import.meta.env.VITE_GITAI_API_BASE?.trim();
   if (configured) return configured.replace(/\/+$/, "");
   if (import.meta.env.DEV) return "http://127.0.0.1:8000";

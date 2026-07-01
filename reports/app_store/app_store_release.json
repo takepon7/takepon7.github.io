@@ -36,6 +36,26 @@
       "status": "pass"
     },
     {
+      "detail": "Capacitor iOS project exists",
+      "name": "ios_wrapper_files_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "appId=app.gitai.game webDir=web/dist",
+      "name": "capacitor_config_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "iOS bundle has non-local API configuration hook",
+      "name": "ios_bundle_api_base_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "{\"app_icon\": [1024, 1024], \"splash\": [2732, 2732]}",
+      "name": "ios_native_assets_ready",
+      "status": "pass"
+    },
+    {
       "detail": "{\"bad\": [], \"count\": 5, \"expected_size\": [1290, 2796]}",
       "name": "iphone_6_9_screenshots_ready",
       "status": "pass"
@@ -49,7 +69,7 @@
   "errors": [],
   "manual_followups": [
     "Create the App Store Connect app record and reserve the final bundle ID.",
-    "Build the iOS wrapper with the final production API origin.",
+    "Re-sync the iOS wrapper with the final production API origin.",
     "Upload an archive build and run TestFlight first-play QA.",
     "Attach generated screenshots and submit with manual release."
   ],
@@ -97,7 +117,7 @@
   ],
   "summary": {
     "failed_checks": 0,
-    "passed_checks": 9,
+    "passed_checks": 13,
     "screenshot_count": 5
   },
   "valid": true

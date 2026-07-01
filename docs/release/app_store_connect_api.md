@@ -23,6 +23,14 @@ Expected variables:
 - `GITAI_IOS_MARKETING_URL`
 - `GITAI_IOS_PRIVACY_URL`
 
+The current iOS wrapper bundle ID is `app.gitai.game`. If App Store Connect uses
+a different final bundle ID, update both `.env.appstore` and
+`capacitor.config.ts`, then run:
+
+```bash
+GITAI_IOS_API_BASE=https://your-api.example.com npm run ios:sync
+```
+
 ## Automatable Actions
 
 - Create or inspect app metadata.

@@ -94,6 +94,61 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "icon source, og image, and hero are present" if not missing_assets else f"missing={missing_assets}",
     )
 
+    ios_files = {
+        "capacitor_config": ROOT / "capacitor.config.ts",
+        "xcode_project": ROOT / "ios" / "App" / "App.xcodeproj" / "project.pbxproj",
+        "info_plist": ROOT / "ios" / "App" / "App" / "Info.plist",
+        "ios_index": ROOT / "ios" / "App" / "App" / "public" / "index.html",
+        "ios_native_config": ROOT / "ios" / "App" / "App" / "public" / "native-config.js",
+        "ios_app_icon": ROOT / "ios" / "App" / "App" / "Assets.xcassets" / "AppIcon.appiconset" / "AppIcon-512@2x.png",
+        "ios_splash": ROOT / "ios" / "App" / "App" / "Assets.xcassets" / "Splash.imageset" / "splash-2732x2732.png",
+    }
+    missing_ios_files = [name for name, path in ios_files.items() if not path.exists()]
+    add_check(
+        checks,
+        errors,
+        "ios_wrapper_files_ready",
+        not missing_ios_files,
+        "Capacitor iOS project exists" if not missing_ios_files else f"missing={missing_ios_files}",
+    )
+    capacitor_text = ios_files["capacitor_config"].read_text(encoding="utf-8") if ios_files["capacitor_config"].exists() else ""
+    add_check(
+        checks,
+        errors,
+        "capacitor_config_ready",
+        "app.gitai.game" in capacitor_text and "web/dist" in capacitor_text,
+        "appId=app.gitai.game webDir=web/dist",
+    )
+    ios_public_text = ""
+    if ios_files["ios_index"].exists():
+        ios_public_text += ios_files["ios_index"].read_text(encoding="utf-8", errors="ignore")
+    for js_path in (ROOT / "ios" / "App" / "App" / "public" / "assets").glob("*.js"):
+        ios_public_text += js_path.read_text(encoding="utf-8", errors="ignore")
+    add_check(
+        checks,
+        errors,
+        "ios_bundle_api_base_ready",
+        "127.0.0.1" not in ios_public_text
+        and "localhost" not in ios_public_text
+        and ("https://api.example.com" in ios_public_text or "GITAI_API_BASE" in ios_public_text),
+        "iOS bundle has non-local API configuration hook",
+    )
+    ios_icon_ok = image_size(ios_files["ios_app_icon"]) == (1024, 1024)
+    ios_splash_ok = image_size(ios_files["ios_splash"]) == (2732, 2732)
+    add_check(
+        checks,
+        errors,
+        "ios_native_assets_ready",
+        ios_icon_ok and ios_splash_ok,
+        json.dumps(
+            {
+                "app_icon": image_size(ios_files["ios_app_icon"]),
+                "splash": image_size(ios_files["ios_splash"]),
+            },
+            sort_keys=True,
+        ),
+    )
+
     screenshots = sorted(SCREENSHOT_DIR.glob("*.png"))
     screenshot_results = []
     for path in screenshots:
@@ -137,7 +192,7 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         "screenshots": screenshot_results,
         "manual_followups": [
             "Create the App Store Connect app record and reserve the final bundle ID.",
-            "Build the iOS wrapper with the final production API origin.",
+            "Re-sync the iOS wrapper with the final production API origin.",
             "Upload an archive build and run TestFlight first-play QA.",
             "Attach generated screenshots and submit with manual release.",
         ],
@@ -161,6 +216,13 @@ def load_json(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {}
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def image_size(path: Path) -> tuple[int, int] | None:
+    if not path.exists():
+        return None
+    with Image.open(path) as image:
+        return image.size
 
 
 def write_report(out_dir: Path, report: dict[str, Any]) -> None:

@@ -10,13 +10,21 @@
     "dev:api:fast": "bash scripts/dev_api_heuristic.sh",
     "build": "vite build web",
     "preview": "vite preview web --host 127.0.0.1",
+    "ios:assets": "python3 tools/build_ios_assets.py",
+    "ios:sync": "python3 tools/sync_ios_wrapper.py",
+    "ios:open": "npx cap open ios",
     "release:itchio": "python3 tools/build_itchio_release_kit.py",
     "release:appstore:audit": "python3 tools/audit_app_store_release.py",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run build"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.4.1",
     "typescript": "^5.9.3",
     "vite": "^7.2.7"
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/ios": "^8.4.1"
   }
 }

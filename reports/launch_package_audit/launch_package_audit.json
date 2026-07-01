@@ -64,7 +64,7 @@
   "errors": [],
   "manual_followups": [
     "Set production GITAI_CORS_ORIGINS and GITAI_PUBLIC_WEB_URL to the final public origin.",
-    "Build the iOS wrapper with the final production API origin and upload the first TestFlight build.",
+    "Re-sync the iOS wrapper with the final production API origin and upload the first TestFlight build.",
     "Rebuild the itch.io ZIP with the final VITE_GITAI_API_BASE and verify the draft iframe origin.",
     "Run an external closed playtest with at least 20 outside players.",
     "Replace or expand heuristic playtest pairs with broader real-model measured pairs before a serious campaign."

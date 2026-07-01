@@ -1,7 +1,7 @@
 # App Store Release Audit
 
 - valid: `true`
-- passed_checks: `9`
+- passed_checks: `13`
 - failed_checks: `0`
 - screenshot_count: `5`
 
@@ -14,6 +14,10 @@
 | metadata_required_fields_ready | pass | all metadata sections present |
 | appstore_env_template_ready | pass | all App Store env keys present |
 | store_visual_assets_ready | pass | icon source, og image, and hero are present |
+| ios_wrapper_files_ready | pass | Capacitor iOS project exists |
+| capacitor_config_ready | pass | appId=app.gitai.game webDir=web/dist |
+| ios_bundle_api_base_ready | pass | iOS bundle has non-local API configuration hook |
+| ios_native_assets_ready | pass | {"app_icon": [1024, 1024], "splash": [2732, 2732]} |
 | iphone_6_9_screenshots_ready | pass | {"bad": [], "count": 5, "expected_size": [1290, 2796]} |
 | web_launch_package_valid | pass | passed=12 failed=0 |
 
@@ -28,6 +32,6 @@
 ## Manual Follow-ups
 
 - Create the App Store Connect app record and reserve the final bundle ID.
-- Build the iOS wrapper with the final production API origin.
+- Re-sync the iOS wrapper with the final production API origin.
 - Upload an archive build and run TestFlight first-play QA.
 - Attach generated screenshots and submit with manual release.

@@ -32,6 +32,21 @@ Fastest implementation path:
 - Add a first-run offline/error screen for API failures.
 - Ensure external policy URLs open in Safari or an in-app browser sheet.
 
+The repository now includes a Capacitor iOS shell in `ios/` with bundle ID
+`app.gitai.game`.
+
+To refresh the bundled iOS web assets:
+
+```bash
+GITAI_IOS_API_BASE=https://your-api.example.com npm run ios:sync
+```
+
+To open the project in Xcode:
+
+```bash
+npm run ios:open
+```
+
 ### Phase 2: API Production
 
 - Deploy the existing Docker/FastAPI app.
@@ -107,4 +122,5 @@ Outputs:
 - Apple Developer account holder must create or provide the App Store Connect API key.
 - Final bundle ID must be reserved in Apple Developer/App Store Connect.
 - Production API origin must be known before final iOS build.
+- Re-run `GITAI_IOS_API_BASE=https://final-api.example.com npm run ios:sync` before archiving.
 - App review screenshots must be generated from the final UI/API build.
