@@ -9,6 +9,11 @@
 
 - `gitai.game`: DNS did not resolve from this environment.
 - `api.gitai.game`: DNS did not resolve from this environment.
+- GitHub repository created: `https://github.com/takepon7/gitai`
+- GitHub Pages enabled with Actions workflow deployment.
+- GitHub Pages workflow run succeeded: `https://github.com/takepon7/gitai/actions/runs/28507241390`
+- GitHub Pages custom domain is set to `gitai.game`.
+- `https://takepon7.github.io/gitai/` redirects to `http://gitai.game/`, which is expected after custom domain setup.
 - Vercel CLI is installed, but no usable Vercel login/token was available in this sandbox.
 - Added Vercel release configuration:
   - `vercel.json`

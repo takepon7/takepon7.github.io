@@ -11,6 +11,8 @@ __pycache__/
 .venv310/
 venv/
 .cache/
+.gh-cache/
+.gh-home/
 .secrets/
 .vercel/
 .vercel-home/

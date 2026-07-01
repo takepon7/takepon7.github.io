@@ -8,6 +8,11 @@
     "gitai.game_resolves": false,
     "api.gitai.game_resolves": false
   },
+  "github_repository": {
+    "url": "https://github.com/takepon7/gitai",
+    "visibility": "public",
+    "default_branch": "main"
+  },
   "vercel": {
     "cli_installed": true,
     "authenticated": false,
@@ -20,7 +25,11 @@
   },
   "github_pages": {
     "prepared": true,
+    "enabled": true,
     "custom_domain": "gitai.game",
+    "workflow_run_url": "https://github.com/takepon7/gitai/actions/runs/28507241390",
+    "workflow_conclusion": "success",
+    "html_url": "http://gitai.game/",
     "prepared_files": [
       ".github/workflows/pages.yml",
       "web/public/CNAME"
