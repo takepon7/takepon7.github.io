@@ -1,28 +1,6 @@
 {
   "qualities": [
     {
-      "accepted": true,
-      "measured_difficulty": "normal",
-      "p10": 0.055481010483532794,
-      "p50": 0.22603140603105815,
-      "p90": 0.5660938319538227,
-      "pair_id": "balloon_to_baseball",
-      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-balloon-baseball-tau30-2026-06-30",
-      "rejection_reasons": [],
-      "spread": 0.5106128214702899
-    },
-    {
-      "accepted": true,
-      "measured_difficulty": "easy",
-      "p10": 0.14549668956435785,
-      "p50": 0.5862194032916829,
-      "p90": 0.6010778229446873,
-      "pair_id": "book_to_car",
-      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-book-car-tau30-2026-06-30",
-      "rejection_reasons": [],
-      "spread": 0.4555811333803294
-    },
-    {
       "accepted": false,
       "measured_difficulty": "hard",
       "p10": 0.0427688871153977,
@@ -34,39 +12,6 @@
         "p90_below_impossible_floor"
       ],
       "spread": 0.10293481036138344
-    },
-    {
-      "accepted": true,
-      "measured_difficulty": "hard",
-      "p10": 0.10213759817154669,
-      "p50": 0.14528556538749374,
-      "p90": 0.23430523699282216,
-      "pair_id": "mug_to_book",
-      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-mug-book-tau30-2026-06-30",
-      "rejection_reasons": [],
-      "spread": 0.13216763882127547
-    },
-    {
-      "accepted": true,
-      "measured_difficulty": "easy",
-      "p10": 0.18400056706231357,
-      "p50": 0.6858054550384369,
-      "p90": 0.789571551617693,
-      "pair_id": "orange_to_tennis_ball",
-      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-orange-tennis_ball-tau30-2026-06-30",
-      "rejection_reasons": [],
-      "spread": 0.6055709845553794
-    },
-    {
-      "accepted": true,
-      "measured_difficulty": "normal",
-      "p10": 0.10195527132505057,
-      "p50": 0.4389157332683104,
-      "p90": 0.5075641464563487,
-      "pair_id": "tomato_to_baseball",
-      "ref_version": "approved-seed-open-clip-vit-l-14-openai-fp32-tomato-baseball-tau30-2026-06-30",
-      "rejection_reasons": [],
-      "spread": 0.4056088751312982
     }
   ]
 }
