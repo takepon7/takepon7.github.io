@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "VITE_GITAI_API_BASE=https://api.gitai.game npm run build",
+  "outputDirectory": "web/dist",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 60,
+      "memory": 1024,
+      "excludeFiles": "{build/**,ios/**,node_modules/**,reports/**,releases/**,tests/**,videos/**,.cache/**,.git-local/**,.pytest_cache/**,.secrets/**,.venv/**,.venv310/**}"
+    }
+  },
+  "routes": [
+    {
+      "src": "/v1/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/healthz",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.py"
+    }
+  ]
+}

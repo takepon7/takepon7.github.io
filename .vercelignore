@@ -1,0 +1,16 @@
+.DS_Store
+.cache/
+.git/
+.git-local/
+.pytest_cache/
+.secrets/
+.venv/
+.venv310/
+build/
+data/runtime/
+ios/
+node_modules/
+reports/
+releases/
+tests/
+videos/

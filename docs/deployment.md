@@ -88,6 +88,28 @@ curl -H "X-Gitai-Operator-Token: $GITAI_OPERATOR_TOKEN" \
   https://api.gitai.game/v1/operator/playtest-feedback
 ```
 
+## Vercel
+
+The repository includes a Vercel Python Runtime entrypoint at `api/index.py`
+and project configuration in `vercel.json`. The Vercel setup serves the FastAPI
+app and the built `web/dist` bundle from the same project, then aliases both
+`gitai.game` and `api.gitai.game` to the production deployment.
+
+Deploy and attach domains with:
+
+```bash
+GITAI_OPERATOR_TOKEN=replace-with-long-random-token tools/deploy_vercel_release.sh
+```
+
+The script expects either an existing Vercel CLI login or `VERCEL_TOKEN` in the
+environment. It can add the domains to the Vercel project, but registrar DNS
+still has to delegate or point `gitai.game` to Vercel if the domain is managed
+outside Vercel.
+
+The Vercel fallback stores runtime SQLite and submitted images under `/tmp`.
+That is enough for a smokeable deployment, but serious public traffic should use
+a persistent container volume or managed database/blob storage before promotion.
+
 ## Preflight
 
 Run:

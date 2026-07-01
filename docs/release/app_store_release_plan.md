@@ -91,6 +91,17 @@ npm run ios:open
   - feedback
   - share card
 
+The repository includes a direct archive/upload helper:
+
+```bash
+APPLE_TEAM_ID=MC77VJ8M9D tools/archive_ios_testflight.sh
+```
+
+This script refreshes the bundled web assets, archives the Capacitor app, and
+exports with `destination=upload` for App Store Connect/TestFlight. It requires
+the Apple Developer account to be available to Xcode or the App Store Connect API
+key from `.env.appstore` to be accepted for provisioning updates.
+
 ### Phase 4: App Review
 
 - Fill metadata from `docs/release/app_store_metadata_ja.md`.
@@ -136,8 +147,8 @@ Outputs:
 
 ## Manual Follow-ups
 
-- Apple Developer account holder must create or provide the App Store Connect API key.
-- Final bundle ID must be reserved in Apple Developer/App Store Connect.
+- Apple Developer account must be available to Xcode for signing, or automatic
+  provisioning must succeed with the App Store Connect API key.
 - Production API must be deployed at `https://api.gitai.game` before final iOS build.
-- Re-run `GITAI_IOS_API_BASE=https://api.gitai.game npm run ios:sync` before archiving.
+- Run `tools/archive_ios_testflight.sh` after DNS/hosting are live.
 - App review screenshots must be generated from the final UI/API build.

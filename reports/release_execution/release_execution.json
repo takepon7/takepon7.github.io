@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-07-01T17:24:00+09:00",
+  "targets": {
+    "web": "https://gitai.game",
+    "api": "https://api.gitai.game"
+  },
+  "dns": {
+    "gitai.game_resolves": false,
+    "api.gitai.game_resolves": false
+  },
+  "vercel": {
+    "cli_installed": true,
+    "authenticated": false,
+    "prepared_files": [
+      "vercel.json",
+      "api/index.py",
+      "requirements.txt",
+      "tools/deploy_vercel_release.sh"
+    ]
+  },
+  "app_store_connect": {
+    "app_id": "6786196512",
+    "bundle_id": "app.gitai.game",
+    "build_count": 0
+  },
+  "xcode": {
+    "archive_completed": false,
+    "blocking_reasons": [
+      "No local Apple Developer account/provisioning profile was available to Xcode.",
+      "Xcode/SwiftPM cache writes were restricted by the sandbox."
+    ],
+    "prepared_files": [
+      "tools/archive_ios_testflight.sh"
+    ]
+  },
+  "verification": {
+    "fastapi_entrypoint_loaded": true,
+    "healthz_status": 200,
+    "app_shell_status": 200,
+    "npm_check": true,
+    "phase3_static_smoke": true,
+    "public_launch_smoke": true,
+    "launch_package_audit": true,
+    "app_store_release_audit": true,
+    "production_env_validation": true
+  }
+}
