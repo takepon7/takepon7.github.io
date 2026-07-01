@@ -50,6 +50,7 @@
     "app_id": "6786196512",
     "bundle_id": "app.gitai.game",
     "build_count": 0,
+    "latest_upload_status": "succeeded_processing",
     "app_store_version": "1.0",
     "app_store_state": "PREPARE_FOR_SUBMISSION",
     "metadata_synced": true,

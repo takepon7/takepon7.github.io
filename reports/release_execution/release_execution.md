@@ -34,6 +34,7 @@
 
 - App Store Connect app record exists for bundle ID `app.gitai.game`.
 - App Store Connect build count for app `6786196512`: `0`.
+- Latest Xcode upload succeeded and is in Apple processing; the build has not appeared in the App Store Connect builds API yet.
 - App Store version `1.0` is in `PREPARE_FOR_SUBMISSION`.
 - App Store text and URL metadata synced through the App Store Connect API.
 - 6.9-inch screenshot set generated and audited: `5`.
