@@ -95,6 +95,23 @@ Then rerun:
 PYTHONPATH=src .venv310/bin/python tools/check_app_store_connect.py
 ```
 
+## Sync Text Metadata
+
+After the app record exists, sync safe text metadata:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/sync_app_store_metadata.py
+```
+
+By default, this updates App Store text fields and skips URL fields until final
+production URLs replace the `example.com` placeholders in `.env.appstore`.
+
+Once final URLs are present:
+
+```bash
+PYTHONPATH=src .venv310/bin/python tools/sync_app_store_metadata.py --apply-urls
+```
+
 ## Kept Manual
 
 - Creating the API key and downloading the `.p8` file.

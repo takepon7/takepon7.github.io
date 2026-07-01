@@ -1,13 +1,13 @@
 # App Store Connect Check
 
-- valid: `false`
+- valid: `true`
 - bundle_id: `app.gitai.game`
 - bundle_found: `true`
 - bundle_resource_id: `32QLDGB33V`
-- app_found: `false`
-- app_id: ``
-- passed_checks: `6`
-- failed_checks: `1`
+- app_found: `true`
+- app_id: `6786196512`
+- passed_checks: `7`
+- failed_checks: `0`
 
 | check | status | detail |
 | --- | --- | --- |
@@ -16,9 +16,5 @@
 | jwt_generated | pass | ES256 token generated |
 | bundle_ids_endpoint_reachable | pass | matched_bundle_ids=1 |
 | bundle_id_found | pass | {"id": "32QLDGB33V", "identifier": "app.gitai.game", "name": "gitai", "platform": "UNIVERSAL"} |
-| apps_endpoint_reachable | pass | matched_apps=0 |
-| app_record_found | fail | No App Store app record found for bundle_id=app.gitai.game |
-
-## Errors
-
-- app_record_found: No App Store app record found for bundle_id=app.gitai.game
+| apps_endpoint_reachable | pass | matched_apps=1 |
+| app_record_found | pass | {"bundleId": "app.gitai.game", "id": "6786196512", "name": "gitai", "primaryLocale": "ja", "sku": "gitai-ios"} |

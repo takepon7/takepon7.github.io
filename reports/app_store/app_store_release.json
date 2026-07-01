@@ -64,12 +64,22 @@
       "detail": "passed=12 failed=0",
       "name": "web_launch_package_valid",
       "status": "pass"
+    },
+    {
+      "detail": "{\"app_id\": \"6786196512\", \"bundle_id\": \"app.gitai.game\", \"bundle_resource_id\": \"32QLDGB33V\"}",
+      "name": "app_store_connect_record_ready",
+      "status": "pass"
+    },
+    {
+      "detail": "{\"actions\": 7, \"missing\": []}",
+      "name": "app_store_text_metadata_synced",
+      "status": "pass"
     }
   ],
   "errors": [],
   "manual_followups": [
-    "Create the App Store Connect app record and reserve the final bundle ID.",
     "Re-sync the iOS wrapper with the final production API origin.",
+    "Sync App Store URL metadata after final production URLs replace example.com placeholders.",
     "Upload an archive build and run TestFlight first-play QA.",
     "Attach generated screenshots and submit with manual release."
   ],
@@ -117,7 +127,7 @@
   ],
   "summary": {
     "failed_checks": 0,
-    "passed_checks": 13,
+    "passed_checks": 15,
     "screenshot_count": 5
   },
   "valid": true

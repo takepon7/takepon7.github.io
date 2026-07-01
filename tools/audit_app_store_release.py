@@ -185,14 +185,59 @@ def audit_app_store_release(out_dir: Path = DEFAULT_OUT_DIR) -> dict[str, Any]:
         f"failed={launch_audit.get('summary', {}).get('failed_checks', 0)}",
     )
 
+    connect_check = load_json(ROOT / "reports" / "app_store_connect" / "app_store_connect.json")
+    add_check(
+        checks,
+        errors,
+        "app_store_connect_record_ready",
+        bool(connect_check.get("valid")),
+        json.dumps(
+            {
+                "app_id": connect_check.get("summary", {}).get("app_id", ""),
+                "bundle_id": connect_check.get("summary", {}).get("bundle_id", ""),
+                "bundle_resource_id": connect_check.get("summary", {}).get("bundle_resource_id", ""),
+            },
+            sort_keys=True,
+        ),
+    )
+
+    metadata_sync = load_json(ROOT / "reports" / "app_store_connect" / "app_store_metadata_sync.json")
+    metadata_actions = metadata_sync.get("actions", [])
+    required_synced_targets = {
+        "appInfoLocalization",
+        "appStoreVersionLocalization.description",
+        "appStoreVersionLocalization.keywords",
+        "appStoreVersionLocalization.promotionalText",
+        "appStoreVersion",
+    }
+    synced_targets = {
+        str(item.get("target", ""))
+        for item in metadata_actions
+        if item.get("status") == "updated"
+    }
+    missing_synced_targets = sorted(required_synced_targets - synced_targets)
+    add_check(
+        checks,
+        errors,
+        "app_store_text_metadata_synced",
+        bool(metadata_sync.get("valid")) and not missing_synced_targets,
+        json.dumps(
+            {
+                "missing": missing_synced_targets,
+                "actions": len(metadata_actions),
+            },
+            sort_keys=True,
+        ),
+    )
+
     report = {
         "valid": not errors,
         "checks": checks,
         "errors": errors,
         "screenshots": screenshot_results,
         "manual_followups": [
-            "Create the App Store Connect app record and reserve the final bundle ID.",
             "Re-sync the iOS wrapper with the final production API origin.",
+            "Sync App Store URL metadata after final production URLs replace example.com placeholders.",
             "Upload an archive build and run TestFlight first-play QA.",
             "Attach generated screenshots and submit with manual release.",
         ],

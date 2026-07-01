@@ -22,6 +22,13 @@ Fastest implementation path:
 6. TestFlight internal build is installable.
 7. Review notes explain user-generated drawings, moderation, reporting, and no-login flow.
 
+Current App Store Connect record:
+
+- Bundle ID: `app.gitai.game`
+- Bundle resource ID: `32QLDGB33V`
+- App ID: `6786196512`
+- SKU: `gitai-ios`
+
 ## Suggested Build Path
 
 ### Phase 1: iOS Wrapper
@@ -62,7 +69,7 @@ npm run ios:open
 
 ### Phase 3: TestFlight
 
-- Create the App Store Connect app record.
+- Use the existing App Store Connect app record.
 - Upload an archive build.
 - Add internal testers.
 - Verify:
